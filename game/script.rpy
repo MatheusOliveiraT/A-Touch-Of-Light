@@ -72,6 +72,17 @@ image lucas pijamab timido2 = Image("images/sprite/lucas/pijamab/timido2.png")
 
 define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 
+# Portal
+
+image portal:
+    "images/assets/portal1.png"
+    linear 1 alpha 0.25
+    "images/assets/portal2.png"
+    linear 1 alpha 0.75
+    "images/assets/portal3.png"
+    linear 1 alpha 0.5
+    repeat
+
 # Começo
 
 label start:

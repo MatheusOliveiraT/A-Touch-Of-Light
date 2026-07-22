@@ -323,7 +323,8 @@ label dia2:
     "A alguns passos de distância da luz eu consegui visualizar com mais detalhes a origem daquele feixo... 
     e estranhamente ele não vinha de nenhuma peça de maquinário, nem nada semelhante."
 
-    # portal
+    show portal
+    with dissolve
 
     "Não. A luz exalava de uma forma estranha. Como em uma peça de ficção científica. Um portal? {w=0.5}Não... {w=0.5}energia acumulada...?"
 
@@ -532,14 +533,14 @@ label darNome:
         "Sim":
 
             $seuNome = povnome
-            jump _prologopt2
+            jump _dia2pt2
 
         "Não":
 
             jump darNome
 
 
-label _prologopt2:
+label _dia2pt2:
 
     v "Meu nome é [seuNome], você esteve em um... {w=0.5}acidente...?"
 
