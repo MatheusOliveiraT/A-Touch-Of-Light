@@ -23,13 +23,14 @@ define gui.show_name = True
 
 ## A versão do jogo.
 
-define config.version = "1.0"
+define config.version = "0.0.1"
 
 
 ## Texto que é colocado na tela "Sobre" do jogo. Coloque o texto entre aspas
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
+Fonte Grape Soda feita por jeti: https://fontenddev.com/fonts/grape-soda/ coa licença de uso CC BY 4.0
 """)
 
 

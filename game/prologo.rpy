@@ -170,6 +170,10 @@ label prologo:
 
     pause 2.0
 
+    jump dia2
+
+label dia2:
+
     scene bg laboratorio
     with fade
 
@@ -596,9 +600,8 @@ label _prologopt2:
     l "Uma água, p-por favor."
 
     scene bg sala casa
-    with fade
-
     show lucas pijamab ouvindo
+    with fade
 
     "Depois de uma breve visita a cozinha e um copo de água abaixo, a conversa continua."
 
@@ -650,7 +653,7 @@ label _prologopt2:
 
     show lucas pijamab timido2
 
-    l "N-não, [seuNome]... {w=0.5}você usou o portal..."
+    l "N-não, [seuNome]... {w=0.5}você ativou o portal..."
 
     v "Portal?"
 
@@ -668,11 +671,423 @@ label _prologopt2:
 
     show lucas pijamab ouvindo
 
-    v "Então sim... {w=0.5}foi eu.... {w=0.5}eu não sabia que aquilo era um portal...?"
+    v "Então sim... {w=0.5}foi eu.... {w=0.5}eu não sabia que aquilo era um portal...?{w=0.5} Mas como assim um portal?"
+
+    show lucas pijamab timido2
+
+    l "É... {w=0.5}complicado..."
+
+    v "E o que você quer dizer com \"tão cedo\"?"
+
+    "O leão mais uma vez parece pedido com as palavras."
+
+    show lucas pijamab timido1
+
+    l "[seuNome]... é uma longa história,{w=0.5} mas eu preciso que você confie em mim."
+
+    v "[l.name], qual outra opção eu tenho?"
+
+    show lucas pijamab duvida1
+
+    l "Eu...{w=0.5} não sei?"
+
+    "Talvez a minha falta de hesitação com o leão tenha sido inesperada."
+
+    v "Olha [l.name]... sinceramente hoje já aconteceu muita coisa, e claramente tem muita coisa que você ainda não disse.{w=0.5} 
+    Eu não sei o dia de amanhã, mas eu acredito que essa conversa pode esperar até lá."
+
+    show lucas pijamab timido2
+
+    l "V-você tem certeza?"
+
+    v "Não, mas certeza não é algo que eu tenho com frequência.{w=0.5} Cuidando do agora, eu tô exausto, principalmente mentalmente.
+    {w=0.5} Necessito de um bom banho e boas horas de sono."
+
+    show lucas pijamab falando
+
+    l "C-certo..."
+
+    show lucas pijamab ouvindo
+
+    v "Eu imagino que você não tenha nenhum amigo pra visitar ou simplesmente outro lugar pra dormir, correto?"
+
+    show lucas pijamab timido1
+
+    l "É...{w=0.5} não por aqui, pelo menos..."
+
+    show lucas pijamab ouvindo
+
+    v "Vou pegar uns travesseiros e uma coberta pra você então. O sofá é confortável o suficiente?"
+
+    show lucas pijamab timido2
+
+    l "S-sim, sim.{w=0.5} Obrigado..."
+
+    show lucas pijamab ouvindo
+
+    v "Muito em breve você não vai estar me agradecendo..."
+
+    "Existe um certo nível de malícia na minha voz, mas na real eu só tô provocando o felino."
+
+    v "Bom, o banheiro é a primeira porta à direita no corredor, a cozinha fica logo ao lado da entrada da sala, se você quiser
+    alguma coisa lá. Só avisando que eu deveria ter feito as compras hoje, então a geladeira tá bem vazia."
+
+    v "Você precisa de mais alguma coisa por agora?"
+
+    show lucas pijamab duvida1
+
+    l "Certo... acho que nada por enquanto..."
+
+    show lucas pijamab ouvindo
+
+    v "Então eu já volto com as suas coisas."
+    
+    scene bg sala casa
+    show lucas pijamab ouvindo
+    with fade
+
+    "Rapidamente eu retorno para a sala com dois travesseiros e um cobertor leve."
+
+    v "Aqui. Precisa de uma cobertor mais pesado? E pensei por causa do seu pelo né..."
+
+    show lucas pijamab timido2
+
+    l "N-não, não.{w=0.5} Esse tá ótimo."
+
+    show lucas pijamab ouvindo
+
+    v "Fechô então. Eu vou tomar um banho e descansar. Meu quarto é a primeira porta à esquerda no corredor, se precisar de 
+    alguma coisa é só me chamar."
+
+    show lucas pijamab timido2
+
+    l "O-obrigado."
+
+    "Nessa eu me afasto do leão em direção ao banheiro, a fim de concluir meu ritual para o bom e velho descanso."
 
     scene black
     with fade
 
-    "To be continued..."
+    "Não é hora pra pensar demais."
+
+    jump dia3
+
+label dia3:
+
+    scene bg casa quarto
+    with fade
+
+    "Eu estaria me iludindo se dissesse que acreditava que essa noite de sono seria maravilhosa. Mas acho que duas horas dá pro gasto."
+
+    "Infelizmente o cérebro ainda não recebe comando de voz para desligar durante certo período...{w=0.5} então o que eu mais 
+    fiz essa noite foi tentar processar tudo que aconteceu ontem. Tentar definitivamente é a melhor palavra."
+
+    "Sentado na cama encarando o chão eu tento revisitar cada passo que me trouxe até aqui."
+
+    "É, nada vai fazer sentido muito cedo. Não enquanto eu ficar aqui sentado."
+
+    "[l.name]... ele tem muita explicação pra dar hoje."
+
+    scene bg casa sala
+    show lucas pijamab sorriso1
+    with fade
+
+    "Saindo do meu quarto em direção a sala, logo eu avisto [l.name] sentado ao sofá, praticamente esperando meu retorno. Ao 
+    me avistar, o leão sorri levemente e me cumprimenta."
+
+    l "Bom dia, [seuNome]. Conseguiu dormir bem?"
+
+    v "Bom dia, [l.name]. Dentro do possível, sim."
+
+    show lucas pijamab timido1
+
+    l "Eu imagino o que você deve estar sentindo..." 
+
+    v "[l.name], quem é você?"
+
+    show lucas pijamab duvida1
+
+    "A pergunta atordoa o leão."
+
+    l "Bem... {w=0.5}essa pergunta é difícil... {w=0.5}pode parecer um pouco vago, e talvez seja, mas meu nome é [l.name], eu 
+    tenho 23 anos e... eu sou de Lumen."
+
+    v "Lumen?"
+
+    show lucas pijamab falando
+
+    l "É como se chama o meu planeta."
+
+    show lucas pijamab ouvindo
+
+    "Planeta{w=0.5}.{w=0.5}.{w=0.5}."
+
+    v "Tá... {w=0.5}então você é um alienígena?"
+
+    show lucas pijamab duvida2
+
+    l "Você támbém é um alienígena no meu ponto de vista..."
+
+    v "É, mas eu tô no meu planeta e não invadi o de ninguém."
+
+    show lucas pijamab falando
+
+    l "Tecnicamente eu não invadi o seu planeta também...{w=0.5} Mas isso não importa. Bem, nesse ponto você já sabe do portal..."
+
+    show lucas pijamab ouvindo
+
+    v "Saber dele eu sei, mas tudo em volta dele não."
+
+    show lucas pijamab duvida1
+
+    l "Você realmente não sabe?"
+
+    v "[l.name]... o que eu sei é que eu toquei numa luz, que na verdade era um portal, e você apareceu."
+
+    show lucas pijamab timido2
+
+    l "C-certo... me desculpa, [seuNome]. Eu não sabia o quanto você estava no escuro quanto a tudo. Eu também não sei de tudo, 
+    mas algumas coisas eu consigo te explicar."
+
+    show lucas pijamab falando
+
+    l "Bom, como eu disse eu venho de Lumen, um planeta da galaxia de Andromeda. O meu trabalho é evitar uma possível catástrofe 
+    de acontecer que envolve não só o meu planeta, mas o seu e também a maior parte das outras galaxias."
+
+    show lucas pijamab ouvindo
+
+    v "..."
+
+    show lucas pijamab timido1
+
+    l "[seuNome]?"
+
+    show lucas pijamab ouvindo
+
+    v "Você tá me dizendo que não é dessa galaxia e sabe do futuro não só do meu planeta, mas como de todos os outros?"
+
+    show lucas pijamab duvida1
+
+    l "Futuro? Não exatamente...{w=0.5} mas sim, [seuNome]."
+
+    v "[l.name], isso ainda não explica nem metade das minhas perguntas."
+
+    show lucas pijamab timido1
+
+    l "Eu...{w=0.5} imagino...{w=0.5} provavelmente eu não consigo responder todas, mas eu farei o meu melhor!"
+
+    v "Como você veio parar aqui, na Terra?"
+
+    show lucas pijamab falando
+
+    l "É uma tecnologia que nós utilizamos...{w=0.5} os portais. É considerada nova no meu planeta...{w=0.5} é como se fosse 
+    um meio de trans—"
+
+    show lucas pijamab assustado1
+
+    v "Não! Como esse portal veio para aqui, [l.name]?"
+
+    show lucas pijamab timido1
+
+    l "Ah...{w=0.5} esse detalhe em específico eu não sei...{w=0.5} eu só sei que era pra aparecer ali, foi o que me disseram."
+
+    v "Te disseram? Quem?"
+
+    show lucas pijamab falando
+
+    l "Os meus superiores. Eles não falam muitos detalhes de como, onde nem porque comigo, apenas o necessário."
+
+    show lucas pijamab ouvindo
+
+    v "Então esse é seu... trabalho?"
+
+    show lucas pijamab sorriso2
+
+    l "Isso!{w=0.5} Bom, o meu primeiro trabalho desse tipo..."
+
+    v "Tá...{w=0.5} e o que eu tenho a ver com isso?"
+
+    show lucas pijamab timido1
+
+    l "Você...{w=0.5} precisa me ajudar?"
+
+    v ".{w=0.5}.{w=0.5}.{w=0.5} isso é suspeitamente vago..."
+
+    show lucas pijamab timido2
+
+    l "Eu sei...{w=0.5} [seuNome], eu não sei muito sobre você, mas eu sei que você é a chave pra evitar toda essa catástrofe..."
+
+    v "O que você sabe sobre mim?"
+
+    show lucas pijamab duvida1
+
+    l "Bom...{w=0.5} acredito que muito pouco...{w=0.5} você me invocou pouco tempo depois de ler um pouco sobre você...{w=0.5} 
+    Um dia depois, exatamente."
+
+    show lucas pijamab falando
+
+    l "[seuNome], 28 anos, programador em uma empresa de pesquisa e desenvolvimento do ramo científico..."
+
+    show lucas pijamab ouvindo
+
+    v "Nada além disso?"
+
+    show lucas pijamab timido1
+
+    l "Não..."
+
+    show lucas pijamab ouvindo
+
+    v "...{w=0.5} como você e...{w=0.5} o seu povo?{w=0.5} Sabem sobre...{w=0.5} mim?"
+
+    show lucas pijamab falando
+
+    l "Existe uma grande tensão política em Lumen. O risco de uma grande guerra acontecer é iminente. Com isso, o governo decidiu 
+    tomar certas...{w=0.5} decisões quanto ao âmbito das relações espaciais."
+
+    l "Apesar do poder de comunicação entre diferentes galáxias por causa dos portais e de outras tecnologias, Lumen escolheu 
+    manter-se fechada e não expor o seu conhecimento adquirido por nós para as outras sociedades do universo."
+
+    l "Mas essa escolha mudou. Agora Lumen precisa de você para prosperar em paz."
+
+    show lucas pijamab ouvindo
+
+    v "...{w=0.5} eu mal sei fazer um miojo...{w=0.5} imagina salvar um planeta, uma galáxia ou o universo..."
+
+    show lucas pijamab timido1
+
+    l "[seuNome], Lumen vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
+
+    v "Isso soa como o maior clichê de ficção científica que eu já ouvi, [l.name]..."
+
+    show lucas pijamab falando
+
+    l "Como eu disse [seuNome], eu não sei todos os detalhes... mas eu sei que te escolheram para este trabalho por um motivo."
+
+    show lucas pijamab ouvindo
+
+    v "Olha [l.name], isso seria muito legal se eu fosse uma criança com bastante tempo livre e uma imaginação fértil. Mas 
+    infelizmente eu não sou nem tenho nada disso. [l.name], pelo menos 117 pessoas morreram naquele acidente. Pessoas inocentes."
+
+    show lucas pijamab timido2
+
+    l "Eu sei, [seuNome]...{w=0.5} e se você não me ajudar, esse vai ser o primeiro de muitos incidentes como esse..."
+
+    v "O que você quer dizer com isso??"
+
+    l "Como eu disse, eu não vi o acidente. Mas eu sei porque ele aconteceu...{w=0.5} quem causou ele...{w=0.5} e é por isso 
+    que eu preciso da sua ajuda."
+
+    v "{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5} Eu preciso de uma água."
+
+    show lucas pijamab timido1
+
+    l "Eu disse demais? D-desculpa, [seuNome]..."
+
+    v "É muita coisa pra digerir de uma vez só..."
+
+    l "D-desculpa, novamente."
+
+    v "Cê tá com fome?"
+
+    show lucas pijamab timido2
+
+    l "Um pouco...{w=0.5} sim."
+
+    v "O que você...{w=0.5} come?"
+
+    show lucas pijamab falando
+
+    l "Eu não sou muito criterioso... qualquer coisa que você conseguir eu aceito."
+
+    show lucas pijamab ouvindo
+
+    v "Eu vou na padaria comprar alguma coisa pra gente comer então...{w=0.5} não devo demorar muito."
+
+    show lucas pijamab sorriso2
+
+    l "Eu posso ir com você!"
+
+    v "[l.name]... você não pode ir junto."
+
+    show lucas pijamab timido1
+
+    l "Por quê?"
+
+    v "...só tem humano que conversa e vai padaria aqui no planeta Terra."
+
+    show lucas pijamab sorriso2
+
+    l "Ah! Não se preocupa. Eu tenho um disfarce pra usar."
+
+    v "Disfarce...?"
+
+    show lucas pijamab timido1
+
+    l "É...{w=0.5} eu consigo me disfarçar como humano!"
+
+    v "..."
+
+    show lucas pijamab duvida1
+
+    l "Na verdade, eu acho que meu disfarce tá ligado desde que eu cheguei..."
+
+    v "Desde que você...{w=0.5} chegou? Ontem?"
+
+    show lucas pijamab timido2
+
+    l "É...{w=0.5} mas o disfarce não funcionou com você, aparentemente."
+
+    v "E como você vai garantir que vai funcionar nos outros? Convenhamos que o índice de falha entre humanos tá bem alto."
+
+    show lucas pijamab timido1
+
+    l "Esse é um dos momentos em que você precisa confiar em mim..."
+
+    "Esse leão não tem medo do perigo."
+
+    v ".{w=0.5}.{w=0.5}.{w=0.5} Tá, tá. Pra quem tem portal e os caralho, disfarce não deveria ser uma surpresa."
+
+    "O estômago de [l.name] faz um leve barulho."
+
+    show lucas pijamab timido2
+
+    l "Ops..."
+
+    v "Você precisa de roupa também?"
+
+    "O felino cora novamente com meu comentário."
+
+    show lucas pijamab timido1
+
+    l "Não necessariamente...{w=0.5} o disfarce tawmbém funciona com as minhas roupas...{w=0.5} mas eu particularmente prefiro 
+    usar roupas do que andar...{w=0.5} pelado."
+
+    v "Eu quis dizer...{w=0.5} você quer um outro par de roupas?"
+
+    l "A-ah...{w=0.5} eu aceitaria..."
+
+    v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
+
+    scene bg casa sala
+    show lucas terno sorriso
+    with fade
+
+    l "Obrigado, [seuNome]. É algo que eu usaria com certeza em Lumen."
+
+    show lucas terno ouvindo
+
+    v "Você tem sorte que as suas medidas são muito parecidas com as minhas."
+
+    show lucas terno timido1
+
+    l "P-pois é..."
+
+    v "Vamo lá, antes que o nosso estômago coma nosso corpo inteiro."
+
+    scene black
+    with fade
+
+    "Continua..."
 
     return
