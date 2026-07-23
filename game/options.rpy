@@ -30,7 +30,7 @@ define config.version = "0.0.1"
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
-Fonte Grape Soda feita por jeti: https://fontenddev.com/fonts/grape-soda/ coa licença de uso CC BY 4.0
+Fonte Not Jam Novel 13 feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a} com a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}.
 """)
 
 
@@ -49,7 +49,7 @@ define build.name = "ATouchOfLight"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## Para permitir que o usuário reproduza um som de teste no canal de som ou

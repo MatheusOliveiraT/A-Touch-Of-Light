@@ -1,25 +1,25 @@
 ﻿# Sons
 
-define campainha = "audio/campainha.mp3"
+define campainha = ""
 
 # Background
 
-image bg carro = Image("images/background/carro.jpeg")
-image bg estacionamento = Image("images/background/estacionamento.jpeg")
-image bg sala casa = Image("images/background/sala.jpeg")
-image bg banheiro casa = Image("images/background/banheiro.jpeg")
-image bg quarto casa = Image("images/background/quarto.jpeg")
-image bg laboratorio = Image("images/background/laboratorio.jpg")
-image bg acelerador1 = Image("images/background/acelerador1.jpg")
-image bg acelerador2 = Image("images/background/acelerador2.jpg")
 image bg white = Image("images/background/white.png")
-image bg hall = Image("images/background/hall.png")
-image bg escombros = Image("images/background/escombros.png")
+image bg carro = Image("")
+image bg estacionamento = Image("")
+image bg sala casa = Image("")
+image bg banheiro casa = Image("")
+image bg quarto casa = Image("")
+image bg laboratorio = Image("")
+image bg acelerador1 = Image("")
+image bg acelerador2 = Image("")
+image bg hall = Image("")
+image bg escombros = Image("")
 
 # CGs
 
-image cg escombros1 = Image("images/cg/escombros1.png")
-image cg escombros2 = Image("images/cg/escombros2.png")
+image cg escombros1 = Image("")
+image cg escombros2 = Image("")
 
 # Personagens
 
@@ -29,7 +29,7 @@ define seuNome = ""
 # Personagens secundários
 
 define vz = Character(name="Vizinho", color="#3d3d3d")
-image vz = Image("images/sprite/@0.4/vizinho.svg")
+image vz = Image("")
 
 define null = Character(name="???", color="#cfcfcf")
 
@@ -41,32 +41,35 @@ define l = Character("Lucas", color="#9900ff")
 
 # Terno
 
-image lucas terno assustado = Image("images/sprite/lucas/terno/assustado.png")
-image lucas terno bravo1 = Image("images/sprite/lucas/terno/bravo1.png")
-image lucas terno bravo2 = Image("images/sprite/lucas/terno/bravo2.png")
-image lucas terno chocado = Image("images/sprite/lucas/terno/chocado.png")
-image lucas terno chorando1 = Image("images/sprite/lucas/terno/chorando1.png")
-image lucas terno chorando2 = Image("images/sprite/lucas/terno/chorando2.png")
-image lucas terno falando = Image("images/sprite/lucas/terno/falando.png")
-image lucas terno ouvindo = Image("images/sprite/lucas/terno/ouvindo.png")
-image lucas terno rindo = Image("images/sprite/lucas/terno/rindo.png")
-image lucas terno sorriso = Image("images/sprite/lucas/terno/sorriso.png")
-image lucas terno timido1 = Image("images/sprite/lucas/terno/timido1.png")
-image lucas terno timido2 = Image("images/sprite/lucas/terno/timido2.png")
-image lucas terno triste = Image("images/sprite/lucas/terno/triste.png")
+image lucas terno assustado = Image("")
+image lucas terno bravo1 = Image("")
+image lucas terno bravo2 = Image("")
+image lucas terno chocado = Image("")
+image lucas terno chorando1 = Image("")
+image lucas terno chorando2 = Image("")
+image lucas terno duvida1 = Image("")
+image lucas terno duvida2 = Image("")
+image lucas terno falando = Image("")
+image lucas terno ouvindo = Image("")
+image lucas terno rindo = Image("")
+image lucas terno sorriso1 = Image("")
+image lucas terno sorriso2 = Image("")
+image lucas terno timido1 = Image("")
+image lucas terno timido2 = Image("")
+image lucas terno triste = Image("")
 
-# Pijama + bandagens
+# Pijama + bandagens (machuado)
 
-image lucas pijamab assustado1 = Image("images/sprite/lucas/pijamab/assustado1.png")
-image lucas pijamab assustado2 = Image("images/sprite/lucas/pijamab/assustado2.png")
-image lucas pijamab duvida1 = Image("images/sprite/lucas/pijamab/duvida1.png")
-image lucas pijamab duvida2 = Image("images/sprite/lucas/pijamab/duvida2.png")
-image lucas pijamab falando = Image("images/sprite/lucas/pijamab/falando.png")
-image lucas pijamab ouvindo = Image("images/sprite/lucas/pijamab/ouvindo.png")
-image lucas pijamab sorriso1 = Image("images/sprite/lucas/pijamab/sorriso1.png")
-image lucas pijamab sorriso2 = Image("images/sprite/lucas/pijamab/sorriso2.png")
-image lucas pijamab timido1 = Image("images/sprite/lucas/pijamab/timido1.png")
-image lucas pijamab timido2 = Image("images/sprite/lucas/pijamab/timido2.png")
+image lucas pijamab assustado = Image("")
+image lucas pijamab duvida1 = Image("")
+image lucas pijamab duvida2 = Image("")
+image lucas pijamab falando = Image("")
+image lucas pijamab ouvindo = Image("")
+image lucas pijamab sorriso1 = Image("")
+image lucas pijamab sorriso2 = Image("")
+image lucas pijamab timido1 = Image("")
+image lucas pijamab timido2 = Image("")
+image lucas pijamab triste = Image("")
 
 # Assets
 

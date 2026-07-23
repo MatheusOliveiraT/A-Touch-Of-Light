@@ -62,22 +62,22 @@ define gui.interface_text_color = '#ffffff'
 ## Fontes e tamanhos de fonte ##################################################
 
 ## A fonte usada para o texto do jogo.
-define gui.text_font = "GrapeSoda.ttf"
+define gui.text_font = "NotJamNovel.ttf"
 
 ## A fonte usada para os nomes dos caracteres.
-define gui.name_text_font = "GrapeSoda.ttf"
+define gui.name_text_font = "NotJamNovel.ttf"
 
 ## A fonte usada para o texto fora do jogo.
-define gui.interface_text_font = "GrapeSoda.ttf"
+define gui.interface_text_font = "NotJamNovel.ttf"
 
 ## O tamanho do texto normal do diálogo.
-define gui.text_size = 40
+define gui.text_size = 42
 
 ## O tamanho dos nomes dos caracteres.
 define gui.name_text_size = 55
 
 ## O tamanho do texto na interface de usuário do jogo.
-define gui.interface_text_size = 40
+define gui.interface_text_size = 42
 
 ## O tamanho dos rótulos na interface de usuário do jogo.
 define gui.label_text_size = 36
