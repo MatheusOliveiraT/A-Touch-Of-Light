@@ -18,17 +18,21 @@ image bg escombros = Image("")
 
 # CGs
 
+default persistent.escombros = False
+image icone escombros = Image("")
 image cg escombros1 = Image("")
 image cg escombros2 = Image("")
 
 # Personagens
 
 define v = Character("Você", color="#cfcfcf")
+define v_e = Character("You", color="#cfcfcf")
 define seuNome = ""
 
 # Personagens secundários
 
 define vz = Character(name="Vizinho", color="#3d3d3d")
+define vz_e = Character(name="Neighbour", color="#3d3d3d")
 image vz = Image("")
 
 define null = Character(name="???", color="#cfcfcf")
@@ -47,6 +51,7 @@ image lucas terno bravo2 = Image("")
 image lucas terno chocado = Image("")
 image lucas terno chorando1 = Image("")
 image lucas terno chorando2 = Image("")
+image lucas terno desconfortavel = Image("")
 image lucas terno duvida1 = Image("")
 image lucas terno duvida2 = Image("")
 image lucas terno falando = Image("")
@@ -57,6 +62,7 @@ image lucas terno sorriso2 = Image("")
 image lucas terno timido1 = Image("")
 image lucas terno timido2 = Image("")
 image lucas terno triste = Image("")
+image lucas terno vergonha = Image("")
 
 # Pijama + bandagens (machuado)
 
@@ -86,10 +92,24 @@ image portal:
     linear 1 alpha 0.5
     repeat
 
+# Termos
+
+define planeta_lucas = "Lumen"
+define galaxia_lucas = "Andromeda"
+
 # Começo
 
 label start:
 
     jump prologo
+
+    return
+
+label continua:
+
+    scene black
+    with fade
+
+    "Continua..."
 
     return

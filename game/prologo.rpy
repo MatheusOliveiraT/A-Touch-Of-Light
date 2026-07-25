@@ -356,6 +356,8 @@ label dia2:
 
     "Lentamente eu me ergui do chão e me sentei. O que os meus olhos encontraram foi algo muito difícil de acreditar."
 
+    $persistent.escombros = True
+
     scene cg escombros1
     with fade
 
@@ -821,9 +823,9 @@ label dia3:
     "A pergunta atordoa o leão."
 
     l "Bem... {w=0.5}essa pergunta é difícil... {w=0.5}pode parecer um pouco vago, e talvez seja, mas meu nome é [l.name], eu 
-    tenho 23 anos e... eu sou de Lumen."
+    tenho 23 anos e... eu sou de [planeta_lucas]."
 
-    v "Lumen?"
+    v "[planeta_lucas]?"
 
     show lucas pijamab falando
 
@@ -862,7 +864,7 @@ label dia3:
 
     show lucas pijamab falando
 
-    l "Bom, como eu disse eu venho de Lumen, um planeta da galaxia de Andromeda. O meu trabalho é evitar uma possível catástrofe 
+    l "Bom, como eu disse eu venho de [planeta_lucas], um planeta da galaxia de [galaxia_lucas]. O meu trabalho é evitar uma possível catástrofe 
     de acontecer que envolve não só o meu planeta, mas o seu e também a maior parte das outras galaxias."
 
     show lucas pijamab ouvindo
@@ -953,14 +955,14 @@ label dia3:
 
     show lucas pijamab falando
 
-    l "Existe uma grande tensão política em Lumen. O risco de uma grande guerra acontecer é iminente. Com isso, o governo decidiu 
+    l "Existe uma grande tensão política em [planeta_lucas]. O risco de uma grande guerra acontecer é iminente. Com isso, o governo decidiu 
     tomar certas...{w=0.5} decisões quanto ao âmbito das relações espaciais."
 
-    l "Apesar do poder de comunicação entre diferentes galáxias por causa dos portais e de outras tecnologias, Lumen escolheu 
+    l "Apesar do poder de comunicação entre diferentes galáxias por causa dos portais e de outras tecnologias, [planeta_lucas] escolheu 
     manter-se fechada e não expor o seu conhecimento adquirido por nós para as outras sociedades do universo."
 
-    l "Mas essa escolha mudou. Lumen começou a olhar para as outras sociedades na busca para a solução desses conflitos. 
-    Eles viram potencial na Terra, especialmente em você. Então agora Lumen precisa de você para prosperar em paz."
+    l "Mas essa escolha mudou. [planeta_lucas] começou a olhar para as outras sociedades na busca para a solução desses conflitos. 
+    Eles viram potencial na Terra, especialmente em você. Então agora [planeta_lucas] precisa de você para prosperar em paz."
 
     show lucas pijamab ouvindo
 
@@ -968,7 +970,7 @@ label dia3:
 
     show lucas pijamab timido1
 
-    l "[seuNome], Lumen vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
+    l "[seuNome], [planeta_lucas] vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
 
     v "Isso soa como o maior clichê de ficção científica que eu já ouvi, [l.name]..."
 
@@ -1087,7 +1089,7 @@ label dia3:
     show lucas terno sorriso1
     with fade
 
-    l "Obrigado, [seuNome]. É algo que eu usaria com certeza em Lumen."
+    l "Obrigado, [seuNome]. É algo que eu usaria com certeza em [planeta_lucas]."
 
     show lucas terno ouvindo
 
@@ -1099,9 +1101,6 @@ label dia3:
 
     v "Vamo lá, antes que o nosso estômago coma nosso corpo inteiro."
 
-    scene black
-    with fade
+    "Então eu caminho em direção a porta do apartamento, abrindo-a e convindando Lucas a se juntar a mim."
 
-    "Continua..."
-
-    return
+    jump cap1
