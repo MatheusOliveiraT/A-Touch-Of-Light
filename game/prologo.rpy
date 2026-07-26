@@ -499,7 +499,7 @@ label dia2:
     "Melhor eu entrar antes que aconteça outro encontro indesejado."
 
     scene bg sala casa
-    show lucas pijamab duvida1
+    show lucas pijamab base
     with fade
 
     "Quando eu entro novamento no meu apartamento, eu observo o leão sentado ao sofá analisando os arredores. 
@@ -507,11 +507,13 @@ label dia2:
 
     v "Oi?"
 
-    show lucas pijamab assustado
+    show lucas pijamab assustado1
 
     "O leão praticamente pula do sofá assustado. O seu olhar se itensifica quando os nossos olhos se encontram. {w=0.5}Talvez ele esteja com mais medo que eu..."
 
     v "Oi... {w=0.5}você consegue me entender?"
+
+    show lucas pijamab assustado2
 
     "Apesar do meu tom calmo e gentil os olhos do leão se arregalam novamente e ele se afasta da minha presença."
 
@@ -568,7 +570,7 @@ label _dia2pt2:
 
     v "Me desculpa... {w=0.5}mas... {w=0.5}o que é você? Você parece um leão, {w=0.5}mas..."
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     "O leão te encara com dúvida."
 
@@ -579,8 +581,6 @@ label _dia2pt2:
     l "E-eu não deveria?"
 
     v "Nunca ouvi um... {w=0.5}animal falante? {w=0.5}Talvez um papagaio... {w=0.5}mas não racional..."
-
-    show lucas pijamab duvida2
 
     l "Esse mundo é mesmo estranho..."
 
@@ -596,7 +596,7 @@ label _dia2pt2:
 
     "Então em um momento ele percebe as suas novas vestes e fica envergonhado novamente."
 
-    show lucas pijamab timido1
+    show lucas pijamab timido2
 
     l "O-obrigado pelas roupas também... {w=0.5}As minhas antigas deviam estar... {w=0.5}comprometidas."
 
@@ -620,7 +620,7 @@ label _dia2pt2:
 
     v "O seu nome eu sei... {w=0.5}mas não sei mais nada sobre você... {w=0.5}você estava no prédio no momento do acidente?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Prédio? {w=0.5}Não..."
 
@@ -644,7 +644,7 @@ label _dia2pt2:
 
     v "Eu?"
 
-    show lucas pijamab timido1
+    show lucas pijamab timido3
 
     l "S-sim."
 
@@ -660,13 +660,13 @@ label _dia2pt2:
 
     v "E como eu te invoquei? Você é um demônio?!"
 
-    show lucas pijamab timido2
+    show lucas pijamab timido4
 
     l "N-não, [seuNome]... {w=0.5}você ativou o portal..."
 
     v "Portal?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Você não lembra de ativar o portal? S-será se foi outro humano? {w=0.5}Não poderia ser..."
 
@@ -682,7 +682,7 @@ label _dia2pt2:
 
     v "Então sim... {w=0.5}acho que foi eu.... {w=0.5}eu não sabia que aquilo era um portal...?{w=0.5} Mas como assim um portal?"
 
-    show lucas pijamab timido2
+    show lucas pijamab timido5
 
     l "É... {w=0.5}complicado..."
 
@@ -696,7 +696,7 @@ label _dia2pt2:
 
     v "[l.name], qual outra opção eu tenho?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Eu...{w=0.5} não sei?"
 
@@ -743,7 +743,7 @@ label _dia2pt2:
 
     v "Você precisa de mais alguma coisa por agora?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Certo... acho que nada por enquanto..."
 
@@ -818,7 +818,7 @@ label dia3:
 
     v "[l.name], quem é você?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     "A pergunta atordoa o leão."
 
@@ -837,7 +837,7 @@ label dia3:
 
     v "Tá... {w=0.5}então você é um alienígena?"
 
-    show lucas pijamab duvida2
+    show lucas pijamab duvida
 
     l "Você támbém é um alienígena no meu ponto de vista..."
 
@@ -851,7 +851,7 @@ label dia3:
 
     v "Saber dele eu sei, mas porra...{w=0.5} o que é um portal?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Você realmente não sabe?"
 
@@ -879,7 +879,7 @@ label dia3:
 
     v "Você tá me dizendo que não é dessa galaxia e sabe do futuro não só do meu planeta, mas como de todos os outros?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab timido3
 
     l "Futuro? Não exatamente...{w=0.5} mas sim, [seuNome]."
 
@@ -896,7 +896,7 @@ label dia3:
     l "É uma tecnologia que nós utilizamos...{w=0.5} os portais. É considerada nova no meu planeta...{w=0.5} é como se fosse 
     um meio de trans—"
 
-    show lucas pijamab assustado
+    show lucas pijamab assustado1
 
     v "Não! Como esse portal veio para aqui, [l.name]?"
 
@@ -932,7 +932,7 @@ label dia3:
 
     v "O que você sabe sobre mim?"
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Bom...{w=0.5} acredito que muito pouco...{w=0.5} você me invocou pouco tempo depois de ler um pouco sobre você...{w=0.5} 
     Um dia depois, exatamente."
@@ -968,7 +968,7 @@ label dia3:
 
     v "...{w=0.5} eu mal sei fazer um miojo...{w=0.5} imagina salvar um planeta, uma galáxia ou o universo..."
 
-    show lucas pijamab timido1
+    show lucas pijamab timido4
 
     l "[seuNome], [planeta_lucas] vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
 
@@ -983,7 +983,7 @@ label dia3:
     v "Olha [l.name], isso seria muito legal se eu fosse uma criança com bastante tempo livre e uma imaginação fértil. Mas 
     infelizmente eu não sou nem tenho nada disso. [l.name], pelo menos 117 pessoas morreram naquele acidente. Pessoas inocentes."
 
-    show lucas pijamab triste
+    show lucas pijamab triste1
 
     l "Eu sei, [seuNome]...{w=0.5} e se você não me ajudar, esse vai ser o primeiro de muitos incidentes como esse..."
 
@@ -996,11 +996,13 @@ label dia3:
 
     v "{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5} Eu preciso de uma água."
 
-    show lucas pijamab triste
+    show lucas pijamab triste2
 
     l "Eu disse demais? D-desculpa, [seuNome]..."
 
     v "É muita coisa pra digerir de uma vez só..."
+
+    show lucas pijamab triste1
 
     l "D-desculpa, novamente."
 
@@ -1026,7 +1028,7 @@ label dia3:
 
     v "[l.name]... você não pode ir junto."
 
-    show lucas pijamab triste
+    show lucas pijamab triste1
 
     l "Por quê?"
 
@@ -1044,13 +1046,13 @@ label dia3:
 
     v "..."
 
-    show lucas pijamab duvida1
+    show lucas pijamab duvida
 
     l "Na verdade, eu acho que meu disfarce tá ligado desde que eu cheguei..."
 
     v "Desde que você...{w=0.5} chegou? Ontem?"
 
-    show lucas pijamab timido2
+    show lucas pijamab timido3
 
     l "É...{w=0.5} mas o disfarce não funcionou com você, aparentemente."
 
@@ -1074,28 +1076,30 @@ label dia3:
 
     "O felino cora novamente com meu comentário."
 
-    show lucas pijamab timido1
+    show lucas pijamab timido5
 
     l "Não necessariamente...{w=0.5} o disfarce também funciona com as minhas roupas...{w=0.5} mas eu particularmente prefiro 
     usar roupas do que andar...{w=0.5} pelado."
 
     v "Eu quis dizer...{w=0.5} você quer um outro par de roupas?"
 
+    show lucas pijamab timido3
+
     l "A-ah...{w=0.5} eu aceitaria..."
 
     v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
 
     scene bg casa sala
-    show lucas terno sorriso1
+    show lucas ternob sorriso1
     with fade
 
     l "Obrigado, [seuNome]. É algo que eu usaria com certeza em [planeta_lucas]."
 
-    show lucas terno ouvindo
+    show lucas ternob ouvindo
 
     v "Você tem sorte que as suas medidas são muito parecidas com as minhas."
 
-    show lucas terno timido1
+    show lucas ternob timido1
 
     l "P-pois é..."
 

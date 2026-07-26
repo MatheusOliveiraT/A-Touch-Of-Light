@@ -1,7 +1,7 @@
 label cap1:
 
     scene bg hall
-    show lucas terno duvida1
+    show lucas ternob duvida
     with fade
 
     "Após trancar a porta eu chamo o elevador e aguardo logo na frente da porta. Ao olhar para o lado vejo que o felino parece extremamente confuso."
@@ -14,7 +14,7 @@ label cap1:
 
     v "Me surpreende vocês terem portais que viajam entre galáxias e não terem elevadores."
 
-    show lucas terno assustado
+    show lucas ternob assustado1
 
     l "A-ah!"
 
@@ -22,14 +22,14 @@ label cap1:
 
     v "Bora, gatinho."
 
-    show lucas terno timido1
+    show lucas ternob timido1
 
     l "C-certo."
 
     "O felino cora levemente com a provocação."
 
     scene bg estacionamento
-    show lucas terno duvida1
+    show lucas ternob duvida
     with fade
 
     "Ao chegar no estacionamento as portas do elevador se abrem e eu saio, o leão prontamente me acompanha. Nós caminhamos em direção à minha vaga, chegando no meu carro. 
@@ -39,18 +39,18 @@ label cap1:
 
     v "Isso seria um carro, mais especificamente o meu."
 
-    show lucas terno chocado
+    show lucas ternob assustado1
 
     l "U-um carro? Você deve ser rico..."
 
     v "Eu vivo bem... mas rico, não."
 
-    show lucas terno falando
+    show lucas ternob falando
 
     l "Em [planeta_lucas] carros são artigos de luxo, já que não precisamos deles necessariamente. Esse é o primeiro carro que eu vejo... 
     mesmo que muito diferente dos que eu via em casa."
 
-    show lucas terno ouvindo
+    show lucas ternob ouvindo
 
     "Dessa vez o olhar de confusão é meu."
 
@@ -58,18 +58,18 @@ label cap1:
 
     "Eu falo apontando para todos os outros carros estacionados próximos ao meu."
 
-    show lucas terno vergonha
+    show lucas ternob timido4
 
     l "A-ah... então mora bastante gente rica aqui..."
 
     v "Você com certeza perdeu o meu ponto. Entra no carro aí, tô com muita fome pra te explicar."
 
-    show lucas terno timido1
+    show lucas ternob timido1
 
     l "T-tá."
 
     scene bg carro
-    show lucas terno vergonha
+    show lucas ternob timido1
     with fade
 
     "Então eu dou a volta e entro no carro pelo banco do motorista. Rapidamente eu ajeito os retrovisores e dou partida no carro. 
@@ -77,11 +77,13 @@ label cap1:
 
     v "Não vai colocar o cinto?"
 
+    show lucas ternob timido2
+
     l "Cinto?"
 
     v "O cinto de segurança."
 
-    show lucas terno timido1
+    show lucas ternob timido1
 
     l "C-como que eu coloco?"
 
@@ -93,13 +95,13 @@ label cap1:
 
     "O leão hesita, mas segue o comando novamente. Logo ele consegue então encaixar o gancho do sinto na trava."
 
-    show lucas terno desconfortavel
+    show lucas ternob bravo2
 
     l "É um pouco..."
 
     v "Apertado?"
 
-    show lucas terno timido2
+    show lucas ternob timido2
 
     l "S-sim..."
 
