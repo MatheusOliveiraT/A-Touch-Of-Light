@@ -30,7 +30,9 @@ define config.version = "0.0.1"
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
-Fonte Not Jam Novel 13 feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a} com a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}.
+Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:\n
+-> Fonte Not Jam Novel 16, feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a}.\n
+-> Vozes e efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
 """)
 
 
