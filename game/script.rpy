@@ -7,7 +7,7 @@ define campainha = ""
 image bg white = Image("images/background/white.png")
 image bg carro = Image("")
 image bg estacionamento = Image("")
-image bg sala casa = Image("")
+image bg sala casa = Image("images/background/sala.png")
 image bg banheiro casa = Image("")
 image bg quarto casa = Image("")
 image bg laboratorio = Image("")
@@ -146,6 +146,11 @@ image portal:
 
 define planeta_lucas = "Lumen"
 define galaxia_lucas = "Andromeda"
+
+# Posições sprites
+
+transform noTapete:
+    xalign 0.2
 
 # Começo
 

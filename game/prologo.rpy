@@ -499,7 +499,7 @@ label dia2:
     "Melhor eu entrar antes que aconteça outro encontro indesejado."
 
     scene bg sala casa
-    show lucas pijamab base
+    show lucas pijamab base at noTapete
     with fade
 
     "Quando eu entro novamento no meu apartamento, eu observo o leão sentado ao sofá analisando os arredores. 
@@ -607,7 +607,7 @@ label _dia2pt2:
     l "Uma água, p-por favor."
 
     scene bg sala casa
-    show lucas pijamab ouvindo
+    show lucas pijamab ouvindo at noTapete
     with fade
 
     "Depois de uma breve visita a cozinha e um copo de água abaixo, a conversa continua."
@@ -752,7 +752,7 @@ label _dia2pt2:
     v "Então eu já volto com as suas coisas."
     
     scene bg sala casa
-    show lucas pijamab ouvindo
+    show lucas pijamab ouvindo at noTapete
     with fade
 
     "Rapidamente eu retorno para a sala com dois travesseiros e um cobertor leve."
@@ -798,7 +798,7 @@ label dia3:
     "[l.name]... ele tem muita explicação a fazer hoje."
 
     scene bg casa sala
-    show lucas pijamab sorriso1
+    show lucas pijamab sorriso1 at noTapete
     with fade
 
     "Saindo do meu quarto em direção a sala, logo eu avisto [l.name] sentado ao sofá, praticamente esperando meu retorno. Ao 
@@ -1090,7 +1090,7 @@ label dia3:
     v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
 
     scene bg casa sala
-    show lucas ternob sorriso1
+    show lucas ternob sorriso1 at noTapete
     with fade
 
     l "Obrigado, [seuNome]. É algo que eu usaria com certeza em [planeta_lucas]."
