@@ -49,7 +49,7 @@ define build.name = "ATouchOfLight"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = False
+define config.has_voice = True
 
 
 ## Para permitir que o usuário reproduza um som de teste no canal de som ou

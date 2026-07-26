@@ -2,6 +2,26 @@
 
 define campainha = ""
 
+# Vozes
+
+define voz_v = "audio/voice/voce.ogg"
+define voz_l = "audio/voice/lucas.ogg"
+
+init python:
+    renpy.music.register_channel("vozes", mixer="voice", loop=True)
+
+    def somDaFalaL(event, interact=True, **kwargs):
+        if event == "show":
+            renpy.sound.play(voz_l, channel="vozes", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop(channel="vozes")
+
+    def somDaFalaV(event, interact=True, **kwargs):
+        if event == "show":
+            renpy.sound.play(voz_v, channel="vozes", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.sound.stop(channel="vozes")
+
 # Background
 
 image bg white = Image("images/background/white.png")
@@ -25,8 +45,8 @@ image cg escombros2 = Image("")
 
 # Personagens
 
-define v = Character("Você", color="#cfcfcf")
-define v_e = Character("You", color="#cfcfcf")
+define v = Character("Você", color="#cfcfcf", callback=somDaFalaV)
+define v_e = Character("You", color="#cfcfcf", callback=somDaFalaV)
 define seuNome = ""
 
 # Personagens secundários
@@ -41,7 +61,8 @@ define e = Character(name="Erick", color="#01c901")
 
 # Lucas
 
-define l = Character("Lucas", color="#9900ff")
+define null_l = Character(name="???", color="#cfcfcf", callback=somDaFalaL)
+define l = Character("Lucas", color="#9900ff", callback=somDaFalaL)
 
 # Terno + bandagens (machucado)
 

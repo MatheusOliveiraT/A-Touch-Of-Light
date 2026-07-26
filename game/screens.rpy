@@ -809,7 +809,7 @@ screen preferences():
                         label _("Volume da voz")
 
                         hbox:
-                            bar value Preference("voice volume")
+                            bar value Preference("vozes volume")
 
                             if config.sample_voice:
                                 textbutton _("Teste") action Play("voice", config.sample_voice)

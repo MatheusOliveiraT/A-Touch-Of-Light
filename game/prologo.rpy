@@ -517,7 +517,7 @@ label dia2:
 
     "Apesar do meu tom calmo e gentil os olhos do leão se arregalam novamente e ele se afasta da minha presença."
 
-    null "Q-quem é você?"
+    null_l "Q-quem é você?"
 
     "O sotaque dele é forte. Ele disse duas palavras e eu mal entendi uma."
 
@@ -554,7 +554,7 @@ label _dia2pt2:
 
     "Ao ouvir meu nome o felino se acalma levemente, demonstrando agora certa incerteza."
 
-    null "V-você disse [seuNome]?"
+    null_l "V-você disse [seuNome]?"
 
     v "Eu mesmo."
 
@@ -562,7 +562,7 @@ label _dia2pt2:
 
     show lucas pijamab falando
 
-    null "Então d-deu certo..."
+    null_l "Então d-deu certo..."
 
     show lucas pijamab ouvindo
 
@@ -710,7 +710,7 @@ label _dia2pt2:
     l "V-você tem certeza?"
 
     v "Não, mas certeza não é algo que eu tenho com frequência.{w=0.5} Cuidando do agora, eu tô exausto, principalmente mentalmente.
-    {w=0.5} Necessito de um bom banho e apagar o quanto antes"
+    {w=0.5}Necessito de um bom banho e apagar o quanto antes."
 
     show lucas pijamab falando
 
