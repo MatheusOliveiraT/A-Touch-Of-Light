@@ -74,13 +74,13 @@ define gui.interface_text_font = "NotJamNovel.ttf"
 define gui.text_size = 42
 
 ## O tamanho dos nomes dos caracteres.
-define gui.name_text_size = 55
+define gui.name_text_size = 60
 
 ## O tamanho do texto na interface de usuário do jogo.
 define gui.interface_text_size = 42
 
 ## O tamanho dos rótulos na interface de usuário do jogo.
-define gui.label_text_size = 36
+define gui.label_text_size = 42
 
 ## O tamanho do texto na tela de notificação.
 define gui.notify_text_size = 24

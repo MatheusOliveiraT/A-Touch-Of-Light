@@ -33,7 +33,7 @@ define seuNome = ""
 
 define vz = Character(name="Vizinho", color="#3d3d3d")
 define vz_e = Character(name="Neighbour", color="#3d3d3d")
-image vz = Image("")
+image vz = Image("images/sprites/vizinho.png")
 
 define null = Character(name="???", color="#cfcfcf")
 
