@@ -99,7 +99,7 @@ label prologo:
 
     "Um banho vai me fazer bem agora."
 
-    scene bg banheiro casa
+    scene bg banheiro casa noite
     with fade
 
     "Seria legal ter uma banheira, igual nas casas americanas.{w=0.5} Hoje seria um bom dia pra relaxar numa daquelas."
@@ -143,7 +143,7 @@ label prologo:
 
     "De buchinho cheio e de banho tomado.{w=0.5} Agora para o prato principal da noite."
 
-    scene bg quarto casa
+    scene bg quarto casa noite
     with fade
 
     "Essa pilha de roupa tá ficando fora de controle.{w=1} Problema meu de amanhã."
@@ -420,7 +420,7 @@ label dia2:
 
     "Ele vai ter que entender o meu lado também."
 
-    scene bg banheiro casa
+    scene bg banheiro casa noite
     with fade
 
     "Eu espero que ele não tenha alergia ao meu xampu... de qualquer forma não tem muito no pote."
@@ -431,7 +431,7 @@ label dia2:
 
     "Mão na massa."
 
-    scene bg banheiro casa
+    scene bg banheiro casa noite
     with fade
 
     "Eu juro que tô na terceira toalha e ele ainda não tá 100\% seco. {w=0.5}Isso é pior que cardio."
@@ -783,7 +783,7 @@ label _dia2pt2:
 
 label dia3:
 
-    scene bg casa quarto
+    scene bg casa quarto dia
     with fade
 
     "Eu estaria me iludindo se dissesse que acreditava que essa noite de sono seria maravilhosa. Mas acho que duas horas (não) dá pro gasto."
