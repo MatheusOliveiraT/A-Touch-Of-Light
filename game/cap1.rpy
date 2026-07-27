@@ -69,7 +69,7 @@ label cap1:
     l "T-tá."
 
     scene bg carro
-    show lucas ternob timido1
+    show lucas ternob timido1 at bancoPassageiro
     with fade
 
     "Então eu dou a volta e entro no carro pelo banco do motorista. Rapidamente eu ajeito os retrovisores e dou partida no carro. 

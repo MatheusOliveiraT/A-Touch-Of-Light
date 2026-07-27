@@ -25,7 +25,7 @@ init python:
 # Background
 
 image bg white = Image("images/background/white.png")
-image bg carro = Image("")
+image bg carro = Image("images/background/carro.png")
 image bg estacionamento = Image("")
 image bg sala casa = Image("images/background/sala.png")
 image bg banheiro casa dia = Image("images/background/banheiroDia.png")
@@ -174,6 +174,11 @@ define galaxia_lucas = "Andromeda"
 
 transform noTapete:
     xalign 0.2
+
+transform bancoPassageiro:
+    xalign 1.23
+    yoffset 300
+    xzoom -1.0
 
 # Começo
 
