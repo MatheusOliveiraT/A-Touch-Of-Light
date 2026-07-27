@@ -18,7 +18,7 @@ define config.name = _("A Touch Of Light")
 ## Determina se o título fornecido acima será mostrado na tela do menu
 ## principal. Defina como False para ocultar o título.
 
-define gui.show_name = True
+define gui.show_name = False
 
 
 ## A versão do jogo.
@@ -30,8 +30,12 @@ define config.version = "0.0.1"
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
-Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:\n
--> Fonte Not Jam Novel 16, feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a}.\n
+Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:
+
+-> Fonte Not Jam Novel 16, feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a}.
+
+-> Trilha Sonora feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-music-pack}aqui{/a}.
+
 -> Vozes e efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
 """)
 
@@ -67,7 +71,7 @@ define config.has_voice = True
 ## continuará sendo reproduzido no jogo até que seja interrompido ou outro
 ## arquivo seja reproduzido.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/music/mainmenu.ogg"
 
 
 ## Transições ##################################################################
