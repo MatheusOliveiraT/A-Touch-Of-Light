@@ -32,11 +32,11 @@ define config.version = "0.0.1"
 define gui.about = _p("""
 Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:
 
--> Fonte Not Jam Novel 16, feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a}.
+-> Fonte Not Jam Novel 16 e Not Jam Old Style 14, ambas feitas por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a} e {a=https://not-jam.itch.io/not-jam-font-pack}aqui{/a}.
 
 -> Trilha Sonora feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-music-pack}aqui{/a}.
 
--> Vozes e efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
+-> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
 """)
 
 
@@ -55,7 +55,7 @@ define build.name = "ATouchOfLight"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## Para permitir que o usuário reproduza um som de teste no canal de som ou

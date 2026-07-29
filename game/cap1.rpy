@@ -22,11 +22,11 @@ label cap1:
 
     v "Bora, gatinho."
 
-    show lucas ternob timido1
+    show lucas ternob duvida
 
     l "C-certo."
 
-    "O felino cora levemente com a provocação."
+    "O felino não entende a provocação."
 
     scene bg estacionamento
     show lucas ternob duvida
@@ -68,7 +68,8 @@ label cap1:
 
     l "T-tá."
 
-    scene bg carro
+    scene bg estacionamento
+    show carro
     show lucas ternob timido1 at bancoPassageiro
     with fade
 

@@ -65,7 +65,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "NotJamNovel.ttf"
 
 ## A fonte usada para os nomes dos caracteres.
-define gui.name_text_font = "NotJamNovel.ttf"
+define gui.name_text_font = "NotJamOldStyle14.ttf"
 
 ## A fonte usada para o texto fora do jogo.
 define gui.interface_text_font = "NotJamNovel.ttf"
@@ -74,7 +74,7 @@ define gui.interface_text_font = "NotJamNovel.ttf"
 define gui.text_size = 42
 
 ## O tamanho dos nomes dos caracteres.
-define gui.name_text_size = 60
+define gui.name_text_size = 55
 
 ## O tamanho do texto na interface de usuário do jogo.
 define gui.interface_text_size = 42

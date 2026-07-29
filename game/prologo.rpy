@@ -10,8 +10,11 @@ label prologo:
 
     "Exceto o fogão.{w=1} E a geladeira.{w=1} E talvez a pilha de roupa suja...{w=1} acho que isso pode esperar até amanhã?{w=1} Claro que pode."
 
-    scene bg carro
+    scene bg rua noite
     with fade
+    show carro
+    with dissolve
+
 
     "Pelo menos é hora de ir embora.{w=1} Mais um dia com aquela voz no fundo da cabeça...{w=1} gritante...{w=1} eu só queria descansar um pouco..."
 
@@ -45,6 +48,9 @@ label prologo:
     "Espero não encontrar ninguém pelos corredores do prédio...{w=0.5} zero carisma hoje."
 
     "Hoje ninguém decidiu ocupar minha vaga...{w=0.5} ótimo."
+
+    hide carro
+    with dissolve
 
     "Talvez esse dia tenha salvação{w=0.5}, afinal."
 
@@ -398,13 +404,15 @@ label dia2:
     "Confirmando meu pessimismo, no caminho para o meu carro não encontro mais nenhum sinal de outro sobrevivente... {w=0.5}o gosto é amargo. {w=0.5}
     Adrenalina corre nas minhas veias, me carregando para fora daquele lugar o mais rápido possível."
 
-    scene bg carro
+    scene bg rua noite
+    show carro
     with fade
 
     "Dando o meu melhor eu coloco o leão dentro do carro e adentro logo em seguida o banco do motorista. {w=0.5}Que. {w=0.5}Porra. {w=0.5}Tá. {w=0.5}Acontecendo... 
     {w=0.5}Acho que se eu pensar demais eu vou desmaiar..."
 
     scene bg estacionamento
+    show carro
     with fade
 
     "Tá. {w=0.5}Se tem um momento pra NÃO encontrar nenhum vizinho, essa hora é agora."
@@ -517,7 +525,7 @@ label dia2:
 
     "Apesar do meu tom calmo e gentil os olhos do leão se arregalam novamente e ele se afasta da minha presença."
 
-    null_l "Q-quem é você?"
+    l "Q-quem é você?"
 
     "O sotaque dele é forte. Ele disse duas palavras e eu mal entendi uma."
 
@@ -554,7 +562,7 @@ label _dia2pt2:
 
     "Ao ouvir meu nome o felino se acalma levemente, demonstrando agora certa incerteza."
 
-    null_l "V-você disse [seuNome]?"
+    l "V-você disse [seuNome]?"
 
     v "Eu mesmo."
 
@@ -562,7 +570,7 @@ label _dia2pt2:
 
     show lucas pijamab falando
 
-    null_l "Então d-deu certo..."
+    l "Então d-deu certo..."
 
     show lucas pijamab ouvindo
 

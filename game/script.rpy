@@ -4,29 +4,12 @@ define campainha = ""
 
 # Vozes
 
-define voz_v = "audio/voice/voce.ogg"
-define voz_l = "audio/voice/lucas.ogg"
-
-init python:
-    renpy.music.register_channel("vozes", mixer="voice", loop=True)
-
-    def somDaFalaL(event, interact=True, **kwargs):
-        if event == "show":
-            renpy.sound.play(voz_l, channel="vozes", loop=True)
-        elif event == "slow_done" or event == "end":
-            renpy.sound.stop(channel="vozes")
-
-    def somDaFalaV(event, interact=True, **kwargs):
-        if event == "show":
-            renpy.sound.play(voz_v, channel="vozes", loop=True)
-        elif event == "slow_done" or event == "end":
-            renpy.sound.stop(channel="vozes")
-
 # Background
 
 image bg white = Image("images/background/white.png")
-image bg carro = Image("images/background/carro.png")
-image bg estacionamento = Image("")
+image bg rua dia = Image("images/background/ruaDia.png")
+image bg rua noite = Image("images/background/ruaNoite.png")
+image bg estacionamento = Image("images/background/estacionamento.png")
 image bg sala casa = Image("images/background/sala.png")
 image bg banheiro casa dia = Image("images/background/banheiroDia.png")
 image bg banheiro casa noite = Image("images/background/banheiroNoite.png")
@@ -47,8 +30,8 @@ image cg escombros2 = Image("")
 
 # Personagens
 
-define v = Character("Você", color="#cfcfcf", callback=somDaFalaV)
-define v_e = Character("You", color="#cfcfcf", callback=somDaFalaV)
+define v = Character("Você", color="#cfcfcf")
+define v_e = Character("You", color="#cfcfcf")
 define seuNome = ""
 
 # Personagens secundários
@@ -63,8 +46,7 @@ define e = Character(name="Erick", color="#01c901")
 
 # Lucas
 
-define null_l = Character(name="???", color="#cfcfcf", callback=somDaFalaL)
-define l = Character("Lucas", color="#9900ff", callback=somDaFalaL)
+define l = Character("Lucas", color="#9900ff")
 
 # Terno + bandagens (machucado)
 
@@ -164,6 +146,10 @@ image portal:
     "images/assets/portal3.png"
     linear 1 alpha 0.5
     repeat
+
+# Carro
+
+image carro = Image("images/assets/carro.png")
 
 # Termos
 
