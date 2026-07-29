@@ -149,7 +149,7 @@ image portal:
 
 # Carro
 
-image carro = Image("images/assets/carro.png")
+image carro = Image("images/assets/carroNew.png")
 
 # Termos
 

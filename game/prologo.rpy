@@ -39,6 +39,7 @@ label prologo:
     pause 2.0
 
     scene bg estacionamento
+    show carro
     with fade
 
     "Aparentemente eu fiquei tempo o suficiente brigando comigo mesmo que eu perdi o momento em que meu próprio carro entrou no condomínio."
