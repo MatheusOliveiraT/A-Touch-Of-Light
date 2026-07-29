@@ -15,10 +15,10 @@ image bg banheiro casa dia = Image("images/background/banheiroDia.png")
 image bg banheiro casa noite = Image("images/background/banheiroNoite.png")
 image bg quarto casa dia = Image("images/background/quartoDia.png")
 image bg quarto casa noite = Image("images/background/quartoNoite.png")
+image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("")
 image bg acelerador1 = Image("")
 image bg acelerador2 = Image("")
-image bg hall = Image("")
 image bg escombros = Image("")
 
 # CGs
