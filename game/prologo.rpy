@@ -306,7 +306,9 @@ label dia2:
     "Lentamento eu abri os olhos preparado pra enfrentar qualquer um dos cenários, menos aquele que eu estava prestes a encarar."
 
     scene bg escombros
+    show sangue
     with Fade(0.0, 0.0, 5.0)
+    
 
     "Sangue. {w=0.5}Restos mortais por todos os lados. {w=0.5}Partes que eu não saberia reconhecer. 
     {w=0.5}Tudo isso em desarmonia com os escombros de concreto por todos os lados. {w=0.5}Peças de maquinários. {w=0.5}Vidro..."
@@ -356,6 +358,7 @@ label dia2:
     "Algo que eu não sei explicar aconteceu, e eu senti as lágrimas começando a escorrer pelo meu rosto. Conexão."
 
     scene bg escombros
+    show sangue
     with dissolve
 
     "Então eu abri os olhos e a luz não estava mais lá. Eu estava deitado no meio dos pedaços de concretos. 

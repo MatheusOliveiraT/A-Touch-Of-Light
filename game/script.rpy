@@ -158,6 +158,17 @@ image portal:
     linear 1 alpha 0.5
     repeat
 
+# Overlay de sangue
+
+image sangue:
+    "images/assets/sangue.png"
+    linear 1 alpha 0.50
+    "images/assets/sangue.png"
+    linear 1 alpha 0.75
+    "images/assets/sangue.png"
+    linear 1 alpha 1.0
+    repeat
+
 # Carro
 
 image carro = Image("images/assets/carroNew.png")
