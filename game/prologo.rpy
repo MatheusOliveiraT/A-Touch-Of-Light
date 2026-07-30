@@ -10,6 +10,8 @@ label prologo:
 
     "Exceto o fogão.{w=1} E a geladeira.{w=1} E talvez a pilha de roupa suja...{w=1} acho que isso pode esperar até amanhã?{w=1} Claro que pode."
 
+    play music rfh fadein 1.0
+
     scene bg rua noite
     with fade
     show carro
@@ -56,6 +58,7 @@ label prologo:
     "Talvez esse dia tenha salvação{w=0.5}, afinal."
 
     pause 2.0
+    stop music fadeout 0.5
 
     show vz
     with moveinright
@@ -97,6 +100,8 @@ label prologo:
 
     scene bg sala casa
     with fade
+
+    play music klma fadein 1.0
 
     "Exatamente como dizem.{w=0.5} Lar doce lar.{w=1} Talvez não tão doce por conta da poeira...{w=1} e da bagunça generalizada..."
 
@@ -142,9 +147,15 @@ label prologo:
 
     "Pedido feito.{w=1} Agora é esperar chegar."
 
+    stop music
+
+    pause 2.0
+
     play sound campainha volume 0.8
 
     pause 5.0
+
+    play music klma fadein 0.5
 
     "Chegou bem mais rápido do que eu esperava.{w=0.5} E quentinho."
 
@@ -172,11 +183,15 @@ label prologo:
 
     "É, {w=0.5}amanhã vai ser melhor."
 
+    stop music fadeout 2.0
+
     pause 2.0
 
     jump dia2
 
 label dia2:
+
+    play music klmb fadein 2.0
 
     scene bg laboratorio
     with fade
@@ -209,13 +224,13 @@ label dia2:
 
     v "Felizmente.{w=0.5} Mas não antes de perder uns 3 anos de vida por estresse."
 
-    e "Cẽ sabe que eu te ajudaria se eu soubesse minimamente o que tu faz aí."
+    e "Cê sabe que eu te ajudaria se eu soubesse minimamente o que tu faz aí."
 
     v "Eu sei. Mas daí quem iria dar esculacho lá na galera da experimentação?"
 
     e "Eu posso ser muito mais que o ditador da minha equipe."
 
-    v "Cẽ sabe muito bem do que eu tô falando."
+    v "Cê sabe muito bem do que eu tô falando."
 
     e "É, eu sei."
 
@@ -270,7 +285,10 @@ label dia2:
 
     # Vale a pena melhorar o build aqui
 
+    stop music fadeout 0.5
+
     scene bg white
+    play sound explosao fadeout 1.0
     with flash
 
     "Uma luz estridente tomou conta de todo o espaço. No final das contas a curiosidade matou o gato. 
@@ -296,6 +314,8 @@ label dia2:
 
     "Então a energia começou a se dissipar, e a luz lentamente enfraqueceu.{w=0.5} Meus olhos permaneceram selados.{w=0.5} Medo?{w=0.5} Provavelmente."
 
+    play sound whiteNoise
+
     "Silêncio absoluto."
 
     "Eu não sei em que momento eu comecei a cogitar abrir os olhos, mas eventualmente aconteceu. 
@@ -306,9 +326,9 @@ label dia2:
     "Lentamento eu abri os olhos preparado pra enfrentar qualquer um dos cenários, menos aquele que eu estava prestes a encarar."
 
     scene bg escombros
+    play sound ondaTensa
     show sangue
-    with Fade(0.0, 0.0, 5.0)
-    
+    with Fade(0.0, 0.0, 3.0)
 
     "Sangue. {w=0.5}Restos mortais por todos os lados. {w=0.5}Partes que eu não saberia reconhecer. 
     {w=0.5}Tudo isso em desarmonia com os escombros de concreto por todos os lados. {w=0.5}Peças de maquinários. {w=0.5}Vidro..."
@@ -336,6 +356,7 @@ label dia2:
     e estranhamente ele não vinha de nenhuma peça de maquinário, nem nada semelhante."
 
     show portal
+    play sound portal loop volume 0.5
     with dissolve
 
     "Não. A luz exalava de uma forma estranha. Como em uma peça de ficção científica. Um portal? {w=0.5}Não... {w=0.5}energia acumulada...?"
@@ -344,12 +365,17 @@ label dia2:
 
     "E se fosse um portal, seria errado da minha parte não interagir com ele. Então na dúvida, eu acho melhor dar uma olhada mais de perto."
 
+    play sound portal loop volume 1.0
+
     "Me aproximando da luz mais e mais surge um sentimento de familiaridade... algo que me puxa, como um chamado. 
     O feixo é algo atraente, sedutor." 
 
     "Eu consigo sentir as vibrações das ondas de luz... instintivamente, meu dedo indicador se aproximou da fonte."
 
+    stop sound
+
     scene bg white
+    play sound energia
     with flash
 
     "Então eu senti o toque da luz. E mais uma vez, tudo se encheu de cor. Porém agora foi diferente. As cores não eram cegantes. 
@@ -369,6 +395,7 @@ label dia2:
     $persistent.escombros = True
 
     scene cg escombros1
+    play music tw fadein 2.0
     with fade
 
     "Um... {w=0.5}leão? {w=0.5}Ele tá... {w=0.5}desmaiado? {w=0.5}Dormindo? {w=0.5}Bem na minha frente... {w=0.5}ele não tava aqui antes... {w=0.5}ele tá machucado..."
@@ -487,6 +514,7 @@ label dia2:
     "Tudo aconteceu rápido demais..."
 
     show vz
+    stop music fadeout 1.0
     with moveinright
 
     vz "Opa vizinho!! Cê tá bem aí? Fiquei sabendo do acidente lá no teu trabalho!"
@@ -513,6 +541,7 @@ label dia2:
     scene bg sala casa
     show lucas pijamab base at noTapete
     with fade
+    play music pp
 
     "Quando eu entro novamento no meu apartamento, eu observo o leão sentado ao sofá analisando os arredores. 
     {w=0.5}Ele escaneia o espaço, claramente perdido no espaço."
@@ -791,12 +820,15 @@ label _dia2pt2:
 
     "Não é hora pra pensar demais."
 
+    stop music fadeout 1.0
+
     jump dia3
 
 label dia3:
 
     scene bg casa quarto dia
     with fade
+    play sound whiteNoise volume 0.5
 
     "Eu estaria me iludindo se dissesse que acreditava que essa noite de sono seria maravilhosa. Mas acho que duas horas (não) dá pro gasto."
 
@@ -812,6 +844,7 @@ label dia3:
     scene bg casa sala
     show lucas pijamab sorriso1 at noTapete
     with fade
+    play music pp
 
     "Saindo do meu quarto em direção a sala, logo eu avisto [l.name] sentado ao sofá, praticamente esperando meu retorno. Ao 
     me avistar, o leão sorri levemente e me cumprimenta."

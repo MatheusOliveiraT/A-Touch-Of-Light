@@ -1,10 +1,21 @@
-﻿# Sons
+﻿# Músicas
 
-define campainha = ""
+define klma = "audio/music/KleptoLindaMountainA_Loopable.ogg"
+define klmb = "audio/music/KleptoLindaMountainB_Loopable.ogg"
+define rfh = "audio/music/rainy_foothills_loopable.ogg"
+define tw = "audio/music/the_wall_loopable.ogg"
+define pp = "audio/music/pool_party_loopable.ogg"
 
-# Vozes
+# Sons
 
-# Background
+define whiteNoise = "audio/sfx/whitenoise.wav"
+define ondaTensa = "audio/sfx/ondaTensa.wav"
+define campainha = "audio/sfx/campainha.wav"
+define explosao = "audio/sfx/explosao.wav"
+define energia = "audio/sfx/energia.wav"
+define portal = "audio/sfx/portal.wav"
+
+# Backgrounds
 
 image bg white = Image("images/background/white.png")
 image bg rua dia = Image("images/background/ruaDia.png")
