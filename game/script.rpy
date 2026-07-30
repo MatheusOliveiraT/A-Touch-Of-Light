@@ -18,7 +18,7 @@ image bg quarto casa noite = Image("images/background/quartoNoite.png")
 image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("images/background/laboratorio.png")
 image bg acelerador1 = Image("")
-image bg acelerador2 = Image("")
+image bg acelerador2 = Image("images/background/acelerador2.png")
 image bg escombros = Image("")
 
 # CGs
@@ -163,7 +163,7 @@ transform noTapete:
 
 transform bancoPassageiro:
     xalign 1.23
-    yoffset 300
+    yoffset 250
     xzoom -1.0
 
 # Começo
