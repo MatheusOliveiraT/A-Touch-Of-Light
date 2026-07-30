@@ -19,7 +19,18 @@ image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("images/background/laboratorio.png")
 image bg acelerador1 = Image("images/background/acelerador1.png")
 image bg acelerador2 = Image("images/background/acelerador2.png")
-image bg escombros = Image("")
+image bg escombros:  
+    "images/background/escombros1.png"
+    linear 0.5
+    "images/background/escombros2.png"
+    linear 0.5
+    "images/background/escombros3.png"
+    linear 0.5
+    "images/background/escombros4.png"
+    linear 0.5
+    "images/background/escombros5.png"
+    linear 0.5
+    repeat
 
 # CGs
 
