@@ -15,14 +15,8 @@ screen galeria:
 
     tag menu
 
-    add gui.main_menu_background
+    use game_menu(_("Galeria"), scroll="viewport"):
 
-    grid 3 3:
+        grid 3 3:
 
-        xfill True
-        yfill True
-
-        add g.make_button("Escombros", "icone escombros", xalign=0.5, yalign=0.5)
-
-
-    textbutton "Voltar" action Return() xalign 0.5 yalign 0.5
+            add g.make_button("Escombros", "icone escombros", xalign=0.5, yalign=0.5)
