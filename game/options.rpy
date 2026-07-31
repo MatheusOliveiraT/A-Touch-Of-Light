@@ -18,7 +18,7 @@ define config.name = _("A Touch Of Light")
 ## Determina se o título fornecido acima será mostrado na tela do menu
 ## principal. Defina como False para ocultar o título.
 
-define gui.show_name = False
+define gui.show_name = True
 
 
 ## A versão do jogo.
@@ -140,6 +140,12 @@ default preferences.text_cps = 15
 ## mais longas, sendo 0 a 30 o intervalo válido.
 
 default preferences.afm_time = 15
+
+# Padrão de volume pra não estourar o ouvido de ninguém
+
+default preferences.volume.music = 0.5
+
+default preferences.volume.sfx = 0.5
 
 
 ## Salvar diretório ############################################################

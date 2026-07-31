@@ -38,7 +38,7 @@ define gui.idle_color = '#888888'
 define gui.idle_small_color = '#aaaaaa'
 
 ## A cor que é usada para botões e barras que passam pelo mouse.
-define gui.hover_color = '#c184ff'
+define gui.hover_color = '#9933ff'
 
 ## A cor usada em um botão de texto quando ele está selecionado, mas não
 ## focalizado. Um botão estará selecionado se for a tela atual ou o valor de
@@ -65,7 +65,7 @@ define gui.interface_text_color = '#ffffff'
 define gui.text_font = "NotJamNovel.ttf"
 
 ## A fonte usada para os nomes dos caracteres.
-define gui.name_text_font = "NotJamOldStyle14.ttf"
+define gui.name_text_font = "NotJamBoreBlasters21.ttf"
 
 ## A fonte usada para o texto fora do jogo.
 define gui.interface_text_font = "NotJamNovel.ttf"
@@ -74,7 +74,7 @@ define gui.interface_text_font = "NotJamNovel.ttf"
 define gui.text_size = 42
 
 ## O tamanho dos nomes dos caracteres.
-define gui.name_text_size = 55
+define gui.name_text_size = 57
 
 ## O tamanho do texto na interface de usuário do jogo.
 define gui.interface_text_size = 42
@@ -93,6 +93,7 @@ define gui.title_text_size = 75
 
 ## As imagens usadas nos menus principal e de jogo.
 define gui.main_menu_background = "main_menu"
+define gui.main_menu_logo = "gui/logo.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 

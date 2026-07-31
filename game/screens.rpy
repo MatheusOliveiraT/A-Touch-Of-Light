@@ -359,6 +359,9 @@ screen main_menu():
 
     add gui.main_menu_background
 
+    vbox:
+        style "main_menu_logo"
+        add gui.main_menu_logo
     ## Esse quadro vazio escurece o menu principal.
     frame:
         style "main_menu_frame"
@@ -372,8 +375,8 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            #text "[config.name!t]":
+            #    style "main_menu_title"
 
             text "[config.version]":
                 style "main_menu_version"
@@ -384,6 +387,10 @@ style main_menu_vbox is vbox
 style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
+
+style main_menu_logo:
+    xalign 0.3
+    yalign 1.0
 
 style main_menu_frame:
     xsize 420
