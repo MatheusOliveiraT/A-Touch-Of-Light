@@ -52,23 +52,23 @@ image cg escombros2 = Image("")
 
 # Personagens
 
-define v = Character("Você", color="#cfcfcf")
-define v_e = Character("You", color="#cfcfcf")
-define seuNome = ""
+define v = Character("Você", color="#ffffff")
+define v_e = Character("You", color="#ffffff")
+define seuNome = "Leonardo"
 
 # Personagens secundários
 
-define vz = Character(name="Vizinho", color="#3d3d3d")
-define vz_e = Character(name="Neighbour", color="#3d3d3d")
+define vz = Character(name="Vizinho", color="#ababab")
+define vz_e = Character(name="Neighbour", color="#ababab")
 image vz = Image("images/sprites/vizinho.png")
 
-define null = Character(name="???", color="#cfcfcf")
+define null = Character(name="???", color="#ababab")
 
 define e = Character(name="Erick", color="#01c901")
 
 # Lucas
 
-define l = Character("Lucas", color="#9900ff")
+define l = Character("Lucas", color="#9900ff", image="lucas")
 
 # Terno + bandagens (machucado)
 
@@ -154,6 +154,36 @@ image lucas pijamab triste2 = Image("images/sprites/lucas/pijamab/triste2.png")
 image lucas pijamab triste3 = Image("images/sprites/lucas/pijamab/triste3.png")
 image lucas pijamab triste4 = Image("images/sprites/lucas/pijamab/triste4.png")
 
+# Side Icons
+
+# Lucas
+
+image side lucas assustado1 = Image("images/sideIcon/lucas/assustado1.png")
+image side lucas assustado2 = Image("images/sideIcon/lucas/assustado2.png")
+image side lucas base = Image("images/sideIcon/lucas/base.png")
+image side lucas bravo1 = Image("images/sideIcon/lucas/bravo1.png")
+image side lucas bravo2 = Image("images/sideIcon/lucas/bravo2.png")
+image side lucas bravo3 = Image("images/sideIcon/lucas/bravo3.png")
+image side lucas chorando1 = Image("images/sideIcon/lucas/chorando1.png")
+image side lucas chorando2 = Image("images/sideIcon/lucas/chorando2.png")
+image side lucas chorando3 = Image("images/sideIcon/lucas/chorando3.png")
+image side lucas chorando4 = Image("images/sideIcon/lucas/chorando4.png")
+image side lucas chorando5 = Image("images/sideIcon/lucas/chorando5.png")
+image side lucas duvida = Image("images/sideIcon/lucas/duvida.png")
+image side lucas falando = Image("images/sideIcon/lucas/falando.png")
+image side lucas ouvindo = Image("images/sideIcon/lucas/ouvindo.png")
+image side lucas sorriso1 = Image("images/sideIcon/lucas/sorriso1.png")
+image side lucas sorriso2 = Image("images/sideIcon/lucas/sorriso2.png")
+image side lucas timido1 = Image("images/sideIcon/lucas/timido1.png")
+image side lucas timido2 = Image("images/sideIcon/lucas/timido2.png")
+image side lucas timido3 = Image("images/sideIcon/lucas/timido3.png")
+image side lucas timido4 = Image("images/sideIcon/lucas/timido4.png")
+image side lucas timido5 = Image("images/sideIcon/lucas/timido5.png")
+image side lucas triste1 = Image("images/sideIcon/lucas/triste1.png")
+image side lucas triste2 = Image("images/sideIcon/lucas/triste2.png")
+image side lucas triste3 = Image("images/sideIcon/lucas/triste3.png")
+image side lucas triste4 = Image("images/sideIcon/lucas/triste4.png")
+
 # Assets
 
 define flash = Fade(0.1, 0.0, 0.5, color="#fff")
@@ -199,10 +229,32 @@ transform bancoPassageiro:
     yoffset 250
     xzoom -1.0
 
+# Transições side icon
+
+transform change_transform(old, new):
+    old with Dissolve(0.1, alpha=True)
+    new with Dissolve(0.1, alpha=True)
+
+transform same_transform(old, new):
+    old
+    new with Dissolve(0.2, alpha=True)
+
+define config.side_image_change_transform = change_transform
+define config.side_image_same_transform = same_transform
+
+# Outros transforms
+
+transform metadeTamanho: # Imagem fica no meio da tela
+    xalign 0.5
+    yalign 0.5
+    zoom 0.5
+
 # Começo
 
 label start:
 
+    # Transição inicial
+    with fade
     stop music fadeout 2.0
 
     jump prologo

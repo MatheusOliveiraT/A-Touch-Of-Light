@@ -93,12 +93,12 @@ define config.intra_transition = dissolve
 
 ## Uma transição que é usada depois que um jogo é carregado.
 
-define config.after_load_transition = None
+define config.after_load_transition = fade
 
 
 ## Usado ao entrar no menu principal após o término do jogo.
 
-define config.end_game_transition = None
+define config.end_game_transition = fade
 
 
 ## Não existe uma variável para definir a transição usada quando o jogo começa.

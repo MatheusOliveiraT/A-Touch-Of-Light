@@ -113,7 +113,7 @@ screen say(who, what):
     ## Se houver uma imagem lateral, exiba-a acima do texto. Não exiba na
     ## variante do telefone - não há espaço.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.075 yalign 1.0
 
 
 ## Disponibilize a caixa de nome para estilização por meio do objeto Character.
@@ -269,7 +269,7 @@ style quick_button_text is button_text
 
 style quick_menu:
     xalign 0.5
-    yalign 1.0
+    yalign 0.99
 
 style quick_button:
     properties gui.button_properties("quick_button")

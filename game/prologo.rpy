@@ -355,7 +355,7 @@ label dia2:
     "A alguns passos de distância da luz eu consegui visualizar com mais detalhes a origem daquele feixo... 
     e estranhamente ele não vinha de nenhuma peça de maquinário, nem nada semelhante."
 
-    show portal
+    show portal at metadeTamanho
     play sound portal loop volume 0.5
     with dissolve
 
@@ -365,7 +365,12 @@ label dia2:
 
     "E se fosse um portal, seria errado da minha parte não interagir com ele. Então na dúvida, eu acho melhor dar uma olhada mais de perto."
 
+    hide portal 
+    with dissolve
+
+    show portal
     play sound portal loop volume 1.0
+    with dissolve
 
     "Me aproximando da luz mais e mais surge um sentimento de familiaridade... algo que me puxa, como um chamado. 
     O feixo é algo atraente, sedutor." 
@@ -558,7 +563,7 @@ label dia2:
 
     "Apesar do meu tom calmo e gentil os olhos do leão se arregalam novamente e ele se afasta da minha presença."
 
-    l "Q-quem é você?"
+    null "Q-quem é você?"
 
     "O sotaque dele é forte. Ele disse duas palavras e eu mal entendi uma."
 
@@ -571,7 +576,7 @@ label darNome:
         povnome = povnome.strip()
 
         if not povnome:
-            povnome = "Leonardo"
+            povnome = seuNome
 
     menu:
 
@@ -595,7 +600,7 @@ label _dia2pt2:
 
     "Ao ouvir meu nome o felino se acalma levemente, demonstrando agora certa incerteza."
 
-    l "V-você disse [seuNome]?"
+    null "V-você disse [seuNome]?"
 
     v "Eu mesmo."
 
@@ -603,7 +608,7 @@ label _dia2pt2:
 
     show lucas pijamab falando
 
-    l "Então d-deu certo..."
+    null "Então d-deu certo..."
 
     show lucas pijamab ouvindo
 
