@@ -43,6 +43,23 @@ image bg escombros:
     linear 0.5
     repeat
 
+# Main menu
+
+image main_menu:
+    "gui/mainmenu/1.png"
+    pause 0.35
+    "gui/mainmenu/2.png"
+    pause 0.35
+    "gui/mainmenu/3.png"
+    pause 0.35
+    "gui/mainmenu/4.png"
+    pause 0.35
+    "gui/mainmenu/5.png"
+    pause 0.35
+    "gui/mainmenu/6.png"
+    pause 0.35
+    repeat
+
 # CGs
 
 default persistent.escombros = False

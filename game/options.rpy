@@ -36,7 +36,11 @@ Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero
 
 -> Trilha Sonora feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-music-pack}aqui{/a}.
 
+-> Faixa Far away feita por DOS-88, disponível {a=https://dos88.itch.io/dos-88-music-library}aqui{/a}.
+
 -> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
+
+-> Cŕeditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
 """)
 
 
