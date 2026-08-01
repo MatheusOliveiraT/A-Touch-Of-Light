@@ -76,6 +76,14 @@ style frame:
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
+init:
+    transform botao_hover_zoom:
+        # Estado normal do botão
+        on idle:
+            easein 0.1 zoom 1.0 alpha 0.6
+        # Estado quando o mouse passa por cima
+        on hover:
+            easeout 0.1 zoom 1.15 alpha 1.0
 
 ################################################################################
 ## Telas no jogo
@@ -299,40 +307,40 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Começar") action Start()
+            textbutton _("Começar") action Start() at botao_hover_zoom
 
         else:
 
-            textbutton _("Histórico") action ShowMenu("history")
+            textbutton _("Histórico") action ShowMenu("history") at botao_hover_zoom
 
-            textbutton _("Salvar") action ShowMenu("save")
+            textbutton _("Salvar") action ShowMenu("save") at botao_hover_zoom
 
-        textbutton _("Carregar") action ShowMenu("load")
+        textbutton _("Carregar") action ShowMenu("load") at botao_hover_zoom
 
-        textbutton _("Galeria") action ShowMenu("galeria")
+        textbutton _("Galeria") action ShowMenu("galeria") at botao_hover_zoom
 
-        textbutton _("Opções") action ShowMenu("preferences")
+        textbutton _("Opções") action ShowMenu("preferences") at botao_hover_zoom
 
         if _in_replay:
 
-            textbutton _("Fim do replay") action EndReplay(confirm=True)
+            textbutton _("Fim do replay") action EndReplay(confirm=True) at botao_hover_zoom
 
         elif not main_menu:
 
-            textbutton _("Menu principal") action MainMenu()
+            textbutton _("Menu principal") action MainMenu() at botao_hover_zoom
 
-        textbutton _("Sobre") action ShowMenu("about")
+        textbutton _("Sobre") action ShowMenu("about") at botao_hover_zoom
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
             ## A ajuda não é necessária ou relevante para dispositivos móveis.
-            textbutton _("Ajuda") action ShowMenu("help")
+            textbutton _("Ajuda") action ShowMenu("help") at botao_hover_zoom
 
         if renpy.variant("pc"):
 
             ## O botão Sair é proibido no iOS e desnecessário no Android e na
             ## Web.
-            textbutton _("Sair") action Quit(confirm=not main_menu)
+            textbutton _("Sair") action Quit(confirm=not main_menu) at botao_hover_zoom
 
 
 style navigation_button is gui_button
@@ -488,7 +496,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     textbutton _("Voltar"):
         style "return_button"
 
-        action Return()
+        action Return() at botao_hover_zoom
 
     label title
 
@@ -753,80 +761,106 @@ screen preferences():
 
                 if renpy.variant("pc") or renpy.variant("web"):
 
+                    frame:
+                        style "empty"
+                        background "gui/fundo_preferences.png"
+                        padding(10, 10, 10, 100)
+
+                        vbox:
+                            style_prefix "radio"
+                            label _("Tela")
+                            textbutton _("Janela") action Preference("display", "window")
+                            textbutton _("Tela cheia") action Preference("display", "fullscreen")
+
+                frame:
+                    style "empty"
+                    background "gui/fundo_preferences.png"
+                    padding(10, 10, 10, 100)
+
+                    vbox:
+                        style_prefix "check"
+                        label _("Pular")
+                        textbutton _("Texto não-visto") action Preference("skip", "toggle")
+                        textbutton _("Após as escolhas") action Preference("after choices", "toggle")
+                        textbutton _("Transições") action InvertSelected(Preference("transitions", "toggle"))
+
+                frame:
+                    style "empty"
+                    background "gui/fundo_preferences.png"
+                    padding(10, 10, 10, 100)
+
                     vbox:
                         style_prefix "radio"
-                        label _("Tela")
-                        textbutton _("Janela") action Preference("display", "window")
-                        textbutton _("Tela cheia") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Pular")
-                    textbutton _("Texto não-visto") action Preference("skip", "toggle")
-                    textbutton _("Após as escolhas") action Preference("after choices", "toggle")
-                    textbutton _("Transições") action InvertSelected(Preference("transitions", "toggle"))
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Idioma")
-                    
-                    textbutton "Português" action Language(None) 
-                    textbutton "English" action Language("english") 
+                        label _("Idioma")
+                        
+                        textbutton "Português" action Language(None) 
+                        textbutton "English" action Language("english") 
 
                 ## Vboxes adicionais do tipo "radio_pref" ou "check_pref" podem
                 ## ser adicionadas aqui para acrescentar outras preferências
                 ## definidas pelo criador.
 
-            null height (4 * gui.pref_spacing)
+            null height (gui.pref_spacing)
 
             hbox:
                 style_prefix "slider"
                 box_wrap True
 
-                vbox:
 
-                    label _("Velocidade do texto")
+                frame:
+                    style "empty"
+                    background "gui/fundo_preferences_slider.png"
+                    padding(0, 10, 0, 100)
 
-                    bar value Preference("text speed")
+                    vbox:
 
-                    label _("Tempo para auto-pulo")
+                        label _("Velocidade do texto")
 
-                    bar value Preference("auto-forward time")
+                        bar value Preference("text speed")
 
-                vbox:
+                        label _("Tempo para auto-pulo")
 
-                    if config.has_music:
-                        label _("Volume da música")
+                        bar value Preference("auto-forward time")
 
-                        hbox:
-                            bar value Preference("music volume")
+                frame:
+                    style "empty"
+                    background "gui/fundo_preferences_slider.png"
+                    padding(0, 10, 0, 100)
 
-                    if config.has_sound:
+                    vbox:
 
-                        label _("Volume do som")
+                        if config.has_music:
+                            label _("Volume da música")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                            hbox:
+                                bar value Preference("music volume")
 
-                            if config.sample_sound:
-                                textbutton _("Teste") action Play("sound", config.sample_sound)
+                        if config.has_sound:
+
+                            label _("Volume do som")
+
+                            hbox:
+                                bar value Preference("sound volume")
+
+                                if config.sample_sound:
+                                    textbutton _("Teste") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Volume da voz")
+                        if config.has_voice:
+                            label _("Volume da voz")
 
-                        hbox:
-                            bar value Preference("vozes volume")
+                            hbox:
+                                bar value Preference("vozes volume")
 
-                            if config.sample_voice:
-                                textbutton _("Teste") action Play("voice", config.sample_voice)
+                                if config.sample_voice:
+                                    textbutton _("Teste") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                        if config.has_music or config.has_sound or config.has_voice:
+                            null height gui.pref_spacing
 
-                        textbutton _("Silenciar tudo"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                            textbutton _("Silenciar tudo"):
+                                action Preference("all mute", "toggle")
+                                style "mute_all_button"
 
 
 style pref_label is gui_label
