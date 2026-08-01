@@ -42,6 +42,7 @@ image bg escombros:
     "images/background/escombros5.png"
     linear 0.5
     repeat
+image bg padaria = Image("images/background/padaria.png")
 
 # Main menu
 
@@ -236,6 +237,10 @@ image carro = Image("images/assets/carroNew.png")
 
 define planeta_lucas = "Lumen"
 define galaxia_lucas = "Andromeda"
+define agencia_pt_sigla = "ANEGES"
+define agencia_pt = "Administração Nacional Extragalacxial e Espacial"
+define agencia_en_allas = "NEGASA"
+define agencia_en = "National Extragalaxial and Spacial Administration"
 
 # Posições sprites
 
