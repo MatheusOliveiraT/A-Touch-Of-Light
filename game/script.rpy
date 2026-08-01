@@ -208,12 +208,13 @@ define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 # Portal
 
 image portal:
+    yanchor 0.5 ypos 0.5
     "images/assets/portal1.png"
-    linear 1 alpha 0.25
+    linear 0.5 alpha 0.25 zoom 0.95
     "images/assets/portal2.png"
-    linear 1 alpha 0.75
+    linear 0.5 alpha 0.75 zoom 1.0
     "images/assets/portal3.png"
-    linear 1 alpha 0.5
+    linear 0.5 alpha 0.5 zoom 0.975
     repeat
 
 # Overlay de sangue

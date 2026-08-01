@@ -113,12 +113,12 @@ define gui.textbox_yalign = 1.0
 ## O posicionamento do nome do personagem que fala, em relação à caixa de texto.
 ## Pode ser um número inteiro de pixels a partir da esquerda ou do topo, ou 0,5
 ## para o centro.
-define gui.name_xpos = 360
+define gui.name_xpos = 0.5
 define gui.name_ypos = 0
 
 ## O alinhamento horizontal do nome do personagem. Pode ser 0,0 para alinhado à
 ## esquerda, 0,5 para centralizado e 1,0 para alinhado à direita.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5
 
 ## A largura, a altura e as bordas da caixa que contém o nome do caractere ou
 ## Nenhum para dimensioná-la automaticamente.
@@ -127,7 +127,7 @@ define gui.namebox_height = None
 
 ## As bordas da caixa que contém o nome do personagem, na ordem esquerda,
 ## superior, direita e inferior.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(17, 5, 17, 5)
 
 ## Se for True, o plano de fundo da caixa de nome será lado a lado; se for
 ## False, o plano de fundo da caixa de nome será dimensionado.
@@ -298,7 +298,7 @@ define gui.main_menu_text_xalign = 1.0
 define gui.frame_borders = Borders(6, 6, 6, 6)
 
 ## O quadro que é usado como parte da tela de confirmação.
-define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
+define gui.confirm_frame_borders = Borders(120, 60, 120, 60)
 
 ## O quadro que é usado como parte da tela de salto.
 define gui.skip_frame_borders = Borders(24, 8, 75, 8)
