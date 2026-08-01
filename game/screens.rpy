@@ -767,7 +767,7 @@ screen preferences():
                     textbutton _("Transições") action InvertSelected(Preference("transitions", "toggle"))
 
                 vbox:
-                    style_prefix "pref"
+                    style_prefix "radio"
                     label _("Idioma")
                     
                     textbutton "Português" action Language(None) 
@@ -857,6 +857,7 @@ style mute_all_button_text is check_button_text
 
 style pref_label:
     top_margin gui.pref_spacing
+    xalign 0.35
     bottom_margin 3
 
 style pref_label_text:

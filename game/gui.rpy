@@ -27,7 +27,7 @@ define config.check_conflicting_properties = True
 
 ## Uma cor de destaque usada em toda a interface para rotular e destacar o
 ## texto.
-define gui.accent_color = '#9933ff'
+define gui.accent_color = '#7f00e6'
 
 ## A cor usada para um botão de texto quando ele não está selecionado nem passa
 ## o mouse.
@@ -38,7 +38,7 @@ define gui.idle_color = '#b6b6b6'
 define gui.idle_small_color = '#aaaaaa'
 
 ## A cor que é usada para botões e barras que passam pelo mouse.
-define gui.hover_color = '#9933ff'
+define gui.hover_color = '#fdfdfd'
 
 ## A cor usada em um botão de texto quando ele está selecionado, mas não
 ## focalizado. Um botão estará selecionado se for a tela atual ou o valor de
@@ -155,12 +155,12 @@ define gui.dialogue_text_xalign = 0.0
 
 ## A largura e a altura de um botão, em pixels. Se nenhum, Ren'Py calcula um
 ## tamanho.
-define gui.button_width = None
-define gui.button_height = None
+define gui.button_width = 300
+define gui.button_height = 70
 
 ## As bordas em cada lado do botão, na ordem esquerda, superior, direita e
 ## inferior.
-define gui.button_borders = Borders(6, 6, 6, 6)
+define gui.button_borders = Borders(9, 6, 9, 6)
 
 ## Se for True, a imagem de fundo será lado a lado. Se for False, a imagem de
 ## fundo será dimensionada linearmente.
@@ -180,7 +180,7 @@ define gui.button_text_insensitive_color = gui.insensitive_color
 
 ## O alinhamento horizontal do texto do botão. (0,0 é à esquerda, 0,5 é ao
 ## centro, 1,0 é à direita).
-define gui.button_text_xalign = 0.0
+define gui.button_text_xalign = 0.5
 
 
 ## Essas variáveis substituem as configurações de diferentes tipos de botões.
@@ -195,7 +195,9 @@ define gui.check_button_borders = Borders(27, 6, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
-define gui.page_button_borders = Borders(15, 6, 15, 6)
+define gui.page_button_width = 100
+define gui.page_button_text_size = 34
+define gui.page_button_borders = Borders(6, 6, 6, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
 define gui.quick_button_text_size = 21
@@ -276,7 +278,7 @@ define gui.navigation_spacing = 6
 define gui.pref_spacing = 15
 
 ## Controla a quantidade de espaçamento entre os botões de preferência.
-define gui.pref_button_spacing = 0
+define gui.pref_button_spacing = 10
 
 ## O espaçamento entre os botões de página de arquivo.
 define gui.page_spacing = 0

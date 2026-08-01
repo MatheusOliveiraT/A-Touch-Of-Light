@@ -25,6 +25,7 @@ define gui.show_name = True
 
 define config.version = "0.0.1"
 
+define config.has_sync = False
 
 ## Texto que é colocado na tela "Sobre" do jogo. Coloque o texto entre aspas
 ## triplas e deixe uma linha em branco entre os parágrafos.
