@@ -234,6 +234,7 @@ label cap1:
     v "Isso se chama especialização."
 
     scene bg padaria
+    show lucas ternob base at emBaixo
     with fade
 
     "Papo vem, papo vai, e finalmente chegamos ao nosso destino."
