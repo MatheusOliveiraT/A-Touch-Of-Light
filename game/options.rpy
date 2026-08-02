@@ -31,7 +31,11 @@ define config.has_sync = False
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
-Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:
+A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
+
+Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.
+
+Artefatos utilizados sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:
 
 -> Fonte Not Jam Novel 16 e Not Jam Atomic 20, ambas feitas por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a} e {a=https://not-jam.itch.io/not-jam-font-pack}aqui{/a}.
 
@@ -44,6 +48,13 @@ Artefatos sob a licença de uso {a=https://creativecommons.org/publicdomain/zero
 -> Cŕeditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
 """)
 
+define splash.about = _p("""
+A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
+""")
+
+define splash.dev = _p("""
+Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.
+""")
 
 ## Um nome curto para o jogo usado para executáveis e diretórios na distribuição
 ## construída. Ele deve ser somente ASCII e não deve conter espaços, dois pontos
@@ -105,6 +116,9 @@ define config.after_load_transition = fade
 
 define config.end_game_transition = fade
 
+## Usado ao entrar no menu principal após o término da splash screen.
+
+define config.end_splash_transition = fade
 
 ## Não existe uma variável para definir a transição usada quando o jogo começa.
 ## Em vez disso, use uma instrução with depois de mostrar a cena inicial.

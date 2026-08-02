@@ -1673,3 +1673,20 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+# Splash Screen
+
+label splashscreen:
+    scene black
+    with Pause(1)
+
+    show text "[splash.about]" with dissolve
+    pause 5.0
+
+    show text "[splash.dev]" with dissolve
+    pause 5.0
+
+    hide text with dissolve
+    with Pause(1)
+
+    return
