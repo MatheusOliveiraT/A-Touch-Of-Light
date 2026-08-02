@@ -237,6 +237,227 @@ label cap1:
     show lucas ternob base at emBaixo
     with fade
 
-    "Papo vem, papo vai, e finalmente chegamos ao nosso destino."
+    "Papo vem, papo vai, e finalmente chegamos ao nosso destino. [l.name] olha ao redor do ambiente, encantado com os detalhes."
+
+    show lucas ternob duvida
+
+    l "Então isso é uma padaria."
+
+    v "A mais próxima de casa. É conveninente. Vou pegar algo pra gente comer."
+
+    show lucas ternob falando
+
+    l "Beleza."
+
+    hide lucas
+    with dissolve
+
+    "Dia de sorte, tá bem vazio aqui hoje. Estou levemente curioso sobre o disfarce do [l.name]... é fato que ninguém tá encarando o leão no quarto."
+
+    "Caminhando até o balcão, eu sou recepcionado pela atendente simpática."
+
+    ate "Bom dia, o que vai ser pro senhor hoje?"
+
+    v "Deixa eu ver..."
+
+    "É bem possível que o estômago dele não esteja acostumado com as coisas mais pesadas... talvez seja ideal algo mais simples, leve."
+
+    v "Me vê dois pães de queijo, um misto, um café e um suco de laranja, por favor."
+
+    ate "Pra levar ou pra comer agora?"
+
+    v "Pra agora mesmo."
+
+    ate "Certo, assim que tiver pronto eu levo na sua mesa."
+
+    v "Muito obrigado."
+
+    "Então eu retorno para a mesa que [l.name] escolheu. O felino parece encantado com o espaço."
+
+    show lucas ternob base at emBaixo
+    with dissolve
+
+    l "Os humanos são interessantes."
+
+    show lucas ternob ouvindo
+
+    v "Interessante é definitivamente uma boa definição. {w=0.5} A comida já chega."
+
+    show lucas ternob timido2
+
+    l "Espero que você não tenha sido muito extravagante na escolha por minha causa."
+
+    v "Antes eu preciso ter certeza que o seu estômago alienígena aguenta a porrada. Peguei algo mais leve pra você comer. Eu não tô com tanta fome, então 
+    a maior parte fica pra você. Fico no meu café."
+
+    show lucas ternob timido1
+
+    l "Obrigado, [seuNome]."
+
+    v "De fome você não morre na minha mão. {w=0.5} Seguinte, eu preciso trabalhar ainda hoje. você vai ficar perambulando por aí ou vai ficar no meu apartamento?"
+
+    show lucas ternob timido3
+
+    l "Eu suponho que eu não posso ir com você lá, certo?"
+
+    v "Seria... {w=0.5}no mínimo estranho."
+
+    show lucas ternob falando
+
+    l "Acho que seria imprudente da minha parte andar pela cidade sem alguém pra me guiar."
+
+    show lucas ternob ouvindo
+
+    v "Às vezes você tem um super GPS instalado aí, sei lá.{w=0.5} Então eu vou passar pra comprar alguma coisa pra você almoçar e te deixar em casa depois que 
+    a gente sair daqui."
+
+    "Logo a atendente chega com o nosso pedido."
+
+    ate "Aproveitem o café."
+
+    v "Obrigado."
+
+    show lucas ternob timido1
+
+    l "O-obrigado."
+
+    "[l.name] me parece desacostumado com a simples gentileza da antendente."
+
+    v "Aqui tem pão de queijo e o misto. E pra beber tem um suco de laranja aqui."
+
+    show lucas ternob duvida
+
+    l "Tipo a cor?"
+
+    v "Não tem larana em [planeta_lucas]?"
+
+    show lucas ternob timido5
+
+    l "Claro que tem...{w=0.5} o espectro das cores é igual em todas as galáxias."
+
+    v "A fruta, [l.name]."
+
+    show lucas ternob timido3
+
+    l "Ah...{w=0.5} a fruta? {w=0.5} Acho que não?"
+
+    v "Enfim, eu vou comer um pão de queijo, você pode comer o outro e o misto."
+
+    show lucas ternob falando
+
+    l "E o que você tá bebendo?"
+
+    show lucas ternob ouvindo
+
+    v "Café. Mais do que necessário hoje. Agora cala a boca e come."
+
+    "Ele tá com tanta fome que não protesta adiante."
+
+    scene bg estacionamento
+    show carro
+    show lucas ternob ouvindo at bancoPassageiro
+    with fade
+
+    v "Chegamos. Você consegue subir no apartamento sozinho?"
+
+    show lucas ternob timido3
+
+    l "Acho que eu não lembro o andar."
+
+    v "É no décimo terceiro andar. Apartamento número 1310."
+
+    l "Parece fácil o suficiente... 1310."
+
+    v "Aqui as chaves. Essa aqui é a da porta da frente. Quando eu chegar você vai precisar abrir a porta pra mim. Então se você for tirar uma soneca 
+    aproveita pra tirar agora."
+
+    show lucas ternob timido4
+
+    l "Acho que eu não tô com sono."
+
+    v "De qualquer forma, eu devo voltar lá pelas seis horas."
+
+    show lucas ternob falando
+
+    l "Certo."
+
+    hide lucas
+    with dissolve
+
+    "Pouco depois o felino desce do carro e caminha em direção ao elevador. Eu o observo na distância analisando os botões, mas conseguindo acertar após pensar por um segundo."
+
+    "O pior que pode acontecer é ele ficar o dia inteiro trancado pro lado de fora."
+
+    scene bg rua dia
+    show carro
+    with fade
+
+    "É assustador ter que viver a vida normal como se nada estivesse acontecendo. {w=0.5}Afinal, {w=0.5}é só mais um dia que eu acordei e levei meu leão 
+    pra passear pela cidade e comer na padaria."
+
+    "O clima lá no trabalho deve estar...{w=0.5} complicado, no mínimo. {w=0.5}Como que você chega pra trabalhar depois disso?"
+
+    "Eai galera, é uma pena que ontem o prédio explodiu e morreu uma galera... {w=0.5} mas bora revisar esse código pra ver o que aconteceu, {w=0.5}bora time!"
+
+    "Tudo bem que eu não sou gestor né, mas porra...{w=0.5} eu ainda cuido da minha equipe... {w=0.5}que situação fudida. "
+
+    scene bg laboratorio
+    with fade
+
+    "O clima nos corredores tá exatamente como você esperaria de um pós acidente grande como esse. {w=0.5}Ninguém tem coragem de abrir um sorriso nem dizer 
+    nada um pro outro."
+
+    "Mais um dia que a minha equipe inteira decidiu fazer home office. {w=0.5}Provavelmente é pro melhor de todo mundo."
+
+    "A bomba que chegou nos meus ouvidos é que vão interrogar todo mundo que trabalhou presencialmente ontem. {w=0.5}Protocolo padrão."
+
+    "Quem não deve, não teme. {w=0.5}Mas puta que pariu como eu temo.{w=0.5} Me resta trabalhar enquanto a bomba não cai na minha cabeça."
+
+    scene bg laboratorio
+    with fade
+
+    "As horas foram correndo, reunião atrás de reunião especulando uma possível falha de segurança. {w=0.5}Nenhuma resposta. {w=0.5}Nenhum sinal. {w=0.5}Nada."
+
+    "Eu dividi a minha equipe pra revisar cada módulo e ninguém achou nada que possa explicar o que aconteceu.{w=0.5} Meio que eu já esperava isso."
+
+    "Relatórios e mais relatórios...{w=0.5} tudo sendo repassado pra cima. {w=0.5}\"Olha aqui galera, explodiu lá, mas não foi culpa nossa viu. 
+    Aqui tá escrito que o sistema de segurança estava funcionando.\""
+
+    "Se ao menos eu pudesse escrever isso."
+
+    e "[seuNome]! Cara, tá uma loucura lá na equipe de pesquisa. Tudo bem por aí?"
+
+    v "De cara nos papéis. {w=0.5}Ou nos documentos, no caso."
+
+    e "Cê deve tá resolvendo uma bucha gigantesca por causa do sistema de segurança."
+
+    v "Ainda mais depois de reescrever aquela parte antes de ontem.{w=0.5} Mas poderia estar sendo pior se eu ou alguém da minha equipe tivesse achado uma falha."
+
+    "O peso na minha consciência estaria vinte vezes pior."
+
+    e "Já passaram te entrevistando por aqui?"
+
+    v "Ainda não. E por lá?"
+
+    e "Passaram agora pouco, acabei de sair da salinha."
+
+    v "Confessou todos os seus crimes?"
+
+    e "Todos menos os de tortura psicológica no trabalho."
+
+    v "Não vale a pena confessar os mais leves."
+
+    e "Nisso eu concordo com você."
+
+    v "Se você tá voltando agora, não deve demorar muito pra chegar a minha vez."
+
+    null "[seuNome], você pode me acompanhar?"
+
+    v "Dito e feito. {w=0.5}Até mais, [e.name]."
+
+    e "Até, [seuNome]."
+
+    "Então eu acompanho o homem misterioso pelos infinitos corredores do prédio de pesquisa e desenvolvimento. Ele permanesce calado por todo o caminho, e assim 
+    eu também fico."
 
     jump continua

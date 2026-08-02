@@ -82,6 +82,8 @@ image vz = Image("images/sprites/vizinho.png")
 
 define null = Character(name="???", color="#ababab")
 
+define ate = Character(name="Atendente", color="#ababab")
+
 define e = Character(name="Erick", color="#01c901")
 
 # Lucas

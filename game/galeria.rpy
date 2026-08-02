@@ -11,7 +11,7 @@ init python:
 
     g.transition = dissolve
 
-screen galeria:
+screen galeria():
 
     tag menu
 

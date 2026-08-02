@@ -31,7 +31,8 @@ define config.has_sync = False
 ## triplas e deixe uma linha em branco entre os parágrafos.
 
 define gui.about = _p("""
-A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
+A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para 
+fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
 
 Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.
 
@@ -46,10 +47,13 @@ Artefatos utilizados sob a licença de uso {a=https://creativecommons.org/public
 -> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
 
 -> Cŕeditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
+
+-> Shader de onda feito por Wattson, disponível {a=https://wattson.itch.io/renpy-wave-rendering}aqui{/a}.
 """)
 
 define splash.about = _p("""
-A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
+A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para 
+fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.
 """)
 
 define splash.dev = _p("""

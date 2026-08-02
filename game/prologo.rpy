@@ -338,7 +338,7 @@ label dia2:
     "Os escombros se acumularam em volta de mim, mas nenhum deles encostou na minha pele, 
     como se houvesse uma barreira me protegendo de qualquer contato físico."
 
-    "A racionalidade lentamente retornou ao meu corpo quando o odor atingiu as minhas narinas. {w=0.5}Potente. {w=0.5}
+    "A racionalidade lentamente retornou ao meu corpo quando o odor atingiu as minhas narinas. {w=0.5}Potente.{w=0.5}
     Eu nunca tinha sentido nada como aquilo antes."
 
     "Com essa mentalidade eu olhei aos meus arredores e eu entendi a proporção do estrago. {w=0.5}Puta merda."
@@ -355,20 +355,28 @@ label dia2:
     "A alguns passos de distância da luz eu consegui visualizar com mais detalhes a origem daquele feixo... 
     e estranhamente ele não vinha de nenhuma peça de maquinário, nem nada semelhante."
 
-    show portal at metadeTamanho
+    show portal:
+        parallel:
+            metadeTamanho
+        parallel:
+            function WaveShader(amp=2, period=3, speed=1.5, double=True)
     play sound portal loop volume 0.5
     with dissolve
 
     "Não. A luz exalava de uma forma estranha. Como em uma peça de ficção científica. Um portal? {w=0.5}Não... {w=0.5}energia acumulada...?"
 
-    "{w=0.5}.{w=0.5}.{w=0.5}. mas um portal seria muito mais divertido{w=0.5}.{w=0.5}.{w=0.5}. e convenhamos que parece bastante um portal..."
+    "{w=0.5}.{w=0.5}.{w=0.5}.mas um portal seria muito mais divertido{w=0.5}.{w=0.5}.{w=0.5}. e convenhamos que parece bastante um portal..."
 
     "E se fosse um portal, seria errado da minha parte não interagir com ele. Então na dúvida, eu acho melhor dar uma olhada mais de perto."
 
     hide portal 
     with dissolve
 
-    show portal
+    show portal:
+        parallel:
+            xalign 0.5
+        parallel:
+            function WaveShader(amp=3, period=3, speed=1.5, double=True)
     play sound portal loop volume 1.0
     with dissolve
 
