@@ -404,7 +404,7 @@ label cap1:
     show carro
     with fade
 
-    stop music fadeout 2.0
+    play music tw fadein 1.0
 
     "É assustador ter que viver a vida normal como se nada estivesse acontecendo. {w=0.5}Afinal, {w=0.5}é só mais um dia que eu acordei e levei meu leão 
     pra passear pela cidade e comer na padaria."
@@ -438,6 +438,8 @@ label cap1:
     Aqui tá escrito que o sistema de segurança estava funcionando.\""
 
     "Se ao menos eu pudesse escrever isso."
+
+    stop music fadeout 1.0
 
     e "[seuNome]! Cara, tá uma loucura lá na equipe de pesquisa. Tudo bem por aí?"
 
@@ -476,6 +478,8 @@ label cap1:
 
     scene bg interrogatorio
     with fade
+
+    play music rfh fadein 1.0
 
     "Eu não fazia ideia que tinha uma salinha pra interrogação aqui nesse prédio. Bizarro."
 
@@ -551,6 +555,24 @@ label cap1:
     scene bg laboratorio
     with fade
 
+    stop music fadeout 1.0
+
     "Essa conversa definitivamente não foi produtiva. {w=0.5}Nem pra eles, {w=0.5}nem pra mim."
+
+    "Com sorte esse foi o último grande acontecimento do dia...{w=0.5} coisa que eu duvido fortemente que vai ser."
+
+    "Mais algumas horinhas e eu estarei livre...{w=0.5} com um leão em casa, mas livre."
+
+    pause 1.0
+
+    scene bg rua noite
+    show carro
+    with fade
+
+    play music klma fadein 1.0
+
+    "Cinco horas demorou um bocado pra chegar. {w=0.5}Mas eventualmente eu consegui fugir daquele lugar.{w=0.5} Pelo menos até amanhã..."
+
+    ""
 
     jump continua

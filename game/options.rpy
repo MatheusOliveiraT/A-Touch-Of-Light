@@ -38,13 +38,15 @@ Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos v
 
 Artefatos utilizados sob a licença de uso {a=https://creativecommons.org/publicdomain/zero/1.0/}CC0{/a}:
 
--> Fonte Not Jam Novel 16 e Not Jam Atomic 20, ambas feitas por Not Jam disponível {a=https://not-jam.itch.io/not-jam-novel-13}aqui{/a} e {a=https://not-jam.itch.io/not-jam-font-pack}aqui{/a}.
+-> Fonte Not Jam UI 15 e Not Jam Atomic 20, ambas feitas por Not Jam disponíveis {a=https://not-jam.itch.io/not-jam-font-pack}aqui{/a}.
 
 -> Trilha Sonora feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-music-pack}aqui{/a}.
 
+-> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
+
 -> Faixa Far away feita por DOS-88, disponível {a=https://dos88.itch.io/dos-88-music-library}aqui{/a}.
 
--> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
+Artefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:
 
 -> Cŕeditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
 
