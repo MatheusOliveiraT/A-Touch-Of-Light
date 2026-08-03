@@ -43,6 +43,7 @@ image bg escombros:
     linear 0.5
     repeat
 image bg padaria = Image("images/background/padaria.png")
+image bg interrogatorio = Image("images/background/interrogatorio.png")
 
 # Main menu
 
@@ -83,6 +84,9 @@ image vz = Image("images/sprites/vizinho.png")
 define null = Character(name="???", color="#ababab")
 
 define ate = Character(name="Atendente", color="#ababab")
+define ate_e = Character(name="Server", color="#ababab")
+
+define r = Character(name="Rafael", color="#2f2f2f")
 
 define e = Character(name="Erick", color="#01c901")
 

@@ -1,8 +1,20 @@
 label cap1:
 
+    stop music fadeout 2.0
+
+    scene black
+    with fade
+
+    pause 1.0
+
+    show text "Capítulo 1" with dissolve
+    pause 5.0
+
     scene bg hall
     show lucas ternob duvida
     with fade
+
+    play music klma fadein 2.0
 
     "Após trancar a porta eu chamo o elevador e aguardo logo na frente da porta. Ao olhar para o lado vejo que o felino parece extremamente confuso."
 
@@ -392,6 +404,8 @@ label cap1:
     show carro
     with fade
 
+    stop music fadeout 2.0
+
     "É assustador ter que viver a vida normal como se nada estivesse acontecendo. {w=0.5}Afinal, {w=0.5}é só mais um dia que eu acordei e levei meu leão 
     pra passear pela cidade e comer na padaria."
 
@@ -459,5 +473,84 @@ label cap1:
 
     "Então eu acompanho o homem misterioso pelos infinitos corredores do prédio de pesquisa e desenvolvimento. Ele permanesce calado por todo o caminho, e assim 
     eu também fico."
+
+    scene bg interrogatorio
+    with fade
+
+    "Eu não fazia ideia que tinha uma salinha pra interrogação aqui nesse prédio. Bizarro."
+
+    null "Pode se sentar, [seuNome]."
+
+    v "Certo."
+
+    r "Senhor [seuNome], meu nome é [r.name] e eu sou o investigador responsável pelo caso do acidente que aconteceu no dia de ontem. {w=0.5}O senhor deve estar 
+    sabendo que todos os funcionários estão sendo interrogados segundo protocolo, correto?"
+
+    v "Sim, {w=0.5}sim."
+
+    r "Então podemos prosseguir com algumas perguntas referentes ao seu dia de ontem?"
+
+    v "Podemos sim."
+
+    "Eu tô tentando muito manter a calma, mas puta que pariu...{w=0.5} eu tô a um passo de ter um treco nessa cadeira."
+
+    r "O senhor estava trabalhando no prédio de pesquisa e desenvolvimento no dia de ontem?"
+
+    v "Sim, eu estava. No meu horário regular, das nove horas da manha às cinco da tarde."
+
+    "[r.name] escuta atentamente cada palavra que eu digo enquanto realiza anotações em um caderno."
+
+    r "Em algum momento o senhor deixou o prédio por qualquer motivo?"
+
+    v "Não, eu almocei na cantina, então nem pro almoço."
+
+    "O que é verdade."
+
+    r "O acidente aconteceu poucos minutos após as cinco horas da tarde, às cinco e dezoito.{w=0.5} Onde o senhor estava nesse horário?"
+
+    "Você não quer saber essa informação."
+
+    v "Eu havia deixado o prédio e estava indo para o mercado fazer as minhas compras."
+
+    r "Então o senhor não viu nem ouviu o acidente?"
+
+    "Os dois. Eu vi e ouvi."
+
+    v "Não."
+
+    r "Certo. Agradecemos a cooperação, senhor [seuNome]. Nós não temos motivos para interrogar o senhor adiante, então muito obrigado pelo seu tempo."
+
+    v "Por nada."
+
+    "Pra ele é como tirar água de pedra. Mas eu meio que não sou só pedra."
+
+    r "O senhor está liberado então. Se precisarmos de mais alguma coisa, iremos entrar em contato. O senhor tem alguma pergunta?"
+
+    v "Na verdade... {w=0.5}eu tenho."
+
+    r "Diga, senhor [seuNome]."
+
+    v "Vocês tem alguma ideia do que causou o acidente? Nada parece...{w=0.5} fazer sentido..."
+
+    r "Certas informações são sigilosas durante a investigação, senhor [seuNome]. Por enquanto, não posso compartilhar nada que você já não saiba sobre."
+
+    v "Certo... muito obrigado."
+
+    r "Por nada."
+
+    "Eu aproveito a deixa e me levanto da cadeira."
+
+    r "Se o senhor tiver qualquer informação que possa auxiliar o andamento da investigação, não hesite em nos procurar."
+
+    "O jeito que ele disse essas palavras...{w=0.5} como se conseguisse ver através de mim."
+
+    v "Pode deixar."
+
+    "Sinto que eles não fazem ideia do que tá acontecendo. {w=0.5}Antes que ele me pergunte mais alguma coisa, eu me retiro da sala."
+
+    scene bg laboratorio
+    with fade
+
+    "Essa conversa definitivamente não foi produtiva. {w=0.5}Nem pra eles, {w=0.5}nem pra mim."
 
     jump continua
