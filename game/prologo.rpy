@@ -98,7 +98,7 @@ label prologo:
 
     "Mas se eu correr para o meu apartamento pelo menos eu consigo garantir que eu não vou encontrar mais ninguém hoje..."
 
-    scene bg sala casa
+    scene bg sala casa roupas
     with fade
 
     play music klma fadein 1.0
@@ -118,6 +118,9 @@ label prologo:
 
     "É definitivamente um desperdício de água.{w=0.5} Mas no fim a culpa é sempre de uma big tech.{w=1} Não tem nem espaço pra uma banheira aqui..."
 
+    show vapor
+    with dissolve
+
     "O xampu tá acabando...{w=0.5} o condicionador também...{w=0.5} talvez esteja na hora de passar no mercado...{w=1} claro que não hoje."
 
     "Ainda mais agora que tá frio...{w=0.5} o cabelo mal fica sujo."
@@ -130,7 +133,7 @@ label prologo:
 
     "Nunca saberemos."
 
-    scene bg sala casa
+    scene bg sala casa roupas
     with fade
 
     "Banho tomado e alma lavada. Agora, janta."
@@ -161,7 +164,7 @@ label prologo:
 
     "De buchinho cheio e de banho tomado.{w=0.5} Agora para o prato principal da noite."
 
-    scene bg quarto casa noite
+    scene bg quarto casa noite roupas
     with fade
 
     "Essa pilha de roupa tá ficando fora de controle.{w=1} Problema meu de amanhã."
@@ -461,7 +464,7 @@ label dia2:
 
     "Tá. {w=0.5}Se tem um momento pra NÃO encontrar nenhum vizinho, essa hora é agora."
 
-    scene bg sala casa
+    scene bg sala casa roupas
     with fade
 
     "Casa... {w=0.5}ok... {w=0.5}agora{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}?"
@@ -484,13 +487,14 @@ label dia2:
     "Mão na massa."
 
     scene bg banheiro casa noite
+    show vapor
     with fade
 
     "Eu juro que tô na terceira toalha e ele ainda não tá 100\% seco. {w=0.5}Isso é pior que cardio."
 
     "Fiz o que pude, pude pouquíssimo."
 
-    scene bg sala casa
+    scene bg sala casa roupas
     with fade
 
     "Tá. Ele tá com alguns cortes... {w=0.5}acho que eu tenho umas ataduras guardadadas em algum lugar... {w=1}feito. {w=0.5}Ele não parece estar com febre nem nada parecido... 

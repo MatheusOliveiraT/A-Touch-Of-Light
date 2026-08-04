@@ -22,10 +22,13 @@ image bg rua dia = Image("images/background/ruaDia.png")
 image bg rua noite = Image("images/background/ruaNoite.png")
 image bg estacionamento = Image("images/background/estacionamento.png")
 image bg sala casa = Image("images/background/sala.png")
+image bg sala casa roupas = Image("images/background/salaRoupas.png")
 image bg banheiro casa dia = Image("images/background/banheiroDia.png")
 image bg banheiro casa noite = Image("images/background/banheiroNoite.png")
 image bg quarto casa dia = Image("images/background/quartoDia.png")
+image bg quarto casa dia roupas = Image("images/background/quartoDiaRoupas.png")
 image bg quarto casa noite = Image("images/background/quartoNoite.png")
+image bg quarto casa noite roupas = Image("images/background/quartoNoiteRoupas.png")
 image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("images/background/laboratorio.png")
 image bg acelerador1 = Image("images/background/acelerador1.png")
@@ -233,6 +236,17 @@ image sangue:
     linear 1 alpha 0.75
     "images/assets/sangue.png"
     linear 1 alpha 1.0
+    repeat
+
+# Overlay de vapor
+
+image vapor:
+    "images/assets/vapor1.png"
+    linear 1
+    "images/assets/vapor2.png"
+    linear 1
+    "images/assets/vapor3.png"
+    linear 1
     repeat
 
 # Carro

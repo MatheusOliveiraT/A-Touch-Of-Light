@@ -691,10 +691,13 @@ label cap1:
     "Então eu me retiro para o banheiro. Eu queria estar totalmente em paz com essa situação toda, mas não tem cabimento.{w=0.5} É tudo tão absurdo que eu não 
     saberia nem por onde começar a explicar."
 
+    show vapor
+    with dissolve
+
     "A água quente sempre me ajuda, pelo menos aliviando essa tensão nos meus ombros.{w=0.5} Eu preciso fazer a barba...{w=0.5} e cortar o cabelo....{w=0.5} 
     que dia é hoje?{w=0.5} Quarta..."
 
-    "...tem alguma cois amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabveça na parede tentando lembrar.{w=0.5} Eu tomei 
+    "...tem alguma coisa amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabveça na parede tentando lembrar.{w=0.5} Eu tomei 
     o meu remédio hoje? Eu não faço ideia."
 
     scene bg sala casa
