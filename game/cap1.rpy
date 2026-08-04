@@ -573,6 +573,148 @@ label cap1:
 
     "Cinco horas demorou um bocado pra chegar. {w=0.5}Mas eventualmente eu consegui fugir daquele lugar.{w=0.5} Pelo menos até amanhã..."
 
-    ""
+    "Agora é me preparar mentalmente pra encontrar um leão no meu sofá.{w=0.5} Incrível.{w=0.5} Incrivelmente  ele é bem simpático, conversa bem, 
+    claro que ele é completamente ignorante quanto aos assuntos aqui da Terra..."
+
+    "...mas dá pra ver que ele tá tentando. {w=0.5}É fácil provocar ele."
+
+    "Eu espero que ele tenha me escutado e não esteja apagado dormindo."
+
+    scene bg estacionamento
+    with fade
+
+    "Honestamento, hoje não seria um dia tão ruim pra encontrar alguém por aqui.{w=0.5} Eu adoraria adiar o inevitável."
+
+    scene bg hall
+    with fade
+
+    "Sem sorte hoje. Definitivamente uma mensagem do universo. Eu me aproximo da porta do apartamento, porém eu não escuto absolutamente nenhum barulho.{w=0.5} 
+    O que me preocupa bastante. {w=0.5}Então eu bato na porta, três toques fortes."
+
+    v "Lucas{w=0.5}, sou eu.{w=0.5} Abre a porta{w=0.5}, por favor."
+
+    ".{w=0.5}.{w=0.5}.{w=0.5}eu não consigo ouvir nem os passos dentro do apartamento. {w=0.5}Ótimo."
+
+    v "Lucas{w=0.5}, abre a porta."
+
+    "Eu falo com mais firmeza.{w=0.5} Nada.{w=0.5} E se ele não achou o apartamento?{w=0.5} Ou o andar?{w=0.5} Ou ele tá mesmo dormindo lá dentro? {w=0.5}Porra..."
+
+    show vz
+    with moveinright
+
+    vz "Eaí vizinho, você ficou sem energia por aí hoje também?"
+
+    "Deus...{w=0.5} o que eu fiz pra merecer tanto sofrimento?"
+
+    v "Opa, eu não saberia dizer. Fiquei o dia inteiro fora hoje."
+
+    vz "Estranho...{w=0.5} eu escutei barulho vindo do seu apartamento hoje...{w=0.5} o dia inteiro, aliás."
+
+    "Isso pelo menos é garantia que ele tá lá dentro. {w=0.5}Ou pelo menos estava."
+
+    v "Eu tô com{w=0.5} visita em casa...{w=0.5} mas eu não consegui dispensa no trabalho.{w=0.5} Ele é de fora e não sabe andar pela cidade."
+
+    vz "Ah! Faz sentido.{w=0.5} Tem muita coisa pra fazer pela cidade aí, né?{w=0.5} Mas que massa, bons passeios pra vocês dois."
+
+    vz "Eu nunca vi você trazer ninguém pra cá antes, deve ser alguém especial."
+
+    "Um soco iria doer menos."
+    
+    v "Sabe como é{w=0.5}, correria..."
+
+    vz "Puxado né!{w=0.5} Mas eu vou indo lá, valeu irmão!"
+
+    v "Até mais!"
+
+    hide vz
+    with moveoutright
+
+    "Eu espero que ele não seja malicioso.{w=0.5} Se ele for já era a minha fachada de bom moço."
+
+    "Então após um instante eu escuto o barulho das chaves destrancando a porta, de forma totalmente desastrada."
+
+    l "Aguenta aí que eu,..{w=0.5} tô quase abrindo..."
+
+    "Eu não tenho outras opções além de esperar, [l.name]."
+
+    v "Vira a chave pra esquerda{w=0.5}, [l.name]."
+
+    l "A-ah...{w=0.5} espera aí..."
+
+    "Alguns seguundos depois a porta se abre. Eu entro para a sala de estar rapidamente, trancando a porta logo em seguida."
+
+    scene bg sala casa
+    show lucas pijamab timido2 at noTapete
+    with fade
+
+    "Eu sou recebido peloa imagem do leão de pijama, mais uma vez."
+
+    l "Eai...{w=0.5} como foi lá?"
+
+    v "Tão estressante quanto eu pensei que seria."
+
+    show lucas pijamab timido3
+
+    l "É..."
+
+    "O leão parece perdido com palavras."
+
+    v "Cê tava dormindo mesmo?"
+
+    show lucas pijamab timido1
+
+    l "T-talvez?"
+
+    v "Você vai acabar virando a fofoca do prédio ainda. {w=0.5}Pelo menos não demorou muito pra acordar. Como foi seu dia por aqui?"
+
+    show lucas pijamab falando
+
+    l "Tranquilo. Eu fiquei estudando a maior parte do tempo. Bem melhor ler sobre os humanos diretamente dos livros de vocês."
+
+    show lucas pijamab ouvindo
+
+    v "Eu me pergunto onde você achou esses livros."
+
+    show lucas pijamab timido5
+
+    l "Alguns livros estavam na mesa...{w=0.5} os outros eu...{w=0.5} achei."
+
+    v "Eu prefiro não saber mais do que isso. A ignorância é uma benção. Eu preciso de um banho."
+
+    show lucas pijamab falando
+
+    l "Okay..."
+
+    scene bg banheiro casa noite
+    with fade
+
+    "Então eu me retiro para o banheiro. Eu queria estar totalmente em paz com essa situação toda, mas não tem cabimento.{w=0.5} É tudo tão absurdo que eu não 
+    saberia nem por onde começar a explicar."
+
+    "A água quente sempre me ajuda, pelo menos aliviando essa tensão nos meus ombros.{w=0.5} Eu preciso fazer a barba...{w=0.5} e cortar o cabelo....{w=0.5} 
+    que dia é hoje?{w=0.5} Quarta..."
+
+    "...tem alguma cois amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabveça na parede tentando lembrar.{w=0.5} Eu tomei 
+    o meu remédio hoje? Eu não faço ideia."
+
+    scene bg sala casa
+    show lucas pijamab base at noTapete
+    with fade
+
+    "Após mais alguns minutos de água quente e outras reflexões profundas, eu retorno para a sala de estar. Agora meus trajes estão de acordo com a situação, casual."
+
+    v "Você disse que não é seletivo pra comer, né?"
+
+    show lucas pijamab falando
+
+    l "Não, não."
+
+    show lucas pijamab ouvindo
+
+    v "Vou pedir uma porção de yakisoba então, dá pra nós dois e não fica caro. Tudo bem por você?"
+
+    show lucas pijamab timido4
+
+    l "Pode ser...{w=0.5} seja lá o que isso significa..."
 
     jump continua
