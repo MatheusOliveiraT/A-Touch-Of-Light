@@ -40,6 +40,7 @@ image bg interrogatorio = Image("images/background/interrogatorio.png")
 # Main menu
 
 image main_menu:
+    zoom 0.87
     "gui/mainmenu/1.png"
     linear 0.35
     "gui/mainmenu/2.png"

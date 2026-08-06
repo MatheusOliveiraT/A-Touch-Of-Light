@@ -11,6 +11,8 @@ init python:
     g.image("cg escombros1")
     g.image("cg escombros2")
 
+    # CG Shopping
+
     g.button("Shopping")
     g.condition("persistent.shopping")
     g.image("cg shopping")
