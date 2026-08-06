@@ -33,18 +33,7 @@ image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("images/background/laboratorio.png")
 image bg acelerador1 = Image("images/background/acelerador1.png")
 image bg acelerador2 = Image("images/background/acelerador2.png")
-image bg escombros:  
-    "images/background/escombros1.png"
-    linear 0.5
-    "images/background/escombros2.png"
-    linear 0.5
-    "images/background/escombros3.png"
-    linear 0.5
-    "images/background/escombros4.png"
-    linear 0.5
-    "images/background/escombros5.png"
-    linear 0.5
-    repeat
+image bg escombros= Image("images/background/escombros.png")
 image bg padaria = Image("images/background/padaria.png")
 image bg interrogatorio = Image("images/background/interrogatorio.png")
 
@@ -69,7 +58,7 @@ image main_menu:
 
 default persistent.escombros = False
 image icone escombros = Image("")
-image cg escombros1 = Image("")
+image cg escombros1 = Image("images/cg/escombros1.png")
 image cg escombros2 = Image("")
 
 # Personagens
@@ -246,6 +235,17 @@ image vapor:
     "images/assets/vapor2.png"
     linear 1
     "images/assets/vapor3.png"
+    linear 1
+    repeat
+
+# Overlay de poeira
+
+image poeira:
+    "images/assets/poeira1.png"
+    linear 1
+    "images/assets/poeira2.png"
+    linear 1
+    "images/assets/poeira3.png"
     linear 1
     repeat
 

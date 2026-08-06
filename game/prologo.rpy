@@ -330,6 +330,7 @@ label dia2:
 
     scene bg escombros
     play sound ondaTensa
+    show poeira
     show sangue
     with Fade(0.0, 0.0, 3.0)
 
@@ -400,6 +401,7 @@ label dia2:
     "Algo que eu não sei explicar aconteceu, e eu senti as lágrimas começando a escorrer pelo meu rosto. Conexão."
 
     scene bg escombros
+    show poeira
     show sangue
     with dissolve
 
@@ -411,6 +413,7 @@ label dia2:
     $persistent.escombros = True
 
     scene cg escombros1
+    show poeira
     play music tw fadein 2.0
     with fade
 
@@ -419,9 +422,11 @@ label dia2:
     "Uma sensação familiar começa a tomar conta do meu corpo: {w=0.5}pânico. {w=0.5}Eu não podia ficar mais um segundo ali."
 
     scene cg escombros1
+    show poeira
     with Fade(0.3, 0.0, 0.3)
 
     scene cg escombros1
+    show poeira
     with Fade(0.3, 0.0, 0.3)
 
     "Acho que eu tô ficando louco de vez..."
@@ -437,6 +442,7 @@ label dia2:
     pause 2.0
 
     scene cg escombros2
+    show poeira
     with dissolve
 
     "Algumas soluções realmente são criações de uma mente brilhante." 
