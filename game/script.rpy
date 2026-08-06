@@ -33,7 +33,7 @@ image bg hall = Image("images/background/hall.png")
 image bg laboratorio = Image("images/background/laboratorio.png")
 image bg acelerador1 = Image("images/background/acelerador1.png")
 image bg acelerador2 = Image("images/background/acelerador2.png")
-image bg escombros= Image("images/background/escombros.png")
+image bg escombros = Image("images/background/escombros.png")
 image bg padaria = Image("images/background/padaria.png")
 image bg interrogatorio = Image("images/background/interrogatorio.png")
 
@@ -56,10 +56,20 @@ image main_menu:
 
 # CGs
 
+image icone bloqueado = Image("images/cg/bloqueado.png")
+
+# Escombros
+
 default persistent.escombros = False
-image icone escombros = Image("")
+image icone escombros = Image("images/cg/iescombros.png")
 image cg escombros1 = Image("images/cg/escombros1.png")
 image cg escombros2 = Image("")
+
+# Shopping
+
+default persistent.shopping = False
+image icone shopping = Image("")
+image cg shopping = Image("images/cg/escombros1.png")
 
 # Personagens
 
