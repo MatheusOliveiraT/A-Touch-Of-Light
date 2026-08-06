@@ -437,7 +437,7 @@ label dia2:
     "{w=0.5}Ele não parece bem... {w=0.5}talvez eu devesse fazer alguma coisa... {w=0.5}eu consigo ver que ele tá respirando... 
     {w=0.5}mas que caralho eu posso fazer? {w=0.5}Como eu tiraria ele daqui?"
 
-    "Começo a procurar então alguma coisa que poderia me ajudar nessa situação...{w=0.5} incomum."
+    "Não tem nada aqui além de concreto, vidro e umas barras de ferro...{w=0.5} e agora?"
 
     pause 2.0
 
@@ -445,11 +445,9 @@ label dia2:
     show poeira
     with dissolve
 
-    "Algumas soluções realmente são criações de uma mente brilhante." 
+    "O jeito vai ser arrastar esse gigante até o lado de fora dessa zona.{w=0.5} Ele é pesado... {w=0.5}e claramente eu tô fora de forma." 
 
-    "Logo ao lado eu vejo um carrinho de mercado, e a minha melhor ideia é executada logo em seguida."
-
-    "Tentando o meu melhor, coloquei o leão dentro do carrinho de mercado e comecei a carregá-lo lentamente para fora da área do prédio caído."
+    "Tentando o meu melhor, começo a arrastar o leão lentamente para fora da área do prédio caído.{w=0.5} Um passo de cada vez."
 
     "Avançando em direção ao estacionamento tudo que eu consigo fazer é visualizar o estrago causado pelo incidente... {w=0.5}os corpos, {w=0.5}pedaços... {w=0.5}
     de concreto... {w=0.5}e de muita gente... {w=0.5}jogados por todos os lados."

@@ -56,20 +56,24 @@ image main_menu:
 
 # CGs
 
-image icone bloqueado = Image("images/cg/bloqueado.png")
+image icone bloqueado = Image("images/cg/ibloqueado.png")
 
 # Escombros
 
 default persistent.escombros = False
 image icone escombros = Image("images/cg/iescombros.png")
-image cg escombros1 = Image("images/cg/escombros1.png")
-image cg escombros2 = Image("")
+image cg escombros1:
+    "images/cg/escombros1.png"
+    zoom 0.87
+image cg escombros2:
+    "images/cg/escombros2.png"
+    zoom 0.87
 
 # Shopping
 
 default persistent.shopping = False
-image icone shopping = Image("")
-image cg shopping = Image("images/cg/escombros1.png")
+image icone shopping = Image("images/cg/ishopping.png")
+image cg shopping = Image("images/cg/shopping.png")
 
 # Personagens
 
