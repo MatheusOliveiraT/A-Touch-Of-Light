@@ -74,7 +74,9 @@ image cg escombros2:
 
 default persistent.shopping = False
 image icone shopping = Image("images/cg/ishopping.png")
-image cg shopping = Image("images/cg/shopping.png")
+image cg shopping: 
+    "images/cg/shopping.png"
+    zoom 0.87
 
 # Personagens
 
