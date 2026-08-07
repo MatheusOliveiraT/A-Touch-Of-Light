@@ -36,6 +36,7 @@ image bg acelerador2 = Image("images/background/acelerador2.png")
 image bg escombros = Image("images/background/escombros.png")
 image bg padaria = Image("images/background/padaria.png")
 image bg interrogatorio = Image("images/background/interrogatorio.png")
+image bg mercado = Image("images/background/mercado.png")
 
 # Main menu
 
