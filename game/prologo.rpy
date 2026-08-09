@@ -98,7 +98,7 @@ label prologo:
 
     "Mas se eu correr para o meu apartamento pelo menos eu consigo garantir que eu não vou encontrar mais ninguém hoje..."
 
-    scene bg sala casa roupas
+    scene bg sala casa noite
     with fade
 
     play music klma fadein 1.0
@@ -133,7 +133,7 @@ label prologo:
 
     "Nunca saberemos."
 
-    scene bg sala casa roupas
+    scene bg sala casa noite
     with fade
 
     "Banho tomado e alma lavada. Agora, janta."
@@ -164,7 +164,7 @@ label prologo:
 
     "De buchinho cheio e de banho tomado.{w=0.5} Agora para o prato principal da noite."
 
-    scene bg quarto casa noite roupas
+    scene bg quarto casa noite
     with fade
 
     "Essa pilha de roupa tá ficando fora de controle.{w=1} Problema meu de amanhã."
@@ -468,7 +468,7 @@ label dia2:
 
     "Tá. {w=0.5}Se tem um momento pra NÃO encontrar nenhum vizinho, essa hora é agora."
 
-    scene bg sala casa roupas
+    scene bg sala casa noite
     with fade
 
     "Casa... {w=0.5}ok... {w=0.5}agora{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5}?"
@@ -498,7 +498,7 @@ label dia2:
 
     "Fiz o que pude, pude pouquíssimo."
 
-    scene bg sala casa roupas
+    scene bg sala casa noite
     with fade
 
     "Tá. Ele tá com alguns cortes... {w=0.5}acho que eu tenho umas ataduras guardadadas em algum lugar... {w=1}feito. {w=0.5}Ele não parece estar com febre nem nada parecido... 
@@ -510,14 +510,14 @@ label dia2:
 
     "Eu tenho um pijama que deve dar pro gasto..."
 
-    scene bg sala casa
+    scene bg sala casa noite
     with fade
 
     "Pronto..."
 
     "Cara. {w=0.5}Que porra foi essa? {w=0.5}O que eu tô fazendo?! {w=0.5}Aquele lugar inteiro... {w=0.5}ao chão... {w=0.5}toda aquela gente... {w=0.5}eu...{w=0.5}preciso de ar..."
 
-    scene bg hall
+    scene bg hall noite
     with fade
 
     "Porra. Já tá nas notícias... {w=0.5}117 mortes confirmadas... {w=0.5}e eu... {w=0.5}sobrevivi? {w=0.5}Por quê? {w=0.5}Isso não faz o menor sentido... {w=0.5}eu não tô com um arranhão... 
@@ -559,7 +559,7 @@ label dia2:
 
     "Melhor eu entrar antes que aconteça outro encontro indesejado."
 
-    scene bg sala casa
+    scene bg sala casa noite
     show lucas pijamab base at noTapete
     with fade
     play music pp
@@ -668,7 +668,7 @@ label _dia2pt2:
 
     l "Uma água, p-por favor."
 
-    scene bg sala casa
+    scene bg sala casa noite
     show lucas pijamab ouvindo at noTapete
     with fade
 
@@ -813,7 +813,7 @@ label _dia2pt2:
 
     v "Então eu já volto com as suas coisas."
     
-    scene bg sala casa
+    scene bg sala casa noite
     show lucas pijamab ouvindo at noTapete
     with fade
 
@@ -862,7 +862,7 @@ label dia3:
 
     "[l.name]... ele tem muita explicação a fazer hoje."
 
-    scene bg casa sala
+    scene bg casa sala dia
     show lucas pijamab sorriso1 at noTapete
     with fade
     play music pp
@@ -1155,7 +1155,7 @@ label dia3:
 
     v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
 
-    scene bg casa sala
+    scene bg casa sala dia
     show lucas ternob sorriso1 at noTapete
     with fade
 

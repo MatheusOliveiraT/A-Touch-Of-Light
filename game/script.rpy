@@ -18,26 +18,27 @@ define portal = "audio/sfx/portal.wav"
 # Backgrounds
 
 image bg white = Image("images/background/white.png")
-image bg rua dia = Image("images/background/blur/ruaDia.png")
-image bg rua noite = Image("images/background/blur/ruaNoite.png")
-image bg estacionamento = Image("images/background/blur/estacionamento.png")
-image bg sala casa = Image("images/background/blur/sala.png")
-image bg sala casa roupas = Image("images/background/blur/salaRoupas.png")
-image bg banheiro casa dia = Image("images/background/blur/banheiroDia.png")
-image bg banheiro casa noite = Image("images/background/blur/banheiroNoite.png")
-image bg quarto casa dia = Image("images/background/blur/quartoDia.png")
-image bg quarto casa dia roupas = Image("images/background/blur/quartoDiaRoupas.png")
-image bg quarto casa noite = Image("images/background/blur/quartoNoite.png")
-image bg quarto casa noite roupas = Image("images/background/blur/quartoNoiteRoupas.png")
-image bg hall = Image("images/background/blur/hall.png")
-image bg laboratorio = Image("images/background/blur/laboratorio.png")
-image bg acelerador1 = Image("images/background/blur/acelerador1.png")
-image bg acelerador2 = Image("images/background/blur/acelerador2.png")
-image bg escombros = Image("images/background/blur/escombros.png")
-image bg padaria = Image("images/background/blur/padaria.png")
-image bg interrogatorio = Image("images/background/blur/interrogatorio.png")
-image bg mercado = Image("images/background/blur/mercado.png")
-image bg shopping = Image("images/background/blur/shopping.png")
+image bg rua dia = Image("images/background/ruaDia.png")
+image bg rua noite = Image("images/background/ruaNoite.png")
+image bg estacionamento = Image("images/background/estacionamento.png")
+image bg sala casa dia = Image("images/background/salaDia.png")
+image bg sala casa noite = Image("images/background/salaNoite.png")
+image bg banheiro casa dia = Image("images/background/banheiroDia.png")
+image bg banheiro casa noite = Image("images/background/banheiroNoite.png")
+image bg quarto casa dia = Image("images/background/quartoDia.png")
+image bg quarto casa noite = Image("images/background/quartoNoite.png")
+image bg cozinha casa dia = Image("images/background/cozinhaDia.png")
+image bg cozinha casa noite = Image("images/background/cozinhaNoite.png")
+image bg hall dia = Image("images/background/hallDia.png")
+image bg hall noite = Image("images/background/hallNoite.png")
+image bg laboratorio = Image("images/background/laboratorio.png")
+image bg acelerador1 = Image("images/background/acelerador1.png")
+image bg acelerador2 = Image("images/background/acelerador2.png")
+image bg escombros = Image("images/background/escombros.png")
+image bg padaria = Image("images/background/padaria.png")
+image bg interrogatorio = Image("images/background/interrogatorio.png")
+image bg mercado = Image("images/background/mercado.png")
+image bg shopping = Image("images/background/shopping.png")
 
 # Main menu
 
@@ -228,9 +229,9 @@ define flash = Fade(0.1, 0.0, 0.5, color="#fff")
 image portal:
     yanchor 0.5 ypos 0.5
     "images/assets/portal1.png"
-    linear 0.5 alpha 0.25 zoom 0.95
+    linear 0.5 alpha 0.4 zoom 0.95
     "images/assets/portal2.png"
-    linear 0.5 alpha 0.75 zoom 1.0
+    linear 0.5 alpha 0.6 zoom 1.0
     "images/assets/portal3.png"
     linear 0.5 alpha 0.5 zoom 0.975
     repeat
@@ -239,16 +240,17 @@ image portal:
 
 image sangue:
     "images/assets/sangue.png"
+    linear 1 alpha 0.4
+    "images/assets/sangue.png"
     linear 1 alpha 0.50
     "images/assets/sangue.png"
-    linear 1 alpha 0.75
-    "images/assets/sangue.png"
-    linear 1 alpha 1.0
+    linear 1 alpha 0.6
     repeat
 
 # Overlay de vapor
 
 image vapor:
+    alpha 0.4
     "images/assets/vapor1.png"
     linear 1
     "images/assets/vapor2.png"
@@ -260,6 +262,7 @@ image vapor:
 # Overlay de poeira
 
 image poeira:
+    alpha 0.4
     "images/assets/poeira1.png"
     linear 1
     "images/assets/poeira2.png"
@@ -270,7 +273,7 @@ image poeira:
 
 # Carro
 
-image carro = Image("images/assets/carroNew.png")
+image carro = Image("images/assets/carro.png")
 
 # Termos
 
@@ -287,8 +290,8 @@ transform noTapete:
     xalign 0.2
 
 transform bancoPassageiro:
-    xalign 1.23
-    yoffset 250
+    xalign 1.43
+    yoffset 200
     xzoom -1.0
 
 transform emBaixo:

@@ -10,7 +10,7 @@ label cap1:
     show text "Capítulo 1" with dissolve
     pause 5.0
 
-    scene bg hall
+    scene bg hall dia
     show lucas ternob duvida
     with fade
 
@@ -585,7 +585,7 @@ label cap1:
 
     "Honestamento, hoje não seria um dia tão ruim pra encontrar alguém por aqui.{w=0.5} Eu adoraria adiar o inevitável."
 
-    scene bg hall
+    scene bg hall noite
     with fade
 
     "Sem sorte hoje. Definitivamente uma mensagem do universo. Eu me aproximo da porta do apartamento, porém eu não escuto absolutamente nenhum barulho.{w=0.5} 
@@ -643,7 +643,7 @@ label cap1:
 
     "Alguns seguundos depois a porta se abre. Eu entro para a sala de estar rapidamente, trancando a porta logo em seguida."
 
-    scene bg sala casa
+    scene bg sala casa noite
     show lucas pijamab timido2 at noTapete
     with fade
 
@@ -700,7 +700,7 @@ label cap1:
     "...tem alguma coisa amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabveça na parede tentando lembrar.{w=0.5} Eu tomei 
     o meu remédio hoje? Eu não faço ideia."
 
-    scene bg sala casa
+    scene bg sala casa noite
     show lucas pijamab base at noTapete
     with fade
 
