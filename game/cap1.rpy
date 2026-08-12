@@ -30,7 +30,7 @@ label cap1:
 
     l "A-ah!"
 
-    "Lucas se assusta quando a porta do elevador se abre, fazendo com que eu solte uma leve risada com a cena na minha frente."
+    "[l.name] se assusta quando a porta do elevador se abre, fazendo com que eu solte uma leve risada com a cena na minha frente."
 
     v "Bora, gatinho."
 
@@ -45,7 +45,7 @@ label cap1:
     with fade
 
     "Ao chegar no estacionamento as portas do elevador se abrem e eu saio, o leão prontamente me acompanha. Nós caminhamos em direção à minha vaga, chegando no meu carro. 
-    Lucas mais uma vez parece confuso, dessa vez encarando o automóvel."
+    [l.name] mais uma vez parece confuso, dessa vez encarando o automóvel."
 
     l "E o que seria... isso?"
 
@@ -86,7 +86,7 @@ label cap1:
     with dissolve
 
     "Então eu dou a volta e entro no carro pelo banco do motorista. Rapidamente eu ajeito os retrovisores e dou partida no carro. 
-    Verificando o cinto de segurança, eu percebo que Lucas não colocou o dele, e o questiono."
+    Verificando o cinto de segurança, eu percebo que [l.name] não colocou o dele, e o questiono."
 
     v "Não vai colocar o cinto?"
 
@@ -127,7 +127,7 @@ label cap1:
 
     l "A terra é bem diferente de [planeta_lucas]... realmente tem carro pra todo lado..."
 
-    "Lucas diz isso olhando pela janela, observando o caminho."
+    "[l.name] diz isso olhando pela janela, observando o caminho."
 
     v "Acredite em mim, tem como piorar, e muito. Essa parte da cidade ainda é de boa. A marginal nessa hora da manhã vira um oceano de rodas."
 
@@ -151,7 +151,7 @@ label cap1:
     v "Meu trabalho é seguir os padrões que chegam pra mim dos especialistas, diversos testes são feitos em escalas menores antes de irem para o acelerador maior. 
     Quando acidentes acontecem, geralmente é papo de trocar uma peça ou uma plaquinha."
 
-    "Falar tudo isso em voz alta me dá uma dor gigantesca no peito. Lucas percebe a minha dor e tenta amenizar os meus sentimentos."
+    "Falar tudo isso em voz alta me dá uma dor gigantesca no peito. [l.name] percebe a minha dor e tenta amenizar os meus sentimentos."
 
     show lucas ternob triste2
 
@@ -227,7 +227,7 @@ label cap1:
 
     show lucas ternob triste2
 
-    "Algo na minha fala deixou Lucas desconfortável."
+    "Algo na minha fala deixou [l.name] desconfortável."
 
     v "É uma piada, viu? Coisa de internet que eu falo. Não sei se você tem internet em [planeta_lucas]."
 
@@ -591,11 +591,11 @@ label cap1:
     "Sem sorte hoje. Definitivamente uma mensagem do universo. Eu me aproximo da porta do apartamento, porém eu não escuto absolutamente nenhum barulho.{w=0.5} 
     O que me preocupa bastante. {w=0.5}Então eu bato na porta, três toques fortes."
 
-    v "Lucas{w=0.5}, sou eu.{w=0.5} Abre a porta{w=0.5}, por favor."
+    v "[l.name]{w=0.5}, sou eu.{w=0.5} Abre a porta{w=0.5}, por favor."
 
     ".{w=0.5}.{w=0.5}.{w=0.5}eu não consigo ouvir nem os passos dentro do apartamento. {w=0.5}Ótimo."
 
-    v "Lucas{w=0.5}, abre a porta."
+    v "[l.name]{w=0.5}, abre a porta."
 
     "Eu falo com mais firmeza.{w=0.5} Nada.{w=0.5} E se ele não achou o apartamento?{w=0.5} Ou o andar?{w=0.5} Ou ele tá mesmo dormindo lá dentro? {w=0.5}Porra..."
 
@@ -644,16 +644,16 @@ label cap1:
     "Alguns seguundos depois a porta se abre. Eu entro para a sala de estar rapidamente, trancando a porta logo em seguida."
 
     scene bg sala casa noite
-    show lucas pijamab timido2 at noTapete
+    show lucas ternob timido2 at noTapete
     with fade
 
-    "Eu sou recebido peloa imagem do leão de pijama, mais uma vez."
+    "Eu sou recebido pela imagem do leão, mais uma vez."
 
     l "Eai...{w=0.5} como foi lá?"
 
     v "Tão estressante quanto eu pensei que seria."
 
-    show lucas pijamab timido3
+    show lucas ternob timido3
 
     l "É..."
 
@@ -661,27 +661,27 @@ label cap1:
 
     v "Cê tava dormindo mesmo?"
 
-    show lucas pijamab timido1
+    show lucas ternob timido1
 
     l "T-talvez?"
 
     v "Você vai acabar virando a fofoca do prédio ainda. {w=0.5}Pelo menos não demorou muito pra acordar. Como foi seu dia por aqui?"
 
-    show lucas pijamab falando
+    show lucas ternob falando
 
     l "Tranquilo. Eu fiquei estudando a maior parte do tempo. Bem melhor ler sobre os humanos diretamente dos livros de vocês."
 
-    show lucas pijamab ouvindo
+    show lucas ternob ouvindo
 
     v "Eu me pergunto onde você achou esses livros."
 
-    show lucas pijamab timido5
+    show lucas ternob timido5
 
     l "Alguns livros estavam na mesa...{w=0.5} os outros eu...{w=0.5} achei."
 
     v "Eu prefiro não saber mais do que isso. A ignorância é uma benção. Eu preciso de um banho."
 
-    show lucas pijamab falando
+    show lucas ternob falando
 
     l "Okay..."
 
@@ -701,23 +701,144 @@ label cap1:
     o meu remédio hoje? Eu não faço ideia."
 
     scene bg sala casa noite
-    show lucas pijamab base at noTapete
+    show lucas ternob base at noTapete
     with fade
 
     "Após mais alguns minutos de água quente e outras reflexões profundas, eu retorno para a sala de estar. Agora meus trajes estão de acordo com a situação, casual."
 
-    v "Você disse que não é seletivo pra comer, né?"
+    v "Seguinte, eu preciso ir no mercado. Cê vem junto?"
 
-    show lucas pijamab falando
+    show lucas ternob falando
 
-    l "Não, não."
+    l "Sim, sim."
 
-    show lucas pijamab ouvindo
+    show lucas ternob ouvindo
 
-    v "Vou pedir uma porção de yakisoba então, dá pra nós dois e não fica caro. Tudo bem por você?"
+    v "Bora então."
 
-    show lucas pijamab timido4
+    scene bg mercado
+    show lucas ternob timido1
+    with fade
 
-    l "Pode ser...{w=0.5} seja lá o que isso significa..."
+    "A viagem até o mercado foi relativamente tranquila.{w=0.5} Tirando o transito dessa cidade infernal.{w=0.5} O mercado segue lotado como sempre. {w=0.5}
+    O [l.name] não parece muito...{w=0.5} acostumado com multidões."
+
+    l "É...{w=0.5} bem cheio aqui..."
+
+    v "Horário de pico.{w=0.5} Pessoal sai do trabalho e tem tempo de cuidar dos outros problemas.{w=0.5} Igual eu, coincidentemente."
+
+    "Caminhando pelos corredores com um carrinho de mão começo a buscar pelas pratileiras os produtos que estão em falta. 
+    {w=0.5}Enquanto eu fui enchendo o carrinho, puxei um papo com [l.name]."
+
+    v "Até agora, o que tá achando do mercado daqui?"
+
+    show lucas ternob falando
+
+    l "Não é tão diferente do que eu vou em [planeta_lucas]. Só mais cheio e...{w=0.5} bem maior."
+
+    show lucas ternob ouvindo
+
+    v "Estamos definitivamente enfrentando um problema de superpopulação. {w=0.5}Bem-vindo ao planeta Terra."
+
+    v "Vai demorar pra gente terminar tudo aqui, então dá pra bater um papo enquanto isso."
+
+    show lucas ternob timido1
+
+    l "Certo..."
+
+    "Então silêncio. Aqueles três segundos de silêncio que deixam qualquer um desconfortável."
+
+    pause 2.0
+
+    show lucas ternob timido2
+
+    l "Sobre o que você quer conversar exatamente, [seuNome]?"
+
+    v "Acho que tá na hora de você dar umas explicações, pelo menos o básico. {w=0.5}Você é um leão, no meio do oceano de gente e não tem ninguém aqui 
+    impressionado além de mim."
+
+    show lucas ternob timido4
+
+    l "Bom, isso é algo que eu não sei explicar totalmente, pelo menos não a parte do porque você me enxerga através do disfarce."
+
+    show lucas ternob falando
+
+    l "Mas em suma, em [planeta_lucas] existe o que nós chamamos de [nome_implante]. Ele é um implante que se conecta com diferentes regiões do cérebro 
+    e possibilita uma gama de coisas diferentes, os disfarces sendo uma delas."
+
+    l "Outro exemplo é a comunicação utilizando idiomas diferentes. Basicamente você me escuta como se eu estivesse falando no seu idioma nativo e 
+    eu te escuto como se você estivesse falando no meu idioma."
+
+    l "Existem diversas outras funcionalidades e motivos pra usar o [nome_implante], essa é só uma breve introdução."
+
+    show lucas ternob ouvindo
+
+    v "Implante...{w=0.5} no cérebro..."
+
+    show lucas ternob falando
+    
+    l "Praticamente inofensivo no sentido de implantação. É relativamente comum em [planeta_lucas]...{w=0.5} principalmente pra um pessoal mais bem de vida."
+
+    show lucas ternob ouvindo
+
+    v "Aqui na terra isso é papo de ficção científica.{w=0.5} Ou papo de conspiração.{w=0.5} Mas eu não deveria estar tão chocado nesse ponto."
+
+    show lucas ternob timido2
+
+    l "Eu acredito que a instabilidade do portal possa ter afetado o [nome_implante] e por isso o disfarce não tá funcionando com você. Mas é apenas uma teoria."
+
+    v "Se você que tem chip na cabeça não sabe, imagina eu."
+
+    show lucas ternob duvida
+
+    "A piada anti-vacina passa despercebida por [l.name], claramente."
+
+    v "Então você não fala português.{w=0.5} Curioso.{w=0.5} Mas meio que esperado de um alienígena."
+
+    v "Em [planeta_lucas] vocês tem tipo, conflitos políticos?{w=0.5} Aqui na Terra tem umas coisas bizarras acontecendo o tempo todo."
+
+    "A minha pergunta pega o leão despreparado."
+
+    show lucas ternob timido5
+
+    l "B-bom... [planeta_lucas] é organizada de forma semelhante a Terra, em questão política. Então o planeta é dividido em diversos países, que por sua vez 
+    são divididos em partes menores e por aí vai."
+
+    show lucas ternob falando
+
+    l "O nome do meu país é [pais_lucas]. A [agencia_pt_sigla] é de [pais_lucas], sendo um órgão do governo federal. Por mais que a parte majoritária de [planeta_lucas] 
+    tenha entrado em consenso em relação à certas atitudes, não é todo país que pensa da mesma forma."
+
+    l "Então é relativamente complicado impedir que certos limites sejam...{w=0.5} respeitados."
+
+    show lucas ternob ouvindo
+
+    v "Aqui na Terra nós temos a ONU que tenta fazer essa ponte entre os países.{w=0.5} Foi necessário depois de umas...{w=0.5} guerras aí."
+
+    show lucas ternob falando
+
+    l "[planeta_lucas] tem mais em comum com a Terra do que diferenças, pelo que eu sei. E também com muitos outros planetas."
+
+    show lucas ternob ouvindo
+
+    v "Então esse objetivo seu de salvar o universo não é algo que todos os países de [planeta_lucas] querem?"
+
+    show lucas ternob timido3
+
+    l "Mais por consequência do que por causa, mas sim [seuNome]."
+
+    v "Esse tipo de resposta é pra dar medo de eu fazer mais perguntas? Por que se for, tá funcionando muito bem."
+
+    show lucas ternob timido2
+
+    l "T-talvez não seja o melhor ambiente pra eu te contar todos os detalhes."
+
+    v "Justo.{w=0.5} Mas essas pontas que você deixa soltas tão atiçando meu ouvido de fofoqueiro.{w=0.5} Acho que peguei tudo que eu precisava, bora pagar e ir embora."
+
+    scene bg sala casa noite
+    show lucas ternob ouvindo
+    with fade
+
+    "Após esperar um tempo desproporcional para conseguir passar as compras e pagar, conseguimos chegar em casa sem mais empecilhos no meio do caminho."
 
     jump continua

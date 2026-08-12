@@ -279,20 +279,23 @@ image carro = Image("images/assets/carro.png")
 
 define planeta_lucas = "Lumen"
 define galaxia_lucas = "Andromeda"
+define pais_lucas = "Jhormthyr"
 define agencia_pt_sigla = "ANEGEA"
 define agencia_pt = "Administração Nacional Extragalacxial, Espacial e Aeronáutica"
 define agencia_en_allas = "NEGASA"
 define agencia_en = "National Extragalaxial, Aeronautics and Spacial Administration"
+define nome_implante = "PlaceHolder"
 
 # Posições sprites
 
 transform noTapete:
-    xalign 0.2
+    xalign 0.3
 
 transform bancoPassageiro:
-    xalign 1.43
-    yoffset 200
-    xzoom -1.0
+    xalign 1.25
+    yoffset 250
+    xzoom -0.85
+    yzoom 0.85
 
 transform emBaixo:
     yoffset 200

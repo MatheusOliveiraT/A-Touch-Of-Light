@@ -1171,6 +1171,6 @@ label dia3:
 
     v "Vamo lá, antes que o nosso estômago coma nosso corpo inteiro."
 
-    "Então eu caminho em direção a porta do apartamento, abrindo-a e convindando Lucas a se juntar a mim."
+    "Então eu caminho em direção a porta do apartamento, abrindo-a e convindando [l.name] a se juntar a mim."
 
     jump cap1
