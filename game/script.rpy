@@ -295,7 +295,7 @@ transform noTapete:
     xalign 0.3
 
 transform bancoPassageiro:
-    xalign 1.25
+    xalign 1.1
     yoffset 250
     xzoom -0.85
     yzoom 0.85
