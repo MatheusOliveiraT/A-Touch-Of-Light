@@ -10,6 +10,7 @@ init python:
     g.condition("persistent.escombros")
     g.image("cg escombros1")
     g.image("cg escombros2")
+    g.image("cg escombros3")
 
     # CG Shopping
 

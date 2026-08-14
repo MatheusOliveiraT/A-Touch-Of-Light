@@ -72,6 +72,9 @@ image cg escombros1:
 image cg escombros2:
     "images/cg/escombros2.png"
     zoom 0.87
+image cg escombros3:
+    "images/cg/escombros3.png"
+    zoom 0.87
 
 # Shopping
 
