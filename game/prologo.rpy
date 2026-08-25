@@ -1,7 +1,7 @@
 
 label prologo:
 
-    pause
+    pause 3.0
 
     "É um daqueles dias em que tudo parece um ataque.{w=1} Absolutamente nada deu certo.{w=1} 
     Pelo menos não vou ter que lidar com mais ninguém no meu ouvido hoje."

@@ -67,22 +67,22 @@ image icone bloqueado = Image("images/cg/ibloqueado.png")
 default persistent.escombros = False
 image icone escombros = Image("images/cg/iescombros.png")
 image cg escombros1:
+    zoom 0.87
     "images/cg/escombros1.png"
-    zoom 0.87
 image cg escombros2:
+    zoom 0.87
     "images/cg/escombros2.png"
-    zoom 0.87
 image cg escombros3:
-    "images/cg/escombros3.png"
     zoom 0.87
+    "images/cg/escombros3.png"
 
 # Shopping
 
 default persistent.shopping = False
 image icone shopping = Image("images/cg/ishopping.png")
 image cg shopping: 
-    "images/cg/shopping.png"
     zoom 0.87
+    "images/cg/shopping.png"
 
 # Personagens
 
