@@ -841,4 +841,94 @@ label cap1:
 
     "Após esperar um tempo desproporcional para conseguir passar as compras e pagar, conseguimos chegar em casa sem mais empecilhos no meio do caminho."
 
+    "Agora é seguir e guardar essas compras na cozinha, aproveitar e tratar esse problema da fome."
+
+    scene bg cozinha casa noite
+    show lucas ternob ouvindo
+    with fade
+
+    v "Algum desejo específico? Algo que queira comer?"
+
+    show lucas ternob falando
+
+    l "Não, não... como eu disse, não sou muito seletivo."
+
+    show lucas ternob ouvindo
+
+    v "Tá... então um empadão vai dar conta do recado então."
+
+    "Começo os preparos para o empadão enquanto [l.name] observa sentado a mesa."
+
+    v "Muitas diferenças culturais?"
+
+    l "Consigo observar algumas coisas, sim... mas eu não sou o melhor exemplo de cidadão médio em [planeta_lucas]."
+
+    v "O que você quer dizer com isso?"
+
+    l "Eu quero dizer que a minha estrutura familiar e o ambiente em que eu vivo não são tão... {w=0.5}ideais."
+
+    v "Certo... você se importa em elaborar? Tudo bem se você não se sentir confortável."
+
+    l "Não, tudo bem. Eu posso falar sobre isso. Eu perdi meus pais biológicos muito novo, quando eu tinha cinco anos. Eu fui pra um orfanato e fiquei lá por um tempo."
+
+    l "Digamos que não era o melhor lugar da minha vida, financeiramente falando... e eu entendi isso muito cedo. Um dia, um homem chegou com uma proposta pra mim."
+
+    l "Ele me ofereceu um lar, educação, alimentação, qualidade de vida. Em troca eu teria que realizar um treinamento, pra que no futuro eu realizasse uma missão."
+
+    l "Eu era só uma criança, periférica, sem pais, sem nenhuma outra opção. E aquele homem, meu pai adotivo, parecia verdadeiramente honesto."
+
+    l "Ele não me prometeu amor, e ele foi sibncero quanto as intenções dele. Bem, o quanto ele poderia ser pelo menos, com uma criança."
+
+    l "Eu aceitei a proposta, e fui morar com ele. E de fato, desde então eu tive boa alimentação, educação e qualidade de vida."
+
+    l "Meu pai adotivo nunca me tratou como filho, mas sim como um projeto. Hoje, mais velho, eu entendo muito mais detalhes sobre a situação, e eu não posso dizer que eu não sou grato por tudo que ele fez por mim."
+
+    l "Eu era uma criança que ninguém iria sentir falta. Por muito tempo, eu cogitei ser especial, mas eu nunca fui."
+
+    v "Tá. tá... seu pai te adotou porque você era um projeto... o que você quer dizer com isso, [l.name]?"
+
+    l "Quer dizer que ele investiu em mim. Desde pequeno eu comecei a estudar sobre o universo, sobre civilizações, sobre a vida. Eu fui treinado pra ser um agente da [agencia_pt_sigla]."
+
+    l "Meu pai é responsável por um projeto especial na [agencia_pt_sigla], e eu sou o escolhido pra essa missão. Que é estar aqui. Pelo menos em partes..."
+
+    v "Então seu pai te adotou pra te treinar pra uma missão inter galaxcial?"
+
+    l "Na prática, sim."
+
+    v "E isso é só mais um dia em [planeta_lucas]?"
+
+    l "Não, não é algo comum de acontecer... e o meu pai é uma pessoa que sempre deixou clara as suas intenções. Ele não é uma pessoa má."
+
+    l "Ele sempre foi responsável por mim. Mas quem cuidava mesmo de mim eram as babás, as faxineiras e as cozinheiras."
+
+    v "Estamos falando de elite então."
+
+    l "Meu pai tem um cargo importante na [agencia_pt_sigla], então ele sempre teve mais poder aquisitivo."
+
+    v "Como todo respeito, eu achei que tava mal. Mas porra... como você se sente com tudo isso? Você parece... calmo demais."
+
+    l "Foram quase duas décadas processando tudo isso e, sinceramente, poderia ter sido muito pior se eu não tivesse aceitado."
+
+    l "Apesar de tudo, eu tenho amigos que se importam comigo e hoje eu me sinto bem com tudo isso. Eu não posso reclamar, [seuNome]."
+
+    v "Quanto disso tudo os seus amigos sabem, [l.name]?"
+
+    l "Apenas o essencial.. eu sabia que um dia iria numa missão como essa e eu não queria que eles sofressem com essas informações."
+
+    v "Você disse que era uma criança, que ninguém sentiria falta... isso implica que existe a possibilidade de você não voltar dessa missão, [l.name]?"
+
+    l "Quando o assunto é guerra política, tudo é possível. Então sim, é uma possibilidade."
+
+    v "Mesmo que você esteja em paz com essa decisão, eu sinto muito que você tenha passado por tudo isso. Nenhuma criança deveria passar por isso, [l.name]."
+
+    v "Fazer uma escolha dessas é algo que ninguém deveria passar, e você não teve escolha. Eu sinto muito por isso."
+
+    l "Obrigado, [seuNome]. Eu agradeço muito pelas palavras."
+
+    v "O empadão tá pronto, bora comer?"
+
+    "O leão imediatamente melhora o seu humor."
+
+    l "Bora!"
+
     jump continua

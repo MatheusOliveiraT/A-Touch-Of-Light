@@ -286,8 +286,6 @@ label dia2:
 
     "A energia aqui...{w=0.5} tá bem esquisita...{w=0.5} tá rolando alguma coisa?"
 
-    # Vale a pena melhorar o build aqui
-
     stop music fadeout 0.5
 
     scene bg white
@@ -417,43 +415,65 @@ label dia2:
     play music tw fadein 2.0
     with fade
 
-    "Um... {w=0.5}leão? {w=0.5}Ele tá... {w=0.5}desmaiado? {w=0.5}Dormindo? {w=0.5}Bem na minha frente... {w=0.5}ele não tava aqui antes... {w=0.5}ele tá machucado..."
+    "Um... {w=0.5}leão...? {w=0.5}Ele tá... {w=0.5}desmaiado? {w=0.5}Dormindo? {w=0.5}Bem na minha frente... {w=0.5}ele não tava aqui antes..."
 
-    "Uma sensação familiar começa a tomar conta do meu corpo: {w=0.5}pânico. {w=0.5}Eu não podia ficar mais um segundo ali."
+    "Uma sensação familiar começa a tomar conta do meu corpo: {w=0.5}pânico. {w=0.5}Eu não posso ficar nem mais um segundo aqui."
 
-    scene cg escombros1
-    show poeira
-    with Fade(0.3, 0.0, 0.3)
+    "Acho que eu tô ficando louco de vez...{w=0.5}mas eu não vou negar que a juba dele é... {w=0.5}bonita... azul, com um tom de roxo e rosa..."
 
-    scene cg escombros1
-    show poeira
-    with Fade(0.3, 0.0, 0.3)
-
-    "Acho que eu tô ficando louco de vez..."
+    "O pelo dele é branco... {w=0.5}e ele tem uma cauda... {w=0.5}com um tufo de pelo na ponta... {w=0.5}rosa... {w=0.5}e azul... {w=0.5}e roxo... {w=0.5}e branco..."
 
     "Um leão... {w=0.5}eu deveria estar correndo... {w=0.5}mas por que ele parece tão... {w=0.5}humano...? 
     {w=0.5}Alguma coisa tá muito errada... {w=0.5}que porra é essa?"
 
+    "Que tipo de droga que eu tomei? {w=0.5}Eu não lembro de ter tomado nada... {w=0.5}eu não lembro de ter feito nada... {w=0.5}eu não lembro de ter visto nada..."
+
     "{w=0.5}Ele não parece bem... {w=0.5}talvez eu devesse fazer alguma coisa... {w=0.5}eu consigo ver que ele tá respirando... 
     {w=0.5}mas que caralho eu posso fazer? {w=0.5}Como eu tiraria ele daqui?"
 
-    "Não tem nada aqui além de concreto, vidro e umas barras de ferro...{w=0.5} e agora?"
+    "Eu não treino fazem semanas... {w=0.5}é perigoso eu me quebrar tentando levantar ele..."
 
-    pause 2.0
+    "Não tem nada aqui além de concreto, vidro e umas barras de ferro... {w=0.5}porra, bem que podia ter uma corda ou alguma coisa pra me ajudar..."
 
     scene cg escombros2
     show poeira
     with dissolve
 
-    "O jeito vai ser arrastar esse gigante até o lado de fora dessa zona.{w=0.5} Ele é pesado... {w=0.5}e claramente eu tô fora de forma." 
+    "Caralho... ele é muito pesado... {w=0.5}eu não consigo nem levantar ele... {w=0.5}e eu não posso deixar ele aqui... {w=0.5}eu não posso..."
+
+    "Ele tá todo machucado, eu consigo ver vários cortes e arranhões... {w=0.5}eu vou ter que tirar força de algum lugar..."
+
+    "...{w=0.5}levantar ele eu não consigo... {w=0.5}mas talvez eu consiga arrastar ele... {w=0.5}talvez se eu segurar aqui e puxar..."
+
+    pause 2.0
+
+    scene cg escombros3
+    show poeira
+    with dissolve
+
+    "...Ele é bem fofo de apertar... {w=0.5} mas definitivamente não é o momento pra isso..."
+
+    "Então o jeito vai ser arrastar ele pra fora daqui. {w=0.5}Quão longe é o estacionamento? {w=0.5}Claramente eu tô fora de forma..." 
 
     "Tentando o meu melhor, começo a arrastar o leão lentamente para fora da área do prédio caído.{w=0.5} Um passo de cada vez."
 
     "Avançando em direção ao estacionamento tudo que eu consigo fazer é visualizar o estrago causado pelo incidente... {w=0.5}os corpos, {w=0.5}pedaços... {w=0.5}
     de concreto... {w=0.5}e de muita gente... {w=0.5}jogados por todos os lados."
 
+    "Até o estacionamento o pé dele vai estar na carne viva. {w=0.5}Mas pelo menos ele vai estar fora do prédio... 
+    {w=0.5}e eu vou estar fora do prédio... {w=0.5}e eu vou estar vivo... {w=0.5}e ele vai estar vivo..."
+
+    "E o que acontece quando ele acordar? {w=0.5}Oi, então, eu te arrastei por todo o prédio caído, você tá bem? {w=0.5}
+    Eu não sei se você consegue me entender... {w=0.5}mas eu espero que sim..."
+
+    "E se ele não conseguir me entender? {w=0.5}Eu não sei se ele vai me atacar... {w=0.5}ou se ele vai me agradecer..."
+
     "Confirmando meu pessimismo, no caminho para o meu carro não encontro mais nenhum sinal de outro sobrevivente... {w=0.5}o gosto é amargo. {w=0.5}
     Adrenalina corre nas minhas veias, me carregando para fora daquele lugar o mais rápido possível."
+
+    "Eu consigo ver o estacionamento daqui... {w=0.5}só mais um pouco... {w=0.5}tá vazio, ótimo... {w=0.5}como explicar que você tá arrastando um leão?"
+
+    "Eu não consigo nem me conformar com isso... {w=0.5}imagina se alguém chega pra mim e fala isso? {w=0.5}Tá maluco."
 
     scene bg rua noite
     show carro
