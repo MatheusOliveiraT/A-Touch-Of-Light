@@ -105,6 +105,15 @@ define r = Character(name="Rafael", color="#2f2f2f")
 
 define e = Character(name="Erick", color="#01c901")
 
+define seg = Character(name="Segurança", color="#2f2f2f")
+define seg_e = Character(name="Security", color="#2f2f2f")
+
+define cient1 = Character(name="Cientista 1", color="#1c4c00")
+define cient1_e = Character(name="Scientist 1", color="#1c4c00")
+
+define cient2 = Character(name="Cientista 2", color="#00264c")
+define cient2_e = Character(name="Scientist 2", color="#00264c")
+
 # Lucas
 
 define l = Character("Lucas", color="#9900ff", image="lucas")

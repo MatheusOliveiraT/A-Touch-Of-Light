@@ -270,21 +270,108 @@ label dia2:
     with fade
 
     "Nunca fica menos impressionante. O prédio é fora de proporção. Pelo menos para mim que fico dentro de um laboratório todos os dias. 
-    Parece bem agitado por aqui hoje."
+    Parece bem agitado por aqui hoje, inclusive."
 
     "Tem algum teste programado pra hoje que eu não fiquei sabendo?{w=0.5} Não que eu saiba o fluxo normal de gente por aqui... eu mal venho aqui."
 
     "Bom, se fosse o caso de algum teste com certeza não teria sido um dia tranquilo lá pelo laboratório. Então tá de boa."
 
+    "Eu me aproximo do prédio do acelerador devagarmente. A entrada é bem grande, mas não tem ninguém na porta."
+
+    seg "Ei, quem é você?"
+
+    "Um dos seguranças do prédio chama minha atenção. Ele tá claramente desconfiado de mim."
+
+    v "Opa, eu trabalho no laboratório de pesquisa, eu só vim dar uma olhada no acelerador. Eu nunca desci aqui, então eu queria ver como ele funciona."
+
+    "Mostro pra ele o meu crachá do laboratório, mas ele não parece muito convencido."
+
+    seg "Ah, beleza. Mas não é permitido ficar por aqui sem autorização, viu?"
+
+    v "Pode deixar, eu não vou atrapalhar o trabalho de ninguém. Vou ficar só de olho."
+
+    "Ele me olha com desconfiança, mas não parece que ele vai me expulsar daqui. Então eu continuo a minha... {w=0.5}jornada."
+
+    "Aproveitando a deixa, eu adentro o prédio tentando passar despercebido."
+
     scene bg acelerador2
     with fade
+
+    "E o lugar não é so grande por fora, ele é enorme por dentro também."
 
     "Todo esse equipamento é completamente maluco. Caralho...{w=0.5} é, não daria pra ver a partícula voando...{w=0.5} 
     tem um monte de tubos aqui, acho que ela deve correr por dentro deles.{w=0.5} Parando pra pensar não seria nada seguro deixar ela correndo por aí..."
 
-    "Mas algo parece...{w=0.5} estranho..."
+    "O corredor é meio que redondo... e o tubo vai seguindo esse formato. Faz sentido com o objetivo desse lugar."
 
-    "A energia aqui...{w=0.5} tá bem esquisita...{w=0.5} tá rolando alguma coisa?"
+    "Andando um pouco pelo espaço eu consigo ouvir dois cientistas conversando. Curioso do jeito que sou, eu convenientemente me aproximo pra ouvir o que eles estão falando."
+
+    cient1 "Como foram os últimos testes?"
+
+    cient2 "Aparentemente tudo certo. Mas a energia tá instável, então a gente vai ter que fazer mais alguns testes antes de ligar o acelerador."
+
+    cient1 "Qual a velocidade que queremos atingir?"
+
+    cient2 "Eu não sei. O que nos disseram foi extremamente vago, mas a gente vai ter que atingir a velocidade máxima possível. Aparentemente é o que eles querem."
+
+    cient1 "E isso é seguro?"
+
+    cient2 "Dentro do que sabemos de limite do acelerador, sim. Mas não podemos prever algumas instabilidades antes de testar completamente."
+
+    cient1 "É assustador...{w=0.5} mas eu confio que a gente vai conseguir."
+
+    cient2 "Tem muito dinheiro envolvido, então é bem possível que a gente consiga. Se der certo, teremos nosso nome na história da ciência."
+
+    cient1 "Você consegue imaginar isso? Tipo, abrir o livro de história e ver o seu nome lá?{w=0.5} Eu não consigo nem imaginar."
+
+    "O outro cientista ri suavemente."
+
+    cient2 "Eu consigo imaginar sim. Mas eu não consigo imaginar o que vai acontecer se der errado."
+
+    "Muito otimista esse cara. Quem sou eu pra julgar, né? Se eu fosse cientista com certeza eu seria pior que ele."
+
+    "Acho que eu já ouvi fofoca demais, então eu vou continuar dando uma olhada por aqui antes de ir embora."
+
+    "Louco que até aqui eles têm as mesmas dúvidas que nós temos lá em cima. Nem eles sabem pra que a gente tá fazendo isso. E são eles que tão fazendo."
+
+    scene bg acelerador2
+    with fade
+
+    "Tá. Dando uma volta aqui eu consigo afirmar com certeza que isso aqui é chato pra caralho. É so um monte de tubo e uns fios."
+
+    "Bom, pelo menos eu matei a minha curiosidade. Bora vazar daqui então..."
+
+    "...Por que tem um pessoal gritando ali no corredor?{w=0.5} Eu não consigo ver direito, mas parece que eles tão com pressa."
+
+    cient1 "Atenção! Atenção! Acelerador de partículas ativado! Todos os funcionários devem se retirar imediatamente do prédio!"
+
+    cient2 "O que tá acontecendo!? Por que o acelerador foi ativado sem autorização!? Isso não é seguro!"
+
+    "PUTA QUE PARIU!{w=0.5} Que momento horrível pra ser curioso!"
+
+    "Começo a correr em busca da saída de emergência, mas...{w=0.5} EU NÃO SEI ONDE É A SAÍDA DE EMERGÊNCIA."
+
+    "Tá tudo certo. Eu só preciso manter a calma e seguir o pessoal que tá correndo pra fora do prédio. Eles sabem pra onde tão indo.{w=1.0} Né?"
+
+    cient1 "A saída de emergência tá bloqueada! A gente não consegue sair daqui!"
+
+    "Ah sim, era exatamente o que eu precisava ouvir. Então bora tomar um café e dar uma volta enquanto explode, né?"
+
+    "...Isso aqui explode?{w=0.5} Eu nem comprei roupa pra esse evento..."
+
+    cient2 "Onde que fica a sala de controle!? Alguém precisa desligar o acelerador antes que seja tarde demais!"
+
+    "Essa eu vou ficar devendo. Se me perguntasse como faz um \"if\" em Python eu saberia te responder, mas desligar um acelerador de partículas...{w=0.5} não é o meu forte."
+
+    "O pessoal tá ficando desesperado. Eu não sei se eu tô mais desesperado que eles ou se eu tô mais desesperado que o meu normal."
+
+    "A energia tá aumentando. Eu consigo sentir a vibração do acelerador correndo por todo o prédio. {w=0.5}Dá pra escutar o barulho da energia passando pelo tubo."
+
+    "Espero que eu tenha sido um bom amigo, um bom programador e um bom contador de fofocas. Se eu não tiver sido, espero que alguém me perdoe."
+
+    cient1 "Alguém trancou a porta da sala de controle...{w=0.5} Quem faria isso?"
+
+    "A voz do cientista soa desperada e vazia. Como a de alguém que não consegue acreditar no que está vendo."
 
     stop music fadeout 0.5
 
