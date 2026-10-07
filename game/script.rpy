@@ -1,19 +1,36 @@
 ﻿# Músicas
 
-define klma = "audio/music/KleptoLindaMountainA_Loopable.ogg"
-define klmb = "audio/music/KleptoLindaMountainB_Loopable.ogg"
-define rfh = "audio/music/rainy_foothills_loopable.ogg"
-define tw = "audio/music/the_wall_loopable.ogg"
-define pp = "audio/music/pool_party_loopable.ogg"
+define musicaAnimada1 = "audio/music/Sketchbook 2024-01-24_02.ogg"
+define musicaTensa1 = "audio/music/Sketchbook 2024-02-14_L01.ogg"
+define musicaTensa2 = "audio/music/Sketchbook 2024-02-14_L02.ogg"
+define musicaSoft = "audio/music/Sketchbook 2024-02-28_02.ogg"
+define musicaMisteriosa1 = "audio/music/Sketchbook 2024-03-06_02.ogg"
+define musicaTensaCuriosa = "audio/music/Sketchbook 2024-03-20_02.ogg"
+define musicaMelancolica1 = "audio/music/Sketchbook 2024-04-24_03.ogg"
+define musicaMisteriosa2 = "audio/music/Sketchbook 2024-05-01_01.ogg"
+define musicaMelancolica2 = "audio/music/Sketchbook 2024-06-16.ogg"
+define musicaLenta = "audio/music/Sketchbook 2024-07-19_L02.ogg"
+define musicaTensaMisteriosa = "audio/music/Sketchbook 2024-08-13.ogg"
+define musicaTensaMelancolica = "audio/music/Sketchbook 2024-10-13.ogg"
+define musicaAnimada2 = "audio/music/Sketchbook 2024-10-26.ogg"
+define musicaAnsiosa = "audio/music/Week 13 - Primordial Soup BASE.ogg"
+define musicaFeliz1 = "audio/music/Week 15 - Sunburn BEACH HOUSE.ogg"
+define musicaFeliz2 = "audio/music/Week 15 - Sunburn SPF 3000.ogg"
+define musicaTranquila = "audio/music/Week 21 - Freefall WHAT A VIEW.ogg"
+define musicaMelancolica3 = "audio/music/Week 24 - Pull Me Down GRAVITY.ogg"
 
 # Sons
 
-define whiteNoise = "audio/sfx/whitenoise.wav"
-define ondaTensa = "audio/sfx/ondaTensa.wav"
-define campainha = "audio/sfx/campainha.wav"
-define explosao = "audio/sfx/explosao.wav"
-define energia = "audio/sfx/energia.wav"
-define portal = "audio/sfx/portal.wav"
+define whiteNoise = "audio/sfx/whiteNoise.ogg"
+define ondaTensa = "audio/sfx/ondaTensa.ogg"
+define campainha = "audio/sfx/campainha.ogg"
+define explosao1 = "audio/sfx/explosao1.ogg"
+define explosao2 = "audio/sfx/explosao2.ogg"
+define energia = "audio/sfx/energia.ogg"
+define portal = "audio/sfx/portal.ogg"
+define chiado = "audio/sfx/chiado.ogg"
+define elevador = "audio/sfx/elevador.ogg"
+define ondaDescendo = "audio/sfx/ondaDescendo.ogg"
 
 # Backgrounds
 

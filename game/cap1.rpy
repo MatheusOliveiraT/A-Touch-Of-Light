@@ -14,7 +14,7 @@ label cap1:
     show lucas ternob duvida
     with fade
 
-    play music klma fadein 2.0
+    play music musicaAnimada2 fadein 2.0
 
     "Após trancar a porta eu chamo o elevador e aguardo logo na frente da porta. Ao olhar para o lado vejo que o felino parece extremamente confuso."
 
@@ -43,6 +43,7 @@ label cap1:
     scene bg estacionamento
     show lucas ternob duvida
     with fade
+    play sound elevador volume 0.8
 
     "Ao chegar no estacionamento as portas do elevador se abrem e eu saio, o leão prontamente me acompanha. Nós caminhamos em direção à minha vaga, chegando no meu carro. 
     [l.name] mais uma vez parece confuso, dessa vez encarando o automóvel."
@@ -145,6 +146,7 @@ label cap1:
     v "Pode-se dizer que hoje eu trabalho com os sistemas de segurança de um acelerador de partículas...{w=0.5} e pelo que parece eu não sou o melhor no meu trabalho."
 
     show lucas ternob triste1
+    play music musicaMelancolica2 fadein 1.0
 
     "O leão claramente entende o peso das minhas palavras."
 
@@ -166,6 +168,7 @@ label cap1:
     v "E você, [l.name]. O que você faz quando não tá passeando por outros planetas?"
 
     show lucas ternob falando
+    play music musicaSoft fadein 1.0
 
     l "Como eu disse, essa é a minha primeira missão desse tipo. Eu nunca tinha saído de [galaxia_lucas] nem de [planeta_lucas]."
 
@@ -404,7 +407,7 @@ label cap1:
     show carro
     with fade
 
-    play music tw fadein 1.0
+    play music musicaAnsiosa fadein 1.0
 
     "É assustador ter que viver a vida normal como se nada estivesse acontecendo. {w=0.5}Afinal, {w=0.5}é só mais um dia que eu acordei e levei meu leão 
     pra passear pela cidade e comer na padaria."
@@ -479,7 +482,7 @@ label cap1:
     scene bg interrogatorio
     with fade
 
-    play music rfh fadein 1.0
+    play music musicaTensaMisteriosa fadein 1.0
 
     "Eu não fazia ideia que tinha uma salinha pra interrogação aqui nesse prédio. Bizarro."
 
@@ -569,7 +572,7 @@ label cap1:
     show carro
     with fade
 
-    play music klma fadein 1.0
+    play music musicaTranquila fadein 1.0
 
     "Cinco horas demorou um bocado pra chegar. {w=0.5}Mas eventualmente eu consegui fugir daquele lugar.{w=0.5} Pelo menos até amanhã..."
 
@@ -601,6 +604,7 @@ label cap1:
 
     show vz
     with moveinright
+    stop music
 
     vz "Eaí vizinho, você ficou sem energia por aí hoje também?"
 
@@ -632,6 +636,8 @@ label cap1:
     "Eu espero que ele não seja malicioso.{w=0.5} Se ele for já era a minha fachada de bom moço."
 
     "Então após um instante eu escuto o barulho das chaves destrancando a porta, de forma totalmente desastrada."
+
+    play music musicaTranquila fadein 2.0
 
     l "Aguenta aí que eu,..{w=0.5} tô quase abrindo..."
 
@@ -869,6 +875,8 @@ label cap1:
 
     v "Certo... você se importa em elaborar? Tudo bem se você não se sentir confortável."
 
+    play music musicaMelancolica3 fadein 1.0
+
     l "Não, tudo bem. Eu posso falar sobre isso. Eu perdi meus pais biológicos muito novo, quando eu tinha cinco anos. Eu fui pra um orfanato e fiquei lá por um tempo."
 
     l "Digamos que não era o melhor lugar da minha vida, financeiramente falando... e eu entendi isso muito cedo. Um dia, um homem chegou com uma proposta pra mim."
@@ -928,6 +936,8 @@ label cap1:
     v "O empadão tá pronto, bora comer?"
 
     "O leão imediatamente melhora o seu humor."
+
+    play music musicaAnimada1 fadein 1.0
 
     l "Bora!"
 

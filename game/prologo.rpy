@@ -10,7 +10,7 @@ label prologo:
 
     "Exceto o fogão.{w=1} E a geladeira.{w=1} E talvez a pilha de roupa suja...{w=1} acho que isso pode esperar até amanhã?{w=1} Claro que pode."
 
-    play music rfh fadein 1.0
+    play music musicaAnsiosa fadein 0.5
 
     scene bg rua noite
     with fade
@@ -58,6 +58,7 @@ label prologo:
     "Talvez esse dia tenha salvação{w=0.5}, afinal."
 
     pause 2.0
+
     stop music fadeout 0.5
 
     show vz
@@ -101,7 +102,8 @@ label prologo:
     scene bg sala casa noite
     with fade
 
-    play music klma fadein 1.0
+    play sound elevador
+    play music musicaTranquila fadein 2.0
 
     "Exatamente como dizem.{w=0.5} Lar doce lar.{w=1} Talvez não tão doce por conta da poeira...{w=1} e da bagunça generalizada..."
 
@@ -158,7 +160,7 @@ label prologo:
 
     pause 5.0
 
-    play music klma fadein 0.5
+    play music musicaTranquila fadein 0.5
 
     "Chegou bem mais rápido do que eu esperava.{w=0.5} E quentinho."
 
@@ -194,7 +196,7 @@ label prologo:
 
 label dia2:
 
-    play music klmb fadein 2.0
+    play music musicaAnimada1 fadein 2.0
 
     scene bg laboratorio
     with fade
@@ -343,7 +345,7 @@ label dia2:
 
     "...Por que tem um pessoal gritando ali no corredor?{w=0.5} Eu não consigo ver direito, mas parece que eles tão com pressa."
 
-    stop music fadeout 0.5
+    play music musicaTensa1 fadein 0.5
 
     cient1 "Atenção! Atenção! Acelerador de partículas ativado! Todos os funcionários devem se retirar imediatamente do prédio!"
 
@@ -416,6 +418,7 @@ label dia2:
     "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
 
     show bg acelerador2 at earthquake_shader
+    play music musicaTensa2 fadein 1.0
 
     cient1 "O chão... tá tudo tremendo... olha as janelas! Elas tão tremendo, cara!"
 
@@ -458,7 +461,8 @@ label dia2:
     "A temperatura começa a subir rapidamente, e o ar rarefeito se torna cada vez mais denso."
 
     scene bg white
-    play sound explosao fadeout 1.0
+    play sound explosao1 fadeout 1.0
+    stop music
     with flash
 
     "Uma luz estridente tomou conta de todo o espaço. No final das contas a curiosidade matou o gato. 
@@ -581,7 +585,7 @@ label dia2:
 
     scene cg escombros1
     show poeira
-    play music tw fadein 2.0
+    play music musicaMisteriosa1 fadein 1.0
     with fade
 
     "Um... {w=0.5}leão...? {w=0.5}Ele tá... {w=0.5}desmaiado? {w=0.5}Dormindo? {w=0.5}Bem na minha frente... {w=0.5}ele não tava aqui antes..."
@@ -649,6 +653,7 @@ label dia2:
     scene bg rua noite
     show carro
     with fade
+    play music musicaTensaCuriosa fadein 1.0
 
     "Dando o meu melhor eu coloco o leão dentro do carro e adentro logo em seguida o banco do motorista. {w=0.5}Que. {w=0.5}Porra. {w=0.5}Tá. {w=0.5}Acontecendo... 
     {w=0.5}Acho que se eu pensar demais eu vou desmaiar..."
@@ -726,8 +731,8 @@ label dia2:
     "Tudo aconteceu rápido demais..."
 
     show vz
-    stop music fadeout 1.0
     with moveinright
+    stop music
 
     vz "Opa vizinho!! Cê tá bem aí? Fiquei sabendo do acidente lá no teu trabalho!"
 
@@ -753,7 +758,7 @@ label dia2:
     scene bg sala casa noite
     show lucas pijamab base at noTapete
     with fade
-    play music pp
+    play music musicaLenta fadein 1.0
 
     "Quando eu entro novamento no meu apartamento, eu observo o leão sentado ao sofá analisando os arredores. 
     {w=0.5}Ele escaneia o espaço, claramente perdido no espaço."
@@ -806,6 +811,8 @@ label _dia2pt2:
     show lucas pijamab timido1
 
     "Ao ouvir meu nome o felino se acalma levemente, demonstrando agora certa incerteza."
+
+    play music musicaMelancolica1 fadein 1.0
 
     null "V-você disse [seuNome]?"
 
@@ -1032,7 +1039,7 @@ label _dia2pt2:
 
     "Não é hora pra pensar demais."
 
-    stop music fadeout 1.0
+    stop music
 
     jump dia3
 
@@ -1056,7 +1063,7 @@ label dia3:
     scene bg casa sala dia
     show lucas pijamab sorriso1 at noTapete
     with fade
-    play music pp
+    play music musicaMelancolica3 fadein 1.0
 
     "Saindo do meu quarto em direção a sala, logo eu avisto [l.name] sentado ao sofá, praticamente esperando meu retorno. Ao 
     me avistar, o leão sorri levemente e me cumprimenta."

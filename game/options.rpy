@@ -40,11 +40,7 @@ Artefatos utilizados sob a licença de uso {a=https://creativecommons.org/public
 
 -> Fonte Not Jam UI 15 e Not Jam Atomic 20, ambas feitas por Not Jam disponíveis {a=https://not-jam.itch.io/not-jam-font-pack}aqui{/a}.
 
--> Trilha Sonora feita por Not Jam disponível {a=https://not-jam.itch.io/not-jam-music-pack}aqui{/a}.
-
 -> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
-
--> Faixa Far away feita por DOS-88, disponível {a=https://dos88.itch.io/dos-88-music-library}aqui{/a}.
 
 Artefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:
 
@@ -93,7 +89,7 @@ define config.has_voice = False
 ## continuará sendo reproduzido no jogo até que seja interrompido ou outro
 ## arquivo seja reproduzido.
 
-define config.main_menu_music = "audio/music/mainmenu.ogg"
+define config.main_menu_music = "audio/music/Week 1 - Retro Lounge UNUSED ALT.ogg"
 
 
 ## Transições ##################################################################
