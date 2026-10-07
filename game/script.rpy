@@ -332,6 +332,17 @@ transform metadeTamanho: # Imagem fica no meio da tela
     yalign 0.5
     zoom 0.5
 
+transform earthquake_shader:
+    mesh True
+    parallel:
+        function WaveShader(
+            amp=(0.2, -0.2), 
+            period=(-3, 3),
+            speed=(20, -20),  
+            direction="both",  
+            repeat="clamp"      
+        )
+
 # Começo
 
 label start:
@@ -349,6 +360,7 @@ label continua:
     scene black
     with fade
 
-    "Continua..."
+    show text "Continua..." with dissolve
+    pause 5.0
 
     return

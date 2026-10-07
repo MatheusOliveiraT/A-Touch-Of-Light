@@ -343,6 +343,8 @@ label dia2:
 
     "...Por que tem um pessoal gritando ali no corredor?{w=0.5} Eu não consigo ver direito, mas parece que eles tão com pressa."
 
+    stop music fadeout 0.5
+
     cient1 "Atenção! Atenção! Acelerador de partículas ativado! Todos os funcionários devem se retirar imediatamente do prédio!"
 
     cient2 "O que tá acontecendo!? Por que o acelerador foi ativado sem autorização!? Isso não é seguro!"
@@ -413,6 +415,8 @@ label dia2:
 
     "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
 
+    show bg acelerador2 at earthquake_shader
+
     cient1 "O chão... tá tudo tremendo... olha as janelas! Elas tão tremendo, cara!"
 
     "O outro cientista começa a suar frio, claramente reagindo não só ao estresse, mas ao aumento da energia."
@@ -437,18 +441,28 @@ label dia2:
 
     "O cientista grita, assim que um arco elétrico se forma cruzando do chão ao teto exatamente onde eu estava."
 
-    v "Obrigado..."
+    v "Obrigado... muito obrigado..."
 
     "Obrigado por me presentar mais alguns momentos de vida."
 
-    stop music fadeout 0.5
+    cient2 "O sistema de resfriamento tá vazando... o nitrogënio tá vazando..."
+
+    "E de fato, uma névoa densa e gélida começa a se acumular no chão, congelando todo o ar ao redor. A temperatura começa a cair rapidamente, e o ar começa a ficar mais rarefeito."
+
+    cient1 "AHHHH!" 
+
+    "O cientista grita quando um pequeno feixe de partículas escapam, causando uma explosão de pressão e um estrondo ensurdecedor."
+
+    "Por alguns segundos tudo ficou em silëncio, mas logo depois o barulho do acelerador se intensifica, e a energia acumulada começa a se dissipar em uma explosão de luz e calor."
+
+    "A temperatura começa a subir rapidamente, e o ar rarefeito se torna cada vez mais denso."
 
     scene bg white
     play sound explosao fadeout 1.0
     with flash
 
     "Uma luz estridente tomou conta de todo o espaço. No final das contas a curiosidade matou o gato. 
-    Se isso foi uma colisão não planejada, sendo otimista não sobra nem metade do prédio."
+    Se isso realmente foi uma colisão não planejada, sendo otimista não sobra nem metade do prédio."
 
     "Definitivamente eu teria dias piores para morrer do que hoje.{w=1} Mas morrer porque um idiota resolveu ligar o bagulho que nem um doido, 
     sem supervisão, sem nenhum tipo de seguraça, protocolo?! Porra..."
@@ -583,6 +597,8 @@ label dia2:
 
     "Que tipo de droga que eu tomei? {w=0.5}Eu não lembro de ter tomado nada... {w=0.5}eu não lembro de ter feito nada... {w=0.5}eu não lembro de ter visto nada..."
 
+    "Isso é com certeza efeito da radiação. {w=0.5}Alucinação, sei lá. {w=0.5}Mas meu cérebro é criativo mesmo, viu."
+
     "{w=0.5}Ele não parece bem... {w=0.5}talvez eu devesse fazer alguma coisa... {w=0.5}eu consigo ver que ele tá respirando... 
     {w=0.5}mas que caralho eu posso fazer? {w=0.5}Como eu tiraria ele daqui?"
 
@@ -594,7 +610,7 @@ label dia2:
     show poeira
     with dissolve
 
-    "Caralho... ele é muito pesado... {w=0.5}eu não consigo nem levantar ele... {w=0.5}e eu não posso deixar ele aqui... {w=0.5}eu não posso..."
+    "Caralho... ele é muito pesado... {w=0.5}eu não consigo nem levantar ele... {w=0.5}e eu não posso deixar ele aqui..."
 
     "Ele tá todo machucado, eu consigo ver vários cortes e arranhões... {w=0.5}eu vou ter que tirar força de algum lugar..."
 
@@ -690,7 +706,7 @@ label dia2:
 
     "Pronto..."
 
-    "Cara. {w=0.5}Que porra foi essa? {w=0.5}O que eu tô fazendo?! {w=0.5}Aquele lugar inteiro... {w=0.5}ao chão... {w=0.5}toda aquela gente... {w=0.5}eu...{w=0.5}preciso de ar..."
+    "Cara. {w=0.5}Que porra foi essa? {w=0.5}O que eu tô fazendo?! {w=0.5}Aquele lugar inteiro... {w=0.5}ao chão... {w=0.5}toda aquela gente... {w=0.5}eu... {w=0.5}preciso de ar..."
 
     scene bg hall noite
     with fade

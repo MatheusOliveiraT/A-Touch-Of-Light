@@ -697,7 +697,7 @@ label cap1:
     "A água quente sempre me ajuda, pelo menos aliviando essa tensão nos meus ombros.{w=0.5} Eu preciso fazer a barba...{w=0.5} e cortar o cabelo....{w=0.5} 
     que dia é hoje?{w=0.5} Quarta..."
 
-    "...tem alguma coisa amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabveça na parede tentando lembrar.{w=0.5} Eu tomei 
+    "...tem alguma coisa amanhã que eu tô esquecendo...{w=0.5} e eu não vou ganhar nada batendo minha cabeça na parede tentando lembrar.{w=0.5} Eu tomei 
     o meu remédio hoje? Eu não faço ideia."
 
     scene bg sala casa noite
@@ -877,7 +877,7 @@ label cap1:
 
     l "Eu era só uma criança, periférica, sem pais, sem nenhuma outra opção. E aquele homem, meu pai adotivo, parecia verdadeiramente honesto."
 
-    l "Ele não me prometeu amor, e ele foi sibncero quanto as intenções dele. Bem, o quanto ele poderia ser pelo menos, com uma criança."
+    l "Ele não me prometeu amor, e ele foi sincero quanto as intenções dele. Bem, o quanto ele poderia ser pelo menos, com uma criança."
 
     l "Eu aceitei a proposta, e fui morar com ele. E de fato, desde então eu tive boa alimentação, educação e qualidade de vida."
 
