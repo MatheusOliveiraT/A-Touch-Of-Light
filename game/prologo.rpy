@@ -359,6 +359,8 @@ label dia2:
 
     "...Isso aqui explode?{w=0.5} Eu nem comprei roupa pra esse evento..."
 
+    "...Eu consigo sentir os pelos do meu corpo arrepiados..."
+
     cient2 "Onde que fica a sala de controle!? Alguém precisa desligar o acelerador antes que seja tarde demais!"
 
     "Essa eu vou ficar devendo. Se me perguntasse como faz um \"if\" em Python eu saberia te responder, mas desligar um acelerador de partículas...{w=0.5} não é o meu forte."
@@ -367,11 +369,77 @@ label dia2:
 
     "A energia tá aumentando. Eu consigo sentir a vibração do acelerador correndo por todo o prédio. {w=0.5}Dá pra escutar o barulho da energia passando pelo tubo."
 
+    "Um gosto metálico na minha boca começa a aparecer. E não... não é por causa do meu sangue. Eu não tô sangrando...{w=0.5} Eu acho."
+
     "Espero que eu tenha sido um bom amigo, um bom programador e um bom contador de fofocas. Se eu não tiver sido, espero que alguém me perdoe."
 
     cient1 "Alguém trancou a porta da sala de controle...{w=0.5} Quem faria isso?"
 
     "A voz do cientista soa desperada e vazia. Como a de alguém que não consegue acreditar no que está vendo."
+
+    "O cientista encosta as mãos no corremão e rapidamente afasta elas."
+
+    cient1 "PORRA! Me deu choque!"
+
+    cient2 "É a energia acumulada no ar! Não esconta em nada metálico!"
+
+    "This is fine.{w=0.5} Literalmente. {w=0.5}Só... {w=0.5}metade disso aqui é feito de metal."
+
+    cient2 "É... definitivamente eu vou parar nos livros de história... {w=0.5}mas não do jeito que eu queria..."
+
+    "Esse tem o mesmo senso de humor que eu...{w=0.5} Será se eu vou parar nos livros também?{w=0.5} \"Programador que morreu por curiosidade.\"{w=0.5} Não é um título ruim, mas eu não queria ser lembrado assim."
+
+    cient1 "A energia tá mais alta do que nunca... cara, você tá ouvindo esse barulho?{w=0.5} Deus, eu não quero morrer assim...{w=0.5} Eu não quero morrer assim..."
+
+    "Ouvir o cientista gritar me dá uma sensação de...{w=0.5} medo.{w=0.5} Acho que tá caindo a ficha de que é isso.{w=0.5} Essa foi a minha vida."
+
+    "Esse barulho... como um chiado correndo pelo concreto e pelas paredes de metal..."
+
+    "Eu fiz tudo que eu queria com a minha vida?{w=0.5} Geralmente as pessoas se perguntam isso quando estamos prestes a morrer, né?{w=0.5} Eu não sei se eu fiz tudo que eu queria, mas eu fiz o que eu podia."
+
+    "Foi o suficiente?{w=0.5} Eu não sei.{w=0.5} Mas eu espero que sim."
+
+    "As lâmpadas começam a piscar, e algumas delas desligaram totalmente."
+
+    cient2 "Amigos, parceiros, colegas, todos vocês...{w=0.5} Eu não sei o que vai acontecer com a gente...{w=0.5} Mas eu espero que a gente se encontre de novo."
+
+    cient1 "Cala a BOCA!{w=0.5} A gente vai sair daqui, pensa em alguma coisa!"
+
+    cient2 "Cara... mesmo que a gente conseguisse desligar o acelerador, a energia acumulada vai ser suficiente pra destruir o prédio inteiro...{w=0.5} A gente não vai sair daqui..."
+
+    cient1 "Você tá mentindo...{w=0.5} Não, tem alguma coisa que a gente pode fazer!"
+
+    cient2 "...Eu sinto muito."
+
+    "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
+
+    cient1 "O chão... tá tudo tremendo... olha as janelas! Elas tão tremendo, cara!"
+
+    "O outro cientista começa a suar frio, claramente reagindo não só ao estresse, mas ao aumento da energia."
+
+    cient2 "Eu tô... me sentindo... tonto..."
+
+    cient1 "NÃO! FICA COMIGO!"
+
+    "O zumbido anterior se intensificou e agora está mais agudo e resonante. As minhas mãos cobrem automaticamente meus ouvidos tentando me proteger do barulho, mas não adianta."
+
+    "O primeiro cientista, com os olhos fechados, grita desesperadamente."
+
+    cient1 "Eu consigo ver mesmo com os olhos fechados...{w=0.5} a energia... {w=0.5}os flashes de luz..."
+
+    cient2 "Fosfenos... por radiação..."
+
+    "Deve ser muito louco passar por isso e saber de todas as reações que seu corpo tá passando. {w=0.5}Fosfenos por Radiação. {w=0.5}Aprendi uma coisa nova hoje."
+
+    "Um brilho azulado começa a se formar no corredor. Eu sinto a minha mandíbula tremendo. Meus olhos estão completamente secos."
+
+    cient1 "CUIDADO!"
+
+    "O cientista grita, assim que um arco elétrico se forma cruzando do chão ao teto exatamente onde eu estava."
+
+    v "Obrigado..."
+
+    "Obrigado por me presentar mais alguns momentos de vida."
 
     stop music fadeout 0.5
 
