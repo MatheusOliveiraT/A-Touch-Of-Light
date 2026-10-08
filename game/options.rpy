@@ -42,9 +42,13 @@ Artefatos utilizados sob a licença de uso {a=https://creativecommons.org/public
 
 -> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível {a=https://sfbgames.itch.io/chiptone}aqui{/a}.
 
+-> Efeito sonoro de sirene, feito por AsdfgOrt disponível {a=https://freesound.org/s/512371/}aqui{/a} 
+
+-> Trilha sonora feita por Abstraction Music e Tallbeard Studios, disponível {a=https://abstractionmusic.com/}aqui{/a}
+
 Artefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:
 
--> Cŕeditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
+-> Creditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele {a=https://deep-fold.itch.io/}aqui{/a}.
 
 -> Shader de onda feito por Wattson, disponível {a=https://wattson.itch.io/renpy-wave-rendering}aqui{/a}.
 """)
@@ -75,6 +79,11 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
 
+# Efeitos visuais / flashes
+
+default persistent.flashing_effects = True
+
+default persistent.photosensitivity_warned = False
 
 ## Para permitir que o usuário reproduza um som de teste no canal de som ou
 ## voz, descomente a linha abaixo e use-a para definir um som de amostra a ser

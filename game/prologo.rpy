@@ -345,6 +345,15 @@ label dia2:
 
     "...Por que tem um pessoal gritando ali no corredor?{w=0.5} Eu não consigo ver direito, mas parece que eles tão com pressa."
 
+    stop music
+    play sound sirene volume 0.75
+    queue sound alarme volume 0.25 loop fadein 2.0
+
+    pause 5.0
+
+    if persistent.flashing_effects:
+        show red_alarm_overlay at alarm_flash
+        with dissolve
     play music musicaTensa1 fadein 0.5
 
     cient1 "Atenção! Atenção! Acelerador de partículas ativado! Todos os funcionários devem se retirar imediatamente do prédio!"
@@ -416,8 +425,8 @@ label dia2:
     cient2 "...Eu sinto muito."
 
     "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
-
-    show bg acelerador2 at earthquake_shader
+    if persistent.flashing_effects:
+        camera at earthquake_loop
     play music musicaTensa2 fadein 1.0
 
     cient1 "O chão... tá tudo tremendo... olha as janelas! Elas tão tremendo, cara!"
@@ -460,6 +469,9 @@ label dia2:
 
     "A temperatura começa a subir rapidamente, e o ar rarefeito se torna cada vez mais denso."
 
+    if persistent.flashing_effects:
+        camera at stop_earthquake
+    stop sound
     scene bg white
     play sound explosao1 fadeout 1.0
     stop music

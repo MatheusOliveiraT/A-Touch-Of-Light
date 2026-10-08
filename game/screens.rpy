@@ -796,6 +796,16 @@ screen preferences():
                         textbutton "Português" action Language(None) 
                         textbutton "English" action Language("english") 
 
+                frame:
+                    style "empty"
+                    background "gui/fundo_preferences.png"
+                    padding(10, 10, 10, 100)
+
+                    vbox:
+                        style_prefix "check"
+                        label _("Acessibilidade")
+                        textbutton _("Efeitos / Flashes") action ToggleVariable("persistent.flashing_effects", true_value=True, false_value=False)
+
                 ## Vboxes adicionais do tipo "radio_pref" ou "check_pref" podem
                 ## ser adicionadas aqui para acrescentar outras preferências
                 ## definidas pelo criador.
@@ -862,6 +872,41 @@ screen preferences():
                                 action Preference("all mute", "toggle")
                                 style "mute_all_button"
 
+
+screen photosensitivity_warning():
+    modal True
+
+    add "#000000"
+
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        spacing 25
+        xmaximum 800
+
+        label _("AVISO DE FOTOSSENSIBILIDADE"):
+            xalign 0.5
+
+        text _("Este jogo contém luzes piscaras, flashes rápidos e efeitos visuais que podem causar desconforto ou crises em pessoas com epilepsia fotossensível.\n\nVocê pode alterar essa opção a qualquer momento no menu de Preferências."):
+            xalign 0.5
+            justify True
+            size 32
+
+        null height 15
+
+        vbox:
+            xalign 0.5
+            spacing 10
+            style_prefix "check"
+
+            textbutton _("Ativar Flashes e Efeitos Visuais"):
+                action ToggleVariable("persistent.flashing_effects", true_value=True, false_value=False)
+
+        null height 15
+
+        textbutton _("Confirmar e Continuar"):
+            xalign 0.5
+            action Return()
 
 style pref_label is gui_label
 style pref_label_text is gui_label_text
@@ -1688,5 +1733,14 @@ label splashscreen:
 
     hide text with dissolve
     with Pause(1)
+
+    if not persistent.photosensitivity_warned:
+        
+        call screen photosensitivity_warning with dissolve
+        
+        $ persistent.photosensitivity_warned = True
+
+        scene black with dissolve
+        with Pause(0.5)
 
     return

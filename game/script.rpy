@@ -30,6 +30,8 @@ define energia = "audio/sfx/energia.ogg"
 define portal = "audio/sfx/portal.ogg"
 define chiado = "audio/sfx/chiado.ogg"
 define elevador = "audio/sfx/elevador.ogg"
+define sirene = "audio/sfx/sirene.ogg"
+define alarme = "audio/sfx/alarme.ogg"
 define ondaDescendo = "audio/sfx/ondaDescendo.ogg"
 
 # Backgrounds
@@ -300,6 +302,20 @@ image poeira:
     linear 1
     repeat
 
+# Overlay de alarme
+
+image red_alarm_overlay = Solid("#ff0000")
+
+transform alarm_flash:
+    blend "add"
+    
+    block:
+        alpha 0.0
+        easein 0.15 alpha 0.45
+        easeout 0.25 alpha 0.05 
+        pause 0.1               
+        repeat
+
 # Carro
 
 image carro = Image("images/assets/carro.png")
@@ -349,16 +365,26 @@ transform metadeTamanho: # Imagem fica no meio da tela
     yalign 0.5
     zoom 0.5
 
-transform earthquake_shader:
-    mesh True
-    parallel:
-        function WaveShader(
-            amp=(0.2, -0.2), 
-            period=(-3, 3),
-            speed=(20, -20),  
-            direction="both",  
-            repeat="clamp"      
-        )
+# Tremor em loop aleatório contínuo
+transform earthquake_loop:
+    anchor (0.5, 0.5)
+    pos (0.5, 0.5)
+    zoom 1.05
+
+    block:
+        choice:
+            ease 0.04 xoffset -12 yoffset 8
+        choice:
+            ease 0.04 xoffset 15 yoffset -10
+        choice:
+            ease 0.04 xoffset -8 yoffset -12
+        choice:
+            ease 0.04 xoffset 10 yoffset 14
+        repeat
+
+# Para o tremor suavemente resetando a posição
+transform stop_earthquake:
+    easein 0.1 xoffset 0 yoffset 0 zoom 1.0
 
 # Começo
 
