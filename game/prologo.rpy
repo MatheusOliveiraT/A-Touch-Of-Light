@@ -425,6 +425,7 @@ label dia2:
     cient2 "...Eu sinto muito."
 
     "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
+    
     if persistent.flashing_effects:
         camera at earthquake_loop
     play music musicaTensa2 fadein 1.0
