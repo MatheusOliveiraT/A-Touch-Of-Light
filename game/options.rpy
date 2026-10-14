@@ -20,6 +20,7 @@ define config.name = _("A Touch Of Light")
 
 define gui.show_name = True
 
+define config.nearest_neighbor = True
 
 ## A versão do jogo.
 

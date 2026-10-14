@@ -769,7 +769,7 @@ label dia2:
     "Melhor eu entrar antes que aconteça outro encontro indesejado."
 
     scene bg sala casa noite
-    show lucas pijamab base at noTapete
+    show lucas base_pijama_bandagens neutro face_bandage
     with fade
     play music musicaLenta fadein 1.0
 
@@ -778,13 +778,13 @@ label dia2:
 
     v "Oi?"
 
-    show lucas pijamab assustado1
+    show lucas assustado
 
     "O leão praticamente pula do sofá assustado. O seu olhar se itensifica quando os nossos olhos se encontram. {w=0.5}Talvez ele esteja com mais medo que eu..."
 
     v "Oi... {w=0.5}você consegue me entender?"
 
-    show lucas pijamab assustado2
+    show lucas scared_pijama_bandagens
 
     "Apesar do meu tom calmo e gentil os olhos do leão se arregalam novamente e ele se afasta da minha presença."
 
@@ -821,7 +821,7 @@ label _dia2pt2:
 
     v "Meu nome é [seuNome], você esteve em um... {w=0.5}acidente...?"
 
-    show lucas pijamab timido1
+    show lucas base_pijama_bandagens sorrindo1 blush 
 
     "Ao ouvir meu nome o felino se acalma levemente, demonstrando agora certa incerteza."
 
@@ -833,17 +833,17 @@ label _dia2pt2:
 
     "O leão solta um suspiro de alívio."
 
-    show lucas pijamab falando
+    show lucas falando -blush
 
     null "Então d-deu certo..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     "Definitivamente não era o que eu esperava ouvir agora."
 
     v "Me desculpa... {w=0.5}mas... {w=0.5}o que é você? Você parece um leão, {w=0.5}mas..."
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso
 
     "O leão te encara com dúvida."
 
@@ -861,7 +861,7 @@ label _dia2pt2:
 
     v "Como você tá se sentindo?"
 
-    show lucas pijamab sorriso1
+    show lucas base_pijama_bandagens sorrindo1
 
     "O leão olha para as próprias bandagens e sorri."
 
@@ -869,41 +869,41 @@ label _dia2pt2:
 
     "Então em um momento ele percebe as suas novas vestes e fica envergonhado novamente."
 
-    show lucas pijamab timido2
+    show lucas head_pijama_bandagens sorrindo2 blush
 
     l "O-obrigado pelas roupas também... {w=0.5}As minhas antigas deviam estar... {w=0.5}comprometidas."
 
     v "Por nada... {w=0.5}[l.name], eu tenho muitas perguntas... {w=0.5}mas antes, você quer algo para comer ou beber?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando -blush
 
     l "Uma água, p-por favor."
 
     scene bg sala casa noite
-    show lucas pijamab ouvindo at noTapete
+    show lucas base_pijama_bandagens neutro
     with fade
 
     "Depois de uma breve visita a cozinha e um copo de água abaixo, a conversa continua."
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "O que exatamente você quer saber?"
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "O seu nome eu sei... {w=0.5}mas não sei mais nada sobre você... {w=0.5}você estava no prédio no momento do acidente?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso
 
     l "Prédio? {w=0.5}Não..."
 
     v "Você não viu o acidente então?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando
 
     l "Não, {w=0.5}não."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Como você foi parar lá então?"
 

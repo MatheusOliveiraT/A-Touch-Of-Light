@@ -137,119 +137,132 @@ define cient2_e = Character(name="Scientist 2", color="#00264c")
 
 define l = Character("Lucas", color="#9900ff", image="lucas")
 
-# Terno + bandagens (machucado)
+# Side icon
 
-image lucas ternob assustado1 = Image("images/sprites/lucas/ternob/assustado1.png")
-image lucas ternob assustado2 = Image("images/sprites/lucas/ternob/assustado2.png")
-image lucas ternob base = Image("images/sprites/lucas/ternob/base.png")
-image lucas ternob bravo1 = Image("images/sprites/lucas/ternob/bravo1.png")
-image lucas ternob bravo2 = Image("images/sprites/lucas/ternob/bravo2.png")
-image lucas ternob bravo3 = Image("images/sprites/lucas/ternob/bravo3.png")
-image lucas ternob chorando1 = Image("images/sprites/lucas/ternob/chorando1.png")
-image lucas ternob chorando2 = Image("images/sprites/lucas/ternob/chorando2.png")
-image lucas ternob chorando3 = Image("images/sprites/lucas/ternob/chorando3.png")
-image lucas ternob chorando4 = Image("images/sprites/lucas/ternob/chorando4.png")
-image lucas ternob chorando5 = Image("images/sprites/lucas/ternob/chorando5.png")
-image lucas ternob duvida = Image("images/sprites/lucas/ternob/duvida.png")
-image lucas ternob falando = Image("images/sprites/lucas/ternob/falando.png")
-image lucas ternob ouvindo = Image("images/sprites/lucas/ternob/ouvindo.png")
-image lucas ternob sorriso1 = Image("images/sprites/lucas/ternob/sorriso1.png")
-image lucas ternob sorriso2 = Image("images/sprites/lucas/ternob/sorriso2.png")
-image lucas ternob timido1 = Image("images/sprites/lucas/ternob/timido1.png")
-image lucas ternob timido2 = Image("images/sprites/lucas/ternob/timido2.png")
-image lucas ternob timido3 = Image("images/sprites/lucas/ternob/timido3.png")
-image lucas ternob timido4 = Image("images/sprites/lucas/ternob/timido4.png")
-image lucas ternob timido5 = Image("images/sprites/lucas/ternob/timido5.png")
-image lucas ternob triste1 = Image("images/sprites/lucas/ternob/triste1.png")
-image lucas ternob triste2 = Image("images/sprites/lucas/ternob/triste2.png")
-image lucas ternob triste3 = Image("images/sprites/lucas/ternob/triste3.png")
-image lucas ternob triste4 = Image("images/sprites/lucas/ternob/triste4.png")
+image side lucas = LayeredImageProxy("lucas", Transform(crop=(300, 0, 400, 350), zoom=0.65))
 
-# Terno
+# Outfits
 
-image lucas terno assustado1 = Image("images/sprites/lucas/terno/assustado1.png")
-image lucas terno assustado2 = Image("images/sprites/lucas/terno/assustado2.png")
-image lucas terno base = Image("images/sprites/lucas/terno/base.png")
-image lucas terno bravo1 = Image("images/sprites/lucas/terno/bravo1.png")
-image lucas terno bravo2 = Image("images/sprites/lucas/terno/bravo2.png")
-image lucas terno bravo3 = Image("images/sprites/lucas/terno/bravo3.png")
-image lucas terno chorando1 = Image("images/sprites/lucas/terno/chorando1.png")
-image lucas terno chorando2 = Image("images/sprites/lucas/terno/chorando2.png")
-image lucas terno chorando3 = Image("images/sprites/lucas/terno/chorando3.png")
-image lucas terno chorando4 = Image("images/sprites/lucas/terno/chorando4.png")
-image lucas terno chorando5 = Image("images/sprites/lucas/terno/chorando5.png")
-image lucas terno duvida = Image("images/sprites/lucas/terno/duvida.png")
-image lucas terno falando = Image("images/sprites/lucas/terno/falando.png")
-image lucas terno ouvindo = Image("images/sprites/lucas/terno/ouvindo.png")
-image lucas terno sorriso1 = Image("images/sprites/lucas/terno/sorriso1.png")
-image lucas terno sorriso2 = Image("images/sprites/lucas/terno/sorriso2.png")
-image lucas terno timido1 = Image("images/sprites/lucas/terno/timido1.png")
-image lucas terno timido2 = Image("images/sprites/lucas/terno/timido2.png")
-image lucas terno timido3 = Image("images/sprites/lucas/terno/timido3.png")
-image lucas terno timido4 = Image("images/sprites/lucas/terno/timido4.png")
-image lucas terno timido5 = Image("images/sprites/lucas/terno/timido5.png")
-image lucas terno triste1 = Image("images/sprites/lucas/terno/triste1.png")
-image lucas terno triste2 = Image("images/sprites/lucas/terno/triste2.png")
-image lucas terno triste3 = Image("images/sprites/lucas/terno/triste3.png")
-image lucas terno triste4 = Image("images/sprites/lucas/terno/triste4.png")
+layeredimage lucas:
 
-# Pijama + bandagens (machuado)
+    zoom 0.8
+    yanchor 1.0
+    ypos 1.0
+    xanchor 0.5
+    xpos 0.5
 
-image lucas pijamab assustado1 = Image("images/sprites/lucas/pijamab/assustado1.png")
-image lucas pijamab assustado2 = Image("images/sprites/lucas/pijamab/assustado2.png")
-image lucas pijamab base = Image("images/sprites/lucas/pijamab/base.png")
-image lucas pijamab bravo1 = Image("images/sprites/lucas/pijamab/bravo1.png")
-image lucas pijamab bravo2 = Image("images/sprites/lucas/pijamab/bravo2.png")
-image lucas pijamab bravo3 = Image("images/sprites/lucas/pijamab/bravo3.png")
-image lucas pijamab chorando1 = Image("images/sprites/lucas/pijamab/chorando1.png")
-image lucas pijamab chorando2 = Image("images/sprites/lucas/pijamab/chorando2.png")
-image lucas pijamab chorando3 = Image("images/sprites/lucas/pijamab/chorando3.png")
-image lucas pijamab chorando4 = Image("images/sprites/lucas/pijamab/chorando4.png")
-image lucas pijamab chorando5 = Image("images/sprites/lucas/pijamab/chorando5.png")
-image lucas pijamab duvida = Image("images/sprites/lucas/pijamab/duvida.png")
-image lucas pijamab falando = Image("images/sprites/lucas/pijamab/falando.png")
-image lucas pijamab ouvindo = Image("images/sprites/lucas/pijamab/ouvindo.png")
-image lucas pijamab sorriso1 = Image("images/sprites/lucas/pijamab/sorriso1.png")
-image lucas pijamab sorriso2 = Image("images/sprites/lucas/pijamab/sorriso2.png")
-image lucas pijamab timido1 = Image("images/sprites/lucas/pijamab/timido1.png")
-image lucas pijamab timido2 = Image("images/sprites/lucas/pijamab/timido2.png")
-image lucas pijamab timido3 = Image("images/sprites/lucas/pijamab/timido3.png")
-image lucas pijamab timido4 = Image("images/sprites/lucas/pijamab/timido4.png")
-image lucas pijamab timido5 = Image("images/sprites/lucas/pijamab/timido5.png")
-image lucas pijamab triste1 = Image("images/sprites/lucas/pijamab/triste1.png")
-image lucas pijamab triste2 = Image("images/sprites/lucas/pijamab/triste2.png")
-image lucas pijamab triste3 = Image("images/sprites/lucas/pijamab/triste3.png")
-image lucas pijamab triste4 = Image("images/sprites/lucas/pijamab/triste4.png")
+    group outfit:
 
-# Side Icons
+        # --- POSE BASE ---
+        attribute base_naked default:
+            "images/sprites/lucas/pose/lucas_pose_base_naked.png"
+        attribute base_pijama:
+            "images/sprites/lucas/pose/lucas_pose_base_pijama.png"
+        attribute base_pijama_bandagens:
+            "images/sprites/lucas/pose/lucas_pose_base_pijama_bandagens.png"
+        attribute base_social:
+            "images/sprites/lucas/pose/lucas_pose_base_social.png"
+        attribute base_social_tie:
+            "images/sprites/lucas/pose/lucas_pose_base_social_tie.png"
+        attribute base_social_tie_vest:
+            "images/sprites/lucas/pose/lucas_pose_base_social_tie_vest.png"
 
-# Lucas
+        # --- POSE BRAÇO NA CABEÇA ---
+        attribute head_naked:
+            "images/sprites/lucas/pose/lucas_pose_head_naked.png"
+        attribute head_pijama:
+            "images/sprites/lucas/pose/lucas_pose_head_pijama.png"
+        attribute head_pijama_bandagens:
+            "images/sprites/lucas/pose/lucas_pose_head_pijama_bandagens.png"
+        attribute head_social:
+            "images/sprites/lucas/pose/lucas_pose_head_social.png"
+        attribute head_social_tie:
+            "images/sprites/lucas/pose/lucas_pose_head_social_tie.png"
+        attribute head_social_tie_vest:
+            "images/sprites/lucas/pose/lucas_pose_head_social_tie_vest.png"
 
-image side lucas assustado1 = Image("images/sideIcon/lucas/assustado1.png")
-image side lucas assustado2 = Image("images/sideIcon/lucas/assustado2.png")
-image side lucas base = Image("images/sideIcon/lucas/base.png")
-image side lucas bravo1 = Image("images/sideIcon/lucas/bravo1.png")
-image side lucas bravo2 = Image("images/sideIcon/lucas/bravo2.png")
-image side lucas bravo3 = Image("images/sideIcon/lucas/bravo3.png")
-image side lucas chorando1 = Image("images/sideIcon/lucas/chorando1.png")
-image side lucas chorando2 = Image("images/sideIcon/lucas/chorando2.png")
-image side lucas chorando3 = Image("images/sideIcon/lucas/chorando3.png")
-image side lucas chorando4 = Image("images/sideIcon/lucas/chorando4.png")
-image side lucas chorando5 = Image("images/sideIcon/lucas/chorando5.png")
-image side lucas duvida = Image("images/sideIcon/lucas/duvida.png")
-image side lucas falando = Image("images/sideIcon/lucas/falando.png")
-image side lucas ouvindo = Image("images/sideIcon/lucas/ouvindo.png")
-image side lucas sorriso1 = Image("images/sideIcon/lucas/sorriso1.png")
-image side lucas sorriso2 = Image("images/sideIcon/lucas/sorriso2.png")
-image side lucas timido1 = Image("images/sideIcon/lucas/timido1.png")
-image side lucas timido2 = Image("images/sideIcon/lucas/timido2.png")
-image side lucas timido3 = Image("images/sideIcon/lucas/timido3.png")
-image side lucas timido4 = Image("images/sideIcon/lucas/timido4.png")
-image side lucas timido5 = Image("images/sideIcon/lucas/timido5.png")
-image side lucas triste1 = Image("images/sideIcon/lucas/triste1.png")
-image side lucas triste2 = Image("images/sideIcon/lucas/triste2.png")
-image side lucas triste3 = Image("images/sideIcon/lucas/triste3.png")
-image side lucas triste4 = Image("images/sideIcon/lucas/triste4.png")
+        # --- POSE PENSANDO ---
+        attribute thinking_naked:
+            "images/sprites/lucas/pose/lucas_pose_thinking_naked.png"
+        attribute thinking_pijama:
+            "images/sprites/lucas/pose/lucas_pose_thinking_pijama.png"
+        attribute thinking_pijama_bandagens:
+            "images/sprites/lucas/pose/lucas_pose_thinking_pijama_bandagens.png"
+        attribute thinking_social:
+            "images/sprites/lucas/pose/lucas_pose_thinking_social.png"
+        attribute thinking_social_tie:
+            "images/sprites/lucas/pose/lucas_pose_thinking_social_tie.png"
+        attribute thinking_social_tie_vest:
+            "images/sprites/lucas/pose/lucas_pose_thinking_social_tie_vest.png"
+
+        # --- POSE BRAÇOS CRUZADOS ---
+        attribute crossed_naked:
+            "images/sprites/lucas/pose/lucas_pose_crossed_naked.png"
+        attribute crossed_pijama:
+            "images/sprites/lucas/pose/lucas_pose_crossed_pijama.png"
+        attribute crossed_pijama_bandagens:
+            "images/sprites/lucas/pose/lucas_pose_crossed_pijama_bandagens.png"
+        attribute crossed_social:
+            "images/sprites/lucas/pose/lucas_pose_crossed_social.png"
+        attribute crossed_social_tie:
+            "images/sprites/lucas/pose/lucas_pose_crossed_social_tie.png"
+        attribute crossed_social_tie_vest:
+            "images/sprites/lucas/pose/lucas_pose_crossed_social_tie_vest.png"
+
+        # --- POSE ASSUSTADO ---
+        attribute scared_naked:
+            "images/sprites/lucas/pose/lucas_pose_scared_naked.png"
+        attribute scared_pijama:
+            "images/sprites/lucas/pose/lucas_pose_scared_pijama.png"
+        attribute scared_pijama_bandagens:
+            "images/sprites/lucas/pose/lucas_pose_scared_pijama_bandagens.png"
+        attribute scared_social:
+            "images/sprites/lucas/pose/lucas_pose_scared_social.png"
+        attribute scared_social_tie:
+            "images/sprites/lucas/pose/lucas_pose_scared_social_tie.png"
+        attribute scared_social_tie_vest:
+            "images/sprites/lucas/pose/lucas_pose_scared_social_tie_vest.png"
+
+    group face:
+        attribute neutro default:
+            "images/sprites/lucas/face/base.png"
+        attribute assustado:
+            "images/sprites/lucas/face/assustado.png"
+        attribute bravo1:
+            "images/sprites/lucas/face/bravo1.png"
+        attribute bravo2:
+            "images/sprites/lucas/face/bravo2.png"
+        attribute confuso:
+            "images/sprites/lucas/face/confuso.png"
+        attribute falando:
+            "images/sprites/lucas/face/falando.png"
+        attribute sorrindo1:
+            "images/sprites/lucas/face/sorriso1.png"
+        attribute sorrindo2:
+            "images/sprites/lucas/face/sorriso2.png"
+        attribute sorrindo3:
+            "images/sprites/lucas/face/sorriso3.png"
+        attribute sorrindoDeLado:
+            "images/sprites/lucas/face/sorrisoDeLado.png"
+        attribute sorrindoDesviandoOlhar:
+            "images/sprites/lucas/face/sorrisoDesviandoOlhar.png"
+        attribute triste1:
+            "images/sprites/lucas/face/triste1.png"
+        attribute triste1:
+            "images/sprites/lucas/face/triste2.png"
+        attribute triste1:
+            "images/sprites/lucas/face/triste3.png"
+        attribute triste1:
+            "images/sprites/lucas/face/triste4.png"
+
+    attribute face_bandage:
+        "images/sprites/lucas/face_overlay/bandagem.png"
+
+    attribute blush:
+        "images/sprites/lucas/face_overlay/corado.png"
+
+    attribute sweat:
+        "images/sprites/lucas/face_overlay/suor.png"
 
 # Assets
 
@@ -332,9 +345,6 @@ define agencia_en = "National Extragalaxial, Aeronautics and Spacial Administrat
 define nome_implante = "PlaceHolder"
 
 # Posições sprites
-
-transform noTapete:
-    xalign 0.3
 
 transform bancoPassageiro:
     xalign 1.1
