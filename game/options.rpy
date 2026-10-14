@@ -28,6 +28,8 @@ define config.version = "0.0.3"
 
 define config.has_sync = False
 
+define config.default_language = "english"
+
 ## Texto que é colocado na tela "Sobre" do jogo. Coloque o texto entre aspas
 ## triplas e deixe uma linha em branco entre os parágrafos.
 

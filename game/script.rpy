@@ -248,11 +248,11 @@ layeredimage lucas:
             "images/sprites/lucas/face/sorrisoDesviandoOlhar.png"
         attribute triste1:
             "images/sprites/lucas/face/triste1.png"
-        attribute triste1:
+        attribute triste2:
             "images/sprites/lucas/face/triste2.png"
-        attribute triste1:
+        attribute triste3:
             "images/sprites/lucas/face/triste3.png"
-        attribute triste1:
+        attribute triste4:
             "images/sprites/lucas/face/triste4.png"
 
     attribute face_bandage:
@@ -349,11 +349,11 @@ define nome_implante = "PlaceHolder"
 transform bancoPassageiro:
     xalign 1.1
     yoffset 250
-    xzoom -0.85
+    xzoom 0.85
     yzoom 0.85
 
-transform emBaixo:
-    yoffset 200
+transform ladoEsquerdo:
+    xalign 0.2
 
 # Transições side icon
 
@@ -370,12 +370,11 @@ define config.side_image_same_transform = same_transform
 
 # Outros transforms
 
-transform metadeTamanho: # Imagem fica no meio da tela
+transform metadeTamanho:
     xalign 0.5
     yalign 0.5
     zoom 0.5
 
-# Tremor em loop aleatório contínuo
 transform earthquake_loop:
     anchor (0.5, 0.5)
     pos (0.5, 0.5)
@@ -392,7 +391,6 @@ transform earthquake_loop:
             ease 0.04 xoffset 10 yoffset 14
         repeat
 
-# Para o tremor suavemente resetando a posição
 transform stop_earthquake:
     easein 0.1 xoffset 0 yoffset 0 zoom 1.0
 
@@ -400,7 +398,6 @@ transform stop_earthquake:
 
 label start:
 
-    # Transição inicial
     with fade
     stop music fadeout 2.0
 

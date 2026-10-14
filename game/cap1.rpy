@@ -11,7 +11,7 @@ label cap1:
     pause 5.0
 
     scene bg hall dia
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso face_bandage
     with fade
 
     play music musicaAnimada2 fadein 2.0
@@ -26,7 +26,7 @@ label cap1:
 
     v "Me surpreende vocês terem portais que viajam entre galáxias e não terem elevadores."
 
-    show lucas ternob assustado1
+    show lucas scared_social_tie_vest assustado
 
     l "A-ah!"
 
@@ -34,14 +34,14 @@ label cap1:
 
     v "Bora, gatinho."
 
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso
 
     l "C-certo."
 
     "O felino me olha com um olhar de dúvida, com certeza não entendeu a provocação."
 
     scene bg estacionamento
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso face_bandage
     with fade
     play sound elevador volume 0.8
 
@@ -52,18 +52,18 @@ label cap1:
 
     v "Isso seria um carro, mais especificamente o meu."
 
-    show lucas ternob assustado1
+    show lucas assustado
 
     l "U-um carro? Você deve ser rico..."
 
     v "Eu vivo bem... mas rico, não."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando
 
     l "Em [planeta_lucas] carros são artigos de luxo, já que não precisamos deles necessariamente. Esse é o primeiro carro que eu vejo... 
     mesmo que muito diferente dos que eu via em casa."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     "Dessa vez o olhar de confusão é meu."
 
@@ -71,19 +71,19 @@ label cap1:
 
     "Eu falo apontando para todos os outros carros estacionados próximos ao meu."
 
-    show lucas ternob timido4
+    show lucas head_social_tie_vest sorrindo2 blush
 
     l "A-ah... então mora bastante gente rica aqui..."
 
     v "Você com certeza perdeu o meu ponto. Entra no carro aí, tô com muita fome pra te explicar."
 
-    show lucas ternob timido1
+    show lucas sorrindo1
 
     l "T-tá."
 
     scene bg estacionamento
     show carro
-    show lucas ternob timido1 at bancoPassageiro
+    show lucas base_social_tie_vest sorrindo1 blush face_bandage at bancoPassageiro
     with dissolve
 
     "Então eu dou a volta e entro no carro pelo banco do motorista. Rapidamente eu ajeito os retrovisores e dou partida no carro. 
@@ -91,13 +91,13 @@ label cap1:
 
     v "Não vai colocar o cinto?"
 
-    show lucas ternob timido2
+    show lucas head_social_tie_vest sorrindoDeLado
 
     l "Cinto?"
 
     v "O cinto de segurança."
 
-    show lucas ternob timido1
+    show lucas base_social_tie_vest sorrindoDeLado
 
     l "C-como que eu coloco?"
 
@@ -109,13 +109,13 @@ label cap1:
 
     "O leão hesita, mas segue o comando novamente. Logo ele consegue então encaixar o gancho do sinto na trava."
 
-    show lucas ternob bravo2
+    show lucas bravo1 -blush
 
     l "É um pouco..."
 
     v "Apertado?"
 
-    show lucas ternob timido2
+    show lucas head_social_tie_vest sorrindoDeLado blush
 
     l "S-sim..."
 
@@ -123,7 +123,7 @@ label cap1:
 
     scene bg rua dia
     show carro
-    show lucas ternob duvida at bancoPassageiro
+    show lucas thinking_social_tie_vest confuso face_bandage at bancoPassageiro
     with fade
 
     l "A terra é bem diferente de [planeta_lucas]... realmente tem carro pra todo lado..."
@@ -134,18 +134,18 @@ label cap1:
 
     "O felino parece ter dificuldade em visualizar o cenário."
 
-    show lucas ternob timido2
+    show lucas head_social_tie_vest falando
 
     l "[seuNome], não sei se é o melhor momento pra te perguntar, mas...{w=0.5} o que você faz, exatamente?"
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Com o tanto de informação que você leu sobre mim, não é surpresa que você não tenha entendido. Essa é o tipo de pergunta que até quem é daqui me costuma me 
     fazer e não entender nem metade da resposta."
 
     v "Pode-se dizer que hoje eu trabalho com os sistemas de segurança de um acelerador de partículas...{w=0.5} e pelo que parece eu não sou o melhor no meu trabalho."
 
-    show lucas ternob triste1
+    show lucas base_social_tie_vest triste1
     play music musicaMelancolica2 fadein 1.0
 
     "O leão claramente entende o peso das minhas palavras."
@@ -155,40 +155,40 @@ label cap1:
 
     "Falar tudo isso em voz alta me dá uma dor gigantesca no peito. [l.name] percebe a minha dor e tenta amenizar os meus sentimentos."
 
-    show lucas ternob triste2
+    show lucas triste2
 
     l "Eu sinto muito que você tenha que passar por essa situação, [seuNome].{w=0.5} Você não precisa continuar falando se não se sentir confortável."
 
     v "Acho que certas coisas realmente só começar a se tornar realidade quando você as verbalizam.{w=0.5} Mas eu vou ter que falar disso mais cedo ou mais tarde."
 
-    show lucas ternob triste1
+    show lucas triste1
 
     l "Essa conversa pode esperar mais um pouco."
 
     v "E você, [l.name]. O que você faz quando não tá passeando por outros planetas?"
 
-    show lucas ternob falando
+    show lucas falando
     play music musicaSoft fadein 1.0
 
     l "Como eu disse, essa é a minha primeira missão desse tipo. Eu nunca tinha saído de [galaxia_lucas] nem de [planeta_lucas]."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Nem pra dar um passeio?"
 
-    show lucas ternob bravo2
+    show lucas bravo1
 
     l "Não, [seuNome]."
 
     v "Despercío de tecnologia você e esse seu povo hein."
 
-    show lucas ternob bravo3
+    show lucas bravo2
 
     l "Não é assim que funciona, [seuNome]."
 
     v "Aqui na Terra tem um povo que paga uma grana pra dar uma volta no espaço.{w=0.5} Tinha até umas celebridades que foram. Que nem o povo do submarino."
 
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso
 
     l "O que exatamente vocês fazem no espaço?"
 
@@ -198,43 +198,47 @@ label cap1:
 
     v "Não faço ideia."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando
 
     l "Voltando pra sua pergunta, eu trabalho para a [agencia_pt_sigla]. Antes de vir para cá, eu passei por um treinamento intenso que durou praticamente minha vida toda."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "[agencia_pt_sigla]?"
 
-    show lucas ternob falando
+    show lucas falando
 
     l "[agencia_pt], por extenso."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     "Esse nome é estranhamente familiar."
 
     v "E pra que serve esse treinamento?"
 
-    show lucas ternob timido3
+    show lucas falando
 
     l "Dentre outras coisas, estudar os comportamentos das outras civilizações, práticas de segurança, protocolos de conduta. Coisas desse tipo."
 
+    show lucas neutro
+
     v "Só de ouvir isso aí já me deu uma dor de cabeça."
 
-    show lucas ternob timido4
+    show lucas head_social_tie_vest falando blush
 
     l "É uma mistura de bastante coisa, de verdade. Eu nunca entendi porque estudar tudo aquilo também. Tirando o treinamento físico..."
 
+    show lucas sorrindo2
+
     v "Tortura psicológica não é entretenimento."
 
-    show lucas ternob triste2
+    show lucas base_social_tie_vest triste2 -blush
 
     "Algo na minha fala deixou [l.name] desconfortável."
 
     v "É uma piada, viu? Coisa de internet que eu falo. Não sei se você tem internet em [planeta_lucas]."
 
-    show lucas ternob triste1
+    show lucas triste1
 
     l "Internet?"
 
@@ -242,25 +246,25 @@ label cap1:
 
     "A minha provocação melhora uma pouco o humor do leão."
 
-    show lucas ternob timido1
+    show lucas sorrindo2
 
     l "É injusto comparar quando eu tenho dezenas de civilizações pra estudar e você só tem a sua."
 
     v "Isso se chama especialização."
 
     scene bg padaria
-    show lucas ternob base at emBaixo
+    show lucas base_social_tie_vest neutro face_bandage at ladoEsquerdo
     with fade
 
     "Papo vem, papo vai, e finalmente chegamos ao nosso destino. [l.name] olha ao redor do ambiente, encantado com os detalhes."
 
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso
 
     l "Então isso é uma padaria."
 
     v "A mais próxima de casa. É conveninente. Vou pegar algo pra gente comer."
 
-    show lucas ternob falando
+    show lucas falando
 
     l "Beleza."
 
@@ -289,39 +293,45 @@ label cap1:
 
     "Então eu retorno para a mesa que [l.name] escolheu. O felino parece encantado com o espaço."
 
-    show lucas ternob base at emBaixo
+    show lucas base_social_tie_vest falando face_bandage at ladoEsquerdo
     with dissolve
 
     l "Os humanos são interessantes."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Interessante é definitivamente uma boa definição. {w=0.5} A comida já chega."
 
-    show lucas ternob timido2
+    show lucas falando blush
 
     l "Espero que você não tenha sido muito extravagante na escolha por minha causa."
+
+    show lucas neutro
 
     v "Antes eu preciso ter certeza que o seu estômago alienígena aguenta a porrada. Peguei algo mais leve pra você comer. Eu não tô com tanta fome, então 
     a maior parte fica pra você. Fico no meu café."
 
-    show lucas ternob timido1
+    show lucas falando
 
     l "Obrigado, [seuNome]."
 
+    show lucas neutro
+
     v "De fome você não morre na minha mão. {w=0.5} Seguinte, eu preciso trabalhar ainda hoje. você vai ficar perambulando por aí ou vai ficar no meu apartamento?"
 
-    show lucas ternob timido3
+    show lucas head_social_tie_vest falando
 
     l "Eu suponho que eu não posso ir com você lá, certo?"
 
+    show lucas sorrindo2
+
     v "Seria... {w=0.5}no mínimo estranho."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando -blush
 
     l "Acho que seria imprudente da minha parte andar pela cidade sem alguém pra me guiar."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Às vezes você tem um super GPS instalado aí, sei lá.{w=0.5} Então eu vou passar pra comprar alguma coisa pra você almoçar e te deixar em casa depois que 
     a gente sair daqui."
@@ -332,7 +342,7 @@ label cap1:
 
     v "Obrigado."
 
-    show lucas ternob timido1
+    show lucas sorrindo2 blush
 
     l "O-obrigado."
 
@@ -340,29 +350,31 @@ label cap1:
 
     v "Aqui tem pão de queijo e o misto. E pra beber tem um suco de laranja aqui."
 
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso -blush
 
     l "Tipo a cor?"
 
     v "Não tem larana em [planeta_lucas]?"
 
-    show lucas ternob timido5
+    show lucas head_social_tie_vest sorrindoDesviandoOlhar blush
 
     l "Claro que tem...{w=0.5} o espectro das cores é igual em todas as galáxias."
 
     v "A fruta, [l.name]."
 
-    show lucas ternob timido3
+    show lucas falando
 
     l "Ah...{w=0.5} a fruta? {w=0.5} Acho que não?"
 
+    show lucas sorrindoDeLado
+
     v "Enfim, eu vou comer um pão de queijo, você pode comer o outro e o misto."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando -blush
 
     l "E o que você tá bebendo?"
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Café. Mais do que necessário hoje. Agora cala a boca e come."
 
@@ -370,29 +382,35 @@ label cap1:
 
     scene bg estacionamento
     show carro
-    show lucas ternob ouvindo at bancoPassageiro
+    show lucas base_social_tie_vest neutro face_bandage at bancoPassageiro
     with fade
 
     v "Chegamos. Você consegue subir no apartamento sozinho?"
 
-    show lucas ternob timido3
+    show lucas head_social_tie_vest sorrindoDesviandoOlhar blush
 
     l "Acho que eu não lembro o andar."
 
     v "É no décimo terceiro andar. Apartamento número 1310."
 
+    show lucas base_social_tie_vest falando -blush
+
     l "Parece fácil o suficiente... 1310."
+
+    show lucas neutro
 
     v "Aqui as chaves. Essa aqui é a da porta da frente. Quando eu chegar você vai precisar abrir a porta pra mim. Então se você for tirar uma soneca 
     aproveita pra tirar agora."
 
-    show lucas ternob timido4
+    show lucas falando
 
     l "Acho que eu não tô com sono."
 
+    show lucas neutro
+
     v "De qualquer forma, eu devo voltar lá pelas seis horas."
 
-    show lucas ternob falando
+    show lucas falando
 
     l "Certo."
 
@@ -650,7 +668,7 @@ label cap1:
     "Alguns seguundos depois a porta se abre. Eu entro para a sala de estar rapidamente, trancando a porta logo em seguida."
 
     scene bg sala casa noite
-    show lucas ternob timido2 at noTapete
+    show lucas head_social_tie_vest sorrindoDeLado face_bandage blush
     with fade
 
     "Eu sou recebido pela imagem do leão, mais uma vez."
@@ -659,7 +677,7 @@ label cap1:
 
     v "Tão estressante quanto eu pensei que seria."
 
-    show lucas ternob timido3
+    show lucas sorrindoDesviandoOlhar
 
     l "É..."
 
@@ -667,27 +685,27 @@ label cap1:
 
     v "Cê tava dormindo mesmo?"
 
-    show lucas ternob timido1
+    show lucas sorrisoDeLado
 
     l "T-talvez?"
 
     v "Você vai acabar virando a fofoca do prédio ainda. {w=0.5}Pelo menos não demorou muito pra acordar. Como foi seu dia por aqui?"
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando -blush
 
     l "Tranquilo. Eu fiquei estudando a maior parte do tempo. Bem melhor ler sobre os humanos diretamente dos livros de vocês."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Eu me pergunto onde você achou esses livros."
 
-    show lucas ternob timido5
+    show lucas head_social_tie_vest sorrindoDeLado blush
 
     l "Alguns livros estavam na mesa...{w=0.5} os outros eu...{w=0.5} achei."
 
     v "Eu prefiro não saber mais do que isso. A ignorância é uma benção. Eu preciso de um banho."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando
 
     l "Okay..."
 
@@ -707,23 +725,23 @@ label cap1:
     o meu remédio hoje? Eu não faço ideia."
 
     scene bg sala casa noite
-    show lucas ternob base at noTapete
+    show lucas base_social_tie_vest neutro face_bandage
     with fade
 
     "Após mais alguns minutos de água quente e outras reflexões profundas, eu retorno para a sala de estar. Agora meus trajes estão de acordo com a situação, casual."
 
     v "Seguinte, eu preciso ir no mercado. Cê vem junto?"
 
-    show lucas ternob falando
+    show lucas falando
 
     l "Sim, sim."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Bora então."
 
     scene bg mercado
-    show lucas ternob timido1
+    show lucas base_social_tie_vest neutro face_bandage blush
     with fade
 
     "A viagem até o mercado foi relativamente tranquila.{w=0.5} Tirando o transito dessa cidade infernal.{w=0.5} O mercado segue lotado como sempre. {w=0.5}
@@ -738,36 +756,38 @@ label cap1:
 
     v "Até agora, o que tá achando do mercado daqui?"
 
-    show lucas ternob falando
+    show lucas falando -blush
 
     l "Não é tão diferente do que eu vou em [planeta_lucas]. Só mais cheio e...{w=0.5} bem maior."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Estamos definitivamente enfrentando um problema de superpopulação. {w=0.5}Bem-vindo ao planeta Terra."
 
     v "Vai demorar pra gente terminar tudo aqui, então dá pra bater um papo enquanto isso."
 
-    show lucas ternob timido1
+    show lucas falando -blush
 
     l "Certo..."
+
+    show lucas neutro
 
     "Então silêncio. Aqueles três segundos de silêncio que deixam qualquer um desconfortável."
 
     pause 2.0
 
-    show lucas ternob timido2
+    show lucas head_social_tie_vest sorrindo2 blush
 
     l "Sobre o que você quer conversar exatamente, [seuNome]?"
 
     v "Acho que tá na hora de você dar umas explicações, pelo menos o básico. {w=0.5}Você é um leão, no meio do oceano de gente e não tem ninguém aqui 
     impressionado além de mim."
 
-    show lucas ternob timido4
+    show lucas sorrindoDesviandoOlhar
 
     l "Bom, isso é algo que eu não sei explicar totalmente, pelo menos não a parte do porque você me enxerga através do disfarce."
 
-    show lucas ternob falando
+    show lucas falando -blush
 
     l "Mas em suma, em [planeta_lucas] existe o que nós chamamos de [nome_implante]. Ele é um implante que se conecta com diferentes regiões do cérebro 
     e possibilita uma gama de coisas diferentes, os disfarces sendo uma delas."
@@ -777,25 +797,25 @@ label cap1:
 
     l "Existem diversas outras funcionalidades e motivos pra usar o [nome_implante], essa é só uma breve introdução."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Implante...{w=0.5} no cérebro..."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando
     
     l "Praticamente inofensivo no sentido de implantação. É relativamente comum em [planeta_lucas]...{w=0.5} principalmente pra um pessoal mais bem de vida."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Aqui na terra isso é papo de ficção científica.{w=0.5} Ou papo de conspiração.{w=0.5} Mas eu não deveria estar tão chocado nesse ponto."
 
-    show lucas ternob timido2
+    show lucas head_social_tie_vest sorrindo2 blush
 
     l "Eu acredito que a instabilidade do portal possa ter afetado o [nome_implante] e por isso o disfarce não tá funcionando com você. Mas é apenas uma teoria."
 
     v "Se você que tem chip na cabeça não sabe, imagina eu."
 
-    show lucas ternob duvida
+    show lucas thinking_social_tie_vest confuso -blush
 
     "A piada anti-vacina passa despercebida por [l.name], claramente."
 
@@ -805,44 +825,44 @@ label cap1:
 
     "A minha pergunta pega o leão despreparado."
 
-    show lucas ternob timido5
+    show lucas head_social_tie_vest falando blush
 
     l "B-bom... [planeta_lucas] é organizada de forma semelhante a Terra, em questão política. Então o planeta é dividido em diversos países, que por sua vez 
     são divididos em partes menores e por aí vai."
 
-    show lucas ternob falando
+    show lucas base_social_tie_vest falando -blush
 
     l "O nome do meu país é [pais_lucas]. A [agencia_pt_sigla] é de [pais_lucas], sendo um órgão do governo federal. Por mais que a parte majoritária de [planeta_lucas] 
     tenha entrado em consenso em relação à certas atitudes, não é todo país que pensa da mesma forma."
 
     l "Então é relativamente complicado impedir que certos limites sejam...{w=0.5} respeitados."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Aqui na Terra nós temos a ONU que tenta fazer essa ponte entre os países.{w=0.5} Foi necessário depois de umas...{w=0.5} guerras aí."
 
-    show lucas ternob falando
+    show lucas falando
 
     l "[planeta_lucas] tem mais em comum com a Terra do que diferenças, pelo que eu sei. E também com muitos outros planetas."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Então esse objetivo seu de salvar o universo não é algo que todos os países de [planeta_lucas] querem?"
 
-    show lucas ternob timido3
+    show lucas head_social_tie_vest sorrindo2 blush
 
     l "Mais por consequência do que por causa, mas sim [seuNome]."
 
     v "Esse tipo de resposta é pra dar medo de eu fazer mais perguntas? Por que se for, tá funcionando muito bem."
 
-    show lucas ternob timido2
+    show lucas sorrindoDeLado
 
     l "T-talvez não seja o melhor ambiente pra eu te contar todos os detalhes."
 
     v "Justo.{w=0.5} Mas essas pontas que você deixa soltas tão atiçando meu ouvido de fofoqueiro.{w=0.5} Acho que peguei tudo que eu precisava, bora pagar e ir embora."
 
     scene bg sala casa noite
-    show lucas ternob ouvindo
+    show lucas base_social_tie_vest neutro face_bandage
     with fade
 
     "Após esperar um tempo desproporcional para conseguir passar as compras e pagar, conseguimos chegar em casa sem mais empecilhos no meio do caminho."
@@ -850,16 +870,16 @@ label cap1:
     "Agora é seguir e guardar essas compras na cozinha, aproveitar e tratar esse problema da fome."
 
     scene bg cozinha casa noite
-    show lucas ternob ouvindo
+    show lucas base_social_tie_vest neutro face_bandage
     with fade
 
     v "Algum desejo específico? Algo que queira comer?"
 
-    show lucas ternob falando
+    show lucas falando
 
     l "Não, não... como eu disse, não sou muito seletivo."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Tá... então um empadão vai dar conta do recado então."
 

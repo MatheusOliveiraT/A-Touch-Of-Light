@@ -880,7 +880,7 @@ label _dia2pt2:
     l "Uma água, p-por favor."
 
     scene bg sala casa noite
-    show lucas base_pijama_bandagens neutro
+    show lucas base_pijama_bandagens neutro face_bandage
     with fade
 
     "Depois de uma breve visita a cozinha e um copo de água abaixo, a conversa continua."
@@ -907,7 +907,7 @@ label _dia2pt2:
 
     v "Como você foi parar lá então?"
 
-    show lucas pijamab sorriso1
+    show lucas sorrindo2
 
     "O leão me encara com um leve sorriso."
 
@@ -917,29 +917,29 @@ label _dia2pt2:
 
     v "Eu?"
 
-    show lucas pijamab timido3
+    show lucas head_pijama_bandagens sorrindo2 blush
 
     l "S-sim."
 
     "O leão diz com um tom levemente envergonhado."
 
-    show lucas pijamab falando
+    show lucas falando -blush
 
     l "Eu sabia que isso era uma possibilidade, mas não esperava que fosse acontecer... {w=0.5}tão cedo."
 
     "O felino reflete nos próprios pensamentos, me deixando ainda mais confuso."
 
-    show lucas pijamab ouvindo
+    show lucas base_pijama_bandagens neutro
 
     v "E como eu te invoquei? Você é um demônio?!"
 
-    show lucas pijamab timido4
+    show lucas head_pijama_bandagens sorrindoDesviandoOlhar blush
 
     l "N-não, [seuNome]... {w=0.5}você ativou o portal..."
 
     v "Portal?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso -blush
 
     l "Você não lembra de ativar o portal? S-será se foi outro humano? {w=0.5}Não poderia ser..."
 
@@ -947,15 +947,15 @@ label _dia2pt2:
 
     v "Você tá falando daquela luz?"
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "É... {w=0.5}acho que sim?{w=0.5} Os portais emitem uma luz meio esquisita..."
 
-    show lucas pijamab ouvindo
+    show lucas confuso
 
     v "Então sim... {w=0.5}acho que foi eu.... {w=0.5}eu não sabia que aquilo era um portal...?{w=0.5} Mas como assim um portal?"
 
-    show lucas pijamab timido5
+    show lucas head_pijama_bandagens sorrindoDesviandoOlhar blush
 
     l "É... {w=0.5}complicado..."
 
@@ -963,13 +963,15 @@ label _dia2pt2:
 
     "O leão mais uma vez parece pedido com as palavras."
 
-    show lucas pijamab timido1
+    show lucas falando
 
     l "[seuNome]... é uma longa história,{w=0.5} mas eu preciso que você confie em mim."
 
+    show lucas neutro
+
     v "[l.name], qual outra opção eu tenho?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso -blush
 
     l "Eu...{w=0.5} não sei?"
 
@@ -978,34 +980,36 @@ label _dia2pt2:
     v "Olha [l.name]... sinceramente hoje já aconteceu muita coisa, e claramente tem muita coisa que você ainda não disse.{w=0.5} 
     Eu não sei o dia de amanhã, mas eu acredito que essa conversa pode esperar até lá."
 
-    show lucas pijamab timido2
+    show lucas base_pijama_bandagens falando blush
 
     l "V-você tem certeza?"
+
+    show lucas neutro
 
     v "Não, mas certeza não é algo que eu tenho com frequência.{w=0.5} Cuidando do agora, eu tô exausto, principalmente mentalmente.
     {w=0.5}Necessito de um bom banho e apagar o quanto antes."
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "C-certo..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Eu imagino que você não tenha nenhum amigo pra visitar ou simplesmente outro lugar pra dormir, correto?"
 
-    show lucas pijamab timido1
+    show lucas head_pijama_bandagens sorrindoDeLado
 
     l "É...{w=0.5} não por aqui, pelo menos..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Vou pegar uns travesseiros e uma coberta pra você então. O sofá é confortável o suficiente?"
 
-    show lucas pijamab timido2
+    show lucas base_pijama_bandagens falando
 
     l "S-sim, sim.{w=0.5} Obrigado..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro -blush
 
     v "Muito em breve você não vai estar me agradecendo..."
 
@@ -1016,34 +1020,36 @@ label _dia2pt2:
 
     v "Você precisa de mais alguma coisa por agora?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso
 
     l "Certo... acho que nada por enquanto..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Então eu já volto com as suas coisas."
     
     scene bg sala casa noite
-    show lucas pijamab ouvindo at noTapete
+    show lucas base_pijama_bandagens neutro face_bandage
     with fade
 
     "Rapidamente eu retorno para a sala com dois travesseiros e um cobertor leve."
 
     v "Aqui. Precisa de uma cobertor mais pesado? E pensei por causa do seu pelo né..."
 
-    show lucas pijamab timido2
+    show lucas falando blush
 
     l "N-não, não.{w=0.5} Esse tá ótimo."
 
-    show lucas pijamab ouvindo
+    show lucas neutro -blush
 
     v "Fechô então. Eu vou tomar um banho e descansar. Meu quarto é a primeira porta à esquerda no corredor, se precisar de 
     alguma coisa é só me chamar."
 
-    show lucas pijamab timido2
+    show lucas falando blush
 
     l "O-obrigado."
+
+    show lucas neutro -blush
 
     "Nessa eu me afasto do leão em direção ao banheiro, a fim de concluir meu ritual para o bom e velho descanso."
 
@@ -1074,163 +1080,177 @@ label dia3:
     "[l.name]... ele tem muita explicação a fazer hoje."
 
     scene bg casa sala dia
-    show lucas pijamab sorriso1 at noTapete
+    show lucas base_pijama_bandagens neutro face_bandage
     with fade
     play music musicaMelancolica3 fadein 1.0
 
     "Saindo do meu quarto em direção a sala, logo eu avisto [l.name] sentado ao sofá, praticamente esperando meu retorno. Ao 
     me avistar, o leão sorri levemente e me cumprimenta."
 
+    show lucas falando
+
     l "Bom dia, [seuNome]. Conseguiu dormir bem?"
+
+    show lucas neutro
 
     v "Bom dia, [l.name]. Dentro do possível, sim."
 
-    show lucas pijamab timido1
+    show lucas falando # Seria legal uma expressão falando e desviando o olhar aqui
 
     l "Eu imagino o que você deve estar sentindo..." 
 
+    show lucas neutro
+
     v "[l.name], a gente precisa conversar."
+
+    show lucas falando 
 
     l "Certo..."
 
+    show lucas neutro
+
     v "[l.name], quem é você?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso
 
     "A pergunta atordoa o leão."
+
+    show lucas falando
 
     l "Bem... {w=0.5}essa pergunta é difícil... {w=0.5}pode parecer um pouco vago, e talvez seja, mas meu nome é [l.name], eu 
     tenho 23 anos e... eu sou de [planeta_lucas]."
 
+    show lucas confuso
+
     v "[planeta_lucas]?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando
 
     l "É como se chama o meu planeta. Pelo menos como nós o chamamos."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     "Planeta{w=0.5}.{w=0.5}.{w=0.5}."
 
     v "Tá... {w=0.5}então você é um alienígena?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens falando
 
     l "Você támbém é um alienígena no meu ponto de vista..."
 
+    show lucas confuso
+
     v "É, mas eu tô no meu planeta e não invadi o de ninguém."
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "Tecnicamente eu não invadi o seu planeta também...{w=0.5} Mas isso não importa. Bem, nesse ponto você já sabe do portal..."
 
-    show lucas pijamab ouvindo
+    show lucas base_pijama_bandagens neutro
 
     v "Saber dele eu sei, mas porra...{w=0.5} o que é um portal?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens falando
 
     l "Você realmente não sabe?"
 
+    show lucas confuso
+
     v "[l.name]... o que eu sei é que eu toquei numa luz, que na verdade era um portal, e você apareceu."
 
-    show lucas pijamab timido2
+    show lucas head_pijama_bandagens falando blush
 
     l "C-certo... me desculpa, [seuNome]. Eu não sabia o quanto você estava no escuro em relação a tudo. Eu também não sei de tudo, 
     mas algumas coisas eu consigo te explicar."
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando -blush
 
     l "Bom, como eu disse eu venho de [planeta_lucas], um planeta da galaxia de [galaxia_lucas]. O meu trabalho é evitar uma possível catástrofe 
     de acontecer que envolve não só o meu planeta, mas o seu e também a maior parte das outras galaxias."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "..."
 
-    show lucas pijamab timido1
+    show lucas confuso
 
     l "[seuNome]?"
 
-    show lucas pijamab ouvindo
-
     v "Você tá me dizendo que não é dessa galaxia e sabe do futuro não só do meu planeta, mas como de todos os outros?"
 
-    show lucas pijamab timido3
+    show lucas head_pijama_bandagens sorrindo2 blush
 
     l "Futuro? Não exatamente...{w=0.5} mas sim, [seuNome]."
 
     v "[l.name], isso ainda não explica nem metade das minhas perguntas."
 
-    show lucas pijamab timido1
+    show lucas sorrindoDesviandoOlhar
 
     l "Eu...{w=0.5} imagino...{w=0.5} provavelmente eu não consigo responder todas, mas eu farei o meu melhor!"
 
     v "Como você veio parar aqui, na Terra?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando -blush
 
     l "É uma tecnologia que nós utilizamos...{w=0.5} os portais. É considerada nova no meu planeta...{w=0.5} é como se fosse 
     um meio de trans—"
 
-    show lucas pijamab assustado1
+    show lucas assustado
 
     v "Não! Como esse portal veio para aqui, [l.name]?"
 
-    show lucas pijamab timido1
+    show lucas head_pijama_bandagens sorrindo2 blush
 
     l "Ah...{w=0.5} esse detalhe em específico eu não sei...{w=0.5} eu só sei que enviaram o portal pra algum lugar, foi o que me disseram."
 
     v "Te disseram? Quem?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando -blush
 
     l "Os meus superiores. Eles não falam muitos detalhes de como, onde nem porque comigo, apenas o necessário."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Então esse é seu... trabalho?"
 
-    show lucas pijamab sorriso2
+    show lucas sorrindo3
 
     l "Isso!{w=0.5} Bom, o meu primeiro trabalho desse tipo..."
 
     v "Tá...{w=0.5} e o que eu tenho a ver com isso?"
 
-    show lucas pijamab timido1
+    show lucas head_pijama_bandagens sorrindoDeLado blush
 
     l "Você...{w=0.5} precisa me ajudar?"
 
     v ".{w=0.5}.{w=0.5}.{w=0.5} isso é suspeitamente vago..."
 
-    show lucas pijamab timido2
+    show lucas sorrindoDesviandoOlhar
 
     l "Eu sei...{w=0.5} [seuNome], eu não sei muito sobre você, mas eu sei que você é a chave pra evitar toda essa catástrofe..."
 
     v "O que você sabe sobre mim?"
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens falando -blush
 
     l "Bom...{w=0.5} acredito que muito pouco...{w=0.5} você me invocou pouco tempo depois de ler um pouco sobre você...{w=0.5} 
     Um dia depois, exatamente."
 
-    show lucas pijamab falando
-
     l "[seuNome], 28 anos, programador em uma empresa de pesquisa e desenvolvimento do ramo científico..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Nada além disso?"
 
-    show lucas pijamab timido1
+    show lucas base_pijama_bandagens falando
 
     l "Não..."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "...{w=0.5} como você e...{w=0.5} o seu povo?{w=0.5} Sabem sobre...{w=0.5} mim?"
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "Existe uma grande tensão política em [planeta_lucas]. O risco de uma grande guerra acontecer é iminente. Com isso, o governo decidiu 
     tomar certas...{w=0.5} decisões quanto ao âmbito das relações espaciais."
@@ -1241,101 +1261,107 @@ label dia3:
     l "Mas essa escolha mudou. [planeta_lucas] começou a olhar para as outras sociedades na busca para a solução desses conflitos. 
     Eles viram potencial na Terra, especialmente em você. Então agora [planeta_lucas] precisa de você para prosperar em paz."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "...{w=0.5} eu mal sei fazer um miojo...{w=0.5} imagina salvar um planeta, uma galáxia ou o universo..."
 
-    show lucas pijamab timido4
+    show lucas head_pijama_bandagens falando
 
     l "[seuNome], [planeta_lucas] vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
 
+    show lucas neutro
+
     v "Isso soa como o maior clichê de ficção científica que eu já ouvi, [l.name]..."
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando
 
     l "Como eu disse [seuNome], eu não sei todos os detalhes... mas eu sei que te escolheram para este trabalho por um motivo."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Olha [l.name], isso seria muito legal se eu fosse uma criança com bastante tempo livre e uma imaginação fértil. Mas 
     infelizmente eu não sou nem tenho nada disso. [l.name], pelo menos 117 pessoas morreram naquele acidente. Pessoas inocentes."
 
-    show lucas pijamab triste1
+    show lucas triste1
 
     l "Eu sei, [seuNome]...{w=0.5} e se você não me ajudar, esse vai ser o primeiro de muitos incidentes como esse..."
 
     v "O que você quer dizer com isso??"
 
-    show lucas pijamab falando
+    show lucas falando
 
     l "Como eu disse, eu não vi o acidente. Mas eu sei porque ele aconteceu...{w=0.5} quem causou ele...{w=0.5} e é por isso 
     que eu preciso da sua ajuda."
 
+    show lucas neutro
+
     v "{w=0.5}.{w=0.5}.{w=0.5}.{w=0.5} Eu preciso de uma água."
 
-    show lucas pijamab triste2
+    show lucas triste2
 
     l "Eu disse demais? D-desculpa, [seuNome]..."
 
     v "É muita coisa pra digerir de uma vez só..."
 
-    show lucas pijamab triste1
+    show lucas triste1
 
     l "D-desculpa, novamente."
 
     v "Cê tá com fome?"
 
-    show lucas pijamab timido2
+    show lucas head_pijama_bandagens falando blush
 
     l "Um pouco...{w=0.5} sim."
 
+    show lucas sorrindo2
+
     v "O que você...{w=0.5} come?"
 
-    show lucas pijamab falando
+    show lucas base_pijama_bandagens falando -blush
 
     l "Eu não sou muito criterioso... qualquer coisa que você conseguir eu aceito."
 
-    show lucas pijamab ouvindo
+    show lucas neutro
 
     v "Eu vou na padaria comprar alguma coisa pra gente comer então...{w=0.5} não devo demorar muito."
 
-    show lucas pijamab sorriso2
+    show lucas sorrindo3
 
     l "Eu posso ir com você!"
 
     v "[l.name]... você não pode ir junto."
 
-    show lucas pijamab triste1
+    show lucas triste1
 
     l "Por quê?"
 
     v "...só tem humano que conversa e vai padaria aqui no planeta Terra."
 
-    show lucas pijamab sorriso2
+    show lucas sorrindo3
 
     l "Ah! Não se preocupa. Eu tenho um disfarce pra usar."
 
     v "Disfarce...?"
 
-    show lucas pijamab timido1
+    show lucas head_pijama_bandagens sorrindo3 blush
 
     l "É...{w=0.5} eu consigo me disfarçar como humano!"
 
     v "..."
 
-    show lucas pijamab duvida
+    show lucas thinking_pijama_bandagens confuso -blush
 
     l "Na verdade, eu acho que meu disfarce tá ligado desde que eu cheguei..."
 
     v "Desde que você...{w=0.5} chegou? Ontem?"
 
-    show lucas pijamab timido3
+    show lucas head_pijama_bandagens sorrindoDesviandoOlhar blush
 
     l "É...{w=0.5} mas o disfarce não funcionou com você, aparentemente."
 
     v "E como você vai garantir que vai funcionar nos outros? Convenhamos que o índice de falha entre humanos tá bem alto."
 
-    show lucas pijamab timido1
+    show lucas sorrindo2
 
     l "Esse é um dos momentos em que você precisa confiar em mim..."
 
@@ -1345,7 +1371,7 @@ label dia3:
 
     "O estômago de [l.name] faz um leve barulho."
 
-    show lucas pijamab timido2
+    show lucas sorrindoDesviandoOlhar
 
     l "Ops..."
 
@@ -1353,30 +1379,32 @@ label dia3:
 
     "O felino cora novamente com meu comentário."
 
-    show lucas pijamab timido5
+    show lucas sorrindo1
 
     l "Não necessariamente...{w=0.5} o disfarce também funciona com as minhas roupas...{w=0.5} mas eu particularmente prefiro 
     usar roupas do que andar...{w=0.5} pelado."
 
     v "Eu quis dizer...{w=0.5} você quer um outro par de roupas?"
 
-    show lucas pijamab timido3
+    show lucas sorrindoDesviandoOlhar
 
     l "A-ah...{w=0.5} eu aceitaria..."
 
     v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
 
     scene bg casa sala dia
-    show lucas ternob sorriso1 at noTapete
+    show lucas base_social_tie_vest neutro face_bandage
     with fade
+
+    show lucas falando
 
     l "Obrigado, [seuNome]. É algo que eu usaria com certeza em [planeta_lucas]."
 
-    show lucas ternob ouvindo
+    show lucas neutro
 
     v "Você tem sorte que as suas medidas são muito parecidas com as minhas."
 
-    show lucas ternob timido1
+    show lucas head_social_tie_vest sorrindo2 blush
 
     l "P-pois é..."
 
