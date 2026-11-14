@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://e2pfxqr71c1n"]
+
+[ext_resource type="Script" uid="uid://ddctwntf7b6r6" path="res://ui/PhotosensitivityWarning/PhotosensitivityWarning.gd" id="1_f3dag"]
+
+[node name="PhotosensitivityWarning" type="Control" unique_id=1597987159]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_f3dag")

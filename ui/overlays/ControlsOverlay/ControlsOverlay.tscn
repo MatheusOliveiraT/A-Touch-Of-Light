@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d4h70ti5qiwm4"]
+
+[ext_resource type="Script" uid="uid://cyo0gs82pi8pj" path="res://ui/overlays/ControlsOverlay/ControlsOverlay.gd" id="1_i7iex"]
+
+[node name="ControlsOverlay" type="Control" unique_id=1604995092]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i7iex")

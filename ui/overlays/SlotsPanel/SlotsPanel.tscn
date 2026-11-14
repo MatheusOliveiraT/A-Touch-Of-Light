@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://c5dkevrckb2sf"]
+
+[ext_resource type="Script" uid="uid://d2ufhphmmtr0d" path="res://ui/overlays/SlotsPanel/SlotsPanel.gd" id="1_xpbar"]
+
+[node name="SlotsPanel" type="Control" unique_id=157520480]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xpbar")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bipo3xcye741s"]
+
+[ext_resource type="Script" uid="uid://dp4ulpdkvsycs" path="res://ui/SplashScreen/SplashScreen.gd" id="1_lflib"]
+
+[node name="SplashScreen" type="Control" unique_id=1526821184]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_lflib")

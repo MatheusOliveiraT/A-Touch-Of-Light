@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://br4mgx2d5hnbd"]
+
+[ext_resource type="Script" uid="uid://b74u8fbu3xnl0" path="res://ui/overlays/PauseOverlay/PauseOverlay.gd" id="1_e4apw"]
+
+[node name="PauseOverlay" type="Control" unique_id=294135944]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_e4apw")

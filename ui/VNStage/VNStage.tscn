@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bssr1xql0e85d"]
+
+[ext_resource type="Script" uid="uid://mbqtmq3mbt66" path="res://ui/VNStage/VNStageController.gd" id="1_ww7wf"]
+
+[node name="VNStage" type="Control" unique_id=1015442356]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ww7wf")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=742209311]
+anchor_mode = 0
+
+[node name="BackgroundLayer" type="Control" parent="." unique_id=1141491839]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BgBack" type="TextureRect" parent="BackgroundLayer" unique_id=1476908016]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="BgFront" type="TextureRect" parent="BackgroundLayer" unique_id=798301719]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CharacterLayer" type="Control" parent="." unique_id=1280710739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="OverlayLayer" type="CanvasLayer" parent="." unique_id=967430543]
+
+[node name="CenterTextLabel" type="RichTextLabel" parent="OverlayLayer" unique_id=1375239894]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+
+[node name="TransitionRect" type="ColorRect" parent="OverlayLayer" unique_id=301349987]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=1059116835]
+layer = 2
+
+[node name="DialogueBox" type="PanelContainer" parent="UILayer" unique_id=1098041533]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/DialogueBox" unique_id=56343037]
+layout_mode = 2
+
+[node name="SpeakerLabel" type="RichTextLabel" parent="UILayer/DialogueBox/VBox" unique_id=1826444947]
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true
+
+[node name="DialogueText" type="RichTextLabel" parent="UILayer/DialogueBox/VBox" unique_id=1454871174]
+layout_mode = 2
+bbcode_enabled = true
+
+[node name="ChoicesContainer" type="VBoxContainer" parent="UILayer" unique_id=1227055040]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="InputPanel" type="PanelContainer" parent="UILayer" unique_id=736356799]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="UILayer/InputPanel" unique_id=139251434]
+layout_mode = 2
+
+[node name="InputPrompt" type="Label" parent="UILayer/InputPanel/VBox" unique_id=191494834]
+layout_mode = 2
+
+[node name="NameLineEdit" type="LineEdit" parent="UILayer/InputPanel/VBox" unique_id=1231641010]
+layout_mode = 2
+
+[node name="ConfirmButton" type="Button" parent="UILayer/InputPanel/VBox" unique_id=22634530]
+layout_mode = 2
+text = "Confirmar"
+
+[node name="AudioPlayers" type="Node2D" parent="." unique_id=1788742001]
+
+[node name="MusicA" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1136328768]
+bus = &"Music"
+
+[node name="MusicB" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=837098363]
+bus = &"Music"
+
+[node name="SfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=350213167]
+bus = &"SFX"
+
+[node name="LoopSfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1567831167]
+bus = &"SFX"

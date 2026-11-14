@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bodviht2qidqm"]
+
+[ext_resource type="Script" uid="uid://c5o7e8twh70c0" path="res://ui/overlays/HistoryOverlay/HistoryOverlay.gd" id="1_asp3j"]
+
+[node name="HistoryOverlay" type="Control" unique_id=1280167335]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_asp3j")

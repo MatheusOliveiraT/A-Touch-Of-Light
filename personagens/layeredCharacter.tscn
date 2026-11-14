@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://tl8v3tvi3b7j"]
+
+[ext_resource type="Script" uid="uid://dai2h77k3chik" path="res://personagens/layeredCharacter.gd" id="1_vhr2e"]
+
+[node name="LayeredCharacterSprite" type="Control" unique_id=896092153]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vhr2e")

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://vb4fw3kde3u0"]
+
+[ext_resource type="Script" uid="uid://cs54lnkbpd7up" path="res://ui/overlays/SettingsOverlay/SettingsOverlay.gd" id="1_fvx5w"]
+
+[node name="SettingsOverlay" type="Control" unique_id=302897224]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fvx5w")

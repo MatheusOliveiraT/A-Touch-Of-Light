@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bemtqminy1ufw"]
+
+[ext_resource type="Script" uid="uid://b1q6vqlrl0gmi" path="res://ui/overlays/GalleryOverlay/GalleryOverlay.gd" id="1_yfdpj"]
+
+[node name="GalleryOverlay" type="Control" unique_id=1343935011]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yfdpj")
