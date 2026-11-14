@@ -182,8 +182,8 @@ play sound sirene volume 0.75
 queue sound alarme loop volume 0.25 fadein 2.0
 pause 5.0
 if persistent.flashing_effects:
-    show red_alarm_overlay at alarm_flash
-    with dissolve
+	show red_alarm_overlay at alarm_flash
+	with dissolve
 play music musicaTensa1 fadein 0.5
 cient1 "Atenção! Atenção! Acelerador de partículas ativado! Todos os funcionários devem se retirar imediatamente do prédio!"
 cient2 "O que tá acontecendo!? Por que o acelerador foi ativado sem autorização!? Isso não é seguro!"
@@ -221,7 +221,7 @@ cient1 "Você tá mentindo... Não, tem alguma coisa que a gente pode fazer!"
 cient2 "...Eu sinto muito."
 "Eu começo a sentir uma dor de cabeça intensa. A energia acumulada tá me afetando... meu coração tá apertando e meu batimento cardíaco tá disparando..."
 if persistent.flashing_effects:
-    camera at earthquake_loop
+	camera at earthquake_loop
 play music musicaTensa2 fadein 1.0
 cient1 "O chão... tá tudo tremendo... olha as janelas! Elas tão tremendo, cara!"
 "O outro cientista começa a suar frio, claramente reagindo não só ao estresse, mas ao aumento da energia."
@@ -244,7 +244,7 @@ cient1 "AHHHH!"
 "Por alguns segundos tudo ficou em silëncio, mas logo depois o barulho do acelerador se intensifica, e a energia acumulada começa a se dissipar em uma explosão de luz e calor."
 "A temperatura começa a subir rapidamente, e o ar rarefeito se torna cada vez mais denso."
 if persistent.flashing_effects:
-    camera at stop_earthquake
+	camera at stop_earthquake
 stop sound
 scene bg_white
 play sound explosao1
@@ -417,10 +417,10 @@ input povnome "Qual o seu nome?"
 "O nome [povnome] está correto?"
 menu:
   > "Sim"
-    $ seuNome = povnome
-    jump _dia2pt2
+	$ seuNome = povnome
+	jump _dia2pt2
   > "Não"
-    jump darNome
+	jump darNome
 
 == _dia2pt2 ==
 

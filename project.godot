@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="A Touch of Light"
-run/main_scene="uid://bssr1xql0e85d"
+run/main_scene="uid://bipo3xcye741s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

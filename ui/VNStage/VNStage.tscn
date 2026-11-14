@@ -23,16 +23,22 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="BgBack" type="TextureRect" parent="BackgroundLayer" unique_id=1476908016]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
 [node name="BgFront" type="TextureRect" parent="BackgroundLayer" unique_id=798301719]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 expand_mode = 1
 stretch_mode = 6
 
@@ -138,13 +144,9 @@ text = "Confirmar"
 [node name="AudioPlayers" type="Node2D" parent="." unique_id=1788742001]
 
 [node name="MusicA" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1136328768]
-bus = &"Music"
 
 [node name="MusicB" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=837098363]
-bus = &"Music"
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=350213167]
-bus = &"SFX"
 
 [node name="LoopSfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1567831167]
-bus = &"SFX"

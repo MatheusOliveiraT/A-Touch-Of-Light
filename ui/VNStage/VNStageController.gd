@@ -6,14 +6,9 @@ signal chapter_finished(label_name: String)
 
 const LAYERED_CHAR_SCENE := preload("res://personagens/layeredCharacter.tscn")
 const MAX_ROLLBACK_STEPS := 60
+const MAX_HISTORY_ENTRIES := 250
 
 @export var manifest_path := "res://data/res_manifest.json"
-@export var script_files: Array[String] = [
-	"res://data/res_script.vn",
-	"res://data/res_prologo.vn",
-	"res://data/res_cap1.vn"
-]
-@export var typewriter_speed := 0.022
 
 @onready var camera: Camera2D = $Camera2D
 @onready var bg_back: TextureRect = $BackgroundLayer/BgBack
@@ -56,13 +51,22 @@ var pending_input_var := ""
 var type_tween: Tween
 var earthquake_tween: Tween
 var rollback_stack: Array[Dictionary] = []
+var dialogue_history: Array[Dictionary] = []
 
 func _ready() -> void:
 	active_music_player = music_a
 	confirm_button.pressed.connect(_on_input_confirmed)
 	name_line_edit.text_submitted.connect(func(_t): _on_input_confirmed())
+	GlobalData.language_changed.connect(_on_language_changed)
 	_load_manifest()
 	_load_all_scripts()
+	if not GlobalData.pending_load_path.is_empty() and FileAccess.file_exists(GlobalData.pending_load_path):
+		var save_file := FileAccess.open(GlobalData.pending_load_path, FileAccess.READ)
+		var parsed: Variant = JSON.parse_string(save_file.get_as_text())
+		GlobalData.pending_load_path = ""
+		if parsed is Dictionary and parsed.has("snapshot"):
+			restore_state_snapshot(parsed["snapshot"])
+			return
 	jump_to_label("start")
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -77,6 +81,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		rollback()
 
+func _on_language_changed(_lang: String) -> void:
+	_load_all_scripts()
+	if labels.has(current_label):
+		event_queue = (labels[current_label] as Array).duplicate(true)
+		_process_current_event()
+
 func _load_manifest() -> void:
 	var file := FileAccess.open(manifest_path, FileAccess.READ)
 	if not file:
@@ -90,7 +100,7 @@ func _load_manifest() -> void:
 
 func _load_all_scripts() -> void:
 	labels.clear()
-	for path in script_files:
+	for path in GlobalData.get_script_paths():
 		if not FileAccess.file_exists(path):
 			continue
 		var file := FileAccess.open(path, FileAccess.READ)
@@ -169,12 +179,14 @@ func _parse_vn_script(raw_text: String) -> Dictionary:
 		var event := _parse_vn_line(trimmed)
 		if not event.is_empty():
 			(result[cur_label] as Array).append(event)
+
 	if mode == "menu" and not cur_label.is_empty():
 		if not cur_opt.is_empty():
 			menu_opts.append(cur_opt)
 		(result[cur_label] as Array).append({"type": "menu", "options": menu_opts})
 	elif mode == "if" and not cur_label.is_empty():
 		(result[cur_label] as Array).append({"type": "if", "condition": if_cond, "actions": if_acts})
+
 	return result
 
 func _preprocess_vn_lines(raw_text: String) -> Array[Dictionary]:
@@ -222,12 +234,15 @@ func _parse_vn_line(line: String) -> Dictionary:
 		var rest := line.substr(10).strip_edges()
 		var parts := rest.split(" with ", false, 1)
 		var txt := parts[0].strip_edges().trim_prefix('"').trim_suffix('"')
+		@warning_ignore("incompatible_ternary")
 		return {"type": "show_text", "text": txt, "transition": parts[1].strip_edges() if parts.size() > 1 else null}
 	if line.begins_with("scene "):
 		var parts := line.substr(6).strip_edges().split(" with ", false, 1)
+		@warning_ignore("incompatible_ternary")
 		return {"type": "scene", "asset": parts[0].strip_edges(), "transition": parts[1].strip_edges() if parts.size() > 1 else null}
 	if line.begins_with("show "):
 		var rest := line.substr(5).strip_edges()
+		@warning_ignore("shadowed_variable_base_class")
 		var tr: Variant = null
 		var pos := "center"
 		if " with " in rest:
@@ -249,6 +264,7 @@ func _parse_vn_line(line: String) -> Dictionary:
 		return {"type": "show", "character": tokens[0], "attributes": attrs, "removed_attributes": rems, "position": pos, "transition": tr}
 	if line.begins_with("hide "):
 		var parts := line.substr(5).strip_edges().split(" with ", false, 1)
+		@warning_ignore("incompatible_ternary")
 		return {"type": "hide", "character": parts[0].strip_edges(), "transition": parts[1].strip_edges() if parts.size() > 1 else null}
 	if line.begins_with("play ") or line.begins_with("queue "):
 		var tokens := line.split(" ", false)
@@ -271,6 +287,7 @@ func _parse_vn_line(line: String) -> Dictionary:
 		return {"type": "transition", "effect": line.substr(5).strip_edges()}
 	if line.begins_with("pause"):
 		var parts := line.split(" ", false)
+		@warning_ignore("incompatible_ternary")
 		return {"type": "pause", "duration": float(parts[1]) if parts.size() > 1 else null}
 	if line.begins_with("camera at "):
 		return {"type": "camera", "effect": line.substr(10).strip_edges()}
@@ -285,7 +302,7 @@ func jump_to_label(label_name: String) -> void:
 		push_error("Label inexistente: " + label_name)
 		return
 	current_label = label_name
-	event_queue = labels[label_name].duplicate(true)
+	event_queue = (labels[label_name] as Array).duplicate(true)
 	current_index = 0
 	_process_current_event()
 
@@ -336,10 +353,10 @@ func _process_current_event() -> void:
 			"transition":
 				await _play_screen_transition(ev.get("effect", "fade"))
 			"pause":
-				var dur = ev.get("duration")
-				if dur != null and dur > 0.0:
+				var dur: Variant = ev.get("duration")
+				if dur != null and float(dur) > 0.0:
 					is_paused = true
-					await get_tree().create_timer(dur).timeout
+					await get_tree().create_timer(float(dur)).timeout
 					is_paused = false
 				else:
 					return
@@ -363,43 +380,67 @@ func _process_current_event() -> void:
 				return
 		current_index += 1
 	emit_signal("chapter_finished", current_label)
+
 func _inject_events_at_next(actions: Array) -> void:
 	for i in range(actions.size()):
-		event_queue.insert(current_index + 1 + i, actions[i].duplicate(true))
+		event_queue.insert(current_index + 1 + i, (actions[i] as Dictionary).duplicate(true))
+
+func _get_character_display_name(speaker_id: String) -> String:
+	var tr_name := GlobalData.tr_ui("characters", speaker_id)
+	if not tr_name.begins_with("characters."):
+		return tr_name
+	var char_info: Dictionary = manifest.get("characters", {}).get(speaker_id, {})
+	return str(char_info.get("default_name", speaker_id))
 
 func _show_dialogue(speaker_id: String, raw_text: String) -> void:
 	dialogue_box.visible = true
 	center_text_label.visible = false
+	var final_text := _interpolate_text(raw_text)
+	var display_name := ""
+	var color_hex := "#ffffff"
 	if speaker_id.is_empty():
 		speaker_label.text = ""
 		speaker_label.visible = false
 	else:
 		speaker_label.visible = true
 		var char_info: Dictionary = manifest.get("characters", {}).get(speaker_id, {})
-		var display_name: String = char_info.get("name", speaker_id)
-		var color_hex: String = char_info.get("color", "#ffffff")
-		speaker_label.text = "[b][color=%s]%s[/color][/b]" % [color_hex, _interpolate_text(display_name)]
-	var final_text := _interpolate_text(raw_text)
+		display_name = _interpolate_text(_get_character_display_name(speaker_id))
+		color_hex = str(char_info.get("color", "#ffffff"))
+		speaker_label.text = "[b][color=%s]%s[/color][/b]" % [color_hex, display_name]
+	_append_history(display_name, color_hex, final_text)
 	dialogue_text.text = final_text
 	dialogue_text.visible_ratio = 0.0
 	is_typing = true
-	var duration := final_text.length() * typewriter_speed
+	var speed: float = GlobalData.settings.get("typewriter_speed", 0.022)
+	var duration := final_text.length() * speed
 	if type_tween:
 		type_tween.kill()
 	type_tween = create_tween()
 	type_tween.tween_property(dialogue_text, "visible_ratio", 1.0, max(duration, 0.05))
 	type_tween.finished.connect(func(): is_typing = false)
 
+func _append_history(speaker_name: String, color_hex: String, text: String) -> void:
+	if not dialogue_history.is_empty():
+		var last: Dictionary = dialogue_history.back()
+		if last["speaker"] == speaker_name and last["text"] == text:
+			return
+	dialogue_history.append({"speaker": speaker_name, "color": color_hex, "text": text})
+	if dialogue_history.size() > MAX_HISTORY_ENTRIES:
+		dialogue_history.pop_front()
+
 func _interpolate_text(text: String) -> String:
 	var result := text
-	for c_id in manifest.get("characters", {}).keys():
-		var c_name: String = manifest["characters"][c_id].get("name", "")
-		result = result.replace("[%s.name]" % c_id, c_name)
+	for c_id in (manifest.get("characters", {}) as Dictionary).keys():
+		result = result.replace("[%s.name]" % c_id, _get_character_display_name(c_id))
+	for term_key in ["agencia_sigla", "agencia"]:
+		var tr_val := GlobalData.tr_ui("terms", term_key)
+		if not tr_val.begins_with("terms."):
+			result = result.replace("[%s]" % term_key, tr_val)
 	for key in variables.keys():
 		result = result.replace("[%s]" % key, str(variables[key]))
 	return result
 
-func _change_background(asset_id: String, transition) -> void:
+func _change_background(asset_id: String, transition: Variant) -> void:
 	current_bg_id = asset_id
 	var bg_map: Dictionary = manifest.get("backgrounds", {})
 	var cg_map: Dictionary = manifest.get("cgs", {})
@@ -412,12 +453,12 @@ func _change_background(asset_id: String, transition) -> void:
 		tex = load(bg_map[asset_id])
 	elif cg_map.has(asset_id):
 		tex = load(cg_map[asset_id])
-		var cg_flag := asset_id.trim_prefix("cg_").rstrip("0123456789")
-		if variables.has(cg_flag):
-			variables[cg_flag] = true
+		var cg_key := asset_id.trim_prefix("cg_").rstrip("0123456789")
+		GlobalData.unlock_cg(cg_key)
 	if tex == null:
 		return
-	if transition != null:
+	var use_transitions: bool = GlobalData.settings.get("transitions_enabled", true)
+	if transition != null and use_transitions:
 		bg_front.texture = tex
 		bg_front.modulate.a = 0.0
 		var tw := create_tween()
@@ -429,7 +470,7 @@ func _change_background(asset_id: String, transition) -> void:
 	else:
 		bg_back.texture = tex
 
-func _show_character(char_id: String, attrs: Array, removed: Array, pos_name: String, transition) -> void:
+func _show_character(char_id: String, attrs: Array, removed: Array, pos_name: String, transition: Variant) -> void:
 	var layered_defs: Dictionary = manifest.get("layered_characters", {})
 	var sprite_node: LayeredCharacterSprite
 	if active_characters.has(char_id):
@@ -441,24 +482,25 @@ func _show_character(char_id: String, attrs: Array, removed: Array, pos_name: St
 		active_characters[char_id] = sprite_node
 		if layered_defs.has(char_id):
 			sprite_node.setup(layered_defs[char_id])
-		elif manifest.get("assets", {}).has(char_id):
+		elif (manifest.get("assets", {}) as Dictionary).has(char_id):
 			sprite_node.setup({
 				"zoom": 0.85,
 				"groups": {"base": {"default": "default", "items": {"default": manifest["assets"][char_id]}}},
 				"overlays": {}
 			})
-		if transition != null:
+		if transition != null and GlobalData.settings.get("transitions_enabled", true):
 			sprite_node.modulate.a = 0.0
 			create_tween().tween_property(sprite_node, "modulate:a", 1.0, 0.25)
+
 	sprite_node.apply_attributes(attrs, removed)
 	_apply_character_position(sprite_node, pos_name)
 
-func _hide_character(char_id: String, transition) -> void:
+func _hide_character(char_id: String, transition: Variant) -> void:
 	if not active_characters.has(char_id):
 		return
 	var node: LayeredCharacterSprite = active_characters[char_id]
 	active_characters.erase(char_id)
-	if transition != null:
+	if transition != null and GlobalData.settings.get("transitions_enabled", true):
 		var tw := create_tween()
 		tw.tween_property(node, "modulate:a", 0.0, 0.25)
 		tw.finished.connect(node.queue_free)
@@ -474,9 +516,9 @@ func _apply_character_position(node: Control, pos_name: String) -> void:
 		var yoffset: float = t.get("yoffset", 0.0)
 		node.position = Vector2(viewport_size.x * xalign, viewport_size.y + yoffset)
 		if t.has("xzoom"):
-			node.scale.x = abs(node.scale.x) * t["xzoom"]
+			node.scale.x = abs(node.scale.x) * float(t["xzoom"])
 		if t.has("yzoom"):
-			node.scale.y = abs(node.scale.y) * t["yzoom"]
+			node.scale.y = abs(node.scale.y) * float(t["yzoom"])
 		return
 	match pos_name:
 		"left", "ladoEsquerdo":
@@ -492,12 +534,13 @@ func _show_choices(options: Array) -> void:
 	for child in choices_container.get_children():
 		child.queue_free()
 	for opt in options:
+		var opt_dict: Dictionary = opt
 		var btn := Button.new()
-		btn.text = _interpolate_text(opt.get("text", ""))
+		btn.text = _interpolate_text(str(opt_dict.get("text", "")))
 		btn.pressed.connect(func():
 			choices_container.visible = false
 			is_waiting_choice = false
-			_inject_events_at_next(opt.get("actions", []))
+			_inject_events_at_next(opt_dict.get("actions", []))
 			advance()
 		)
 		choices_container.add_child(btn)
@@ -574,15 +617,17 @@ func _stop_audio_event(channel: String, fadeout: float) -> void:
 		sfx_player.stop()
 		loop_sfx_player.stop()
 
-func _show_center_text(text: String, transition) -> void:
+func _show_center_text(text: String, transition: Variant) -> void:
 	dialogue_box.visible = false
 	center_text_label.text = "[center]%s[/center]" % _interpolate_text(text)
 	center_text_label.visible = true
-	if transition != null:
+	if transition != null and GlobalData.settings.get("transitions_enabled", true):
 		center_text_label.modulate.a = 0.0
 		create_tween().tween_property(center_text_label, "modulate:a", 1.0, 0.5)
 
 func _play_screen_transition(effect: String) -> void:
+	if not GlobalData.settings.get("transitions_enabled", true):
+		return
 	var fade_in_time := 0.4
 	var fade_out_time := 0.4
 	if effect.begins_with("Fade("):
@@ -600,6 +645,8 @@ func _play_screen_transition(effect: String) -> void:
 
 func _handle_camera_effect(effect: String) -> void:
 	if effect == "earthquake_loop":
+		if not GlobalData.flashing_effects:
+			return
 		if earthquake_tween:
 			earthquake_tween.kill()
 		earthquake_tween = create_tween().set_loops()
@@ -614,6 +661,8 @@ func _handle_camera_effect(effect: String) -> void:
 
 func _evaluate_condition(cond: String) -> bool:
 	var clean_cond := cond.replace("persistent.", "")
+	if clean_cond == "flashing_effects":
+		return GlobalData.flashing_effects
 	if variables.has(clean_cond):
 		return bool(variables[clean_cond])
 	return true
@@ -636,7 +685,7 @@ func create_state_snapshot() -> Dictionary:
 		var node: LayeredCharacterSprite = active_characters[c_id]
 		chars_state[c_id] = {
 			"attributes": node.get_state(),
-			"position": node.position
+			"position": {"x": node.position.x, "y": node.position.y}
 		}
 	return {
 		"label": current_label,
@@ -645,23 +694,28 @@ func create_state_snapshot() -> Dictionary:
 		"variables": variables.duplicate(true),
 		"bg": current_bg_id,
 		"music": current_music_id,
-		"characters": chars_state
+		"characters": chars_state,
+		"history": dialogue_history.duplicate(true)
 	}
 
 func restore_state_snapshot(snap: Dictionary) -> void:
 	current_label = snap["label"]
-	event_queue = snap["queue"].duplicate(true)
+	event_queue = (snap["queue"] as Array).duplicate(true)
 	current_index = snap["index"]
-	variables = snap["variables"].duplicate(true)
+	variables = (snap["variables"] as Dictionary).duplicate(true)
+	if snap.has("history"):
+		dialogue_history.assign(snap["history"])
 	if snap["bg"] != current_bg_id:
 		_change_background(snap["bg"], null)
 	for c_id in active_characters.keys():
-		active_characters[c_id].queue_free()
+		(active_characters[c_id] as Node).queue_free()
 	active_characters.clear()
 	var chars_state: Dictionary = snap.get("characters", {})
 	for c_id in chars_state.keys():
-		_show_character(c_id, chars_state[c_id]["attributes"], [], "center", null)
-		active_characters[c_id].position = chars_state[c_id]["position"]
+		var c_data: Dictionary = chars_state[c_id]
+		_show_character(c_id, c_data["attributes"], [], "center", null)
+		var pos_dict: Dictionary = c_data["position"]
+		(active_characters[c_id] as Control).position = Vector2(float(pos_dict["x"]), float(pos_dict["y"]))
 	_process_current_event()
 
 func _record_rollback_snapshot() -> void:

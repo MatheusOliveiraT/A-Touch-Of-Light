@@ -1,14 +1,13 @@
 extends Control
 
-const MAIN_MENU_SCENE := "res://ui/MainMenu.tscn"
-
-const TEXT_ABOUT := "A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência."
-const TEXT_DEV := "Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento."
+const MAIN_MENU_SCENE := "res://ui/MainMenu/MainMenu.tscn"
 
 @onready var splash_label: RichTextLabel = $CenterContainer/SplashLabel
 @onready var photo_panel: Control = $PhotosensitivityOverlay
-@onready var effects_check: CheckBox = $PhotosensitivityOverlay/VBox/EffectsCheckBox
-@onready var confirm_btn: Button = $PhotosensitivityOverlay/VBox/ConfirmButton
+@onready var effects_check: CheckBox = $PhotosensitivityOverlay/VBox/CenterContainer/VBox/EffectsCheckBox
+@onready var confirm_btn: Button = $PhotosensitivityOverlay/VBox/CenterContainer/VBox/ConfirmButton
+@onready var text_warning: RichTextLabel = $PhotosensitivityOverlay/VBox/Text
+@onready var title_warning: Label = $PhotosensitivityOverlay/VBox/Title
 
 var _step := 0
 var _active_tween: Tween
@@ -17,9 +16,14 @@ func _ready() -> void:
 	photo_panel.visible = false
 	splash_label.modulate.a = 0.0
 	effects_check.button_pressed = GlobalData.flashing_effects
+	title_warning.text = GlobalData.tr_ui("splash", "warning_title")
+	text_warning.text = GlobalData.tr_ui("splash", "warning_body")
+	effects_check.text = GlobalData.tr_ui("splash", "warning_checkbox")
+	confirm_btn.text = GlobalData.tr_ui("splash", "warning_confirm")
 	confirm_btn.pressed.connect(_on_photosensitivity_confirmed)
+	
 	await get_tree().create_timer(1.0).timeout
-	_show_splash_text(TEXT_ABOUT, 1)
+	_show_splash_text(GlobalData.tr_ui("splash", "about"), 1)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if photo_panel.visible:
@@ -42,7 +46,7 @@ func _show_splash_text(bbcode: String, step_id: int) -> void:
 func _advance_splash() -> void:
 	splash_label.modulate.a = 0.0
 	if _step == 1:
-		_show_splash_text(TEXT_DEV, 2)
+		_show_splash_text(GlobalData.tr_ui("splash", "dev"), 2)
 	elif _step == 2:
 		_step = 3
 		if not GlobalData.photosensitivity_warned:

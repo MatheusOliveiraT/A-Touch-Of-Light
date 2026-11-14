@@ -62,127 +62,40 @@
   "cgs": {
 	"icone_bloqueado": "res://assets/images/cg/ibloqueado.png",
 	"icone_escombros": "res://assets/images/cg/iescombros.png",
-	"icone_shopping": "res://assets/images/cg/ishopping.png"
+	"cg_escombros1": "res://assets/images/cg/escombros1.png",
+	"cg_escombros2": "res://assets/images/cg/escombros2.png",
+	"cg_escombros3": "res://assets/images/cg/escombros3.png",
+	"icone_shopping": "res://assets/images/cg/ishopping.png",
+	"cg_shopping": "res://assets/images/cg/shopping.png"
   },
   "characters": {
-	"v": {
-	  "name": "Você",
-	  "color": "#ffffff",
-	  "image": null
-	},
-	"v_e": {
-	  "name": "You",
-	  "color": "#ffffff",
-	  "image": null
-	},
-	"vz": {
-	  "name": "Vizinho",
-	  "color": "#ababab",
-	  "image": null
-	},
-	"vz_e": {
-	  "name": "Neighbour",
-	  "color": "#ababab",
-	  "image": null
-	},
-	"null": {
-	  "name": "???",
-	  "color": "#ababab",
-	  "image": null
-	},
-	"ate": {
-	  "name": "Atendente",
-	  "color": "#ababab",
-	  "image": null
-	},
-	"ate_e": {
-	  "name": "Server",
-	  "color": "#ababab",
-	  "image": null
-	},
-	"r": {
-	  "name": "Rafael",
-	  "color": "#2f2f2f",
-	  "image": null
-	},
-	"e": {
-	  "name": "Erick",
-	  "color": "#01c901",
-	  "image": null
-	},
-	"seg": {
-	  "name": "Segurança",
-	  "color": "#2f2f2f",
-	  "image": null
-	},
-	"seg_e": {
-	  "name": "Security",
-	  "color": "#2f2f2f",
-	  "image": null
-	},
-	"cient1": {
-	  "name": "Cientista 1",
-	  "color": "#1c4c00",
-	  "image": null
-	},
-	"cient1_e": {
-	  "name": "Scientist 1",
-	  "color": "#1c4c00",
-	  "image": null
-	},
-	"cient2": {
-	  "name": "Cientista 2",
-	  "color": "#00264c",
-	  "image": null
-	},
-	"cient2_e": {
-	  "name": "Scientist 2",
-	  "color": "#00264c",
-	  "image": null
-	},
-	"l": {
-	  "name": "Lucas",
-	  "color": "#9900ff",
-	  "image": "lucas"
-	}
+	"v": { "default_name": "Você", "color": "#ffffff", "image": null },
+	"vz": { "default_name": "Vizinho", "color": "#ababab", "image": null },
+	"null": { "default_name": "???", "color": "#ababab", "image": null },
+	"ate": { "default_name": "Atendente", "color": "#ababab", "image": null },
+	"r": { "default_name": "Rafael", "color": "#2f2f2f", "image": null },
+	"e": { "default_name": "Erick", "color": "#01c901", "image": null },
+	"seg": { "default_name": "Segurança", "color": "#2f2f2f", "image": null },
+	"cient1": { "default_name": "Cientista 1", "color": "#1c4c00", "image": null },
+	"cient2": { "default_name": "Cientista 2", "color": "#00264c", "image": null },
+	"l": { "default_name": "Lucas", "color": "#9900ff", "image": "lucas" }
   },
   "variables": {
 	"seuNome": "Leonardo",
 	"planeta_lucas": "Lumen",
 	"galaxia_lucas": "Andromeda",
 	"pais_lucas": "Jhormthyr",
-	"agencia_pt_sigla": "ANEGEA",
-	"agencia_pt": "Administração Nacional Extragalacxial, Espacial e Aeronáutica",
-	"agencia_en_allas": "NEGASA",
-	"agencia_en": "National Extragalaxial, Aeronautics and Spacial Administration",
-	"nome_implante": "PlaceHolder",
-	"escombros": false,
-	"shopping": false
+	"nome_implante": "PlaceHolder"
   },
   "layered_characters": {
 	"lucas": {
 	  "zoom": 0.8,
 	  "layer_order": [
-		{
-		  "kind": "group",
-		  "name": "outfit"
-		},
-		{
-		  "kind": "group",
-		  "name": "face"
-		},
-		{
-		  "kind": "overlay",
-		  "name": "face_bandage"
-		},
-		{
-		  "kind": "overlay",
-		  "name": "blush"
-		},
-		{
-		  "kind": "overlay",
-		  "name": "sweat"
-		}
+		{ "kind": "group", "name": "outfit" },
+		{ "kind": "group", "name": "face" },
+		{ "kind": "overlay", "name": "face_bandage" },
+		{ "kind": "overlay", "name": "blush" },
+		{ "kind": "overlay", "name": "sweat" }
 	  ],
 	  "groups": {
 		"outfit": {
