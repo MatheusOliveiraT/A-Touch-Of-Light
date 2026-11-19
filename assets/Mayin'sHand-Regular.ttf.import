@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c8qod8g32c2do"
-path="res://.godot/imported/NotJamBoreBlasters21.ttf-0ab07615e1d8f41abbf46dfdc611eb7e.fontdata"
+uid="uid://ftpxkdmprjgn"
+path="res://.godot/imported/Mayin'sHand-Regular.ttf-7765fb849eab3bd868c2ad4eef6f34a9.fontdata"
 
 [deps]
 
-source_file="res://assets/NotJamBoreBlasters21.ttf"
-dest_files=["res://.godot/imported/NotJamBoreBlasters21.ttf-0ab07615e1d8f41abbf46dfdc611eb7e.fontdata"]
+source_file="res://assets/Mayin'sHand-Regular.ttf"
+dest_files=["res://.godot/imported/Mayin'sHand-Regular.ttf-7765fb849eab3bd868c2ad4eef6f34a9.fontdata"]
 
 [params]
 
@@ -30,7 +30,14 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
 language_support={}
 script_support={}
-opentype_features={}
+opentype_features={
+1818847073: 0
+}

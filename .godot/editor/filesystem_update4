@@ -1,9 +1,9 @@
 res://ui/SplashScreen/SplashScreen.tscn
-res://ui/MainMenu/MainMenu.gd
-res://autoload/globalData.gd
-res://ui/SplashScreen/SplashScreen.gd
-res://data/pt/ui.json
+res://ui/components/NavHoverButton.gd
+res://ui/MainMenu/MainMenu.tscn
+res://default_bus_layout.tres
 res://ui/VNStage/VNStage.tscn
-res://data/res_manifest.json
-res://data/pt/res_prologo.vn
-res://ui/VNStage/VNStageController.gd
+res://ui/MainMenu/MainMenu.gd
+res://ui/GameMenuShell/GameMenuShell.tscn
+res://ui/GameMenuShell/GameMenuShell.gd
+res://ui/overlays/AboutOverlay/AboutOverlay.tscn

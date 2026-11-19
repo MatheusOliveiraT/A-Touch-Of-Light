@@ -144,9 +144,13 @@ text = "Confirmar"
 [node name="AudioPlayers" type="Node2D" parent="." unique_id=1788742001]
 
 [node name="MusicA" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1136328768]
+bus = &"Music"
 
 [node name="MusicB" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=837098363]
+bus = &"Music"
 
 [node name="SfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=350213167]
+bus = &"SFX"
 
 [node name="LoopSfxPlayer" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=1567831167]
+bus = &"SFX"
