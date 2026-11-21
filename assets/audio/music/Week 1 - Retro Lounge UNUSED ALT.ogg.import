@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgr2tfopf0acr"
+path="res://.godot/imported/Week 1 - Retro Lounge UNUSED ALT.ogg-a2170ce216ad9b20b58aea85ce250fec.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Week 1 - Retro Lounge UNUSED ALT.ogg"
+dest_files=["res://.godot/imported/Week 1 - Retro Lounge UNUSED ALT.ogg-a2170ce216ad9b20b58aea85ce250fec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

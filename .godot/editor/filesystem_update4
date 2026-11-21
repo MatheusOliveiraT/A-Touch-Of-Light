@@ -1,0 +1,14 @@
+res://autoload/globalData.gd
+res://autoload/GlobalData.gd
+res://ui/VNStage/VNStage.tscn
+res://ui/VNStage/VNStageController.gd
+res://ui/SplashScreen/SplashScreen.gd
+res://ui/MainMenu/MainMenu.gd
+res://data/pt/res_prologo.vn
+res://data/pt/res_script.vn
+res://ui/MainMenu/MainMenu.tscn
+res://theme/theme.tres
+res://theme/button_unfocus.tres
+res://personagens/layeredCharacter.tscn
+res://personagens/layeredCharacter.gd
+res://data/res_manifest.json

@@ -1,0 +1,210 @@
+{
+  "audio": {
+	"musicaAnimada1": "res://assets/audio/music/Sketchbook 2024-01-24_02.ogg",
+	"musicaTensa1": "res://assets/audio/music/Sketchbook 2024-02-14_L01.ogg",
+	"musicaTensa2": "res://assets/audio/music/Sketchbook 2024-02-14_L02.ogg",
+	"musicaSoft": "res://assets/audio/music/Sketchbook 2024-02-28_02.ogg",
+	"musicaMisteriosa1": "res://assets/audio/music/Sketchbook 2024-03-06_02.ogg",
+	"musicaTensaCuriosa": "res://assets/audio/music/Sketchbook 2024-03-20_02.ogg",
+	"musicaMelancolica1": "res://assets/audio/music/Sketchbook 2024-04-24_03.ogg",
+	"musicaMisteriosa2": "res://assets/audio/music/Sketchbook 2024-05-01_01.ogg",
+	"musicaMelancolica2": "res://assets/audio/music/Sketchbook 2024-06-16.ogg",
+	"musicaLenta": "res://assets/audio/music/Sketchbook 2024-07-19_L02.ogg",
+	"musicaTensaMisteriosa": "res://assets/audio/music/Sketchbook 2024-08-13.ogg",
+	"musicaTensaMelancolica": "res://assets/audio/music/Sketchbook 2024-10-13.ogg",
+	"musicaAnimada2": "res://assets/audio/music/Sketchbook 2024-10-26.ogg",
+	"musicaAnsiosa": "res://assets/audio/music/Week 13 - Primordial Soup BASE.ogg",
+	"musicaFeliz1": "res://assets/audio/music/Week 15 - Sunburn BEACH HOUSE.ogg",
+	"musicaFeliz2": "res://assets/audio/music/Week 15 - Sunburn SPF 3000.ogg",
+	"musicaTranquila": "res://assets/audio/music/Week 21 - Freefall WHAT A VIEW.ogg",
+	"musicaMelancolica3": "res://assets/audio/music/Week 24 - Pull Me Down GRAVITY.ogg",
+	"whiteNoise": "res://assets/audio/sfx/whiteNoise.ogg",
+	"ondaTensa": "res://assets/audio/sfx/ondaTensa.ogg",
+	"campainha": "res://assets/audio/sfx/campainha.ogg",
+	"explosao1": "res://assets/audio/sfx/explosao1.ogg",
+	"explosao2": "res://assets/audio/sfx/explosao2.ogg",
+	"energia": "res://assets/audio/sfx/energia.ogg",
+	"portal": "res://assets/audio/sfx/portal.ogg",
+	"chiado": "res://assets/audio/sfx/chiado.ogg",
+	"elevador": "res://assets/audio/sfx/elevador.ogg",
+	"sirene": "res://assets/audio/sfx/sirene.ogg",
+	"alarme": "res://assets/audio/sfx/alarme.ogg",
+	"ondaDescendo": "res://assets/audio/sfx/ondaDescendo.ogg"
+  },
+  "backgrounds": {
+	"bg_white": "res://assets/images/background/white.png",
+	"bg_rua_dia": "res://assets/images/background/ruaDia.png",
+	"bg_rua_noite": "res://assets/images/background/ruaNoite.png",
+	"bg_estacionamento": "res://assets/images/background/estacionamento.png",
+	"bg_sala_casa_dia": "res://assets/images/background/salaDia.png",
+	"bg_sala_casa_noite": "res://assets/images/background/salaNoite.png",
+	"bg_banheiro_casa_dia": "res://assets/images/background/banheiroDia.png",
+	"bg_banheiro_casa_noite": "res://assets/images/background/banheiroNoite.png",
+	"bg_quarto_casa_dia": "res://assets/images/background/quartoDia.png",
+	"bg_quarto_casa_noite": "res://assets/images/background/quartoNoite.png",
+	"bg_cozinha_casa_dia": "res://assets/images/background/cozinhaDia.png",
+	"bg_cozinha_casa_noite": "res://assets/images/background/cozinhaNoite.png",
+	"bg_hall_dia": "res://assets/images/background/hallDia.png",
+	"bg_hall_noite": "res://assets/images/background/hallNoite.png",
+	"bg_laboratorio": "res://assets/images/background/laboratorio.png",
+	"bg_acelerador1": "res://assets/images/background/acelerador1.png",
+	"bg_acelerador2": "res://assets/images/background/acelerador2.png",
+	"bg_escombros": "res://assets/images/background/escombros.png",
+	"bg_padaria": "res://assets/images/background/padaria.png",
+	"bg_interrogatorio": "res://assets/images/background/interrogatorio.png",
+	"bg_mercado": "res://assets/images/background/mercado.png",
+	"bg_shopping": "res://assets/images/background/shopping.png"
+  },
+  "assets": {
+	"vz": "res://assets/images/sprites/vizinho.png",
+	"carro": "res://assets/images/assets/carro.png",
+	"sangue": "res://assets/images/assets/sangue.png",
+  },
+  "cgs": {
+	"icone_bloqueado": "res://assets/images/cg/ibloqueado.png",
+	"icone_escombros": "res://assets/images/cg/iescombros.png",
+	"cg_escombros1": "res://assets/images/cg/escombros1.png",
+	"cg_escombros2": "res://assets/images/cg/escombros2.png",
+	"cg_escombros3": "res://assets/images/cg/escombros3.png",
+	"icone_shopping": "res://assets/images/cg/ishopping.png",
+	"cg_shopping": "res://assets/images/cg/shopping.png",
+  },
+  "characters": {
+	"v": { "default_name": "Você", "color": "#ffffff", "image": null },
+	"vz": { "default_name": "Vizinho", "color": "#ababab", "image": null },
+	"null": { "default_name": "???", "color": "#ababab", "image": null },
+	"ate": { "default_name": "Atendente", "color": "#ababab", "image": null },
+	"r": { "default_name": "Rafael", "color": "#2f2f2f", "image": null },
+	"e": { "default_name": "Erick", "color": "#01c901", "image": null },
+	"seg": { "default_name": "Segurança", "color": "#2f2f2f", "image": null },
+	"cient1": { "default_name": "Cientista 1", "color": "#1c4c00", "image": null },
+	"cient2": { "default_name": "Cientista 2", "color": "#00264c", "image": null },
+	"l": { "default_name": "Lucas", "color": "#9900ff", "image": "lucas" }
+  },
+  "variables": {
+	"seuNome": "Leonardo",
+	"planeta_lucas": "Lumen",
+	"galaxia_lucas": "Andromeda",
+	"pais_lucas": "Jhormthyr",
+	"nome_implante": "PlaceHolder"
+  },
+  "layered_characters": {
+	"lucas": {
+	  "zoom": 0.8,
+	  "layer_order": [
+		{ "kind": "group", "name": "outfit" },
+		{ "kind": "group", "name": "face" },
+		{ "kind": "overlay", "name": "face_bandage" },
+		{ "kind": "overlay", "name": "blush" },
+		{ "kind": "overlay", "name": "sweat" }
+	  ],
+	  "groups": {
+		"outfit": {
+		  "default": "base_social_tie_vest",
+		  "items": {
+			"base_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_base_naked.png",
+			"base_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_base_pijama.png",
+			"base_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_base_pijama_bandagens.png",
+			"base_social": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social.png",
+			"base_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social_tie.png",
+			"base_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social_tie_vest.png",
+			"head_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_head_naked.png",
+			"head_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_head_pijama.png",
+			"head_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_head_pijama_bandagens.png",
+			"head_social": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social.png",
+			"head_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social_tie.png",
+			"head_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social_tie_vest.png",
+			"thinking_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_naked.png",
+			"thinking_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_pijama.png",
+			"thinking_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_pijama_bandagens.png",
+			"thinking_social": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social.png",
+			"thinking_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social_tie.png",
+			"thinking_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social_tie_vest.png",
+			"crossed_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_naked.png",
+			"crossed_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_pijama.png",
+			"crossed_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_pijama_bandagens.png",
+			"crossed_social": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social.png",
+			"crossed_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social_tie.png",
+			"crossed_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social_tie_vest.png",
+			"scared_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_naked.png",
+			"scared_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_pijama.png",
+			"scared_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_pijama_bandagens.png",
+			"scared_social": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social.png",
+			"scared_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social_tie.png",
+			"scared_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social_tie_vest.png"
+		  }
+		},
+		"face": {
+		  "default": "neutro",
+		  "items": {
+			"neutro": "res://assets/images/sprites/lucas/face/base.png",
+			"assustado": "res://assets/images/sprites/lucas/face/assustado.png",
+			"bravo1": "res://assets/images/sprites/lucas/face/bravo1.png",
+			"bravo2": "res://assets/images/sprites/lucas/face/bravo2.png",
+			"confuso": "res://assets/images/sprites/lucas/face/confuso.png",
+			"falando": "res://assets/images/sprites/lucas/face/falando.png",
+			"sorrindo1": "res://assets/images/sprites/lucas/face/sorriso1.png",
+			"sorrindo2": "res://assets/images/sprites/lucas/face/sorriso2.png",
+			"sorrindo3": "res://assets/images/sprites/lucas/face/sorriso3.png",
+			"sorrindoDeLado": "res://assets/images/sprites/lucas/face/sorrisoDeLado.png",
+			"sorrindoDesviandoOlhar": "res://assets/images/sprites/lucas/face/sorrisoDesviandoOlhar.png",
+			"triste1": "res://assets/images/sprites/lucas/face/triste1.png",
+			"triste2": "res://assets/images/sprites/lucas/face/triste2.png",
+			"triste3": "res://assets/images/sprites/lucas/face/triste3.png",
+			"triste4": "res://assets/images/sprites/lucas/face/triste4.png"
+		  }
+		}
+	  },
+	  "overlays": {
+		"face_bandage": "res://assets/images/sprites/lucas/face_overlay/bandagem.png",
+		"blush": "res://assets/images/sprites/lucas/face_overlay/corado.png",
+		"sweat": "res://assets/images/sprites/lucas/face_overlay/suor.png"
+	  },
+	}
+  },
+  "transforms": {
+	"bancoPassageiro": {
+	  "xalign": 0.8,
+	  "yoffset": 250.0,
+	  "xzoom": 0.85,
+	  "yzoom": 0.85
+	},
+	"ladoEsquerdo": {
+	  "xalign": 0.2
+	},
+	"metadeTamanho": {
+	  "xalign": 0.5,
+	  "yalign": 0.5,
+	  "zoom": 0.5
+	},
+  },
+  "animated_overlays": {
+	"poeira": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/poeira1.png",
+		"res://assets/images/assets/poeira2.png",
+        "res://assets/images/assets/poeira3.png"
+	  ]
+	},
+	"portal": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/portal1.png",
+		"res://assets/images/assets/portal2.png",
+        "res://assets/images/assets/portal3.png"
+	  ]
+	},
+	"vapor": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/vapor1.png",
+		"res://assets/images/assets/vapor2.png",
+        "res://assets/images/assets/vapor3.png"
+	  ]
+	},
+  },
+}

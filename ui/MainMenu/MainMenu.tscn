@@ -1,0 +1,170 @@
+[gd_scene format=3 uid="uid://bict10pmf2ip8"]
+
+[ext_resource type="Script" uid="uid://de1kmhykptd1y" path="res://ui/MainMenu/MainMenu.gd" id="1_yovl8"]
+[ext_resource type="Texture2D" uid="uid://bllk7txq88lva" path="res://assets/gui/mainmenu/1.png" id="2_16u2t"]
+[ext_resource type="Texture2D" uid="uid://cpds2ke6ck6t4" path="res://assets/gui/logo.png" id="2_hur4r"]
+[ext_resource type="Texture2D" uid="uid://c3k0cxp4jbwer" path="res://assets/gui/mainmenu/2.png" id="3_htm1i"]
+[ext_resource type="Texture2D" uid="uid://c8vsmblk6g23v" path="res://assets/gui/overlay/main_menu.png" id="3_wlwnj"]
+[ext_resource type="Texture2D" uid="uid://71cup02o6jk0" path="res://assets/gui/mainmenu/3.png" id="4_0xady"]
+[ext_resource type="Script" uid="uid://bld2qvqmwj2ln" path="res://ui/components/NavHoverButton.gd" id="4_wlwnj"]
+[ext_resource type="Texture2D" uid="uid://dxby6vpx201jb" path="res://assets/gui/mainmenu/4.png" id="5_en2kh"]
+[ext_resource type="AudioStream" uid="uid://bgr2tfopf0acr" path="res://assets/audio/music/Week 1 - Retro Lounge UNUSED ALT.ogg" id="5_jxptb"]
+[ext_resource type="Texture2D" uid="uid://y5bm4v27lvli" path="res://assets/gui/mainmenu/5.png" id="6_iu4bf"]
+[ext_resource type="Texture2D" uid="uid://cf8528pi0ute0" path="res://assets/gui/mainmenu/6.png" id="7_56uxw"]
+[ext_resource type="Theme" uid="uid://dngfhyuquqn3d" path="res://theme/theme.tres" id="10_0xady"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jxptb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_16u2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_htm1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0xady")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_en2kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_iu4bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_56uxw")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqco8"]
+font_size = 24
+
+[node name="MainMenu" type="Control" unique_id=1251466901]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yovl8")
+
+[node name="Background" type="Control" parent="." unique_id=536183218]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BgAnim" type="AnimatedSprite2D" parent="Background" unique_id=1753442912]
+scale = Vector2(0.86, 0.86)
+sprite_frames = SubResource("SpriteFrames_jxptb")
+frame = 1
+frame_progress = 0.8618559
+centered = false
+
+[node name="LogoContainer" type="MarginContainer" parent="." unique_id=1017268748]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -480.0
+offset_right = 620.0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position_ratio = Vector2(0.6, 0)
+
+[node name="LogoTexture" type="TextureRect" parent="LogoContainer" unique_id=1311838645]
+layout_mode = 2
+texture = ExtResource("2_hur4r")
+
+[node name="SideOverlay" type="TextureRect" parent="." unique_id=72093206]
+custom_minimum_size = Vector2(420, 0)
+custom_maximum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = -85.0
+offset_right = 2240.0
+offset_bottom = 85.0
+grow_vertical = 2
+texture = ExtResource("3_wlwnj")
+
+[node name="NavigationVBox" type="VBoxContainer" parent="." unique_id=200466519]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="StartButton" type="Button" parent="NavigationVBox" unique_id=2061863866]
+layout_mode = 2
+theme = ExtResource("10_0xady")
+script = ExtResource("4_wlwnj")
+
+[node name="LoadButton" type="Button" parent="NavigationVBox" unique_id=1199623902]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="GalleryButton" type="Button" parent="NavigationVBox" unique_id=1303587747]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="OptionsButton" type="Button" parent="NavigationVBox" unique_id=77846926]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="AboutButton" type="Button" parent="NavigationVBox" unique_id=2027814979]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="HelpButton" type="Button" parent="NavigationVBox" unique_id=435971921]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="QuitButton" type="Button" parent="NavigationVBox" unique_id=105208881]
+layout_mode = 2
+script = ExtResource("4_wlwnj")
+
+[node name="VersionLabel" type="Label" parent="." unique_id=2597370]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_enabled = true
+offset_transform_position = Vector2(-30, -30)
+text = "0.0.1"
+label_settings = SubResource("LabelSettings_bqco8")
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer" parent="." unique_id=609383571]
+stream = ExtResource("5_jxptb")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="SubMenuLayer" type="Control" parent="." unique_id=1400868161]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

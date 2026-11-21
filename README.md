@@ -1,6 +1,6 @@
 # A Touch Of Light
 
-> Uma visual novel desenvolvida em **Ren'Py**.
+> Uma visual novel desenvolvida em **Godot Engine 4**.
 
 ---
 
@@ -12,8 +12,8 @@
 
 ## Requisitos e Tecnologias
 
-* **Engine:** [Ren'Py](https://www.renpy.org/) (Versão **8.5.3**)
-* **Linguagem de Script:** Python / Ren'Py Scripting
+- **Engine:** [Godot Engine](https://godotengine.org/) (Versão **4.x**)
+- **Linguagens:** GDScript, JSON (manifesto de recursos) e formato customizado de roteiro (`.vn`)
 
 ---
 
@@ -21,10 +21,10 @@
 
 ### Para Desenvolvedores (Código Fonte)
 
-1. Faça o download e instale o [Ren'Py 8.5.3](https://www.renpy.org/release/8.5.3).
+1. Faça o download e instale o [Godot Engine 4](https://godotengine.org/download).
 2. Clone este repositório:
    ```bash
    git clone git@github.com:MatheusOliveiraT/A-Touch-Of-Light.git
-3. Abra o Ren'Py Launcher.
-4. Configure o diretório do projeto (Projects Directory) apontando para a pasta onde você clonou o repositório.
-5. Selecione A Touch Of Light no menu e clique em Launch Project.
+3. Abra o Godot Project Manager.
+4. Clique em Import e selecione o arquivo project.godot dentro da pasta onde você clonou o repositório.
+5. Abra o projeto no editor e pressione F5 (ou clique em Run Project) para iniciar.

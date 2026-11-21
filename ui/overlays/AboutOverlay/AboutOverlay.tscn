@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dja3t0amrwtp5"]
+
+[ext_resource type="Script" uid="uid://cv53dym0bj2a" path="res://ui/overlays/AboutOverlay/AboutOverlay.gd" id="1_jliv4"]
+
+[node name="AboutOverlay" type="Control" unique_id=309460411]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jliv4")

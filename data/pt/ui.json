@@ -1,0 +1,81 @@
+{
+  "splash": {
+	"about": "A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.",
+	"dev": "Este jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.",
+	"warning_title": "AVISO DE FOTOSSENSIBILIDADE",
+	"warning_body": "Este jogo contém luzes piscantes, flashes rápidos e efeitos visuais que podem causar desconforto ou crises em pessoas com epilepsia fotossensível. Você pode alterar essa opção a qualquer momento no menu de Preferências.",
+	"warning_checkbox": "Ativar Flashes e Efeitos Visuais",
+	"warning_confirm": "Confirmar e Continuar"
+  },
+  "menu": {
+	"start": "Começar",
+	"continue": "Continuar",
+	"history": "Histórico",
+	"save": "Salvar",
+	"load": "Carregar",
+	"gallery": "Galeria",
+	"options": "Opções",
+	"main_menu": "Menu principal",
+	"about": "Sobre",
+	"help": "Ajuda",
+	"quit": "Sair",
+	"back": "Voltar"
+  },
+  "quick_menu": {
+	"rollback": "Voltar",
+	"history": "Histórico",
+	"skip": "Pular",
+	"auto": "Auto-pular",
+	"save": "Salvar",
+	"quick_save": "Salvar R.",
+	"quick_load": "Carregar R.",
+	"options": "Opc"
+  },
+  "slots": {
+	"empty": "Slot vazio",
+	"auto_page": "Salvamentos automáticos",
+	"quick_page": "Salvamentos rápidos",
+	"page_prefix": "Página"
+  },
+  "settings": {
+	"display": "Tela",
+	"window": "Janela",
+	"fullscreen": "Tela cheia",
+	"skip": "Pular",
+	"skip_unseen": "Texto não-visto",
+	"skip_after_choices": "Após as escolhas",
+	"transitions": "Transições",
+	"language": "Idioma",
+	"accessibility": "Acessibilidade",
+	"flashing_effects": "Efeitos / Flashes",
+	"text_speed": "Velocidade do texto",
+	"auto_time": "Tempo para auto-pulo",
+	"music_vol": "Volume da música",
+	"sfx_vol": "Volume do som",
+	"mute_all": "Silenciar tudo"
+  },
+  "about": {
+	"version": "Versão 0.0.1",
+	"body": "A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.\n\nEste jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.\n\nArtefatos utilizados sob a licença de uso [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]:\n\n-> Fonte Not Jam UI 15 e Not Jam Atomic 20, ambas feitas por Not Jam disponíveis [url=https://not-jam.itch.io/not-jam-font-pack]aqui[/url].\n\n-> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível [url=https://sfbgames.itch.io/chiptone]aqui[/url].\n\n-> Efeito sonoro de sirene, feito por AsdfgOrt disponível [url=https://freesound.org/s/512371/]aqui[/url]\n\n-> Trilha sonora feita por Abstraction Music e Tallbeard Studios, disponível [url=https://abstractionmusic.com/]aqui[/url]\n\nArtefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:\n\n-> Créditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele [url=https://deep-fold.itch.io/]aqui[/url].\n\n-> Shader de onda feito por Wattson, disponível [url=https://wattson.itch.io/renpy-wave-rendering]aqui[/url]."
+  },
+  "confirm": {
+	"yes": "Sim",
+	"no": "Não",
+	"quit": "Tem certeza que deseja sair?",
+	"main_menu": "Tem certeza que deseja voltar ao menu principal? O progresso não salvo será perdido.",
+	"overwrite": "Deseja sobrescrever este save?",
+	"delete": "Deseja apagar este save?"
+  },
+  "characters": {
+	"v": "Você",
+	"vz": "Vizinho",
+	"ate": "Atendente",
+	"seg": "Segurança",
+	"cient1": "Cientista 1",
+	"cient2": "Cientista 2"
+  },
+  "terms": {
+	"agencia_sigla": "ANEGEA",
+	"agencia": "Administração Nacional Extragalacxial, Espacial e Aeronáutica"
+  }
+}

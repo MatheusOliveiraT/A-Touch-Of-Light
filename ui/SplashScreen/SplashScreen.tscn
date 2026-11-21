@@ -1,0 +1,100 @@
+[gd_scene format=3 uid="uid://bipo3xcye741s"]
+
+[ext_resource type="Script" uid="uid://dp4ulpdkvsycs" path="res://ui/SplashScreen/SplashScreen.gd" id="1_lflib"]
+
+[node name="SplashScreen" type="Control" unique_id=1526821184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lflib")
+
+[node name="Background" type="ColorRect" parent="." unique_id=804435518]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=847688395]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SplashLabel" type="RichTextLabel" parent="CenterContainer" unique_id=1452554589]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+
+[node name="PhotosensitivityOverlay" type="Control" parent="." unique_id=66017194]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PhotosensitivityOverlay" unique_id=1937003428]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -48.5
+offset_right = 700.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="PhotosensitivityOverlay/VBox" unique_id=736928470]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+
+[node name="Text" type="RichTextLabel" parent="PhotosensitivityOverlay/VBox" unique_id=552313096]
+custom_minimum_size = Vector2(1400, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 24
+theme_override_font_sizes/bold_italics_font_size = 24
+theme_override_font_sizes/italics_font_size = 24
+theme_override_font_sizes/mono_font_size = 24
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PhotosensitivityOverlay/VBox" unique_id=25271279]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="PhotosensitivityOverlay/VBox/CenterContainer" unique_id=119658883]
+layout_mode = 2
+
+[node name="EffectsCheckBox" type="CheckBox" parent="PhotosensitivityOverlay/VBox/CenterContainer/VBox" unique_id=1946931033]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ativar Flashes e Efeitos Visuais"
+alignment = 1
+icon_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="PhotosensitivityOverlay/VBox/CenterContainer/VBox" unique_id=481820264]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Confirmar e Continuar"

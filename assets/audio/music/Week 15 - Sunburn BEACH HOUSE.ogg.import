@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c80yfuef8na4p"
+path="res://.godot/imported/Week 15 - Sunburn BEACH HOUSE.ogg-d0f520ec002b13a5ed7c9241a8b52ee3.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/music/Week 15 - Sunburn BEACH HOUSE.ogg"
+dest_files=["res://.godot/imported/Week 15 - Sunburn BEACH HOUSE.ogg-d0f520ec002b13a5ed7c9241a8b52ee3.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
