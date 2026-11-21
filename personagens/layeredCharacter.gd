@@ -7,6 +7,12 @@ var overlay_nodes: Dictionary = {}
 var attr_to_group: Dictionary = {}    
 var active_attributes: Array[String] = [] 
 
+var _anim_textures: Array[Texture2D] = []
+var _anim_fps := 6.0
+var _anim_timer := 0.0
+var _anim_index := 0
+var _anim_rect: TextureRect = null
+
 func setup(char_config: Dictionary) -> void:
 	config = char_config
 	scale = Vector2.ONE * config.get("zoom", 1.0)
@@ -30,11 +36,11 @@ func setup(char_config: Dictionary) -> void:
 				attr_to_group[attr_name] = layer_name
 			var def_attr = grp_data.get("default")
 			if def_attr != null and grp_data["items"].has(def_attr):
-				tex_rect.texture = load(grp_data["items"][def_attr])
+				_assign_centered_texture(tex_rect, load(grp_data["items"][def_attr]))
 				active_attributes.append(def_attr)
 		elif kind == "overlay":
 			overlay_nodes[layer_name] = tex_rect
-			tex_rect.texture = load(overlays[layer_name])
+			_assign_centered_texture(tex_rect, load(overlays[layer_name]))
 			tex_rect.visible = false
 
 func apply_attributes(attributes: Array, removed_attributes: Array = []) -> void:
@@ -43,7 +49,7 @@ func apply_attributes(attributes: Array, removed_attributes: Array = []) -> void
 		if attr_to_group.has(attr):
 			var grp_name: String = attr_to_group[attr]
 			var tex_path: String = groups[grp_name]["items"][attr]
-			group_nodes[grp_name].texture = load(tex_path)
+			_assign_centered_texture(group_nodes[grp_name], load(tex_path))
 			_register_group_attribute(grp_name, attr)
 		elif overlay_nodes.has(attr):
 			overlay_nodes[attr].visible = true
@@ -54,14 +60,12 @@ func apply_attributes(attributes: Array, removed_attributes: Array = []) -> void
 			overlay_nodes[rem].visible = false
 			active_attributes.erase(rem)
 
-func get_state() -> Array[String]:
-	return active_attributes.duplicate()
-
-func restore_state(saved_attributes: Array) -> void:
-	for ov_name in overlay_nodes.keys():
-		overlay_nodes[ov_name].visible = false
-	active_attributes.clear()
-	apply_attributes(saved_attributes)
+func _assign_centered_texture(rect: TextureRect, tex: Texture2D) -> void:
+	rect.texture = tex
+	if tex:
+		var sz := tex.get_size()
+		rect.size = sz
+		rect.position = Vector2(-sz.x * 0.5, -sz.y)
 
 func _create_layer_node(node_name: String) -> TextureRect:
 	var rect := TextureRect.new()
@@ -70,6 +74,15 @@ func _create_layer_node(node_name: String) -> TextureRect:
 	rect.stretch_mode = TextureRect.STRETCH_KEEP
 	add_child(rect)
 	return rect
+
+func get_state() -> Array[String]:
+	return active_attributes.duplicate()
+
+func restore_state(saved_attributes: Array) -> void:
+	for ov_name in overlay_nodes.keys():
+		overlay_nodes[ov_name].visible = false
+	active_attributes.clear()
+	apply_attributes(saved_attributes)
 
 func _register_group_attribute(grp_name: String, new_attr: String) -> void:
 	var items: Dictionary = config["groups"][grp_name]["items"]
@@ -85,3 +98,31 @@ func _clear_layers() -> void:
 	overlay_nodes.clear()
 	attr_to_group.clear()
 	active_attributes.clear()
+	_anim_textures.clear()
+	_anim_rect = null
+
+func setup_animated_overlay(anim_cfg: Dictionary) -> void:
+	config = anim_cfg
+	scale = Vector2.ONE * float(anim_cfg.get("zoom", 1.0))
+	_clear_layers()
+	_anim_textures.clear()
+	for frame_path in anim_cfg.get("frames", []):
+		var tex: Texture2D = load(str(frame_path))
+		if tex:
+			_anim_textures.append(tex)
+	_anim_fps = float(anim_cfg.get("fps", 6.0))
+	_anim_timer = 0.0
+	_anim_index = 0
+	if not _anim_textures.is_empty():
+		_anim_rect = _create_layer_node("animated_frame")
+		_assign_centered_texture(_anim_rect, _anim_textures[0])
+
+func _process(delta: float) -> void:
+	if _anim_textures.size() <= 1 or _anim_rect == null:
+		return
+	_anim_timer += delta
+	var frame_dur: float = 1.0 / maxf(_anim_fps, 0.1)
+	if _anim_timer >= frame_dur:
+		_anim_timer = fmod(_anim_timer, frame_dur)
+		_anim_index = (_anim_index + 1) % _anim_textures.size()
+		_assign_centered_texture(_anim_rect, _anim_textures[_anim_index])

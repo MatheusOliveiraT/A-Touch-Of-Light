@@ -1,5 +1,6 @@
 == start ==
 
+scene black
 with fade
 stop music fadeout 2.0
 jump prologo

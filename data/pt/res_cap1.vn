@@ -105,11 +105,11 @@ v "Esse pessoal geralmente só vai pra olhar mesmo. Mas também tem os astronaut
 l "Você não sabe o que um astronauta faz, né?"
 v "Não faço ideia."
 show lucas base_social_tie_vest falando
-l "Voltando pra sua pergunta, eu trabalho para a [agencia_pt_sigla]. Antes de vir para cá, eu passei por um treinamento intenso que durou praticamente minha vida toda."
+l "Voltando pra sua pergunta, eu trabalho para a [agencia_sigla]. Antes de vir para cá, eu passei por um treinamento intenso que durou praticamente minha vida toda."
 show lucas neutro
-v "[agencia_pt_sigla]?"
+v "[agencia_sigla]?"
 show lucas falando
-l "[agencia_pt], por extenso."
+l "[agencia], por extenso."
 show lucas neutro
 "Esse nome é estranhamente familiar."
 v "E pra que serve esse treinamento?"
@@ -426,7 +426,7 @@ v "Em [planeta_lucas] vocês tem tipo, conflitos políticos? Aqui na Terra tem u
 show lucas head_social_tie_vest falando blush
 l "B-bom... [planeta_lucas] é organizada de forma semelhante a Terra, em questão política. Então o planeta é dividido em diversos países, que por sua vez são divididos em partes menores e por aí vai."
 show lucas base_social_tie_vest falando -blush
-l "O nome do meu país é [pais_lucas]. A [agencia_pt_sigla] é de [pais_lucas], sendo um órgão do governo federal. Por mais que a parte majoritária de [planeta_lucas] tenha entrado em consenso em relação à certas atitudes, não é todo país que pensa da mesma forma."
+l "O nome do meu país é [pais_lucas]. A [agencia_sigla] é de [pais_lucas], sendo um órgão do governo federal. Por mais que a parte majoritária de [planeta_lucas] tenha entrado em consenso em relação à certas atitudes, não é todo país que pensa da mesma forma."
 l "Então é relativamente complicado impedir que certos limites sejam... respeitados."
 show lucas neutro
 v "Aqui na Terra nós temos a ONU que tenta fazer essa ponte entre os países. Foi necessário depois de umas... guerras aí."
@@ -469,15 +469,15 @@ l "Eu aceitei a proposta, e fui morar com ele. E de fato, desde então eu tive b
 l "Meu pai adotivo nunca me tratou como filho, mas sim como um projeto. Hoje, mais velho, eu entendo muito mais detalhes sobre a situação, e eu não posso dizer que eu não sou grato por tudo que ele fez por mim."
 l "Eu era uma criança que ninguém iria sentir falta. Por muito tempo, eu cogitei ser especial, mas eu nunca fui."
 v "Tá. tá... seu pai te adotou porque você era um projeto... o que você quer dizer com isso, [l.name]?"
-l "Quer dizer que ele investiu em mim. Desde pequeno eu comecei a estudar sobre o universo, sobre civilizações, sobre a vida. Eu fui treinado pra ser um agente da [agencia_pt_sigla]."
-l "Meu pai é responsável por um projeto especial na [agencia_pt_sigla], e eu sou o escolhido pra essa missão. Que é estar aqui. Pelo menos em partes..."
+l "Quer dizer que ele investiu em mim. Desde pequeno eu comecei a estudar sobre o universo, sobre civilizações, sobre a vida. Eu fui treinado pra ser um agente da [agencia_sigla]."
+l "Meu pai é responsável por um projeto especial na [agencia_sigla], e eu sou o escolhido pra essa missão. Que é estar aqui. Pelo menos em partes..."
 v "Então seu pai te adotou pra te treinar pra uma missão inter galaxcial?"
 l "Na prática, sim."
 v "E isso é só mais um dia em [planeta_lucas]?"
 l "Não, não é algo comum de acontecer... e o meu pai é uma pessoa que sempre deixou clara as suas intenções. Ele não é uma pessoa má."
 l "Ele sempre foi responsável por mim. Mas quem cuidava mesmo de mim eram as babás, as faxineiras e as cozinheiras."
 v "Estamos falando de elite então."
-l "Meu pai tem um cargo importante na [agencia_pt_sigla], então ele sempre teve mais poder aquisitivo."
+l "Meu pai tem um cargo importante na [agencia_sigla], então ele sempre teve mais poder aquisitivo."
 v "Como todo respeito, eu achei que tava mal. Mas porra... como você se sente com tudo isso? Você parece... calmo demais."
 l "Foram quase duas décadas processando tudo isso e, sinceramente, poderia ter sido muito pior se eu não tivesse aceitado."
 l "Apesar de tudo, eu tenho amigos que se importam comigo e hoje eu me sinto bem com tudo isso. Eu não posso reclamar, [seuNome]."

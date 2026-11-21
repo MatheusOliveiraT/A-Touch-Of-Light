@@ -57,7 +57,8 @@
   },
   "assets": {
 	"vz": "res://assets/images/sprites/vizinho.png",
-	"carro": "res://assets/images/assets/carro.png"
+	"carro": "res://assets/images/assets/carro.png",
+	"sangue": "res://assets/images/assets/sangue.png",
   },
   "cgs": {
 	"icone_bloqueado": "res://assets/images/cg/ibloqueado.png",
@@ -66,7 +67,7 @@
 	"cg_escombros2": "res://assets/images/cg/escombros2.png",
 	"cg_escombros3": "res://assets/images/cg/escombros3.png",
 	"icone_shopping": "res://assets/images/cg/ishopping.png",
-	"cg_shopping": "res://assets/images/cg/shopping.png"
+	"cg_shopping": "res://assets/images/cg/shopping.png",
   },
   "characters": {
 	"v": { "default_name": "Você", "color": "#ffffff", "image": null },
@@ -99,7 +100,7 @@
 	  ],
 	  "groups": {
 		"outfit": {
-		  "default": "base_naked",
+		  "default": "base_social_tie_vest",
 		  "items": {
 			"base_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_base_naked.png",
 			"base_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_base_pijama.png",
@@ -158,12 +159,12 @@
 		"face_bandage": "res://assets/images/sprites/lucas/face_overlay/bandagem.png",
 		"blush": "res://assets/images/sprites/lucas/face_overlay/corado.png",
 		"sweat": "res://assets/images/sprites/lucas/face_overlay/suor.png"
-	  }
+	  },
 	}
   },
   "transforms": {
 	"bancoPassageiro": {
-	  "xalign": 1.1,
+	  "xalign": 0.8,
 	  "yoffset": 250.0,
 	  "xzoom": 0.85,
 	  "yzoom": 0.85
@@ -175,6 +176,35 @@
 	  "xalign": 0.5,
 	  "yalign": 0.5,
 	  "zoom": 0.5
-	}
-  }
+	},
+  },
+  "animated_overlays": {
+	"poeira": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/poeira1.png",
+		"res://assets/images/assets/poeira2.png",
+        "res://assets/images/assets/poeira3.png"
+	  ]
+	},
+	"portal": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/portal1.png",
+		"res://assets/images/assets/portal2.png",
+        "res://assets/images/assets/portal3.png"
+	  ]
+	},
+	"vapor": {
+	  "fps": 2.0,
+	  "zoom": 1.0,
+	  "frames": [
+		"res://assets/images/assets/vapor1.png",
+		"res://assets/images/assets/vapor2.png",
+        "res://assets/images/assets/vapor3.png"
+	  ]
+	},
+  },
 }

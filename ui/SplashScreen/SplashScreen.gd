@@ -63,6 +63,4 @@ func _on_photosensitivity_confirmed() -> void:
 	_go_to_main_menu()
 
 func _go_to_main_menu() -> void:
-	var fade := create_tween()
-	fade.tween_property(self, "modulate:a", 0.0, 0.4)
-	fade.finished.connect(func(): get_tree().change_scene_to_file(MAIN_MENU_SCENE))
+	GlobalData.change_scene_with_fade(MAIN_MENU_SCENE, 0.4, 0.5)

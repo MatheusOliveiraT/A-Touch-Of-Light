@@ -3,10 +3,16 @@ class_name VNStageController
 
 signal returned_to_main_menu
 signal chapter_finished(label_name: String)
+signal menu_requested
+signal skip_state_changed(is_skipping: bool)
 
 const LAYERED_CHAR_SCENE := preload("res://personagens/layeredCharacter.tscn")
 const MAX_ROLLBACK_STEPS := 60
 const MAX_HISTORY_ENTRIES := 250
+const SKIP_STEP_INTERVAL := 0.03
+
+const FULLSCREEN_FIT_IDS := ["sangue", "poeira", "portal", "vapor", "carro"]
+const FOREGROUND_OVERLAY_IDS := ["sangue", "poeira", "portal", "vapor"]
 
 @export var manifest_path := "res://data/res_manifest.json"
 
@@ -40,21 +46,30 @@ var event_queue: Array = []
 var current_index := 0
 var active_characters: Dictionary = {}
 var current_bg_id := ""
-var current_music_id := ""
 var active_music_player: AudioStreamPlayer
 
 var is_typing := false
 var is_waiting_choice := false
 var is_waiting_input := false
 var is_paused := false
+var is_skipping := false
+var _skip_timer := 0.0
+var _current_dialogue_uid := ""
+
 var pending_input_var := ""
 var type_tween: Tween
 var earthquake_tween: Tween
 var rollback_stack: Array[Dictionary] = []
 var dialogue_history: Array[Dictionary] = []
 
+var current_music_id := ""
+var current_music_volume := 1.0
+var current_camera_effect := ""
+
 func _ready() -> void:
 	active_music_player = music_a
+	music_a.finished.connect(func(): _on_music_finished(music_a))
+	music_b.finished.connect(func(): _on_music_finished(music_b))
 	confirm_button.pressed.connect(_on_input_confirmed)
 	name_line_edit.text_submitted.connect(func(_t): _on_input_confirmed())
 	GlobalData.language_changed.connect(_on_language_changed)
@@ -69,17 +84,116 @@ func _ready() -> void:
 			return
 	jump_to_label("start")
 
-func _unhandled_input(event: InputEvent) -> void:
-	if is_waiting_choice or is_waiting_input or is_paused:
+func _on_music_finished(player: AudioStreamPlayer) -> void:
+	if player == active_music_player and not current_music_id.is_empty():
+		player.play()
+
+func _process(delta: float) -> void:
+	if not is_skipping:
 		return
-	if event.is_action_pressed("ui_accept") or event.is_action_pressed("interact") or (
-		event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed
+	if is_waiting_choice or is_waiting_input or is_paused:
+		set_skipping(false)
+		return
+	if not _is_current_event_skippable():
+		set_skipping(false)
+		return
+	_skip_timer += delta
+	if _skip_timer >= SKIP_STEP_INTERVAL:
+		_skip_timer = 0.0
+		if is_typing:
+			if type_tween:
+				type_tween.kill()
+			dialogue_text.visible_ratio = 1.0
+			is_typing = false
+		advance()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("menu"):
+		set_skipping(false)
+		get_viewport().set_input_as_handled()
+		emit_signal("menu_requested")
+		return
+	if is_waiting_input or is_paused:
+		return
+	if is_waiting_choice:
+		if event.is_action_pressed("up") or event.is_action_pressed("down"):
+			_ensure_choice_focus()
+		return
+	if event.is_action_pressed("skip"):
+		get_viewport().set_input_as_handled()
+		toggle_skip()
+		return
+	if (
+		event.is_action_pressed("right")
+		or event.is_action_pressed("interact")
+		or event.is_action_pressed("ui_accept")
+		or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed)
 	):
+		if is_skipping:
+			set_skipping(false)
 		get_viewport().set_input_as_handled()
 		advance()
-	elif event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed:
+		return
+	if (
+		event.is_action_pressed("left")
+		or (event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP and event.pressed)
+	):
+		if is_skipping:
+			set_skipping(false)
 		get_viewport().set_input_as_handled()
 		rollback()
+
+func toggle_skip() -> void:
+	if is_skipping:
+		set_skipping(false)
+		return
+	if _is_current_event_skippable():
+		set_skipping(true)
+
+func set_skipping(active: bool) -> void:
+	if is_skipping == active:
+		return
+	is_skipping = active
+	_skip_timer = 0.0
+	emit_signal("skip_state_changed", is_skipping)
+
+func _set_stream_loop(stream: AudioStream, enable: bool) -> void:
+	if stream is AudioStreamOggVorbis or stream is AudioStreamMP3:
+		stream.loop = enable
+	elif stream is AudioStreamWAV:
+		stream.loop_mode = AudioStreamWAV.LOOP_FORWARD if enable else AudioStreamWAV.LOOP_DISABLED
+
+func _has_trailing_dissolve(start_idx: int) -> bool:
+	var idx := start_idx + 1
+	while idx < event_queue.size():
+		var t: String = event_queue[idx].get("type", "")
+		if t in ["show", "hide", "scene"]:
+			idx += 1
+			continue
+		if t == "transition":
+			return not _is_fade_effect(event_queue[idx].get("effect", ""))
+		break
+	return false
+
+func _build_event_uid(label_name: String, idx: int, ev: Dictionary) -> String:
+	var ev_type: String = ev.get("type", "")
+	var speaker: String = ev.get("speaker", "")
+	return "%s::%d::%s::%s" % [label_name, idx, ev_type, speaker]
+
+func _is_current_event_skippable() -> bool:
+	if current_index < 0 or current_index >= event_queue.size():
+		return false
+	var ev: Dictionary = event_queue[current_index]
+	var ev_type: String = ev.get("type", "")
+	if ev_type == "dialogue" or ev_type == "narration":
+		return GlobalData.is_dialogue_seen(_current_dialogue_uid)
+	return ev_type not in ["menu", "input", "pause", "return"]
+
+func _ensure_choice_focus() -> void:
+	if get_viewport().gui_get_focus_owner() == null and choices_container.get_child_count() > 0:
+		var first_btn := choices_container.get_child(0) as Control
+		if first_btn:
+			first_btn.grab_focus()
 
 func _on_language_changed(_lang: String) -> void:
 	_load_all_scripts()
@@ -179,7 +293,6 @@ func _parse_vn_script(raw_text: String) -> Dictionary:
 		var event := _parse_vn_line(trimmed)
 		if not event.is_empty():
 			(result[cur_label] as Array).append(event)
-
 	if mode == "menu" and not cur_label.is_empty():
 		if not cur_opt.is_empty():
 			menu_opts.append(cur_opt)
@@ -234,21 +347,20 @@ func _parse_vn_line(line: String) -> Dictionary:
 		var rest := line.substr(10).strip_edges()
 		var parts := rest.split(" with ", false, 1)
 		var txt := parts[0].strip_edges().trim_prefix('"').trim_suffix('"')
-		@warning_ignore("incompatible_ternary")
-		return {"type": "show_text", "text": txt, "transition": parts[1].strip_edges() if parts.size() > 1 else null}
+		var trans_name := parts[1].strip_edges() if parts.size() > 1 else ""
+		return {"type": "show_text", "text": txt, "transition": trans_name}
 	if line.begins_with("scene "):
 		var parts := line.substr(6).strip_edges().split(" with ", false, 1)
-		@warning_ignore("incompatible_ternary")
-		return {"type": "scene", "asset": parts[0].strip_edges(), "transition": parts[1].strip_edges() if parts.size() > 1 else null}
+		var trans_name := parts[1].strip_edges() if parts.size() > 1 else ""
+		return {"type": "scene", "asset": parts[0].strip_edges(), "transition": trans_name}
 	if line.begins_with("show "):
 		var rest := line.substr(5).strip_edges()
-		@warning_ignore("shadowed_variable_base_class")
-		var tr: Variant = null
-		var pos := "center"
+		var trans_name := ""
+		var pos := ""
 		if " with " in rest:
 			var p := rest.split(" with ", false, 1)
 			rest = p[0].strip_edges()
-			tr = p[1].strip_edges()
+			trans_name = p[1].strip_edges()
 		if " at " in rest:
 			var p := rest.split(" at ", false, 1)
 			rest = p[0].strip_edges()
@@ -261,11 +373,11 @@ func _parse_vn_line(line: String) -> Dictionary:
 				rems.append(tokens[i].substr(1))
 			else:
 				attrs.append(tokens[i])
-		return {"type": "show", "character": tokens[0], "attributes": attrs, "removed_attributes": rems, "position": pos, "transition": tr}
+		return {"type": "show", "character": tokens[0], "attributes": attrs, "removed_attributes": rems, "position": pos, "transition": trans_name}
 	if line.begins_with("hide "):
 		var parts := line.substr(5).strip_edges().split(" with ", false, 1)
-		@warning_ignore("incompatible_ternary")
-		return {"type": "hide", "character": parts[0].strip_edges(), "transition": parts[1].strip_edges() if parts.size() > 1 else null}
+		var trans_name := parts[1].strip_edges() if parts.size() > 1 else ""
+		return {"type": "hide", "character": parts[0].strip_edges(), "transition": trans_name}
 	if line.begins_with("play ") or line.begins_with("queue "):
 		var tokens := line.split(" ", false)
 		var ev: Dictionary = {"type": "audio", "action": tokens[0], "channel": tokens[1], "track": tokens[2], "loop": "loop" in tokens}
@@ -287,8 +399,8 @@ func _parse_vn_line(line: String) -> Dictionary:
 		return {"type": "transition", "effect": line.substr(5).strip_edges()}
 	if line.begins_with("pause"):
 		var parts := line.split(" ", false)
-		@warning_ignore("incompatible_ternary")
-		return {"type": "pause", "duration": float(parts[1]) if parts.size() > 1 else null}
+		var dur := float(parts[1]) if parts.size() > 1 else -1.0
+		return {"type": "pause", "duration": dur}
 	if line.begins_with("camera at "):
 		return {"type": "camera", "effect": line.substr(10).strip_edges()}
 	if line.begins_with("jump "):
@@ -321,44 +433,91 @@ func _process_current_event() -> void:
 		var ev: Dictionary = event_queue[current_index]
 		var ev_type: String = ev.get("type", "")
 		match ev_type:
-			"dialogue":
+			"dialogue", "narration":
+				var uid := _build_event_uid(current_label, current_index, ev)
+				var was_seen := GlobalData.is_dialogue_seen(uid)
+				_current_dialogue_uid = uid
+				if is_skipping and not was_seen:
+					set_skipping(false)
 				_record_rollback_snapshot()
-				_show_dialogue(ev.get("speaker", ""), ev.get("text", ""))
-				return
-			"narration":
-				_record_rollback_snapshot()
-				_show_dialogue("", ev.get("text", ""))
+				var spk: String = ev.get("speaker", "") if ev_type == "dialogue" else ""
+				_show_dialogue(spk, ev.get("text", ""), was_seen and is_skipping)
+				GlobalData.mark_dialogue_seen(uid)
 				return
 			"menu":
+				set_skipping(false)
 				_record_rollback_snapshot()
 				_show_choices(ev.get("options", []))
 				return
 			"input":
+				set_skipping(false)
 				_show_input_prompt(ev.get("var", "povnome"), ev.get("prompt", "Digite:"))
 				return
 			"scene":
-				_change_background(ev.get("asset", ""), ev.get("transition"))
+				var inline_tr: String = ev.get("transition", "")
+				var next_ev: Dictionary = event_queue[current_index + 1] if current_index + 1 < event_queue.size() else {}
+				if inline_tr.is_empty() and next_ev.get("type", "") == "transition":
+					var eff: String = next_ev.get("effect", "fade")
+					if _is_fade_effect(eff):
+						current_index += 1
+						if GlobalData.settings.get("transitions_enabled", true) and not is_skipping:
+							var p := _parse_fade_params(eff)
+							transition_rect.visible = true
+							transition_rect.color = Color(0, 0, 0, 0)
+							if p.x > 0.0:
+								var tw_in := create_tween()
+								tw_in.tween_property(transition_rect, "color:a", 1.0, p.x)
+								await tw_in.finished
+							_change_background(ev.get("asset", ""), "")
+							if p.y > 0.0:
+								await get_tree().create_timer(p.y).timeout
+							if p.z > 0.0:
+								var tw_out := create_tween()
+								tw_out.tween_property(transition_rect, "color:a", 0.0, p.z)
+								await tw_out.finished
+						else:
+							_change_background(ev.get("asset", ""), eff)
+					else:
+						_change_background(ev.get("asset", ""), eff)
+				elif inline_tr.is_empty() and _has_trailing_dissolve(current_index):
+					_change_background(ev.get("asset", ""), "dissolve")
+				else:
+					_change_background(ev.get("asset", ""), inline_tr)
 			"show":
+				var inline_tr: String = ev.get("transition", "")
+				if inline_tr.is_empty() and _has_trailing_dissolve(current_index):
+					inline_tr = "dissolve"
 				_show_character(
 					ev.get("character", ""),
 					ev.get("attributes", []),
 					ev.get("removed_attributes", []),
 					ev.get("position", "center"),
-					ev.get("transition")
+					inline_tr
 				)
 			"hide":
-				_hide_character(ev.get("character", ""), ev.get("transition"))
+				var inline_tr: String = ev.get("transition", "")
+				if inline_tr.is_empty() and _has_trailing_dissolve(current_index):
+					inline_tr = "dissolve"
+				_hide_character(ev.get("character", ""), inline_tr)
 			"show_text":
-				_show_center_text(ev.get("text", ""), ev.get("transition"))
+				_show_center_text(ev.get("text", ""), ev.get("transition", ""))
+			"transition":
+				var eff: String = ev.get("effect", "fade")
+				if _is_fade_effect(eff):
+					await _play_screen_transition(eff)
+			"show_text":
+				_show_center_text(ev.get("text", ""), ev.get("transition", ""))
 			"transition":
 				await _play_screen_transition(ev.get("effect", "fade"))
 			"pause":
-				var dur: Variant = ev.get("duration")
-				if dur != null and float(dur) > 0.0:
-					is_paused = true
-					await get_tree().create_timer(float(dur)).timeout
-					is_paused = false
+				var dur := float(ev.get("duration", -1.0))
+				if dur > 0.0:
+					if not is_skipping:
+						is_paused = true
+						await get_tree().create_timer(dur).timeout
+						is_paused = false
 				else:
+					set_skipping(false)
 					return
 			"audio":
 				_play_audio_event(ev)
@@ -376,14 +535,33 @@ func _process_current_event() -> void:
 				jump_to_label(ev.get("target", ""))
 				return
 			"return":
+				set_skipping(false)
 				emit_signal("returned_to_main_menu")
+				GlobalData.change_scene_with_fade("res://ui/MainMenu/MainMenu.tscn")
 				return
 		current_index += 1
+	set_skipping(false)
 	emit_signal("chapter_finished", current_label)
 
 func _inject_events_at_next(actions: Array) -> void:
 	for i in range(actions.size()):
 		event_queue.insert(current_index + 1 + i, (actions[i] as Dictionary).duplicate(true))
+
+func _create_red_alarm_overlay() -> Control:
+	var overlay := ColorRect.new()
+	overlay.name = "red_alarm_overlay"
+	overlay.color = Color(1.0, 0.0, 0.0, 0.0)
+	overlay.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	overlay.z_index = 20
+	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	character_layer.add_child(overlay)
+	if GlobalData.flashing_effects:
+		var tw := overlay.create_tween().set_loops()
+		tw.tween_property(overlay, "color:a", 0.25, 0.5).set_trans(Tween.TRANS_SINE)
+		tw.tween_property(overlay, "color:a", 0.04, 0.5).set_trans(Tween.TRANS_SINE)
+	else:
+		overlay.color.a = 0.14
+	return overlay
 
 func _get_character_display_name(speaker_id: String) -> String:
 	var tr_name := GlobalData.tr_ui("characters", speaker_id)
@@ -392,7 +570,7 @@ func _get_character_display_name(speaker_id: String) -> String:
 	var char_info: Dictionary = manifest.get("characters", {}).get(speaker_id, {})
 	return str(char_info.get("default_name", speaker_id))
 
-func _show_dialogue(speaker_id: String, raw_text: String) -> void:
+func _show_dialogue(speaker_id: String, raw_text: String, instant: bool = false) -> void:
 	dialogue_box.visible = true
 	center_text_label.visible = false
 	var final_text := _interpolate_text(raw_text)
@@ -400,21 +578,23 @@ func _show_dialogue(speaker_id: String, raw_text: String) -> void:
 	var color_hex := "#ffffff"
 	if speaker_id.is_empty():
 		speaker_label.text = ""
-		speaker_label.visible = false
 	else:
-		speaker_label.visible = true
 		var char_info: Dictionary = manifest.get("characters", {}).get(speaker_id, {})
 		display_name = _interpolate_text(_get_character_display_name(speaker_id))
 		color_hex = str(char_info.get("color", "#ffffff"))
 		speaker_label.text = "[b][color=%s]%s[/color][/b]" % [color_hex, display_name]
 	_append_history(display_name, color_hex, final_text)
 	dialogue_text.text = final_text
+	if type_tween:
+		type_tween.kill()
+	if instant:
+		dialogue_text.visible_ratio = 1.0
+		is_typing = false
+		return
 	dialogue_text.visible_ratio = 0.0
 	is_typing = true
 	var speed: float = GlobalData.settings.get("typewriter_speed", 0.022)
 	var duration := final_text.length() * speed
-	if type_tween:
-		type_tween.kill()
 	type_tween = create_tween()
 	type_tween.tween_property(dialogue_text, "visible_ratio", 1.0, max(duration, 0.05))
 	type_tween.finished.connect(func(): is_typing = false)
@@ -440,7 +620,8 @@ func _interpolate_text(text: String) -> String:
 		result = result.replace("[%s]" % key, str(variables[key]))
 	return result
 
-func _change_background(asset_id: String, transition: Variant) -> void:
+func _change_background(asset_id: String, transition: String) -> void:
+	_clear_stage_entities()
 	current_bg_id = asset_id
 	var bg_map: Dictionary = manifest.get("backgrounds", {})
 	var cg_map: Dictionary = manifest.get("cgs", {})
@@ -457,8 +638,8 @@ func _change_background(asset_id: String, transition: Variant) -> void:
 		GlobalData.unlock_cg(cg_key)
 	if tex == null:
 		return
-	var use_transitions: bool = GlobalData.settings.get("transitions_enabled", true)
-	if transition != null and use_transitions:
+	var use_transitions: bool = GlobalData.settings.get("transitions_enabled", true) and not is_skipping
+	if not transition.is_empty() and use_transitions:
 		bg_front.texture = tex
 		bg_front.modulate.a = 0.0
 		var tw := create_tween()
@@ -470,55 +651,93 @@ func _change_background(asset_id: String, transition: Variant) -> void:
 	else:
 		bg_back.texture = tex
 
-func _show_character(char_id: String, attrs: Array, removed: Array, pos_name: String, transition: Variant) -> void:
+func _resolve_single_asset_path(asset_id: String) -> String:
+	for section in ["assets", "overlays", "images", "backgrounds"]:
+		var dict: Dictionary = manifest.get(section, {})
+		if dict.has(asset_id):
+			return str(dict[asset_id])
+	return ""
+
+func _show_character(char_id: String, attrs: Array, removed: Array, pos_name: String, transition: String) -> void:
+	if char_id == "red_alarm_overlay":
+		if not active_characters.has(char_id):
+			active_characters[char_id] = _create_red_alarm_overlay()
+		return
 	var layered_defs: Dictionary = manifest.get("layered_characters", {})
+	var anim_overlays: Dictionary = manifest.get("animated_overlays", {})
+	var is_anim_overlay: bool = anim_overlays.has(char_id)
+	var is_foreground_overlay: bool = (
+		is_anim_overlay
+		or (manifest.get("overlays", {}) as Dictionary).has(char_id)
+		or char_id in FOREGROUND_OVERLAY_IDS
+	)
+	var is_fullscreen_fit: bool = is_foreground_overlay or char_id in FULLSCREEN_FIT_IDS
+	var is_new_node := not active_characters.has(char_id)
 	var sprite_node: LayeredCharacterSprite
-	if active_characters.has(char_id):
+	if not is_new_node:
 		sprite_node = active_characters[char_id]
 	else:
 		sprite_node = LAYERED_CHAR_SCENE.instantiate()
 		sprite_node.name = char_id
+		sprite_node.z_index = (10 + active_characters.size()) if is_foreground_overlay else active_characters.size()
 		character_layer.add_child(sprite_node)
 		active_characters[char_id] = sprite_node
 		if layered_defs.has(char_id):
 			sprite_node.setup(layered_defs[char_id])
-		elif (manifest.get("assets", {}) as Dictionary).has(char_id):
-			sprite_node.setup({
-				"zoom": 0.85,
-				"groups": {"base": {"default": "default", "items": {"default": manifest["assets"][char_id]}}},
-				"overlays": {}
-			})
-		if transition != null and GlobalData.settings.get("transitions_enabled", true):
+		elif is_anim_overlay:
+			sprite_node.setup_animated_overlay(anim_overlays[char_id])
+		else:
+			var asset_path := _resolve_single_asset_path(char_id)
+			if not asset_path.is_empty():
+				var fit_zoom := 1.0 if is_fullscreen_fit else 0.85
+				if is_fullscreen_fit:
+					var tex: Texture2D = load(asset_path)
+					if tex and tex.get_size().x > 0.0:
+						var vp := get_viewport_rect().size
+						fit_zoom = maxf(vp.x / tex.get_size().x, vp.y / tex.get_size().y)
+				sprite_node.setup({
+					"zoom": fit_zoom,
+					"groups": {"base": {"default": "default", "items": {"default": asset_path}}},
+					"overlays": {}
+				})
+			else:
+				push_warning("Personagem ou overlay não encontrado no manifesto: " + char_id)
+		if not transition.is_empty() and GlobalData.settings.get("transitions_enabled", true) and not is_skipping:
 			sprite_node.modulate.a = 0.0
 			create_tween().tween_property(sprite_node, "modulate:a", 1.0, 0.25)
-
 	sprite_node.apply_attributes(attrs, removed)
-	_apply_character_position(sprite_node, pos_name)
+	if is_new_node or not pos_name.is_empty():
+		var target_pos := pos_name if not pos_name.is_empty() else "center"
+		sprite_node.set_meta("vn_transform", target_pos)
+		_apply_character_position(sprite_node, target_pos, is_foreground_overlay)
 
-func _hide_character(char_id: String, transition: Variant) -> void:
-	if not active_characters.has(char_id):
-		return
-	var node: LayeredCharacterSprite = active_characters[char_id]
-	active_characters.erase(char_id)
-	if transition != null and GlobalData.settings.get("transitions_enabled", true):
-		var tw := create_tween()
-		tw.tween_property(node, "modulate:a", 0.0, 0.25)
-		tw.finished.connect(node.queue_free)
-	else:
-		node.queue_free()
+func _get_node_texture_height(node: Control) -> float:
+	for child in node.get_children():
+		if child is TextureRect and child.texture != null:
+			return child.texture.get_size().y
+	return 0.0
 
-func _apply_character_position(node: Control, pos_name: String) -> void:
+func _apply_character_position(node: Control, pos_name: String, is_overlay: bool = false) -> void:
 	var viewport_size := get_viewport_rect().size
 	var transforms: Dictionary = manifest.get("transforms", {})
 	if transforms.has(pos_name):
 		var t: Dictionary = transforms[pos_name]
 		var xalign: float = t.get("xalign", 0.5)
+		var yalign: float = t.get("yalign", 1.0)
 		var yoffset: float = t.get("yoffset", 0.0)
-		node.position = Vector2(viewport_size.x * xalign, viewport_size.y + yoffset)
+		if t.has("zoom"):
+			var z := float(t["zoom"])
+			node.scale = Vector2(z, z)
 		if t.has("xzoom"):
 			node.scale.x = abs(node.scale.x) * float(t["xzoom"])
 		if t.has("yzoom"):
 			node.scale.y = abs(node.scale.y) * float(t["yzoom"])
+		var tex_h : float = _get_node_texture_height(node) * abs(node.scale.y)
+		var pos_y := viewport_size.y * yalign + tex_h * (1.0 - yalign) + yoffset
+		node.position = Vector2(viewport_size.x * xalign, pos_y)
+		return
+	if is_overlay and pos_name == "center":
+		node.position = Vector2(viewport_size.x * 0.5, viewport_size.y)
 		return
 	match pos_name:
 		"left", "ladoEsquerdo":
@@ -528,15 +747,29 @@ func _apply_character_position(node: Control, pos_name: String) -> void:
 		_:
 			node.position = Vector2(viewport_size.x * 0.5, viewport_size.y)
 
+func _hide_character(char_id: String, transition: String) -> void:
+	if not active_characters.has(char_id):
+		return
+	var node: LayeredCharacterSprite = active_characters[char_id]
+	active_characters.erase(char_id)
+	if not transition.is_empty() and GlobalData.settings.get("transitions_enabled", true) and not is_skipping:
+		var tw := create_tween()
+		tw.tween_property(node, "modulate:a", 0.0, 0.25)
+		tw.finished.connect(node.queue_free)
+	else:
+		node.queue_free()
+
 func _show_choices(options: Array) -> void:
 	is_waiting_choice = true
 	choices_container.visible = true
 	for child in choices_container.get_children():
 		child.queue_free()
+	var first_btn: Button = null
 	for opt in options:
 		var opt_dict: Dictionary = opt
 		var btn := Button.new()
 		btn.text = _interpolate_text(str(opt_dict.get("text", "")))
+		btn.focus_mode = Control.FOCUS_ALL
 		btn.pressed.connect(func():
 			choices_container.visible = false
 			is_waiting_choice = false
@@ -544,6 +777,10 @@ func _show_choices(options: Array) -> void:
 			advance()
 		)
 		choices_container.add_child(btn)
+		if first_btn == null:
+			first_btn = btn
+	if first_btn:
+		first_btn.call_deferred("grab_focus")
 
 func _show_input_prompt(var_name: String, prompt_text: String) -> void:
 	is_waiting_input = true
@@ -572,26 +809,31 @@ func _play_audio_event(ev: Dictionary) -> void:
 	if not ResourceLoader.exists(path):
 		push_warning("Áudio não encontrado: " + path)
 		return
-	var stream: AudioStream = load(path)
+	var raw_stream: AudioStream = load(path)
+	var stream: AudioStream = raw_stream.duplicate()
 	var channel: String = ev.get("channel", "sound")
+	var should_loop: bool = ev.get("loop", false) or (channel == "music" and not ev.get("noloop", false))
+	_set_stream_loop(stream, should_loop)
 	var vol_linear: float = ev.get("volume", 1.0)
 	var vol_db := linear_to_db(max(vol_linear, 0.001))
 	var fadein: float = ev.get("fadein", 0.0)
 	if channel == "music":
 		current_music_id = track_key
+		current_music_volume = vol_linear
 		var next_player := music_b if active_music_player == music_a else music_a
 		var old_player := active_music_player
 		active_music_player = next_player
 		next_player.stream = stream
 		next_player.volume_db = -40.0 if fadein > 0.0 else vol_db
 		next_player.play()
-		if fadein > 0.0:
+		if fadein > 0.0 and not is_skipping:
 			var tw := create_tween().set_parallel(true)
 			tw.tween_property(next_player, "volume_db", vol_db, fadein)
 			if old_player.playing:
 				tw.tween_property(old_player, "volume_db", -40.0, fadein)
 				tw.chain().tween_callback(old_player.stop)
 		else:
+			next_player.volume_db = vol_db
 			old_player.stop()
 	else:
 		if ev.get("loop", false):
@@ -606,7 +848,8 @@ func _play_audio_event(ev: Dictionary) -> void:
 func _stop_audio_event(channel: String, fadeout: float) -> void:
 	if channel == "music":
 		current_music_id = ""
-		if fadeout > 0.0 and active_music_player.playing:
+		current_music_volume = 1.0
+		if fadeout > 0.0 and active_music_player.playing and not is_skipping:
 			var p := active_music_player
 			var tw := create_tween()
 			tw.tween_property(p, "volume_db", -40.0, fadeout)
@@ -617,34 +860,31 @@ func _stop_audio_event(channel: String, fadeout: float) -> void:
 		sfx_player.stop()
 		loop_sfx_player.stop()
 
-func _show_center_text(text: String, transition: Variant) -> void:
+func _show_center_text(text: String, transition: String) -> void:
 	dialogue_box.visible = false
 	center_text_label.text = "[center]%s[/center]" % _interpolate_text(text)
 	center_text_label.visible = true
-	if transition != null and GlobalData.settings.get("transitions_enabled", true):
+	if not transition.is_empty() and GlobalData.settings.get("transitions_enabled", true) and not is_skipping:
 		center_text_label.modulate.a = 0.0
 		create_tween().tween_property(center_text_label, "modulate:a", 1.0, 0.5)
 
 func _play_screen_transition(effect: String) -> void:
-	if not GlobalData.settings.get("transitions_enabled", true):
+	if not GlobalData.settings.get("transitions_enabled", true) or is_skipping:
 		return
-	var fade_in_time := 0.4
-	var fade_out_time := 0.4
-	if effect.begins_with("Fade("):
-		var nums := effect.trim_prefix("Fade(").trim_suffix(")").split(",")
-		if nums.size() >= 3:
-			fade_in_time = float(nums[0])
-			fade_out_time = float(nums[2])
+	var p := _parse_fade_params(effect)
 	transition_rect.color = Color(0, 0, 0, 0)
 	var tw := create_tween()
-	if fade_in_time > 0.0:
-		tw.tween_property(transition_rect, "color:a", 1.0, fade_in_time)
-	if fade_out_time > 0.0:
-		tw.tween_property(transition_rect, "color:a", 0.0, fade_out_time)
+	if p.x > 0.0:
+		tw.tween_property(transition_rect, "color:a", 1.0, p.x)
+	if p.y > 0.0:
+		tw.tween_interval(p.y)
+	if p.z > 0.0:
+		tw.tween_property(transition_rect, "color:a", 0.0, p.z)
 	await tw.finished
 
 func _handle_camera_effect(effect: String) -> void:
 	if effect == "earthquake_loop":
+		current_camera_effect = "earthquake_loop"
 		if not GlobalData.flashing_effects:
 			return
 		if earthquake_tween:
@@ -655,6 +895,7 @@ func _handle_camera_effect(effect: String) -> void:
 		earthquake_tween.tween_property(camera, "offset", Vector2(-8, -12), 0.04)
 		earthquake_tween.tween_property(camera, "offset", Vector2(10, 14), 0.04)
 	elif effect == "stop_earthquake":
+		current_camera_effect = ""
 		if earthquake_tween:
 			earthquake_tween.kill()
 		create_tween().tween_property(camera, "offset", Vector2.ZERO, 0.1)
@@ -682,11 +923,18 @@ func _execute_inline_expression(code: String) -> void:
 func create_state_snapshot() -> Dictionary:
 	var chars_state := {}
 	for c_id in active_characters.keys():
-		var node: LayeredCharacterSprite = active_characters[c_id]
-		chars_state[c_id] = {
-			"attributes": node.get_state(),
-			"position": {"x": node.position.x, "y": node.position.y}
-		}
+		var node: Node = active_characters[c_id]
+		if node is LayeredCharacterSprite:
+			var ctrl := node as Control
+			chars_state[c_id] = {
+				"attributes": node.get_state(),
+				"transform": str(ctrl.get_meta("vn_transform", "center")),
+				"position": {"x": ctrl.position.x, "y": ctrl.position.y},
+				"scale": {"x": ctrl.scale.x, "y": ctrl.scale.y},
+				"z_index": ctrl.z_index
+			}
+		else:
+			chars_state[c_id] = {"procedural": true}
 	return {
 		"label": current_label,
 		"index": current_index,
@@ -694,11 +942,14 @@ func create_state_snapshot() -> Dictionary:
 		"variables": variables.duplicate(true),
 		"bg": current_bg_id,
 		"music": current_music_id,
+		"music_volume": current_music_volume,
+		"camera_effect": current_camera_effect,
 		"characters": chars_state,
 		"history": dialogue_history.duplicate(true)
 	}
 
 func restore_state_snapshot(snap: Dictionary) -> void:
+	set_skipping(false)
 	current_label = snap["label"]
 	event_queue = (snap["queue"] as Array).duplicate(true)
 	current_index = snap["index"]
@@ -706,16 +957,47 @@ func restore_state_snapshot(snap: Dictionary) -> void:
 	if snap.has("history"):
 		dialogue_history.assign(snap["history"])
 	if snap["bg"] != current_bg_id:
-		_change_background(snap["bg"], null)
+		_change_background(snap["bg"], "")
+	var target_music := str(snap.get("music", ""))
+	var target_vol := float(snap.get("music_volume", 1.0))
+	if target_music != current_music_id:
+		if target_music.is_empty():
+			_stop_audio_event("music", 0.2)
+		else:
+			_play_audio_event({
+				"channel": "music",
+				"track": target_music,
+				"volume": target_vol,
+				"fadein": 0.25,
+				"loop": true
+			})
+	var target_cam := str(snap.get("camera_effect", ""))
+	if target_cam != current_camera_effect:
+		if target_cam == "earthquake_loop":
+			_handle_camera_effect("earthquake_loop")
+		else:
+			_handle_camera_effect("stop_earthquake")
 	for c_id in active_characters.keys():
 		(active_characters[c_id] as Node).queue_free()
 	active_characters.clear()
 	var chars_state: Dictionary = snap.get("characters", {})
 	for c_id in chars_state.keys():
 		var c_data: Dictionary = chars_state[c_id]
-		_show_character(c_id, c_data["attributes"], [], "center", null)
-		var pos_dict: Dictionary = c_data["position"]
-		(active_characters[c_id] as Control).position = Vector2(float(pos_dict["x"]), float(pos_dict["y"]))
+		if c_data.get("procedural", false):
+			_show_character(c_id, [], [], "center", "")
+		else:
+			var saved_transform := str(c_data.get("transform", "center"))
+			_show_character(c_id, c_data.get("attributes", []), [], saved_transform, "")
+			var ctrl := active_characters[c_id] as Control
+			if c_data.has("position"):
+				var pos_dict: Dictionary = c_data["position"]
+				ctrl.position = Vector2(float(pos_dict["x"]), float(pos_dict["y"]))
+			if c_data.has("scale"):
+				var scale_dict: Dictionary = c_data["scale"]
+				ctrl.scale = Vector2(float(scale_dict["x"]), float(scale_dict["y"]))
+			if c_data.has("z_index"):
+				ctrl.z_index = int(c_data["z_index"])
+			ctrl.set_meta("vn_transform", saved_transform)
 	_process_current_event()
 
 func _record_rollback_snapshot() -> void:
@@ -727,6 +1009,25 @@ func _record_rollback_snapshot() -> void:
 	rollback_stack.append(snap)
 	if rollback_stack.size() > MAX_ROLLBACK_STEPS:
 		rollback_stack.pop_front()
+
+func _is_fade_effect(effect: String) -> bool:
+	var low := effect.strip_edges().to_lower()
+	return low == "fade" or low.begins_with("fade(")
+
+func _parse_fade_params(effect: String) -> Vector3:
+	var low := effect.strip_edges().to_lower()
+	if low.begins_with("fade("):
+		var nums := low.trim_prefix("fade(").trim_suffix(")").split(",")
+		if nums.size() >= 3:
+			return Vector3(float(nums[0]), float(nums[1]), float(nums[2]))
+	return Vector3(0.4, 0.0, 0.4)
+
+func _clear_stage_entities() -> void:
+	for c_id in active_characters.keys():
+		var node: Node = active_characters[c_id]
+		if is_instance_valid(node):
+			node.queue_free()
+	active_characters.clear()
 
 func rollback() -> void:
 	if rollback_stack.size() <= 1:

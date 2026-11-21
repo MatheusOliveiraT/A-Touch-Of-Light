@@ -281,6 +281,7 @@ with Fade(0.0, 0.0, 3.0)
 "Essa pessoa com certeza sabia o que estava fazendo. E com certeza também sabia todos os riscos. Mas... por quê?"
 "A alguns passos de distância da luz eu consegui visualizar com mais detalhes a origem daquele feixo... e estranhamente ele não vinha de nenhuma peça de maquinário, nem nada semelhante."
 play sound portal loop volume 0.5
+show portal at metadeTamanho
 with dissolve
 "Não. A luz exalava de uma forma estranha. Como em uma peça de ficção científica. Um portal? Não... energia acumulada...?"
 "...mas um portal seria muito mais divertido... e convenhamos que parece bastante um portal..."
@@ -288,6 +289,7 @@ with dissolve
 hide portal
 with dissolve
 play sound portal loop volume 1.0
+show portal
 with dissolve
 "Me aproximando da luz mais e mais surge um sentimento de familiaridade... algo que me puxa, como um chamado. O feixo é algo atraente, sedutor."
 "Eu consigo sentir as vibrações das ondas de luz... instintivamente, meu dedo indicador se aproximou da fonte."
@@ -549,7 +551,7 @@ jump dia3
 
 == dia3 ==
 
-scene bg_casa_quarto_dia
+scene bg_quarto_casa_dia
 with fade
 play sound whiteNoise volume 0.5
 "Eu estaria me iludindo se dissesse que acreditava que essa noite de sono seria maravilhosa. Mas acho que duas horas (não) dá pro gasto."
@@ -557,7 +559,7 @@ play sound whiteNoise volume 0.5
 "Sentado na cama encarando o chão eu tento revisitar cada passo que me trouxe até aqui."
 "É, nada vai fazer sentido muito cedo. Não enquanto eu ficar aqui sentado."
 "[l.name]... ele tem muita explicação a fazer hoje."
-scene bg_casa_sala_dia
+scene bg_sala_casa_dia
 show lucas base_pijama_bandagens neutro face_bandage
 with fade
 play music musicaMelancolica3 fadein 1.0
@@ -628,7 +630,7 @@ l "Isso! Bom, o meu primeiro trabalho desse tipo..."
 v "Tá... e o que eu tenho a ver com isso?"
 show lucas head_pijama_bandagens sorrindoDeLado blush
 l "Você... precisa me ajudar?"
-v "... isso é suspeitamente vago..."
+v "...isso é suspeitamente vago..."
 show lucas sorrindoDesviandoOlhar
 l "Eu sei... [seuNome], eu não sei muito sobre você, mas eu sei que você é a chave pra evitar toda essa catástrofe..."
 v "O que você sabe sobre mim?"
@@ -640,13 +642,13 @@ v "Nada além disso?"
 show lucas base_pijama_bandagens falando
 l "Não..."
 show lucas neutro
-v "... como você e... o seu povo? Sabem sobre... mim?"
+v "...como você e... o seu povo? Sabem sobre... mim?"
 show lucas falando
 l "Existe uma grande tensão política em [planeta_lucas]. O risco de uma grande guerra acontecer é iminente. Com isso, o governo decidiu tomar certas... decisões quanto ao âmbito das relações espaciais."
 l "Apesar do poder de comunicação entre diferentes galáxias por causa dos portais e de outras tecnologias, [planeta_lucas] escolheu manter-se fechada e não expor o seu conhecimento adquirido por nós para as outras sociedades do universo."
 l "Mas essa escolha mudou. [planeta_lucas] começou a olhar para as outras sociedades na busca para a solução desses conflitos. Eles viram potencial na Terra, especialmente em você. Então agora [planeta_lucas] precisa de você para prosperar em paz."
 show lucas neutro
-v "... eu mal sei fazer um miojo... imagina salvar um planeta, uma galáxia ou o universo..."
+v "...eu mal sei fazer um miojo... imagina salvar um planeta, uma galáxia ou o universo..."
 show lucas head_pijama_bandagens falando
 l "[seuNome], [planeta_lucas] vem observando a Terra a anos... especialmente você. Desde que você nasceu..."
 show lucas neutro
@@ -661,7 +663,7 @@ v "O que você quer dizer com isso??"
 show lucas falando
 l "Como eu disse, eu não vi o acidente. Mas eu sei porque ele aconteceu... quem causou ele... e é por isso que eu preciso da sua ajuda."
 show lucas neutro
-v "... Eu preciso de uma água."
+v "...Eu preciso de uma água."
 show lucas triste2
 l "Eu disse demais? D-desculpa, [seuNome]..."
 v "É muita coisa pra digerir de uma vez só..."
@@ -697,7 +699,7 @@ v "E como você vai garantir que vai funcionar nos outros? Convenhamos que o ín
 show lucas sorrindo2
 l "Esse é um dos momentos em que você precisa confiar em mim..."
 "Esse leão não tem medo do perigo."
-v "... Tá, tá. Pra quem tem portal e os caralho, disfarce não deveria ser uma surpresa."
+v "...Tá, tá. Pra quem tem portal e os caralho, disfarce não deveria ser uma surpresa."
 "O estômago de [l.name] faz um leve barulho."
 show lucas sorrindoDesviandoOlhar
 l "Ops..."
@@ -709,7 +711,7 @@ v "Eu quis dizer... você quer um outro par de roupas?"
 show lucas sorrindoDesviandoOlhar
 l "A-ah... eu aceitaria..."
 v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
-scene bg_casa_sala_dia
+scene bg_sala_casa_dia
 show lucas base_social_tie_vest neutro face_bandage
 with fade
 show lucas falando

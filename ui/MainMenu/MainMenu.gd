@@ -99,9 +99,7 @@ func _refresh_texts() -> void:
 
 func _on_start_pressed() -> void:
 	GlobalData.pending_load_path = ""
-	var fade := create_tween()
-	fade.tween_property(self, "modulate:a", 0.0, 0.35)
-	fade.finished.connect(func(): get_tree().change_scene_to_file(VN_STAGE_SCENE))
+	GlobalData.change_scene_with_fade(VN_STAGE_SCENE, 0.4, 0.5)
 
 func _open_shell_tab(tab_id: String) -> void:
 	if _active_shell and is_instance_valid(_active_shell):
