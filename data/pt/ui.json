@@ -52,11 +52,13 @@
 	"auto_time": "Tempo para auto-pulo",
 	"music_vol": "Volume da música",
 	"sfx_vol": "Volume do som",
-	"mute_all": "Silenciar tudo"
+	"mute_all": "Silenciar tudo",
+	"general_vol": "Volume geral",
+	"reset": "Restaurar padrões"
   },
   "about": {
 	"version": "Versão 0.0.1",
-	"body": "A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.\n\nEste jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.\n\nArtefatos utilizados sob a licença de uso [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]:\n\n-> Fonte Not Jam UI 15 e Not Jam Atomic 20, ambas feitas por Not Jam disponíveis [url=https://not-jam.itch.io/not-jam-font-pack]aqui[/url].\n\n-> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível [url=https://sfbgames.itch.io/chiptone]aqui[/url].\n\n-> Efeito sonoro de sirene, feito por AsdfgOrt disponível [url=https://freesound.org/s/512371/]aqui[/url]\n\n-> Trilha sonora feita por Abstraction Music e Tallbeard Studios, disponível [url=https://abstractionmusic.com/]aqui[/url]\n\nArtefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:\n\n-> Créditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele [url=https://deep-fold.itch.io/]aqui[/url].\n\n-> Shader de onda feito por Wattson, disponível [url=https://wattson.itch.io/renpy-wave-rendering]aqui[/url]."
+	"body": "A Touch Of Light é uma obra de ficção. Quaisquer menções ou citações a eventos, pessoas e lugares reais são utilizadas de forma fantasiosa ou alteradas para fins narrativos. Qualquer outra semelhança com a realidade é mera coincidência.\n\nEste jogo está em fase de desenvolvimento. Portanto, a história, os recursos visuais e os elementos do jogo estão sujeitos a alterações a qualquer momento.\n\nArtefatos utilizados sob a licença de uso [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url]:\n\n-> Fonte Not Jam UI 15 e Not Jam Atomic 20, ambas feitas por Not Jam disponíveis [url=https://not-jam.itch.io/not-jam-font-pack]aqui[/url].\n\n-> Efeitos sonoros gerados com Chiptone, ferramenta feita por SFBGames disponível [url=https://sfbgames.itch.io/chiptone]aqui[/url].\n\n-> Efeito sonoro de sirene, feito por AsdfgOrt disponível [url=https://freesound.org/s/512371/]aqui[/url]\n\n-> Trilha sonora feita por Abstraction Music e Tallbeard Studios, disponível [url=https://abstractionmusic.com/]aqui[/url]\n\nArtefatos utilizados sem licença explícita de uso/outros tipos de licença de uso:\n\n-> Créditos especiais a Deep-Fold pelas ferramentas para geração de artefatos/fundos, encontre mais do trabalho dele [url=https://deep-fold.itch.io/]aqui[/url]."
   },
   "confirm": {
 	"yes": "Sim",

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cdl0o14u2b5vl" path="res://assets/gui/game_menu.png" id="2_pj7m7"]
 [ext_resource type="Texture2D" uid="uid://rcxsjuh38u1e" path="res://assets/gui/overlay/game_menu.png" id="3_thetd"]
 [ext_resource type="Script" uid="uid://bld2qvqmwj2ln" path="res://ui/components/NavHoverButton.gd" id="4_lsglm"]
+[ext_resource type="Theme" uid="uid://dngfhyuquqn3d" path="res://theme/theme.tres" id="4_rr028"]
 
 [node name="GameMenuShell" type="Control" unique_id=553449530]
 layout_mode = 3
@@ -60,38 +61,47 @@ theme_override_constants/separation = 6
 
 [node name="HistoryButton" type="Button" parent="NavigationVBox" unique_id=769286742]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="SaveButton" type="Button" parent="NavigationVBox" unique_id=302473152]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="LoadButton" type="Button" parent="NavigationVBox" unique_id=1805129341]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="GalleryButton" type="Button" parent="NavigationVBox" unique_id=679462812]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="OptionsButton" type="Button" parent="NavigationVBox" unique_id=758314087]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="MainMenuButton" type="Button" parent="NavigationVBox" unique_id=1280159759]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="AboutButton" type="Button" parent="NavigationVBox" unique_id=120037791]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="HelpButton" type="Button" parent="NavigationVBox" unique_id=652896544]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="QuitButton" type="Button" parent="NavigationVBox" unique_id=1678141037]
 layout_mode = 2
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="ReturnButton" type="Button" parent="." unique_id=579119713]
@@ -105,6 +115,7 @@ grow_vertical = 0
 offset_transform_enabled = true
 offset_transform_position = Vector2(60, -45)
 offset_transform_visual_only = false
+theme = ExtResource("4_rr028")
 script = ExtResource("4_lsglm")
 
 [node name="ContentSlot" type="Control" parent="." unique_id=1964358332]

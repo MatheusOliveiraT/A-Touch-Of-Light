@@ -4,5 +4,41 @@
 
 [node name="AboutOverlay" type="Control" unique_id=309460411]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_jliv4")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1592189795]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=656732883]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=10928100]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=76338133]
+layout_mode = 2
+
+[node name="VersionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=557287385]
+layout_mode = 2
+
+[node name="BodyText" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1707606441]
+custom_minimum_size = Vector2(600, 380)
+layout_mode = 2
+bbcode_enabled = true
+fit_content = true

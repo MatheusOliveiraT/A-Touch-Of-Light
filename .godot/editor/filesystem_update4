@@ -1,0 +1,10 @@
+res://ui/MainMenu/MainMenu.tscn
+res://theme/theme.tres
+res://ui/SplashScreen/SplashScreen.tscn
+res://ui/GameMenuShell/GameMenuShell.tscn
+res://ui/overlays/SettingsOverlay/SettingsOverlay.tscn
+res://ui/overlays/SettingsOverlay/SettingsOverlay.gd
+res://data/pt/ui.json
+res://ui/GameMenuShell/GameMenuShell.gd
+res://ui/overlays/AboutOverlay/AboutOverlay.tscn
+res://ui/overlays/AboutOverlay/AboutOverlay.gd

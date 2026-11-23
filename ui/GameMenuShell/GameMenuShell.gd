@@ -24,9 +24,9 @@ var _tab_scenes: Dictionary = {
 	# "save": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
 	# "load": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
 	# "gallery": preload("res://ui/overlays/GalleryOverlay/GalleryOverlay.tscn"),
-	# "options": preload("res://ui/overlays/SettingsOverlay/SettingsOverlay.tscn"),
+	 "options": preload("res://ui/overlays/SettingsOverlay/SettingsOverlay.tscn"),
 	# "history": preload("res://ui/overlays/HistoryOverlay/HistoryOverlay.tscn"),
-	# "about": preload("res://ui/overlays/AboutOverlay/AboutOverlay.tscn"),
+	 "about": preload("res://ui/overlays/AboutOverlay/AboutOverlay.tscn"),
 	# "help": preload("res://ui/overlays/HelpOverlay/HelpOverlay.tscn"),
 }
 
@@ -77,10 +77,8 @@ func _refresh_texts() -> void:
 func open_tab(tab_id: String) -> void:
 	_current_tab = tab_id
 	title_label.text = GlobalData.tr_ui("menu", tab_id)
-
 	for child in content_slot.get_children():
 		child.queue_free()
-
 	if _tab_scenes.has(tab_id):
 		var panel: Control = (_tab_scenes[tab_id] as PackedScene).instantiate()
 		if panel.has_method("configure"):

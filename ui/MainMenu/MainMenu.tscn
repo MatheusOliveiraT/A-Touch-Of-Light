@@ -114,26 +114,32 @@ script = ExtResource("4_wlwnj")
 
 [node name="LoadButton" type="Button" parent="NavigationVBox" unique_id=1199623902]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="GalleryButton" type="Button" parent="NavigationVBox" unique_id=1303587747]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="OptionsButton" type="Button" parent="NavigationVBox" unique_id=77846926]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="AboutButton" type="Button" parent="NavigationVBox" unique_id=2027814979]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="HelpButton" type="Button" parent="NavigationVBox" unique_id=435971921]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="QuitButton" type="Button" parent="NavigationVBox" unique_id=105208881]
 layout_mode = 2
+theme = ExtResource("10_0xady")
 script = ExtResource("4_wlwnj")
 
 [node name="VersionLabel" type="Label" parent="." unique_id=2597370]

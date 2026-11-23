@@ -4,5 +4,96 @@
 
 [node name="SettingsOverlay" type="Control" unique_id=302897224]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_fvx5w")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=415252689]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=507924349]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=308442874]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=87187672]
+layout_mode = 2
+text = "Opções"
+
+[node name="Sliders" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=769622706]
+layout_mode = 2
+
+[node name="General" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders" unique_id=686374502]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/General" unique_id=2085777122]
+layout_mode = 2
+
+[node name="General" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/General" unique_id=1649726988]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Music" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders" unique_id=360124599]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/Music" unique_id=415677606]
+layout_mode = 2
+
+[node name="Music" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/Music" unique_id=846657257]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="SFX" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders" unique_id=1439798260]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/SFX" unique_id=539531293]
+layout_mode = 2
+
+[node name="SFX" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/Sliders/SFX" unique_id=980454393]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Toggles" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=988230477]
+layout_mode = 2
+
+[node name="FullScreen" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/Toggles" unique_id=478378132]
+layout_mode = 2
+
+[node name="Transitions" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/Toggles" unique_id=430027593]
+layout_mode = 2
+
+[node name="Effects" type="CheckButton" parent="PanelContainer/MarginContainer/VBoxContainer/Toggles" unique_id=18779307]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1437864024]
+layout_mode = 2
+
+[node name="ButtonsHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=285898555]
+layout_mode = 2
+
+[node name="ResetButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox" unique_id=1480569108]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox" unique_id=896197231]
+layout_mode = 2
