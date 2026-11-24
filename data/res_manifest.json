@@ -79,7 +79,7 @@
 	"seg": { "default_name": "Segurança", "color": "#2f2f2f", "image": null },
 	"cient1": { "default_name": "Cientista 1", "color": "#1c4c00", "image": null },
 	"cient2": { "default_name": "Cientista 2", "color": "#00264c", "image": null },
-	"l": { "default_name": "Lucas", "color": "#9900ff", "image": "lucas" }
+	"l": { "default_name": "Lucas", "color": "#9900ff", "image": null }
   },
   "variables": {
 	"seuNome": "Leonardo",
@@ -106,32 +106,22 @@
 			"base_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_base_pijama.png",
 			"base_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_base_pijama_bandagens.png",
 			"base_social": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social.png",
-			"base_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social_tie.png",
-			"base_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_base_social_tie_vest.png",
 			"head_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_head_naked.png",
 			"head_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_head_pijama.png",
 			"head_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_head_pijama_bandagens.png",
 			"head_social": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social.png",
-			"head_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social_tie.png",
-			"head_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_head_social_tie_vest.png",
 			"thinking_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_naked.png",
 			"thinking_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_pijama.png",
 			"thinking_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_pijama_bandagens.png",
 			"thinking_social": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social.png",
-			"thinking_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social_tie.png",
-			"thinking_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_thinking_social_tie_vest.png",
 			"crossed_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_naked.png",
 			"crossed_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_pijama.png",
 			"crossed_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_pijama_bandagens.png",
 			"crossed_social": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social.png",
-			"crossed_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social_tie.png",
-			"crossed_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_crossed_social_tie_vest.png",
 			"scared_naked": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_naked.png",
 			"scared_pijama": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_pijama.png",
 			"scared_pijama_bandagens": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_pijama_bandagens.png",
 			"scared_social": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social.png",
-			"scared_social_tie": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social_tie.png",
-			"scared_social_tie_vest": "res://assets/images/sprites/lucas/pose/lucas_pose_scared_social_tie_vest.png"
 		  }
 		},
 		"face": {

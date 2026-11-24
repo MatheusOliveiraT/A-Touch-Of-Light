@@ -4,5 +4,44 @@
 
 [node name="ControlsOverlay" type="Control" unique_id=1604995092]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_i7iex")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1404003824]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -180.0
+offset_right = 20.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=677529088]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=127606955]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1923746301]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=137841782]
+custom_minimum_size = Vector2(400, 320)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ControlsGrid" type="GridContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=807338222]
+layout_mode = 2
+columns = 2
+
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=600624318]
+layout_mode = 2

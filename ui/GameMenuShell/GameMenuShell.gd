@@ -27,7 +27,7 @@ var _tab_scenes: Dictionary = {
 	 "options": preload("res://ui/overlays/SettingsOverlay/SettingsOverlay.tscn"),
 	 "history": preload("res://ui/overlays/HistoryOverlay/HistoryOverlay.tscn"),
 	 "about": preload("res://ui/overlays/AboutOverlay/AboutOverlay.tscn"),
-	 "help": preload("res://ui/overlays/HelpOverlay/HelpOverlay.tscn"),
+	 "help": preload("res://ui/overlays/ControlsOverlay/ControlsOverlay.tscn"),
 }
 
 var _current_tab := ""

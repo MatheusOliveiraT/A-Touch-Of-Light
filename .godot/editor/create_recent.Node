@@ -1,14 +1,14 @@
 Button
-RichTextLabel
+GridContainer
+ScrollContainer
 Label
 VBoxContainer
 MarginContainer
 PanelContainer
+RichTextLabel
 HBoxContainer
 OptionButton
 CheckButton
 CheckBox
 HSlider
 BackBufferCopy
-TabContainer
-AnimatedSprite2D

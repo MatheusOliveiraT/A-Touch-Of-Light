@@ -7,7 +7,7 @@ pause 1.0
 show text "Capítulo 1" with dissolve
 pause 5.0
 scene bg_hall_dia
-show lucas thinking_social_tie_vest confuso face_bandage
+show lucas thinking_social confuso face_bandage
 with fade
 play music musicaAnimada2 fadein 2.0
 "Após trancar a porta eu chamo o elevador e aguardo logo na frente da porta. Ao olhar para o lado vejo que o felino parece extremamente confuso."
@@ -15,15 +15,15 @@ l "É normal a porta demorar tanto para abrir? Você não consegue, sei lá, emp
 v "O elevador ainda tá subindo... por quê?"
 l "Elevador... acho que nunca ouvi essa palavra antes."
 v "Me surpreende vocês terem portais que viajam entre galáxias e não terem elevadores."
-show lucas scared_social_tie_vest assustado
+show lucas scared_social assustado
 l "A-ah!"
 "[l.name] se assusta quando a porta do elevador se abre, fazendo com que eu solte uma leve risada com a cena na minha frente."
 v "Bora, gatinho."
-show lucas thinking_social_tie_vest confuso
+show lucas thinking_social confuso
 l "C-certo."
 "O felino me olha com um olhar de dúvida, com certeza não entendeu a provocação."
 scene bg_estacionamento
-show lucas thinking_social_tie_vest confuso face_bandage
+show lucas thinking_social confuso face_bandage
 with fade
 play sound elevador volume 0.8
 "Ao chegar no estacionamento as portas do elevador se abrem e eu saio, o leão prontamente me acompanha. Nós caminhamos em direção à minha vaga, chegando no meu carro. [l.name] mais uma vez parece confuso, dessa vez encarando o automóvel."
@@ -32,27 +32,27 @@ v "Isso seria um carro, mais especificamente o meu."
 show lucas assustado
 l "U-um carro? Você deve ser rico..."
 v "Eu vivo bem... mas rico, não."
-show lucas base_social_tie_vest falando
+show lucas base_social falando
 l "Em [planeta_lucas] carros são artigos de luxo, já que não precisamos deles necessariamente. Esse é o primeiro carro que eu vejo... mesmo que muito diferente dos que eu via em casa."
 show lucas neutro
 "Dessa vez o olhar de confusão é meu."
 v "Você sabe que todos os outros também são carros, né?"
 "Eu falo apontando para todos os outros carros estacionados próximos ao meu."
-show lucas head_social_tie_vest sorrindo2 blush
+show lucas head_social sorrindo2 blush
 l "A-ah... então mora bastante gente rica aqui..."
 v "Você com certeza perdeu o meu ponto. Entra no carro aí, tô com muita fome pra te explicar."
 show lucas sorrindo1
 l "T-tá."
 scene bg_estacionamento
 show carro
-show lucas base_social_tie_vest sorrindo1 blush face_bandage at bancoPassageiro
+show lucas base_social sorrindo1 blush face_bandage at bancoPassageiro
 with dissolve
 "Então eu dou a volta e entro no carro pelo banco do motorista. Rapidamente eu ajeito os retrovisores e dou partida no carro. Verificando o cinto de segurança, eu percebo que [l.name] não colocou o dele, e o questiono."
 v "Não vai colocar o cinto?"
-show lucas head_social_tie_vest sorrindoDeLado
+show lucas head_social sorrindoDeLado
 l "Cinto?"
 v "O cinto de segurança."
-show lucas base_social_tie_vest sorrindoDeLado
+show lucas base_social sorrindoDeLado
 l "C-como que eu coloco?"
 v "Na sua direita, puxa o gancho até a trava que tem do lado esquerdo do seu banco."
 "O felino tenta seguir o comando, porém ele puxa o cinto com muita força, fazendo ele travar no meio do caminho."
@@ -61,23 +61,23 @@ v "Solta um pouco e puxa com menos força."
 show lucas bravo1 -blush
 l "É um pouco..."
 v "Apertado?"
-show lucas head_social_tie_vest sorrindoDeLado blush
+show lucas head_social sorrindoDeLado blush
 l "S-sim..."
 v "Se não fosse apertado, não seria seguro. Agora bora pra padoca."
 scene bg_rua_dia
 show carro
-show lucas thinking_social_tie_vest confuso face_bandage at bancoPassageiro
+show lucas thinking_social confuso face_bandage at bancoPassageiro
 with fade
 l "A terra é bem diferente de [planeta_lucas]... realmente tem carro pra todo lado..."
 "[l.name] diz isso olhando pela janela, observando o caminho."
 v "Acredite em mim, tem como piorar, e muito. Essa parte da cidade ainda é de boa. A marginal nessa hora da manhã vira um oceano de rodas."
 "O felino parece ter dificuldade em visualizar o cenário."
-show lucas head_social_tie_vest falando
+show lucas head_social falando
 l "[seuNome], não sei se é o melhor momento pra te perguntar, mas... o que você faz, exatamente?"
 show lucas neutro
 v "Com o tanto de informação que você leu sobre mim, não é surpresa que você não tenha entendido. Essa é o tipo de pergunta que até quem é daqui me costuma me fazer e não entender nem metade da resposta."
 v "Pode-se dizer que hoje eu trabalho com os sistemas de segurança de um acelerador de partículas... e pelo que parece eu não sou o melhor no meu trabalho."
-show lucas base_social_tie_vest triste1
+show lucas base_social triste1
 play music musicaMelancolica2 fadein 1.0
 "O leão claramente entende o peso das minhas palavras."
 v "Meu trabalho é seguir os padrões que chegam pra mim dos especialistas, diversos testes são feitos em escalas menores antes de irem para o acelerador maior. Quando acidentes acontecem, geralmente é papo de trocar uma peça ou uma plaquinha."
@@ -99,12 +99,12 @@ v "Despercío de tecnologia você e esse seu povo hein."
 show lucas bravo2
 l "Não é assim que funciona, [seuNome]."
 v "Aqui na Terra tem um povo que paga uma grana pra dar uma volta no espaço. Tinha até umas celebridades que foram. Que nem o povo do submarino."
-show lucas thinking_social_tie_vest confuso
+show lucas thinking_social confuso
 l "O que exatamente vocês fazem no espaço?"
 v "Esse pessoal geralmente só vai pra olhar mesmo. Mas também tem os astronautas que vão pra estudar ou seja lá o que eles fazem. Conhecer?"
 l "Você não sabe o que um astronauta faz, né?"
 v "Não faço ideia."
-show lucas base_social_tie_vest falando
+show lucas base_social falando
 l "Voltando pra sua pergunta, eu trabalho para a [agencia_sigla]. Antes de vir para cá, eu passei por um treinamento intenso que durou praticamente minha vida toda."
 show lucas neutro
 v "[agencia_sigla]?"
@@ -117,11 +117,11 @@ show lucas falando
 l "Dentre outras coisas, estudar os comportamentos das outras civilizações, práticas de segurança, protocolos de conduta. Coisas desse tipo."
 show lucas neutro
 v "Só de ouvir isso aí já me deu uma dor de cabeça."
-show lucas head_social_tie_vest falando blush
+show lucas head_social falando blush
 l "É uma mistura de bastante coisa, de verdade. Eu nunca entendi porque estudar tudo aquilo também. Tirando o treinamento físico..."
 show lucas sorrindo2
 v "Tortura psicológica não é entretenimento."
-show lucas base_social_tie_vest triste2 -blush
+show lucas base_social triste2 -blush
 "Algo na minha fala deixou [l.name] desconfortável."
 v "É uma piada, viu? Coisa de internet que eu falo. Não sei se você tem internet em [planeta_lucas]."
 show lucas triste1
@@ -132,10 +132,10 @@ show lucas sorrindo2
 l "É injusto comparar quando eu tenho dezenas de civilizações pra estudar e você só tem a sua."
 v "Isso se chama especialização."
 scene bg_padaria
-show lucas base_social_tie_vest neutro face_bandage at ladoEsquerdo
+show lucas base_social neutro face_bandage at ladoEsquerdo
 with fade
 "Papo vem, papo vai, e finalmente chegamos ao nosso destino. [l.name] olha ao redor do ambiente, encantado com os detalhes."
-show lucas thinking_social_tie_vest confuso
+show lucas thinking_social confuso
 l "Então isso é uma padaria."
 v "A mais próxima de casa. É conveninente. Vou pegar algo pra gente comer."
 show lucas falando
@@ -153,7 +153,7 @@ v "Pra agora mesmo."
 ate "Certo, assim que tiver pronto eu levo na sua mesa."
 v "Muito obrigado."
 "Então eu retorno para a mesa que [l.name] escolheu. O felino parece encantado com o espaço."
-show lucas base_social_tie_vest falando face_bandage at ladoEsquerdo
+show lucas base_social falando face_bandage at ladoEsquerdo
 with dissolve
 l "Os humanos são interessantes."
 show lucas neutro
@@ -166,11 +166,11 @@ show lucas falando
 l "Obrigado, [seuNome]."
 show lucas neutro
 v "De fome você não morre na minha mão. Seguinte, eu preciso trabalhar ainda hoje. você vai ficar perambulando por aí ou vai ficar no meu apartamento?"
-show lucas head_social_tie_vest falando
+show lucas head_social falando
 l "Eu suponho que eu não posso ir com você lá, certo?"
 show lucas sorrindo2
 v "Seria... no mínimo estranho."
-show lucas base_social_tie_vest falando -blush
+show lucas base_social falando -blush
 l "Acho que seria imprudente da minha parte andar pela cidade sem alguém pra me guiar."
 show lucas neutro
 v "Às vezes você tem um super GPS instalado aí, sei lá. Então eu vou passar pra comprar alguma coisa pra você almoçar e te deixar em casa depois que a gente sair daqui."
@@ -181,30 +181,30 @@ show lucas sorrindo2 blush
 l "O-obrigado."
 "[l.name] me parece desacostumado com a simples gentileza da antendente."
 v "Aqui tem pão de queijo e o misto. E pra beber tem um suco de laranja aqui."
-show lucas thinking_social_tie_vest confuso -blush
+show lucas thinking_social confuso -blush
 l "Tipo a cor?"
 v "Não tem larana em [planeta_lucas]?"
-show lucas head_social_tie_vest sorrindoDesviandoOlhar blush
+show lucas head_social sorrindoDesviandoOlhar blush
 l "Claro que tem... o espectro das cores é igual em todas as galáxias."
 v "A fruta, [l.name]."
 show lucas falando
 l "Ah... a fruta? Acho que não?"
 show lucas sorrindoDeLado
 v "Enfim, eu vou comer um pão de queijo, você pode comer o outro e o misto."
-show lucas base_social_tie_vest falando -blush
+show lucas base_social falando -blush
 l "E o que você tá bebendo?"
 show lucas neutro
 v "Café. Mais do que necessário hoje. Agora cala a boca e come."
 "Ele tá com tanta fome que não protesta adiante."
 scene bg_estacionamento
 show carro
-show lucas base_social_tie_vest neutro face_bandage at bancoPassageiro
+show lucas base_social neutro face_bandage at bancoPassageiro
 with fade
 v "Chegamos. Você consegue subir no apartamento sozinho?"
-show lucas head_social_tie_vest sorrindoDesviandoOlhar blush
+show lucas head_social sorrindoDesviandoOlhar blush
 l "Acho que eu não lembro o andar."
 v "É no décimo terceiro andar. Apartamento número 1310."
-show lucas base_social_tie_vest falando -blush
+show lucas base_social falando -blush
 l "Parece fácil o suficiente... 1310."
 show lucas neutro
 v "Aqui as chaves. Essa aqui é a da porta da frente. Quando eu chegar você vai precisar abrir a porta pra mim. Então se você for tirar uma soneca aproveita pra tirar agora."
@@ -345,7 +345,7 @@ v "Vira a chave pra esquerda, [l.name]."
 l "A-ah... espera aí..."
 "Alguns seguundos depois a porta se abre. Eu entro para a sala de estar rapidamente, trancando a porta logo em seguida."
 scene bg_sala_casa_noite
-show lucas head_social_tie_vest sorrindoDeLado face_bandage blush
+show lucas head_social sorrindoDeLado face_bandage blush
 with fade
 "Eu sou recebido pela imagem do leão, mais uma vez."
 l "Eai... como foi lá?"
@@ -357,14 +357,14 @@ v "Cê tava dormindo mesmo?"
 show lucas sorrisoDeLado
 l "T-talvez?"
 v "Você vai acabar virando a fofoca do prédio ainda. Pelo menos não demorou muito pra acordar. Como foi seu dia por aqui?"
-show lucas base_social_tie_vest falando -blush
+show lucas base_social falando -blush
 l "Tranquilo. Eu fiquei estudando a maior parte do tempo. Bem melhor ler sobre os humanos diretamente dos livros de vocês."
 show lucas neutro
 v "Eu me pergunto onde você achou esses livros."
-show lucas head_social_tie_vest sorrindoDeLado blush
+show lucas head_social sorrindoDeLado blush
 l "Alguns livros estavam na mesa... os outros eu... achei."
 v "Eu prefiro não saber mais do que isso. A ignorância é uma benção. Eu preciso de um banho."
-show lucas base_social_tie_vest falando
+show lucas base_social falando
 l "Okay..."
 scene bg_banheiro_casa_noite
 with fade
@@ -374,7 +374,7 @@ with dissolve
 "A água quente sempre me ajuda, pelo menos aliviando essa tensão nos meus ombros. Eu preciso fazer a barba... e cortar o cabelo.... que dia é hoje? Quarta..."
 "...tem alguma coisa amanhã que eu tô esquecendo... e eu não vou ganhar nada batendo minha cabeça na parede tentando lembrar. Eu tomei o meu remédio hoje? Eu não faço ideia."
 scene bg_sala_casa_noite
-show lucas base_social_tie_vest neutro face_bandage
+show lucas base_social neutro face_bandage
 with fade
 "Após mais alguns minutos de água quente e outras reflexões profundas, eu retorno para a sala de estar. Agora meus trajes estão de acordo com a situação, casual."
 v "Seguinte, eu preciso ir no mercado. Cê vem junto?"
@@ -383,7 +383,7 @@ l "Sim, sim."
 show lucas neutro
 v "Bora então."
 scene bg_mercado
-show lucas base_social_tie_vest neutro face_bandage blush
+show lucas base_social neutro face_bandage blush
 with fade
 "A viagem até o mercado foi relativamente tranquila. Tirando o transito dessa cidade infernal. O mercado segue lotado como sempre. O [l.name] não parece muito... acostumado com multidões."
 l "É... bem cheio aqui..."
@@ -400,7 +400,7 @@ l "Certo..."
 show lucas neutro
 "Então silêncio. Aqueles três segundos de silêncio que deixam qualquer um desconfortável."
 pause 2.0
-show lucas head_social_tie_vest sorrindo2 blush
+show lucas head_social sorrindo2 blush
 l "Sobre o que você quer conversar exatamente, [seuNome]?"
 v "Acho que tá na hora de você dar umas explicações, pelo menos o básico. Você é um leão, no meio do oceano de gente e não tem ninguém aqui impressionado além de mim."
 show lucas sorrindoDesviandoOlhar
@@ -411,21 +411,21 @@ l "Outro exemplo é a comunicação utilizando idiomas diferentes. Basicamente v
 l "Existem diversas outras funcionalidades e motivos pra usar o [nome_implante], essa é só uma breve introdução."
 show lucas neutro
 v "Implante... no cérebro..."
-show lucas base_social_tie_vest falando
+show lucas base_social falando
 l "Praticamente inofensivo no sentido de implantação. É relativamente comum em [planeta_lucas]... principalmente pra um pessoal mais bem de vida."
 show lucas neutro
 v "Aqui na terra isso é papo de ficção científica. Ou papo de conspiração. Mas eu não deveria estar tão chocado nesse ponto."
-show lucas head_social_tie_vest sorrindo2 blush
+show lucas head_social sorrindo2 blush
 l "Eu acredito que a instabilidade do portal possa ter afetado o [nome_implante] e por isso o disfarce não tá funcionando com você. Mas é apenas uma teoria."
 v "Se você que tem chip na cabeça não sabe, imagina eu."
-show lucas thinking_social_tie_vest confuso -blush
+show lucas thinking_social confuso -blush
 "A piada anti-vacina passa despercebida por [l.name], claramente."
 v "Então você não fala português. Curioso. Mas meio que esperado de um alienígena."
 v "Em [planeta_lucas] vocês tem tipo, conflitos políticos? Aqui na Terra tem umas coisas bizarras acontecendo o tempo todo."
 "A minha pergunta pega o leão despreparado."
-show lucas head_social_tie_vest falando blush
+show lucas head_social falando blush
 l "B-bom... [planeta_lucas] é organizada de forma semelhante a Terra, em questão política. Então o planeta é dividido em diversos países, que por sua vez são divididos em partes menores e por aí vai."
-show lucas base_social_tie_vest falando -blush
+show lucas base_social falando -blush
 l "O nome do meu país é [pais_lucas]. A [agencia_sigla] é de [pais_lucas], sendo um órgão do governo federal. Por mais que a parte majoritária de [planeta_lucas] tenha entrado em consenso em relação à certas atitudes, não é todo país que pensa da mesma forma."
 l "Então é relativamente complicado impedir que certos limites sejam... respeitados."
 show lucas neutro
@@ -434,19 +434,19 @@ show lucas falando
 l "[planeta_lucas] tem mais em comum com a Terra do que diferenças, pelo que eu sei. E também com muitos outros planetas."
 show lucas neutro
 v "Então esse objetivo seu de salvar o universo não é algo que todos os países de [planeta_lucas] querem?"
-show lucas head_social_tie_vest sorrindo2 blush
+show lucas head_social sorrindo2 blush
 l "Mais por consequência do que por causa, mas sim [seuNome]."
 v "Esse tipo de resposta é pra dar medo de eu fazer mais perguntas? Por que se for, tá funcionando muito bem."
 show lucas sorrindoDeLado
 l "T-talvez não seja o melhor ambiente pra eu te contar todos os detalhes."
 v "Justo. Mas essas pontas que você deixa soltas tão atiçando meu ouvido de fofoqueiro. Acho que peguei tudo que eu precisava, bora pagar e ir embora."
 scene bg_sala_casa_noite
-show lucas base_social_tie_vest neutro face_bandage
+show lucas base_social neutro face_bandage
 with fade
 "Após esperar um tempo desproporcional para conseguir passar as compras e pagar, conseguimos chegar em casa sem mais empecilhos no meio do caminho."
 "Agora é seguir e guardar essas compras na cozinha, aproveitar e tratar esse problema da fome."
 scene bg_cozinha_casa_noite
-show lucas base_social_tie_vest neutro face_bandage
+show lucas base_social neutro face_bandage
 with fade
 v "Algum desejo específico? Algo que queira comer?"
 show lucas falando

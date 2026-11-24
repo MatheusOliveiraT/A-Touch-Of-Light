@@ -1,0 +1,83 @@
+{
+  "splash": {
+	"about": "A Touch Of Light is a work of fiction. Any mentions or references to real events, people, and places are used fictitiously or altered for narrative purposes. Any other resemblance to reality is purely coincidental.",
+	"dev": "This game is currently in development. Therefore, the story, visuals, and game elements are subject to change at any time.",
+	"warning_title": "PHOTOSENSITIVITY WARNING",
+	"warning_body": "This game contains flashing lights, rapid flashes, and visual effects that may cause discomfort or seizures in people with photosensitive epilepsy. You can change this option at any time in the Options menu.",
+	"warning_checkbox": "Enable Flashes and Visual Effects",
+	"warning_confirm": "Confirm and Continue"
+  },
+  "menu": {
+	"start": "Start",
+	"continue": "Continue",
+	"history": "History",
+	"save": "Save",
+	"load": "Load",
+	"gallery": "Gallery",
+	"options": "Options",
+	"main_menu": "Main Menu",
+	"about": "About",
+	"help": "Help",
+	"quit": "Quit",
+	"back": "Back"
+  },
+  "quick_menu": {
+	"rollback": "Back",
+	"history": "History",
+	"skip": "Skip",
+	"auto": "Auto",
+	"save": "Save",
+	"quick_save": "Q.Save",
+	"quick_load": "Q.Load",
+	"options": "Prefs"
+  },
+  "slots": {
+	"empty": "Empty slot",
+	"auto_page": "Auto saves",
+	"quick_page": "Quick saves",
+	"page_prefix": "Page"
+  },
+  "settings": {
+	"display": "Display",
+	"window": "Window",
+	"fullscreen": "Fullscreen",
+	"skip": "Skip",
+	"skip_unseen": "Unseen Text",
+	"skip_after_choices": "After Choices",
+	"transitions": "Transitions",
+	"language": "Language",
+	"accessibility": "Accessibility",
+	"flashing_effects": "Effects / Flashes",
+	"text_speed": "Text Speed",
+	"auto_time": "Auto-Forward Time",
+	"music_vol": "Music Volume",
+	"sfx_vol": "Sound Volume",
+	"mute_all": "Mute All",
+	"general_vol": "Master Volume",
+	"reset": "Reset to Defaults"
+  },
+  "about": {
+	"version": "Version 0.0.1",
+	"body": "A Touch Of Light is a work of fiction. Any mentions or references to real events, people, and places are used fictitiously or altered for narrative purposes. Any other resemblance to reality is purely coincidental.\n\nThis game is currently in development. Therefore, the story, visuals, and game elements are subject to change at any time.\n\nAssets used under the [url=https://creativecommons.org/publicdomain/zero/1.0/]CC0[/url] license:\n\n-> Mayin's Hand and Rich Eatin fonts, created by Cos Ryan available [url=https://fontlibrary.org/member/JasonTerrific/]here[/url].\n\n-> Sound effects generated with Chiptone, a tool made by SFBGames available [url=https://sfbgames.itch.io/chiptone]here[/url].\n\n-> Siren sound effect, created by AsdfgOrt available [url=https://freesound.org/s/512371/]here[/url].\n\n-> Soundtrack composed by Abstraction Music and Tallbeard Studios, available [url=https://abstractionmusic.com/]here[/url].\n\nAssets used without an explicit license / under other license types:\n\n-> Special credits to Deep-Fold for the asset/background generation tools, find more of their work [url=https://deep-fold.itch.io/]here[/url]."
+  },
+  "confirm": {
+	"yes": "Yes",
+	"no": "No",
+	"quit": "Are you sure you want to quit?",
+	"main_menu": "Are you sure you want to return to the main menu? Unsaved progress will be lost.",
+	"overwrite": "Do you want to overwrite this save?",
+	"delete": "Do you want to delete this save?"
+  },
+  "characters": {
+	"v": "You",
+	"vz": "Neighbor",
+	"ate": "Attendant",
+	"seg": "Security Guard",
+	"cient1": "Scientist 1",
+	"cient2": "Scientist 2"
+  },
+  "terms": {
+	"agencia_sigla": "NEGASA",
+	"agencia": "National Extragalactic, Space and Aeronautics Administration"
+  }
+}

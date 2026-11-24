@@ -712,13 +712,13 @@ show lucas sorrindoDesviandoOlhar
 l "A-ah... eu aceitaria..."
 v "Baseado no que você tava vestindo antes, eu tenho uma ideia..."
 scene bg_sala_casa_dia
-show lucas base_social_tie_vest neutro face_bandage
+show lucas base_social neutro face_bandage
 with fade
 show lucas falando
 l "Obrigado, [seuNome]. É algo que eu usaria com certeza em [planeta_lucas]."
 show lucas neutro
 v "Você tem sorte que as suas medidas são muito parecidas com as minhas."
-show lucas head_social_tie_vest sorrindo2 blush
+show lucas head_social sorrindo2 blush
 l "P-pois é..."
 v "Vamo lá, antes que o nosso estômago coma nosso corpo inteiro."
 "Então eu caminho em direção a porta do apartamento, abrindo-a e convindando [l.name] a se juntar a mim."
