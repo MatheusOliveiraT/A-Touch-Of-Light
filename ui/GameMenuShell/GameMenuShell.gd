@@ -21,13 +21,13 @@ signal request_main_menu
 @onready var content_slot: Control = $ContentSlot
 
 var _tab_scenes: Dictionary = {
-	# "save": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
-	# "load": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
-	# "gallery": preload("res://ui/overlays/GalleryOverlay/GalleryOverlay.tscn"),
+	 "save": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
+	 "load": preload("res://ui/overlays/SlotsPanel/SlotsPanel.tscn"),
+	 "gallery": preload("res://ui/overlays/GalleryOverlay/GalleryOverlay.tscn"),
 	 "options": preload("res://ui/overlays/SettingsOverlay/SettingsOverlay.tscn"),
-	# "history": preload("res://ui/overlays/HistoryOverlay/HistoryOverlay.tscn"),
+	 "history": preload("res://ui/overlays/HistoryOverlay/HistoryOverlay.tscn"),
 	 "about": preload("res://ui/overlays/AboutOverlay/AboutOverlay.tscn"),
-	# "help": preload("res://ui/overlays/HelpOverlay/HelpOverlay.tscn"),
+	 "help": preload("res://ui/overlays/HelpOverlay/HelpOverlay.tscn"),
 }
 
 var _current_tab := ""

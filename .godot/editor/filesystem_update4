@@ -8,3 +8,4 @@ res://data/pt/ui.json
 res://ui/GameMenuShell/GameMenuShell.gd
 res://ui/overlays/AboutOverlay/AboutOverlay.tscn
 res://ui/overlays/AboutOverlay/AboutOverlay.gd
+res://ui/overlays/ControlsOverlay/ControlsOverlay.tscn
