@@ -1,11 +1,7 @@
 extends Control
 class_name ControlsOverlay
 
-signal closed
-
-@onready var title_label: Label = $PanelContainer/MarginContainer/VBoxContainer/TitleLabel
 @onready var controls_grid: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/ControlsGrid
-@onready var back_button: Button = $PanelContainer/MarginContainer/VBoxContainer/BackButton
 
 const CONTROL_ROWS := [
 	{"key": "advance", "pt": "Avançar diálogo", "en": "Advance dialogue", "actions": ["interact", "right"], "extra_pt": "Clique Esquerdo / Enter", "extra_en": "Left Click / Enter"},
@@ -17,43 +13,28 @@ const CONTROL_ROWS := [
 
 func _ready() -> void:
 	controls_grid.columns = 2
-	back_button.pressed.connect(_on_back_pressed)
-
 	GlobalData.language_changed.connect(func(_l: String): _refresh_ui())
 	visibility_changed.connect(_on_visibility_changed)
-
 	_refresh_ui()
-	if visible:
-		back_button.grab_focus()
 
 func _on_visibility_changed() -> void:
 	if visible:
 		_refresh_ui()
-		back_button.grab_focus()
-
-func _on_back_pressed() -> void:
-	emit_signal("closed")
-	hide()
 
 func _refresh_ui() -> void:
-	title_label.text = _tr_or("menu", "help", "Ajuda")
-	back_button.text = _tr_or("menu", "back", "Voltar")
 	_populate_controls()
 
 func _populate_controls() -> void:
 	for child in controls_grid.get_children():
 		child.queue_free()
-
 	var lang: String = str(GlobalData.settings.get("language", GlobalData.DEFAULT_LANG))
 	var is_en := lang == "en"
-
 	for row in CONTROL_ROWS:
 		var action_lbl := Label.new()
 		var fallback_desc: String = row["en"] if is_en else row["pt"]
 		action_lbl.text = _tr_or("controls", row["key"], fallback_desc)
 		action_lbl.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		controls_grid.add_child(action_lbl)
-
 		var keys_lbl := Label.new()
 		keys_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		keys_lbl.text = _format_row_keys(row, is_en)

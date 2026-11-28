@@ -96,13 +96,19 @@ func unlock_cg(cg_id: String) -> void:
 		unlocked_cgs[cg_id] = true
 		save_persistent()
 
-func apply_settings() -> void:
+func apply_audio_settings() -> void:
 	_set_bus_volume("Master", settings["master_vol"])
 	_set_bus_volume("Music", settings["music_vol"])
 	_set_bus_volume("SFX", settings["sfx_vol"])
-	
-	var mode := DisplayServer.WINDOW_MODE_FULLSCREEN if settings["fullscreen"] else DisplayServer.WINDOW_MODE_WINDOWED
-	DisplayServer.window_set_mode(mode)
+
+func apply_window_settings() -> void:
+	var target_mode := DisplayServer.WINDOW_MODE_FULLSCREEN if settings["fullscreen"] else DisplayServer.WINDOW_MODE_MAXIMIZED
+	if DisplayServer.window_get_mode() != target_mode:
+		DisplayServer.window_set_mode(target_mode)
+
+func apply_settings() -> void:
+	apply_audio_settings()
+	apply_window_settings()
 
 func _set_bus_volume(bus_name: String, linear_val: float) -> void:
 	var idx := AudioServer.get_bus_index(bus_name)

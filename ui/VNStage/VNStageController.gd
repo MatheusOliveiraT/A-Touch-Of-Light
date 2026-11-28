@@ -3,10 +3,10 @@ class_name VNStageController
 
 signal returned_to_main_menu
 signal chapter_finished(label_name: String)
-signal menu_requested
 signal skip_state_changed(is_skipping: bool)
 
 const LAYERED_CHAR_SCENE := preload("res://personagens/layeredCharacter.tscn")
+const GAME_MENU_SHELL_PATH := "res://ui/GameMenuShell/GameMenuShell.tscn"
 const MAX_ROLLBACK_STEPS := 60
 const MAX_HISTORY_ENTRIES := 250
 const SKIP_STEP_INTERVAL := 0.03
@@ -55,6 +55,8 @@ var is_paused := false
 var is_skipping := false
 var _skip_timer := 0.0
 var _current_dialogue_uid := ""
+var _active_menu_shell: GameMenuShell = null
+var _confirm_main_menu_dialog: ConfirmationDialog = null
 
 var pending_input_var := ""
 var type_tween: Tween
@@ -64,6 +66,8 @@ var dialogue_history: Array[Dictionary] = []
 
 var current_music_id := ""
 var current_music_volume := 1.0
+var current_loop_sfx_id := ""
+var current_loop_sfx_volume := 1.0
 var current_camera_effect := ""
 
 func _ready() -> void:
@@ -77,7 +81,9 @@ func _ready() -> void:
 	_load_all_scripts()
 	if not GlobalData.pending_load_path.is_empty() and FileAccess.file_exists(GlobalData.pending_load_path):
 		var save_file := FileAccess.open(GlobalData.pending_load_path, FileAccess.READ)
-		var parsed: Variant = JSON.parse_string(save_file.get_as_text())
+		var content := save_file.get_as_text()
+		save_file.close()
+		var parsed: Variant = JSON.parse_string(content)
 		GlobalData.pending_load_path = ""
 		if parsed is Dictionary and parsed.has("snapshot"):
 			restore_state_snapshot(parsed["snapshot"])
@@ -108,10 +114,12 @@ func _process(delta: float) -> void:
 		advance()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("menu"):
+	if is_instance_valid(_active_menu_shell):
+		return
+	if event.is_action_pressed("menu") or event.is_action_pressed("ui_cancel"):
 		set_skipping(false)
 		get_viewport().set_input_as_handled()
-		emit_signal("menu_requested")
+		open_pause_menu()
 		return
 	if is_waiting_input or is_paused:
 		return
@@ -142,6 +150,54 @@ func _unhandled_input(event: InputEvent) -> void:
 			set_skipping(false)
 		get_viewport().set_input_as_handled()
 		rollback()
+
+func open_pause_menu(default_tab: String = "options") -> void:
+	if is_instance_valid(_active_menu_shell):
+		return
+	set_skipping(false)
+	is_paused = true
+	var shell_scene := load(GAME_MENU_SHELL_PATH) as PackedScene
+	var shell: GameMenuShell = shell_scene.instantiate()
+	shell.is_in_game = true
+	shell.bind_vn_stage(self)
+	shell.closed.connect(_on_pause_menu_closed)
+	shell.request_main_menu.connect(_on_pause_request_main_menu)
+	$UILayer.add_child(shell)
+	_active_menu_shell = shell
+	shell.open_tab(default_tab)
+
+func _on_pause_menu_closed() -> void:
+	if is_instance_valid(_confirm_main_menu_dialog):
+		_confirm_main_menu_dialog.queue_free()
+		_confirm_main_menu_dialog = null
+	_active_menu_shell = null
+	is_paused = false
+
+func _on_pause_request_main_menu() -> void:
+	if is_instance_valid(_confirm_main_menu_dialog):
+		_confirm_main_menu_dialog.popup_centered()
+		return
+	var dialog := ConfirmationDialog.new()
+	dialog.title = GlobalData.tr_ui("menu", "main_menu")
+	dialog.dialog_text = GlobalData.tr_ui("confirm", "main_menu")
+	dialog.ok_button_text = GlobalData.tr_ui("confirm", "yes")
+	dialog.cancel_button_text = GlobalData.tr_ui("confirm", "no")
+	dialog.confirmed.connect(func():
+		if is_instance_valid(_active_menu_shell):
+			_active_menu_shell.queue_free()
+			_active_menu_shell = null
+		_confirm_main_menu_dialog = null
+		is_paused = false
+		emit_signal("returned_to_main_menu")
+		GlobalData.change_scene_with_fade("res://ui/MainMenu/MainMenu.tscn")
+	)
+	dialog.canceled.connect(func():
+		dialog.queue_free()
+		_confirm_main_menu_dialog = null
+	)
+	$UILayer.add_child(dialog)
+	_confirm_main_menu_dialog = dialog
+	dialog.popup_centered()
 
 func toggle_skip() -> void:
 	if is_skipping:
@@ -475,6 +531,7 @@ func _process_current_event() -> void:
 								var tw_out := create_tween()
 								tw_out.tween_property(transition_rect, "color:a", 0.0, p.z)
 								await tw_out.finished
+							transition_rect.visible = false
 						else:
 							_change_background(ev.get("asset", ""), eff)
 					else:
@@ -505,10 +562,6 @@ func _process_current_event() -> void:
 				var eff: String = ev.get("effect", "fade")
 				if _is_fade_effect(eff):
 					await _play_screen_transition(eff)
-			"show_text":
-				_show_center_text(ev.get("text", ""), ev.get("transition", ""))
-			"transition":
-				await _play_screen_transition(ev.get("effect", "fade"))
 			"pause":
 				var dur := float(ev.get("duration", -1.0))
 				if dur > 0.0:
@@ -649,7 +702,10 @@ func _change_background(asset_id: String, transition: String) -> void:
 			bg_front.modulate.a = 0.0
 		)
 	else:
+		bg_front.texture = null
+		bg_front.modulate.a = 0.0
 		bg_back.texture = tex
+		bg_back.visible = true
 
 func _resolve_single_asset_path(asset_id: String) -> String:
 	for section in ["assets", "overlays", "images", "backgrounds"]:
@@ -837,6 +893,8 @@ func _play_audio_event(ev: Dictionary) -> void:
 			old_player.stop()
 	else:
 		if ev.get("loop", false):
+			current_loop_sfx_id = track_key
+			current_loop_sfx_volume = vol_linear
 			loop_sfx_player.stream = stream
 			loop_sfx_player.volume_db = vol_db
 			loop_sfx_player.play()
@@ -857,6 +915,8 @@ func _stop_audio_event(channel: String, fadeout: float) -> void:
 		else:
 			active_music_player.stop()
 	else:
+		current_loop_sfx_id = ""
+		current_loop_sfx_volume = 1.0
 		sfx_player.stop()
 		loop_sfx_player.stop()
 
@@ -872,6 +932,7 @@ func _play_screen_transition(effect: String) -> void:
 	if not GlobalData.settings.get("transitions_enabled", true) or is_skipping:
 		return
 	var p := _parse_fade_params(effect)
+	transition_rect.visible = true
 	transition_rect.color = Color(0, 0, 0, 0)
 	var tw := create_tween()
 	if p.x > 0.0:
@@ -881,6 +942,7 @@ func _play_screen_transition(effect: String) -> void:
 	if p.z > 0.0:
 		tw.tween_property(transition_rect, "color:a", 0.0, p.z)
 	await tw.finished
+	transition_rect.visible = false
 
 func _handle_camera_effect(effect: String) -> void:
 	if effect == "earthquake_loop":
@@ -943,6 +1005,8 @@ func create_state_snapshot() -> Dictionary:
 		"bg": current_bg_id,
 		"music": current_music_id,
 		"music_volume": current_music_volume,
+		"loop_sfx": current_loop_sfx_id,
+		"loop_sfx_volume": current_loop_sfx_volume,
 		"camera_effect": current_camera_effect,
 		"characters": chars_state,
 		"history": dialogue_history.duplicate(true)
@@ -950,14 +1014,25 @@ func create_state_snapshot() -> Dictionary:
 
 func restore_state_snapshot(snap: Dictionary) -> void:
 	set_skipping(false)
+	is_paused = false
+	is_waiting_choice = false
+	is_waiting_input = false
+	choices_container.visible = false
+	input_panel.visible = false
+	center_text_label.visible = false
+	transition_rect.color = Color(0, 0, 0, 0)
+	transition_rect.visible = false
+	if get_viewport_rect().size == Vector2.ZERO:
+		await get_tree().process_frame
 	current_label = snap["label"]
 	event_queue = (snap["queue"] as Array).duplicate(true)
 	current_index = snap["index"]
 	variables = (snap["variables"] as Dictionary).duplicate(true)
 	if snap.has("history"):
 		dialogue_history.assign(snap["history"])
-	if snap["bg"] != current_bg_id:
-		_change_background(snap["bg"], "")
+	var saved_bg := str(snap.get("bg", ""))
+	if not saved_bg.is_empty():
+		_change_background(saved_bg, "")
 	var target_music := str(snap.get("music", ""))
 	var target_vol := float(snap.get("music_volume", 1.0))
 	if target_music != current_music_id:
@@ -969,6 +1044,19 @@ func restore_state_snapshot(snap: Dictionary) -> void:
 				"track": target_music,
 				"volume": target_vol,
 				"fadein": 0.25,
+				"loop": true
+			})
+	sfx_player.stop()
+	var target_loop_sfx := str(snap.get("loop_sfx", ""))
+	var target_loop_vol := float(snap.get("loop_sfx_volume", 1.0))
+	if target_loop_sfx != current_loop_sfx_id:
+		if target_loop_sfx.is_empty():
+			_stop_audio_event("sound", 0.0)
+		else:
+			_play_audio_event({
+				"channel": "sound",
+				"track": target_loop_sfx,
+				"volume": target_loop_vol,
 				"loop": true
 			})
 	var target_cam := str(snap.get("camera_effect", ""))

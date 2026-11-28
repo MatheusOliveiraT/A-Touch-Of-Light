@@ -11,17 +11,17 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_jliv4")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1592189795]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=457071311]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -300.0
+offset_top = -218.0
+offset_right = 300.0
+offset_bottom = 218.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -29,9 +29,6 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=10928100]
-layout_mode = 2
-
-[node name="TitleLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=76338133]
 layout_mode = 2
 
 [node name="VersionLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=557287385]

@@ -1,9 +1,6 @@
 extends Control
 class_name AboutOverlay
 
-signal closed
-
-@onready var title_label: Label = $PanelContainer/MarginContainer/VBoxContainer/TitleLabel
 @onready var version_label: Label = $PanelContainer/MarginContainer/VBoxContainer/VersionLabel
 @onready var body_text: RichTextLabel = $PanelContainer/MarginContainer/VBoxContainer/BodyText
 
@@ -22,12 +19,7 @@ func _on_visibility_changed() -> void:
 func _on_meta_clicked(meta: Variant) -> void:
 	OS.shell_open(str(meta))
 
-func _on_back_pressed() -> void:
-	emit_signal("closed")
-	hide()
-
 func _refresh_texts() -> void:
-	title_label.text = _tr_or("menu", "about", "Sobre")
 	version_label.text = _tr_or("about", "version", "Versão 0.0.1")
 	body_text.text = _tr_or("about", "body", "")
 

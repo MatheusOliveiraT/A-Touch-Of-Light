@@ -1,10 +1,6 @@
 extends Control
 class_name SettingsOverlay
 
-signal closed
-
-@onready var title_label: Label = $PanelContainer/MarginContainer/VBoxContainer/TitleLabel
-
 @onready var general_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Sliders/General/Label
 @onready var general_slider: HSlider = $PanelContainer/MarginContainer/VBoxContainer/Sliders/General/General
 @onready var music_label: Label = $PanelContainer/MarginContainer/VBoxContainer/Sliders/Music/Label
@@ -18,7 +14,6 @@ signal closed
 
 @onready var language_option: OptionButton = $PanelContainer/MarginContainer/VBoxContainer/OptionButton
 @onready var reset_button: Button = $PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox/ResetButton
-@onready var back_button: Button = $PanelContainer/MarginContainer/VBoxContainer/ButtonsHBox/BackButton
 
 const LANGUAGES := [
 	{"code": "pt", "label": "Português"},
@@ -38,7 +33,6 @@ func _ready() -> void:
 	effects_toggle.toggled.connect(_on_effects_toggled)
 	language_option.item_selected.connect(_on_language_selected)
 	reset_button.pressed.connect(_on_reset_pressed)
-	back_button.pressed.connect(_on_back_pressed)
 	GlobalData.language_changed.connect(func(_l: String): _refresh_texts())
 	visibility_changed.connect(_on_visibility_changed)
 	if visible:
@@ -76,7 +70,7 @@ func _load_from_global() -> void:
 
 func _on_volume_changed(setting_key: String, linear_val: float) -> void:
 	GlobalData.settings[setting_key] = linear_val
-	GlobalData.apply_settings()
+	GlobalData.apply_audio_settings()
 
 func _on_fullscreen_toggled(pressed: bool) -> void:
 	GlobalData.settings["fullscreen"] = pressed
@@ -106,13 +100,7 @@ func _on_reset_pressed() -> void:
 	GlobalData.save_persistent()
 	_load_from_global()
 
-func _on_back_pressed() -> void:
-	GlobalData.save_persistent()
-	emit_signal("closed")
-	hide()
-
 func _refresh_texts() -> void:
-	title_label.text = _tr_or("menu", "options", "Opções")
 	general_label.text = _tr_or("settings", "general_vol", "Volume geral")
 	music_label.text = _tr_or("settings", "music_vol", "Volume da música")
 	sfx_label.text = _tr_or("settings", "sfx_vol", "Volume do som")
@@ -120,7 +108,6 @@ func _refresh_texts() -> void:
 	transitions_toggle.text = _tr_or("settings", "transitions", "Transições")
 	effects_toggle.text = _tr_or("settings", "flashing_effects", "Efeitos / Flashes")
 	reset_button.text = _tr_or("settings", "reset", "Restaurar padrões")
-	back_button.text = _tr_or("menu", "back", "Voltar")
 
 func _tr_or(section: String, key: String, fallback: String) -> String:
 	var res := GlobalData.tr_ui(section, key)
