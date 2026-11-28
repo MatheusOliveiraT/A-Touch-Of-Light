@@ -70,6 +70,8 @@ var current_loop_sfx_id := ""
 var current_loop_sfx_volume := 1.0
 var current_camera_effect := ""
 
+var cached_stage_screenshot: Image = null
+
 func _ready() -> void:
 	active_music_player = music_a
 	music_a.finished.connect(func(): _on_music_finished(music_a))
@@ -155,7 +157,14 @@ func open_pause_menu(default_tab: String = "options") -> void:
 	if is_instance_valid(_active_menu_shell):
 		return
 	set_skipping(false)
-	is_paused = true
+	var prev_ui_visible : bool = $UILayer.visible
+	$UILayer.visible = false
+	await RenderingServer.frame_post_draw
+	var img := get_viewport().get_texture().get_image()
+	if img:
+		img.resize(320, 180, Image.INTERPOLATE_BILINEAR)
+		cached_stage_screenshot = img
+	$UILayer.visible = prev_ui_visible
 	var shell_scene := load(GAME_MENU_SHELL_PATH) as PackedScene
 	var shell: GameMenuShell = shell_scene.instantiate()
 	shell.is_in_game = true

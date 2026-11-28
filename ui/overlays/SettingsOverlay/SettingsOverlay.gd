@@ -68,19 +68,26 @@ func _load_from_global() -> void:
 			language_option.select(i)
 			break
 
+func _exit_tree() -> void:
+	GlobalData.save_persistent()
+
 func _on_volume_changed(setting_key: String, linear_val: float) -> void:
 	GlobalData.settings[setting_key] = linear_val
 	GlobalData.apply_audio_settings()
+	GlobalData.save_persistent()
 
 func _on_fullscreen_toggled(pressed: bool) -> void:
 	GlobalData.settings["fullscreen"] = pressed
-	GlobalData.apply_settings()
+	GlobalData.apply_window_settings()
+	GlobalData.save_persistent()
 
 func _on_transitions_toggled(pressed: bool) -> void:
 	GlobalData.settings["transitions_enabled"] = pressed
+	GlobalData.save_persistent()
 
 func _on_effects_toggled(pressed: bool) -> void:
 	GlobalData.flashing_effects = pressed
+	GlobalData.save_persistent()
 
 func _on_language_selected(index: int) -> void:
 	if index < 0 or index >= LANGUAGES.size():

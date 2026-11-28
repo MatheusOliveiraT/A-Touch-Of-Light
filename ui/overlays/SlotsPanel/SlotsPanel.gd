@@ -18,7 +18,6 @@ const TOTAL_PAGES := 10
 @onready var slots_grid: GridContainer = $PanelContainer/MarginContainer/VBoxContainer/SlotsGrid
 @onready var confirm_dialog: ConfirmationDialog = $ConfirmDialog
 
-
 var current_mode: Mode = Mode.LOAD
 var stage_controller: VNStageController = null
 var menu_shell: GameMenuShell = null
@@ -65,19 +64,43 @@ func _populate_slots() -> void:
 	for i in range(SLOTS_PER_PAGE):
 		var slot_num := start_idx + i
 		var path := _get_slot_path(slot_num)
+		var thumb_path := _get_slot_thumb_path(slot_num)
+		var exists := FileAccess.file_exists(path)
 		var btn := Button.new()
-		btn.custom_minimum_size = Vector2(240, 110)
+		btn.custom_minimum_size = Vector2(380, 250)
 		btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		btn.size_flags_vertical = Control.SIZE_EXPAND_FILL
-		btn.alignment = HORIZONTAL_ALIGNMENT_LEFT
-		if FileAccess.file_exists(path):
+		var margin := MarginContainer.new()
+		margin.set_anchors_preset(Control.PRESET_FULL_RECT)
+		margin.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		margin.add_theme_constant_override("margin_left", 8)
+		margin.add_theme_constant_override("margin_top", 8)
+		margin.add_theme_constant_override("margin_right", 8)
+		margin.add_theme_constant_override("margin_bottom", 8)
+		btn.add_child(margin)
+		var vbox := VBoxContainer.new()
+		vbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		vbox.add_theme_constant_override("separation", 6)
+		margin.add_child(vbox)
+		var thumb_rect := TextureRect.new()
+		thumb_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		thumb_rect.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		thumb_rect.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+		thumb_rect.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+		vbox.add_child(thumb_rect)
+		var info_lbl := Label.new()
+		info_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		info_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		vbox.add_child(info_lbl)
+		if exists:
 			var info := _read_slot_metadata(path)
 			var label_str := str(info.get("label", ""))
 			var date_str := str(info.get("timestamp", ""))
-			btn.text = "Slot %02d\n%s\n%s" % [slot_num, label_str, date_str]
+			info_lbl.text = "Slot %02d — %s\n%s" % [slot_num, label_str, date_str]
+			thumb_rect.texture = _load_thumbnail_texture(thumb_path)
 			btn.pressed.connect(func(): _on_slot_pressed(slot_num))
 		else:
-			btn.text = "Slot %02d\n%s" % [slot_num, empty_text]
+			info_lbl.text = "Slot %02d — %s" % [slot_num, empty_text]
 			btn.disabled = (current_mode == Mode.LOAD)
 			if current_mode == Mode.SAVE:
 				btn.pressed.connect(func(): _on_slot_pressed(slot_num))
@@ -113,6 +136,7 @@ func _execute_save(slot_num: int) -> void:
 		push_warning("VNStageController não vinculado ao SlotsPanel para salvar.")
 		return
 	var path := _get_slot_path(slot_num)
+	var thumb_path := _get_slot_thumb_path(slot_num)
 	var snap := stage_controller.create_state_snapshot()
 	var save_payload := {
 		"slot": slot_num,
@@ -124,8 +148,10 @@ func _execute_save(slot_num: int) -> void:
 	if file:
 		file.store_string(JSON.stringify(save_payload))
 		file.close()
-		emit_signal("slot_saved", path)
-		_refresh_ui()
+	if stage_controller.cached_stage_screenshot != null:
+		stage_controller.cached_stage_screenshot.save_png(thumb_path)
+	emit_signal("slot_saved", path)
+	_refresh_ui()
 
 func _execute_load(slot_num: int) -> void:
 	var path := _get_slot_path(slot_num)
@@ -133,7 +159,9 @@ func _execute_load(slot_num: int) -> void:
 		return
 	if is_instance_valid(stage_controller):
 		var file := FileAccess.open(path, FileAccess.READ)
-		var parsed: Variant = JSON.parse_string(file.get_as_text())
+		var content := file.get_as_text()
+		file.close()
+		var parsed: Variant = JSON.parse_string(content)
 		if parsed is Dictionary and parsed.has("snapshot"):
 			stage_controller.restore_state_snapshot(parsed["snapshot"])
 			emit_signal("slot_loaded", path)
@@ -144,8 +172,19 @@ func _execute_load(slot_num: int) -> void:
 		emit_signal("slot_loaded", path)
 		GlobalData.change_scene_with_fade(stage_scene_path)
 
+func _load_thumbnail_texture(thumb_path: String) -> Texture2D:
+	if not FileAccess.file_exists(thumb_path):
+		return null
+	var img := Image.load_from_file(thumb_path)
+	if img == null or img.is_empty():
+		return null
+	return ImageTexture.create_from_image(img)
+
 func _get_slot_path(slot_num: int) -> String:
 	return "%sslot_%02d.json" % [SAVE_DIR, slot_num]
+
+func _get_slot_thumb_path(slot_num: int) -> String:
+	return "%sslot_%02d.png" % [SAVE_DIR, slot_num]
 
 func _read_slot_metadata(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)

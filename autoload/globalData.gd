@@ -128,12 +128,17 @@ func save_persistent() -> void:
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if file:
 		file.store_string(JSON.stringify(data, "\t"))
+		file.close()
 
 func load_persistent() -> void:
 	if not FileAccess.file_exists(SAVE_PATH):
 		return
 	var file := FileAccess.open(SAVE_PATH, FileAccess.READ)
-	var parsed: Variant = JSON.parse_string(file.get_as_text())
+	if not file:
+		return
+	var content := file.get_as_text()
+	file.close()
+	var parsed: Variant = JSON.parse_string(content)
 	if parsed is Dictionary:
 		first_launch_done = parsed.get("first_launch_done", false)
 		photosensitivity_warned = parsed.get("photosensitivity_warned", false)
